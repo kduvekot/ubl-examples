@@ -4,7 +4,7 @@
   {
    "id": "ore",
    "title": "Ore from the mine to the factory (domestic, Urvania)",
-   "text": "Under a supply agreement for 2026, which sets the price basis, one train a month and a moisture clause, Valdara calls off one train of iron ore a month from Serravona Mining, free carrier (FCA) at Fucinalta mine siding: the buyer arranges and pays the main transport, so Valdara, not the mine, books Ferrano Rail Cargo's ore train under their framework transport agreement, within the standing plan for the year. On Tuesday 10 March, the first day of the loading window, the mine loads {fact:ore.wagons}, which are weighed at the siding: 1,788.4 t of lump ore with 62 % iron. The train runs about {fact:ore.run_km} on the line past Ferrano into the factory's siding and arrives the same afternoon, which earns the carrier the 2 % bonus of the plan, so that the factory can start the blend a day early. The mine deducts 1.5 % of the value for the 7.5 % moisture measured at loading, as the agreement's moisture clause says.",
+   "text": "Under a supply agreement for 2026, which sets the price basis, one train a month and a moisture clause, Valdara calls off one train of iron ore a month from Serravona Mining, free carrier (FCA) at Fucinalta mine siding: the buyer arranges and pays the main transport, so Valdara, not the mine, books Ferrano Rail Cargo's ore train under their framework transport agreement, within the standing plan for the year. On Tuesday 10 March, the first day of the loading window, the mine loads {fact:ore.wagons}, which are weighed at the siding: {fact:ore.tonnes} of lump ore with {fact:ore.iron} iron. The train runs about {fact:ore.run_km} on the line past Ferrano into the factory's siding and arrives the same afternoon, which earns the carrier the {fact:ore.bonus} bonus of the plan, so that the factory can start the blend a day early. The mine deducts {fact:ore.deduction} of the value for the {fact:ore.moisture} moisture measured at loading, as the agreement's moisture clause says.",
    "legs": [
     {
      "mode": "rail",
@@ -71,7 +71,7 @@
   {
    "id": "road",
    "title": "Finished goods by truck across the land border (Urvania → Bayvarra)",
-   "text": "The distributor in Bayvarra buys 96 park benches and 12 spare side frames from the manufacturer in Urvania, free carrier (FCA) at the manufacturer's 3PL warehouse, and books the road carrier itself. The manufacturer confirms the order with the new casting of the side frame, at the same price; Urvania's chamber of commerce certifies the goods' preferential origin; the manufacturer clears them for export, the distributor for import. At goods-in a bench seems to be short and a carton of frames over; the next morning the recount finds the bench's carton on the pallet of spare frames, and the distributor withdraws its first receipt advice and sends a corrected one: everything ordered arrived. The carrier invoices the transport to the distributor, the manufacturer invoices the goods, and the distributor pays across the border.",
+   "text": "The distributor in Bayvarra buys {fact:road.benches} and {fact:road.frames} from the manufacturer in Urvania, free carrier (FCA) at the manufacturer's 3PL warehouse, and books the road carrier itself. The manufacturer confirms the order with the new casting of the side frame, at the same price; Urvania's chamber of commerce certifies the goods' preferential origin; the manufacturer clears them for export, the distributor for import. At goods-in a bench seems to be short and a carton of frames over; the next morning the recount finds the bench's carton on the pallet of spare frames, and the distributor withdraws its first receipt advice and sends a corrected one: everything ordered arrived. The carrier invoices the transport to the distributor, the manufacturer invoices the goods, and the distributor pays across the border.",
    "legs": [
     {
      "mode": "road",
@@ -175,7 +175,7 @@
   {
    "id": "rail",
    "title": "Containers by rail under the Accord's common transit (Urvania → Bayvarra)",
-   "text": "For full container loads Valdara sells Lumeway 192 benches delivered at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges and pays the transport: it books Ferrano Rail Cargo under their framework contract for container slots. Castrano Logistics packs the two 40-foot containers at its warehouse, each with one of the two production lots of 9 and 10 April, and announces the despatch to Lumeway; the despatch advice and the consignment note name the lot of each container. The carrier's tractor brings the two packed containers from Castrano's warehouse to the intermodal hub at Ferrano, a pre-carriage by road of the same contract, and the hub lifts them onto the container train FRC 4417; the consignment note follows the Accord's uniform rules for international carriage by rail. Urvania's rail infrastructure manager, which runs the tracks and the train paths since the state separated them from the train operators, reports the train's progress to the carrier. The goods travel under the Accord's common transit, which Valdara lodges the evening before departure, to Bayvarra customs' inland office at Marrowdale, where Lumeway declares the import on 15 April and claims the Accord preference. Lumeway empties the first container the next day; the second waits until 22 April, because the siding's fork-lift is in repair, and runs two days past the five days' free time. Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to its freight invoice, and Valdara passes it on to Lumeway, which bears a delay in unloading under DAP, in a debit note to its goods invoice.",
+   "text": "For full container loads Valdara sells Lumeway {fact:rail.benches} delivered at place (DAP) Lumeway's rail siding in Marrowdale. The seller arranges and pays the transport: it books Ferrano Rail Cargo under their framework contract for container slots. Castrano Logistics packs the two 40-foot containers at its warehouse, each with one of the two production lots of 9 and 10 April, and announces the despatch to Lumeway; the despatch advice and the consignment note name the lot of each container. The carrier's tractor brings the two packed containers from Castrano's warehouse to the intermodal hub at Ferrano, a pre-carriage by road of the same contract, and the hub lifts them onto the container train FRC 4417; the consignment note follows the Accord's uniform rules for international carriage by rail. Urvania's rail infrastructure manager, which runs the tracks and the train paths since the state separated them from the train operators, reports the train's progress to the carrier. The goods travel under the Accord's common transit, which Valdara lodges the evening before departure, to Bayvarra customs' inland office at Marrowdale, where Lumeway declares the import on 15 April and claims the Accord preference. Lumeway empties the first container the next day; the second waits until 22 April, because the siding's fork-lift is in repair, and runs two days past the five days' free time. Ferrano Rail Cargo charges the demurrage to Valdara in a debit note to its freight invoice, and Valdara passes it on to Lumeway, which bears a delay in unloading under DAP, in a debit note to its goods invoice.",
    "legs": [
     {
      "mode": "road",
@@ -312,7 +312,7 @@
   {
    "id": "plastics",
    "title": "Recycled plastic granulate by river barge (Urvania → Bayvarra)",
-   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells 120 tonnes of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. Before the order Rinova sends its product information for the quarter, with the recycled-content certificate of an accredited certification body. The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow).",
+   "text": "Rinova Recovery in Ferrano recovers polyethylene from the production waste of several factories, Valdara's among them (the waste flow), and sells {fact:plastics.tonnes} of granulate in 120 jumbo bags of one tonne to Rivermouth Packaging on Bayvarra's coast, carriage paid to (CPT) Rivermouth's river quay: the seller books the barge and pays the freight, the buyer takes the risk once the bags are on board. Before the order Rinova sends its product information for the quarter, with the recycled-content certificate of an accredited certification body. The bags are loaded on Monday 20 April and sail down the river by day; the freight of exported goods is exempt from Urvania's value added tax. Rivermouth turns the granulate into stretch film and garment bags (the packaging flow).",
    "legs": [
     {
      "mode": "river",
@@ -418,7 +418,7 @@
   {
    "id": "retail",
    "title": "Distributor to retailer, delivered duty paid (domestic, Bayvarra)",
-   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment. The store renovates the home and garden department of its Lumeport store and reopens it on Monday 11 May, with two weeks at 10 % off; to set up the range it asks the distributor for a catalogue, which the distributor deletes when its winter catalogue takes over on 20 June. The store orders 24 benches, delivered in a slot on the morning of 30 April; it refuses one in a torn carton, and the distributor credits it. The distributor has sold its receivables to a factor, which the store pays. A consumer buys in the shop, and another orders a dining set from the store's web shop.",
+   "text": "The retailer buys delivered duty paid (DDP) at its shop: the distributor arranges the transport and bears all costs, so the distributor, not the retailer, books the truck and receives the transport documents. The retailer shares forecasts, promotions and its stock levels so the distributor can plan replenishment. The store renovates the home and garden department of its Lumeport store and reopens it on Monday 11 May, with two weeks at {fact:retail.off} off; to set up the range it asks the distributor for a catalogue, which the distributor deletes when its winter catalogue takes over on 20 June. The store orders {fact:retail.benches}, delivered in a slot on the morning of 30 April; it refuses one in a torn carton, and the distributor credits it. The distributor has sold its receivables to a factor, which the store pays. A consumer buys in the shop, and another orders a dining set from the store's web shop.",
    "legs": [
     {
      "mode": "road",
@@ -551,7 +551,7 @@
   {
    "id": "sea",
    "title": "Overseas by container ship, cost insurance and freight (Bayvarra → island Lisavu)",
-   "text": "The distributor wins a new customer on the island. It introduces itself, both join the Trade Accord's digital agreement, and the buyer orders 104 benches and spare frames, cost, insurance and freight (CIF) to the port of discharge: 96 benches for the Port of Selanu's harbour parks and two more pallets of four for its own stock. The prices, 520 lume a bench and 68 a frame, hold the sea freight and the cargo insurance, which the distributor buys through its freight forwarder; the invoice bills the goods alone. The forwarder clears the export and books the container; the carrier reports its ship and cargo to the island's authorities before it arrives; the buyer's customs broker clears the goods and its 3PL receives them. The distributor has sold the receivable to a factor, which sends the statement of account. A frame arrives crushed and a pallet's illegible mark makes customs inspect the container, so the distributor credits the frame and the cost of the inspection, and the buyer pays the factor. The buyer sells two of the benches in its shop.",
+   "text": "The distributor wins a new customer on the island. It introduces itself, both join the Trade Accord's digital agreement, and the buyer orders {fact:sea.benches} and spare frames, cost, insurance and freight (CIF) to the port of discharge: {fact:sea.port_benches} for the Port of Selanu's harbour parks and two more pallets of four for its own stock. The prices, {fact:sea.bench_price} a bench and {fact:sea.frame_price} a frame, hold the sea freight and the cargo insurance, which the distributor buys through its freight forwarder; the invoice bills the goods alone. The forwarder clears the export and books the container; the carrier reports its ship and cargo to the island's authorities before it arrives; the buyer's customs broker clears the goods and its 3PL receives them. The distributor has sold the receivable to a factor, which sends the statement of account. A frame arrives crushed and a pallet's illegible mark makes customs inspect the container, so the distributor credits the frame and the cost of the inspection, and the buyer pays the factor. The buyer sells two of the benches in its shop.",
    "legs": [
     {
      "mode": "road",
@@ -1212,7 +1212,7 @@
   {
    "id": "waste",
    "title": "Production waste to recovery (domestic, Urvania)",
-   "text": "Valdara bales the polyethylene film its factory throws out, the stretch film of the pallets it receives and the offcuts of its own wrapping, about 275 t a year, and sends it to Rinova Recovery across Ferrano, which recycles it into granulate. The waste is not hazardous and does not leave Urvania, so Urvania's waste law applies, not the Basel procedure: the producer notifies the waste stream for the year to the environment agency, which acknowledges it with a waste-stream number, and the recovery facility reports each load it receives. Trasvia, registered with the agency as a waste carrier, brings about 54 bales a load; Rinova's weighbridge weighs the truck full and empty, about 38.2 t and 15.3 t, and Rinova invoices the 22.9 t of waste.",
+   "text": "Valdara bales the polyethylene film its factory throws out, the stretch film of the pallets it receives and the offcuts of its own wrapping, about {fact:waste.year_t} a year, and sends it to Rinova Recovery across Ferrano, which recycles it into granulate. The waste is not hazardous and does not leave Urvania, so Urvania's waste law applies, not the Basel procedure: the producer notifies the waste stream for the year to the environment agency, which acknowledges it with a waste-stream number, and the recovery facility reports each load it receives. Trasvia, registered with the agency as a waste carrier, brings about {fact:waste.bales} a load; Rinova's weighbridge weighs the truck full and empty, about {fact:waste.gross} and {fact:trasvia.t07_tare}, and Rinova invoices the {fact:waste.net} of waste.",
    "legs": [
     {
      "mode": "road",
@@ -1317,7 +1317,7 @@
   {
    "id": "wood",
    "title": "Wood: slats for the benches and timber for furniture (Bayvarra → Urvania, and at home)",
-   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C, planes it to 1800 × 95 × 45 mm and sells the slats by the bundle of 50. It modifies the ash in a thermal modification kiln of its own; in the southern summer, when that kiln is full with its own decking and cladding, it has the slats modified under contract at Tostara Wood Modification in Conciaro, near Ferrano, and names that processor to Valdara, whose approval of the supplier covers it. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders 96 bundles of the ash delivered at its factory (DAP). The sawmill fills the February delivery from the season stock of slats it had modified at Conciaro in January and keeps in the plant's store, so it books the truck from the plant to the factory: 4,800 slats on 24 heat-treated pallets, about 21.0 t, a quarter's supply for 960 benches, which the plant despatches for the sawmill. The slats remain the sawmill's until it delivers them. On the morning of the delivery it releases them from inward processing into free circulation in Urvania as their importer, pays Urvania's import VAT, assessed on the blanks as they were entered, and deducts it in its Urvanian return. It then sells them to Valdara from its stock in Urvania, a domestic sale in Urvania: registered for Urvania's VAT itself, it charges 20 % VAT, which Valdara deducts, and invoices in lume with the VAT also stated in ferra, at the parity of 100 ferra to the lume. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
+   "text": "Marrowdale Sawmill in Upland State makes Valdara's bench slats to Valdara's drawing: it saws and kiln-dries ash from the managed forest, modifies it at about 212 °C, planes it to {fact:wood.slat_size} and sells the slats by the bundle of {fact:wood.bundle_slats}. It modifies the ash in a thermal modification kiln of its own; in the southern summer, when that kiln is full with its own decking and cladding, it has the slats modified under contract at Tostara Wood Modification in Conciaro, near Ferrano, and names that processor to Valdara, whose approval of the supplier covers it. Valdara asks for a quotation, which the sawmill gives under Valdara's purchasing terms, for the modified ash with kiln-dried oak of the same size as a priced alternative, and orders {fact:wood.bundles} of the ash delivered at its factory (DAP). The sawmill fills the February delivery from the season stock of slats it had modified at Conciaro in January and keeps in the plant's store, so it books the truck from the plant to the factory: {fact:wood.slats} on {fact:wood.pallets} heat-treated pallets, about {fact:wood.weight}, a quarter's supply for {fact:wood.benches}, which the plant despatches for the sawmill. The slats remain the sawmill's until it delivers them. On the morning of the delivery it releases them from inward processing into free circulation in Urvania as their importer, pays Urvania's import VAT, assessed on the blanks as they were entered, and deducts it in its Urvanian return. It then sells them to Valdara from its stock in Urvania, a domestic sale in Urvania: registered for Urvania's VAT itself, it charges {fact:xu.vat} VAT, which Valdara deducts, and invoices in lume with the VAT also stated in ferra, at the parity of {fact:fx.ferra} to the lume. The furniture maker buys timber at home; selling for manufacture, against the furniture maker's exemption certificate, the sawmill charges no sales tax and says why.",
    "legs": [
     {
      "mode": "road",
@@ -1423,7 +1423,7 @@
   {
    "id": "modification",
    "title": "Modification: bench slats modified under contract (Bayvarra → Urvania)",
-   "text": "From October to March, the southern summer, Marrowdale Sawmill's thermal modification kiln is full with its own decking and cladding, so it buys kiln slots for the park-bench slats from Tostara Wood Modification at Conciaro, east of Ferrano, under a season agreement that gives each slot a job number in advance. In January it orders one job for its season stock of park-bench slats, the standing product it sells to Valdara each quarter: the modification, planing, end sealing and bundling of 96 bundles. It sends its own kiln-dried ash blanks, 4,800 of 1,830 × 101 × 51 mm, across the border in two loads of its timber truck. The blanks remain the sawmill's and are only worked in Urvania, so they do not enter free circulation: the plant holds an authorisation for inward processing and enters them under it, and Urvania's import VAT waits until the sawmill releases the finished slats to sell them in Urvania. Bayvarra records the blanks as a permanent export for processing. The plant reports what it holds for the sawmill and when the second charge is ready, stores the bundles until the sawmill calls them off, and hands them to the carrier the sawmill books, against the sawmill's pick-up release. It invoices the processing in ferra, a service to a customer established abroad and so outside Urvania's VAT, and the sawmill pays within the discount period.",
+   "text": "From October to March, the southern summer, Marrowdale Sawmill's thermal modification kiln is full with its own decking and cladding, so it buys kiln slots for the park-bench slats from Tostara Wood Modification at Conciaro, east of Ferrano, under a season agreement that gives each slot a job number in advance. In January it orders one job for its season stock of park-bench slats, the standing product it sells to Valdara each quarter: the modification, planing, end sealing and bundling of {fact:modification.bundles}. It sends its own kiln-dried ash blanks, 4,800 of {fact:wood.blank_size}, across the border in two loads of its timber truck. The blanks remain the sawmill's and are only worked in Urvania, so they do not enter free circulation: the plant holds an authorisation for inward processing and enters them under it, and Urvania's import VAT waits until the sawmill releases the finished slats to sell them in Urvania. Bayvarra records the blanks as a permanent export for processing. The plant reports what it holds for the sawmill and when the second charge is ready, stores the bundles until the sawmill calls them off, and hands them to the carrier the sawmill books, against the sawmill's pick-up release. It invoices the processing in ferra, a service to a customer established abroad and so outside Urvania's VAT, and the sawmill pays within the discount period.",
    "legs": [
     {
      "mode": "road",
@@ -2337,7 +2337,7 @@
   {
    "id": "reefer",
    "title": "Apples and pears in a reefer container by sea (Bayvarra → island Lisavu)",
-   "text": "In the southern autumn the island's fresh-produce wholesaler buys a 40-foot reefer of apples and pears from the fruit growers' cooperative at Harrowmead, carriage and insurance paid to the Port of Selanu (CIP): the cooperative books the reefer through its forwarder, which brings it pre-cooled to the packhouse and trucks it back to Lumeport on a generator; the plant health service of Bayvarra's Department of Agriculture certifies the fruit free of the pests the island names. The reefer sails at 0.5 °C and 90 % humidity, its fresh-air vent set for fruit that breathes, on Tidewell's weekly service; at Selanu it waits on the port's power until the wholesaler's carrier takes it to the cold store, where it is unloaded and its temperature log read. Food pays the island's import consumption tax like most imports: the island taxes imported food to encourage its own farms.",
+   "text": "In the southern autumn the island's fresh-produce wholesaler buys a 40-foot reefer of apples and pears from the fruit growers' cooperative at Harrowmead, carriage and insurance paid to the Port of Selanu (CIP): the cooperative books the reefer through its forwarder, which brings it pre-cooled to the packhouse and trucks it back to Lumeport on a generator; the plant health service of Bayvarra's Department of Agriculture certifies the fruit free of the pests the island names. The reefer sails at {fact:reefer.set_point} and {fact:reefer.humidity} humidity, its fresh-air vent set for fruit that breathes, on Tidewell's weekly service; at Selanu it waits on the port's power until the wholesaler's carrier takes it to the cold store, where it is unloaded and its temperature log read. Food pays the island's import consumption tax like most imports: the island taxes imported food to encourage its own farms.",
    "legs": [
     {
      "mode": "road",
@@ -2501,7 +2501,7 @@
   {
    "id": "lpg",
    "title": "Propane by road tanker to Lumeport's district heating (dangerous goods, domestic, Bayvarra)",
-   "text": "Kelpstone Gas separates propane from its field's gas at the Gullhaven plant and sells it by road tanker. In winter the Coastal State Water Company, which runs Lumeport's district heating, burns propane in its peak boilers and orders a tanker load when its storage runs low. Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry dangerous goods in tanks: about 20 t of propane, UN 1965, class 2.1, in a tank semi-trailer that weighs about 17 t with its tractor, so within the Accord's 40 t; the tank shows the class 2.1 placard and orange plates with 23 over 1965. The tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, pumps the propane into the water company's storage and returns empty the next day. The propane is burned, not resold, so Bayvarra's sales tax applies to the sale.",
+   "text": "Kelpstone Gas separates propane from its field's gas at the Gullhaven plant and sells it by road tanker. In winter the Coastal State Water Company, which runs Lumeport's district heating, burns propane in its peak boilers and orders a tanker load when its storage runs low. Kelpstone has it carried by Gullhaven Tank Haulage, licensed to carry dangerous goods in tanks: about {fact:lpg.tonnes} of propane, UN 1965, class 2.1, in a tank semi-trailer that weighs about {fact:lpg.tare} with its tractor, so within the Accord's {fact:road.limit}; the tank shows the class 2.1 placard and orange plates with 23 over 1965. The tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, pumps the propane into the water company's storage and returns empty the next day. The propane is burned, not resold, so Bayvarra's sales tax applies to the sale.",
    "legs": [
     {
      "mode": "road",
@@ -2564,7 +2564,7 @@
   {
    "id": "medicines",
    "title": "Medicines and a technetium generator for the island's hospital, by air (cold chain and radioactive material)",
-   "text": "A pharmaceutical wholesaler in Lumeport buys its vaccines and insulin for the southern winter from a maker in India in April, in rupees, and the hospital's technetium-99m generator every week from a maker in the Netherlands, in euro, under a standing order; each maker invoices its goods as an export, and the wholesaler clears both imports into Bayvarra at Lumeport airport itself. Selanu General Hospital then orders the vaccines for the island's winter influenza campaign, insulin, a frozen varicella vaccine and its weekly technetium-99m generator from the wholesaler, carriage paid to Selanu airport. The forwarder books the morning flight of Monday 15 June: the vaccines and the insulin fly at 2 to 8 °C in the airline's active temperature-controlled container, the frozen vaccine in an insulated box on dry ice, and the generator, a Type A package of radioactive material with a Yellow label, under a shipper's declaration of its own, in the aft hold. The wholesaler's own van brings the generator to the cargo terminal at 05:30. On the island the customs broker declares the import for the hospital, free of duty and exempt from the import consumption tax, and the hospital pharmacy's van fetches the goods.",
+   "text": "A pharmaceutical wholesaler in Lumeport buys its vaccines and insulin for the southern winter from a maker in India in April, in rupees, and the hospital's technetium-99m generator every week from a maker in the Netherlands, in euro, under a standing order; each maker invoices its goods as an export, and the wholesaler clears both imports into Bayvarra at Lumeport airport itself. Selanu General Hospital then orders the vaccines for the island's winter influenza campaign, insulin, a frozen varicella vaccine and its weekly technetium-99m generator from the wholesaler, carriage paid to Selanu airport. The forwarder books the morning flight of Monday 15 June: the vaccines and the insulin fly at {fact:medicines.cold} in the airline's active temperature-controlled container, the frozen vaccine in an insulated box on dry ice, and the generator, a Type A package of radioactive material with a Yellow label, under a shipper's declaration of its own, in the aft hold. The wholesaler's own van brings the generator to the cargo terminal at 05:30. On the island the customs broker declares the import for the hospital, free of duty and exempt from the import consumption tax, and the hospital pharmacy's van fetches the goods.",
    "legs": [
     {
      "mode": "road",
@@ -3419,7 +3419,7 @@
    "doc": "RetailEvent",
    "from": "26-xb",
    "to": "6-xb",
-   "why": "The reopening of the home and garden department on 11 May, with two weeks at 10 % off, will lift demand; the distributor needs to know before it orders from the manufacturer.",
+   "why": "The reopening of the home and garden department on 11 May, with two weeks at {fact:retail.off} off, will lift demand; the distributor needs to know before it orders from the manufacturer.",
    "parties": {
     "SenderParty": "26-xb",
     "ReceiverParty": "6-xb",
@@ -3707,7 +3707,7 @@
    "doc": "Order",
    "from": "1-xl",
    "to": "6-xb",
-   "why": "The buyer orders 104 benches on 26 pallets, 96 for the Port of Selanu and 8 for its own stock, and spare frames. Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
+   "why": "The buyer orders {fact:sea.benches} on {fact:sea.bench_pallets}, 96 for the Port of Selanu and 8 for its own stock, and spare frames. Delivery terms CIF port of the island: the order names the buyer's 3PL as delivery party; freight and insurance are the seller's business.",
    "parties": {
     "BuyerCustomerParty": "1-xl",
     "SellerSupplierParty": "6-xb",
@@ -4444,7 +4444,7 @@
    "doc": "Order",
    "from": "2-xb",
    "to": "5-xu",
-   "why": "The first call-off under the awarded contract: 40 benches and their 40 installations. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
+   "why": "The first call-off under the awarded contract: {fact:tender.calloff} and their 40 installations. Delivery terms DAP the authority's site: the manufacturer delivers, by the road carrier it chooses.",
    "parties": {
     "BuyerCustomerParty": "2-xb",
     "SellerSupplierParty": "5-xu",
@@ -4590,7 +4590,7 @@
    "doc": "WasteNotification",
    "from": "5-xu",
    "to": "46-xu",
-   "why": "Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery. UBL requires a CustomsParty in a waste notification, \"the competent authority granting a permit to export or import the waste\"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.",
+   "why": "Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about {fact:waste.year_t} in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery. UBL requires a CustomsParty in a waste notification, \"the competent authority granting a permit to export or import the waste\"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.",
    "parties": {
     "SenderParty": "5-xu",
     "ReceiverParty": "46-xu",
@@ -4609,7 +4609,7 @@
    "doc": "WasteMovement",
    "from": "7-xu",
    "to": "46-xu",
-   "why": "The recovery facility reports to the environment agency the first load it has received under the notified stream: 54 bales, 22.9 tonnes net as its weighbridge found them, under the waste-stream number.",
+   "why": "The recovery facility reports to the environment agency the first load it has received under the notified stream: {fact:waste.bales}, {fact:waste.net} net as its weighbridge found them, under the waste-stream number.",
    "parties": {
     "SenderParty": "7-xu",
     "ReceiverParty": "46-xu",
@@ -5015,7 +5015,7 @@
    "doc": "Quotation",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "The sawmill quotes per bundle of 50 slats of thermally modified ash, with kiln-dried oak as a priced alternative, delivered at the factory, under the buyer's purchasing terms, with Urvania's VAT, for it sells the slats from its stock in Urvania, and names the plant that modifies this delivery for it.",
+   "why": "The sawmill quotes per bundle of {fact:wood.bundle_slats} slats of thermally modified ash, with kiln-dried oak as a priced alternative, delivered at the factory, under the buyer's purchasing terms, with Urvania's VAT, for it sells the slats from its stock in Urvania, and names the plant that modifies this delivery for it.",
    "parties": {
     "SellerSupplierParty": "36-xb",
     "BuyerCustomerParty": "5-xu",
@@ -5080,7 +5080,7 @@
    "doc": "DespatchAdvice",
    "from": "59-xu",
    "to": "5-xu",
-   "why": "The modification plant despatches the 96 bundles for the sawmill, which sold them: it announces them on their 24 pallets with the lot of each kiln charge, so the factory can trace the wood of every bench, and records the pick-up release they left under.",
+   "why": "The modification plant despatches the {fact:wood.bundles} for the sawmill, which sold them: it announces them on their {fact:wood.pallets} pallets with the lot of each kiln charge, so the factory can trace the wood of every bench, and records the pick-up release they left under.",
    "parties": {
     "DespatchSupplierParty": "59-xu",
     "DeliveryCustomerParty": "5-xu",
@@ -5110,7 +5110,7 @@
    "doc": "Invoice",
    "from": "36-xb",
    "to": "5-xu",
-   "why": "Slats and pallets, sold from the sawmill's stock in Urvania: a domestic sale in Urvania, with Urvania's VAT at 20 % under the sawmill's Urvanian VAT number; the invoice is in lume and states the VAT in ferra as well.",
+   "why": "Slats and pallets, sold from the sawmill's stock in Urvania: a domestic sale in Urvania, with Urvania's VAT at {fact:xu.vat} under the sawmill's Urvanian VAT number; the invoice is in lume and states the VAT in ferra as well.",
    "parties": {
     "AccountingSupplierParty": "36-xb",
     "AccountingCustomerParty": "5-xu",
@@ -5169,7 +5169,7 @@
    "doc": "Order",
    "from": "36-xb",
    "to": "59-xu",
-   "why": "The sawmill orders the processing of one job under the season agreement: 96 bundles of modified, planed and end-sealed slats from its own blanks, which it supplies free of charge.",
+   "why": "The sawmill orders the processing of one job under the season agreement: {fact:modification.bundles} of modified, planed and end-sealed slats from its own blanks, which it supplies free of charge.",
    "parties": {
     "BuyerCustomerParty": "36-xb",
     "SellerSupplierParty": "59-xu"

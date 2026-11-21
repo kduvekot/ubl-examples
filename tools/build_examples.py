@@ -42,6 +42,7 @@ import world_ids  # noqa: E402
 import world_parties  # noqa: E402
 import world_specs  # noqa: E402
 import world_items  # noqa: E402
+import world_facts  # noqa: E402
 
 NS_CAC = "urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 NS_CBC = "urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
@@ -2026,7 +2027,7 @@ def page(n, doc, root, reasons, flow):
     lines = [f"# {title}", "",
              f"*Example {n} of the flow \"{flow['title']}\" · [{world_docs.words(doc['doc'])} in the UBL 2.5 "
              f"specification]({world_docs.spec_link(doc['doc'])})*", "",
-             doc["why"], "",
+             world_facts.fill(doc["why"]), "",   # {fact:…} in the reason (stage 7 B2)
              f"[The XML file]({os.path.basename(xmlname(n, doc))}) is valid against the UBL 2.5 schemas and the world's "
              "code lists. Below, every value with its place in the document and the reason for it.", "",
              "## Values and their reasons", ""]

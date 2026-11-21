@@ -14,6 +14,7 @@ import build_examples
 import codelists
 import examples_kit as kit
 import world_ids
+import world_facts  # noqa: E402
 import world_items
 import world_map as wmap
 from build_examples import ITEM, PARTY, WORLD, V, Detail, address, amount, coordinate, item, money, party, price, qty
@@ -32,7 +33,7 @@ ORE_MOISTURE = ("7.5", "6")       # measured at loading, and the limit of the ag
 ORE_ASSAY = "SM-ASSAY-26-12"      # the assay certificate of the sample taken at loading (world/documents.json, cited)
 ORE = kit.Flow("ore", "2026-03-02", [
     {"item": "ore-lump", "ordered": 1800, "delivered": "1788.4",
-     "why": "One train: 30 wagons of about 60 tonnes.",
+     "why": f"One train: {world_facts.render('ore.wagons')} of about 60 tonnes.",
      "invoice_why": "The weighed quantity from the despatch advice, not the ordered quantity.",
      "line_allowance": {"percent": "1.5", "code": "64", "code_why": "The reason for the allowance as a code of "
                         "UN/EDIFACT 5189: special agreement, the moisture clause of the supply agreement.",
@@ -86,7 +87,7 @@ def ore(n, doc):
         return kit.tep(f, n, doc, 2, "The day after the request.", 8, 1800000)
     if doc["doc"] == "DespatchAdvice":
         return kit.despatch_advice(f, n, doc, 8, "The day the train was loaded and weighed.",
-                                   "Weighed on the weighbridge at loading: 30 wagons.",
+                                   f"Weighed on the weighbridge at loading: {world_facts.render('ore.wagons')}.",
                                    {"IssueTime": V("10:20:00", f"Sent once the train has left the siding at "
                                                                f"{ORE_DEPARTS}, so that the factory can plan the "
                                                                "unloading before it arrives."),
@@ -1427,7 +1428,7 @@ def barge_goods(f, w):
             "ChargeableQuantity": qty(120, "TNE", "The tonnes charged."),
             "TraceID": V(PE_LOT, "The lot on the bags' labels, the seller's lot number, as in its despatch advice"
                                  "."),  # D41
-            "Quantity": qty(120, "TNE", "120 tonnes."),
+            "Quantity": qty(120, "TNE", f"{world_facts.render('plastics.tonnes')}."),
             "OriginAddress": address("7-xu"),
             "ContainingPackage": {"Quantity": qty(1, "TNE", "What one bag holds: a tonne of granulate; the "
                                                             "consignment counts the 120 bags."),  # D41
@@ -1463,7 +1464,7 @@ def barge_freight(why):
     """The river freight of the 120 tonnes at the barge operator's rate per tonne (world/items.json barge-freight),
     as the plan agrees it and the consignment note charges it (plastics/04#F16)."""
     rate = Decimal(str(ITEM["barge-freight"]["price"]["amount"]))
-    tonnes = Decimal("120")
+    tonnes = Decimal(str(PLASTICS.deal[0]["ordered"]))
     return {"ChargeIndicator": V("true", "The freight, a charge."),
             "AllowanceChargeReasonCode": V("FC", "The reason for the charge as a code: for a charge UN/EDIFACT 7161 "
                                                  "(special services)."),
@@ -1485,7 +1486,7 @@ def barge_consignment(f, view):
         out["MainCarriageShipmentStage"] = barge_stage(f, False)
         # the agreed freight, on which the plan's commission and penalty terms are reckoned (plastics/04#F16)
         out["FreightAllowanceCharge"] = barge_freight("The agreed rate per tonne of the operator's tariff for bagged "
-                                                      "cargo, for the 120 tonnes planned.")
+                                                      f"cargo, for the {world_facts.render('plastics.tonnes')} planned.")
         return out
     out.update({"CarrierAssignedID": V(BARGE_VOYAGE + "/2", "The barge operator's number: the second lot of "
                                                              "the voyage."),
@@ -2935,12 +2936,14 @@ FLIGHT_BLOCK_EAST = wmap.flight()["east"]
 FLIGHT_CLOCKS = wmap.clock_ahead("XB", "XL")      # hours the island's clocks are ahead of Lumeport's
 FLIGHT_BLOCK_TEXT = (f"in island time, {'an hour' if FLIGHT_CLOCKS == 1 else f'{FLIGHT_CLOCKS:g} hours'} ahead of "
                      f"Lumeport's: a block time of {wmap.duration(FLIGHT_BLOCK_EAST)} eastbound")
-FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", "07:00"), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS)
+FLIGHT_DEPARTS = wmap.flight()["departures"]     # the timetable's departures from Lumeport (world/map.json, stage 7 B2)
+FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", FLIGHT_DEPARTS["KXL207"]), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS)
 # D39: the frames are booked on the afternoon flight KXL209 of Wednesday 13 May (day 2), Lumeport 15:00 to Selanu
 # 18:45; the truck from Ferrano is late, the cargo reaches the terminal after the acceptance cut-off at 12:00, is
 # accepted on arrival and flies on the morning flight KXL207 of Thursday 14 May (day 3), landing at about 10:30
-AIR_BOOKED = ("KXL209", 2, "15:00", wmap.hm(wmap.after(wmap.at("2026-05-13", "15:00"), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS)))
-AIR_FLOWN = ("KXL207", 3, "07:00", wmap.hm(FLIGHT_ARRIVES))
+AIR_BOOKED = ("KXL209", 2, FLIGHT_DEPARTS["KXL209"],
+              wmap.hm(wmap.after(wmap.at("2026-05-13", FLIGHT_DEPARTS["KXL209"]), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS)))
+AIR_FLOWN = ("KXL207", 3, FLIGHT_DEPARTS["KXL207"], wmap.hm(FLIGHT_ARRIVES))
 AIR_CUTOFF = "12:00:00"
 # read-through air A3 (owner, 2026-11-20): Bayforth's truck leaves the cross-dock before the cut-off, late because
 # Trasvia's truck from Ferrano came in late, and needs about an hour for the leg on the map; the terminal, which works
@@ -3254,7 +3257,7 @@ def air(n, doc):
 
 # ---------------------------------------------------------------- the cotton flow (Lisavu -> Bayvarra, FOB)
 COTTON = kit.Flow("cotton", "2026-02-02", [
-    {"item": "cotton-bale", "ordered": 6129, "why": "27 bales of about 227 kg: one container of lint."}])
+    {"item": "cotton-bale", "ordered": 6129, "why": f"27 bales of about {world_facts.render('cotton.bale')}: one container of lint."}])
 SEED_KG = 18000
 ADVANCE_KG = 4500                  # the season advance: a quarter of the farm's expected 18,000 kg
 ADVANCE = Decimal("1485.000")      # 4,500 kg at the season's 0.330 coral, on the prepayment self-billed invoice
@@ -5434,7 +5437,7 @@ def wood(n, doc):
             raise SystemExit(f"wood: {w} kg of slats exceed the payload of Trasvia's truck")  # O134
         out = kit.tep_request(f, n, doc, 7, "Under DAP the sawmill books the truck from the modification plant, "
                               "where its slats are stored, to the factory.", 10, w,
-                              "96 bundles of slats on 24 pallets, with the pallets.",
+                              f"{world_facts.render('wood.bundles')} of slats on {WOOD_PALLETS} pallets, with the pallets.",
                               same_day=kit.flow_leg(f, "13-xu").get("transit_days") == 0)    # O255 point 7
         kit.deep_merge(out["Consignment"], {
             "TotalTransportHandlingUnitQuantity": V(str(WOOD_PALLETS), "The pallets to be carried, four bundles on "
@@ -5505,7 +5508,7 @@ def wood(n, doc):
         out = kit.invoice(f, n, doc, 10, "Issued when the slats leave.",
                           {"OrderReference": ref(f, "order", "The manufacturer's order.")},
                           [{"item": "slat-bundle-1800", "qty": 96, "invoice_why": "The bundles despatched, "
-                                                                                  "4,800 slats."}],
+                                                                                  f"{world_facts.render('wood.slats')}."}],
                           charges=[PALLETS_CHARGE])
         # a domestic sale in Urvania invoiced in lume (O259): Urvania's VAT is accounted for in ferra, so the invoice
         # states it in ferra too, at the parity
@@ -8093,7 +8096,7 @@ def _(f, n, doc, out):
     line.update({"ID": V("1", "The quotation line."), "Note": V("Thermally modified ash, as drawn, in bundles of "
                                                                  "50; the same bundle in kiln-dried oak is offered "
                                                                  "below.", "What is quoted."),
-                 "Quantity": qty(96, "EA", "The bundles quoted: 4,800 slats, one truck."),
+                 "Quantity": qty(96, "EA", f"The bundles quoted: {world_facts.render('wood.slats')}, one truck."),
                  "LineExtensionAmount": amount(base, "XBL", "The quoted amount."),
                  "TaxInclusiveLineExtensionAmount": amount(base + line_vat, "XBL", "The quoted amount with "
                                                                                    "Urvania's value added tax."),
@@ -8143,8 +8146,9 @@ def _(f, n, doc, out):
                                                     "EndDate": V(f.date(18), "Within about a week.")}},
             "DeliveryTerms": {"ID": V("DAP", "Delivered at the factory, as asked.", schemeID="INCOTERMS")},
             "PaymentMeans": {"PaymentMeansCode": V("30", "By credit transfer.", listID="UN/EDIFACT EDED 4461")},
-            "TransactionConditions": {"Description": V("Priced per bundle of 50 slats; the smallest order is one "
-                                                       "truck: 96 bundles on 24 pallets.", "The conditions.")},
+            "TransactionConditions": {"Description": V(f"Priced per bundle of {world_facts.render('wood.bundle_slats')} slats; the smallest order "
+                                                       f"is one truck: {world_facts.render('wood.bundles')} on {WOOD_PALLETS} pallets.",
+                                                       "The conditions.")},
             "DestinationCountry": {"IdentificationCode": V("XU", "Into Urvania.")},
             "TaxTotal": kit.tax_total([({"item": "slat-bundle-1800"}, None,
                                         base + Decimal(PALLETS_CHARGE["amount"]),
@@ -8700,7 +8704,7 @@ def dg_contact(why):
                         "Note": V(desk["hours"], "When it answers.")}}
 
 
-MAST_FLIGHT = ("KXL209", "15:00:00")     # the afternoon flight of Thursday 4 June (D36, D39's timetable)
+MAST_FLIGHT = ("KXL209", FLIGHT_DEPARTS["KXL209"] + ":00")     # the afternoon flight of Thursday 4 June (D36, D39's timetable)
 
 
 def mast_uld(serial):
@@ -8983,13 +8987,13 @@ MED_NL_DEAL = [{"item": "tc-generator", "ordered": 1, "why": "The generator for 
                                                              "week from Monday 15 June."}]
 MED_DAY = {"in-order": 0, "in-invoice": 17, "in-import": 21, "order": 51, "nl-order": 51, "fi": 52,
            "nl-invoice": 54, "nl-import": 55, "flight": 56}
-MED_FLIGHT = ("KXL207", "07:00")      # the morning flight Lumeport - Selanu (D39's timetable)
+MED_FLIGHT = ("KXL207", FLIGHT_DEPARTS["KXL207"])      # the morning flight Lumeport - Selanu (D39's timetable)
 MED_RKN = f"RKN20871{PARTY['12-xl']['identity']['airline_designator']}"
 MED_DGD = "QLM-DGD-26-0615"           # the shipper's declaration of the generator, a document of its own (O202 5)
 MED_LOTS = {    # the makers' lots, as their certificates of release give them (O229)
     "flu-vaccine": ("NLB-FLU26S-0412", "2027-02-28", "The southern hemisphere formula of 2026 is used up by the next "
                                                     "winter: the lot expires at the end of February 2027."),
-    "insulin-vial": ("NLB-INS-2603-118", "2028-02-29", "Unopened at 2 to 8 °C, human insulin keeps for two years: the "
+    "insulin-vial": ("NLB-INS-2603-118", "2028-02-29", f"Unopened at {world_facts.render('medicines.cold')}, human insulin keeps for two years: the "
                                                       "lot of March 2026 expires at the end of February 2028."),
     "varicella-vaccine": ("NLB-VZV-2602-031", "2027-08-31", "A frozen live vaccine keeps 18 months at -15 °C or "
                                                            "colder: the lot of February 2026 expires at the end of "
@@ -9105,7 +9109,7 @@ def med_units(f, full):
            **({} if full else {"TransportHandlingUnitTypeCode": V("CT", "UN/ECE Recommendation 21 code CT: the "
                                                                         "cartons, which the airline loads into its "
                                                                         "container.")}),
-           "HandlingInstructions": V("Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo "
+           "HandlingInstructions": V(f"Keep at {world_facts.render('medicines.cold')}; do not freeze; do not open before the island's cargo "
                                      "terminal.", "What the cold chain needs."),
            "MinimumTemperature": med_temp("PRODUCT", "2", "The vaccines and the insulin must not fall below 2 °C: "
                                                           "they lose their potency when they freeze."),
@@ -9116,7 +9120,7 @@ def med_units(f, full):
            "HandlingInstructions": V(f"Frozen vaccine on {kit.kg(MED_DRY_ICE_KG)} kg of dry ice: keep the box "
                                      "upright and its vent clear; do not put it in the active container.",
                                      "How the box is handled: dry ice gives off carbon dioxide, and at -78 °C it "
-                                     "would freeze the goods at 2 to 8 °C."),
+                                     f"would freeze the goods at {world_facts.render('medicines.cold')}."),
            "HazardousRiskIndicator": V("true", "The dry ice is dangerous goods of class 9."),
            "MinimumTemperature": med_temp("PRODUCT", "-50", "The live vaccine is kept frozen, at -50 °C or warmer."),
            "MaximumTemperature": med_temp("PRODUCT", "-15", "And at -15 °C or colder."),
@@ -9148,8 +9152,8 @@ def med_units(f, full):
         "RefrigerationOnIndicator": V("true", "The container's cooling and heating are switched on: it keeps its "
                                               "set point by itself, on its batteries, from the wholesaler's cold room "
                                               "to the island."),
-        "Description": V("Active temperature-controlled LD3 container (RKN), set to 5 °C", "What kind of container: "
-                         "one that cools and heats, so it holds 2 to 8 °C whatever the hold's temperature."),
+        "Description": V(f"Active temperature-controlled LD3 container (RKN), set to {world_facts.render('medicines.set_point')}",
+                         f"What kind of container: one that cools and heats, so it holds {world_facts.render('medicines.cold')} whatever the hold's temperature."),
         "MinimumTemperature": med_temp("TRANSPORT", "2", "The lowest temperature the container lets its cargo space "
                                                          "fall to: its alarm limit."),
         "MaximumTemperature": med_temp("TRANSPORT", "8", "The highest: its other alarm limit."),
@@ -9195,7 +9199,7 @@ def med_goods(f, transport=True):
                                         "is set to.")
         if mk.get("storage"):
             g.update(med_cold(d["item"], "The range the maker's storage conditions give: "
-                                         + ("2 to 8 °C, never frozen." if mk["storage"]["min"] == "2" else
+                                         + (f"{mk['storage']['min']} to {mk['storage']['max']} °C, never frozen." if mk["storage"]["min"] == "2" else
                                             "frozen, -50 to -15 °C.")))
         g["Item"] = {"Name": V(it["name"], "The goods, named.")}
         if mk.get("hazard"):
@@ -9273,7 +9277,7 @@ def medicines(n, doc):
                         "scheduled air cargo from Hyderabad; the wholesaler clears the import.",
                         "Lumeport airport, cargo terminal", deal=MED_IN_DEAL, key="order-in")
         out["IssueTime"] = V("10:20:00", "During the wholesaler's office hours.")
-        out["Note"] = V("Please ship by scheduled air cargo at 2 to 8 °C, the varicella vaccine frozen, to arrive at "
+        out["Note"] = V(f"Please ship by scheduled air cargo at {world_facts.render('medicines.cold')}, the varicella vaccine frozen, to arrive at "
                         "Lumeport by Monday 11 May; we pay in euro.", "What the wholesaler asks.")
         return out
     if d == "Invoice" and india:
@@ -9493,7 +9497,7 @@ def medicines(n, doc):
         last = MED_LOG[-1][1]
         out = kit.transportation_status(f, n, doc, MED_DAY["flight"], "Reported when the container had been opened "
                                         "and its logger read.",
-                                        "Consignment arrived on KXL207; the cold chain held at 2 to 8 °C.",
+                                        f"Consignment arrived on KXL207; the cold chain held at {world_facts.render('medicines.cold')}.",
                                         "Selanu airport, cargo terminal",
                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
                                         event_type="ARRIVAL")
@@ -9504,7 +9508,7 @@ def medicines(n, doc):
             "ConditionCode": V("COMPLETED", "The arrival has taken place."),
             "Description": V("Temperature log of the active container from its closing at the wholesaler to its "
                              "opening at the cargo terminal.", "What the status reports."),
-            "IndicationIndicator": V("true", "The temperature stayed within 2 to 8 °C for the whole carriage: what "
+            "IndicationIndicator": V("true", f"The temperature stayed within {world_facts.render('medicines.cold')} for the whole carriage: what "
                                              "the hospital pharmacy needs to accept the vaccines and the insulin."),
             "Condition": {"AttributeID": V("TRANSPORT", "The temperature in the container's cargo space."),
                           "Measure": V(str(last), "When the container was opened, at 11:00.", unitCode="CEL"),
@@ -11414,12 +11418,12 @@ def _(f, n, doc, out):
 def _(f, n, doc, out):
     # no status reason: the request has no status, and its relation to the standing plan is said next to the
     # reference (D45, ore/02#F5); the quantity is this month's, the standing plan's train (ore/02#F4)
-    out["Consignment"]["SummaryDescription"] = V("One train of 30 wagons, about 1,800 t of lump iron ore.",
+    out["Consignment"]["SummaryDescription"] = V(f"One train of {world_facts.render('ore.wagons')}, about 1,800 t of lump iron ore.",
                                                  "What is to be carried, before the wagons are loaded and weighed.")
     out["Consignment"]["TotalGoodsItemQuantity"] = qty(1, "EA", "The number of goods items: the ore.")
     return {"TransportExecutionPlanDocumentReference": {
                 "ID": V(kit.cited_number("frc-ore-season-plan"), "The standing plan for the ore season, agreed in January (not shown)."),
-                "DocumentDescription": V("The standing plan for 2026 provides one train a month of 30 wagons, about "
+                "DocumentDescription": V(f"The standing plan for 2026 provides one train a month of {world_facts.render('ore.wagons')}, about "
                                          "1,800 t; this request books March's train, for this month's call-off of "
                                          "1,800 t, in the loading window of 10 to 13 March.",
                                          "How this request updates the standing plan.")},  # ore/02#F4, F5
@@ -11462,7 +11466,7 @@ def _(f, n, doc, out):
     terms["TransportServiceProviderSpecialTerms"] = V("Delivery within the agreed slot; the consignee unloads. "
                                                       "Waiting time beyond two hours is charged.", "The carrier's "
                                                       "terms.")
-    out["Consignment"]["SummaryDescription"] = V("One train of 30 wagons, about 1,800 t of lump iron ore.",
+    out["Consignment"]["SummaryDescription"] = V(f"One train of {world_facts.render('ore.wagons')}, about 1,800 t of lump iron ore.",
                                                  "What is to be carried, before the wagons are loaded and weighed.")
     out["Consignment"]["TotalGoodsItemQuantity"] = qty(1, "EA", "The number of goods items: the ore.")
     return {"TransportExecutionPlanDocumentReference": {"ID": V(kit.cited_number("frc-ore-season-plan"), "The standing plan this plan "
@@ -11987,7 +11991,7 @@ def tender_calloff(n, doc):
         out = kit.order(f, n, doc, days["order"], "Tuesday 24 March, the day after the catalogue.",  # D28 point 9
                         "Delivered at place, the department's depot: the manufacturer delivers, by the carrier it "
                         "chooses; the department clears the import.", "Public works depot, Lumeport",
-                        {"Note": V("Release 1 under the framework contract: 40 benches and their installation, to be "
+                        {"Note": V(f"Release 1 under the framework contract: {world_facts.render('tender.calloff')} and their installation, to be "
                                    "completed by Tuesday 7 April.", "Which call-off this is, and when the installation "
                                    "is due: the penalty clause counts from that day."),
                          "Contract": calloff_contract_ref(),
@@ -14294,7 +14298,7 @@ def rf_goods_item(f, with_set_point=True):
                          "CommodityClassification": {"CommodityCode": V("080830", "The Harmonized System subheading "
                                                                                   "of fresh pears.")}}}]}
     if with_set_point:
-        out["Temperature"] = rf_cel(STORE["set_point_c"], "The set point the reefer is to hold: 0.5 °C, the middle "
+        out["Temperature"] = rf_cel(STORE["set_point_c"], f"The set point the reefer is to hold: {STORE['set_point_c']} °C, the middle "
                                     "of the fruit's range, the figure the order's 'chilled' asks for.",
                                     attribute="SETPOINT")
         out["MinimumTemperature"] = rf_cel(STORE["temperature_c"][0], "The coldest the fruit may be carried at.")
@@ -15023,14 +15027,14 @@ def modification(n, doc):
                                                                     "Where the delivery terms place the handover.")}},
             "TaxTotal": total,
             "AnticipatedMonetaryTotal": {
-                "LineExtensionAmount": amount(base, "XUF", "The processing of the 96 bundles; storage is billed by "
+                "LineExtensionAmount": amount(base, "XUF", f"The processing of the {MOD_BUNDLES} bundles; storage is billed by "
                                                            "the week, as it falls."),
                 "PayableAmount": amount(base + tax, "XUF", "What the sawmill expects to pay for the processing.")},
             "OrderLine": {"LineItem": {
                 "ID": V("1", "The line number."),
-                "Note": V("96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.",
+                "Note": V(f"{MOD_BUNDLES} bundles of {world_facts.render('wood.bundle_slats')} slats, our park-bench slat MDS-SL-1800, {world_facts.render('wood.slat_size')}.",
                           "The output the job is to give: the sawmill's own slat, by its number."),
-                "Quantity": qty(MOD_BUNDLES, "EA", "The bundles to be made: the 4,800 blanks give 4,800 slats."),
+                "Quantity": qty(MOD_BUNDLES, "EA", f"The bundles to be made: the {MOD_BLANKS:,} blanks give {MOD_BLANKS:,} slats."),
                 "LineExtensionAmount": amount(rows[0][2], "XUF", "Quantity times price."),
                 "Price": kit.price_block("tm-processing", "XUF"),
                 "Item": item("tm-processing"),
@@ -15038,7 +15042,7 @@ def modification(n, doc):
                     "ID": V("1.1", "The material of the job, a line below the main line."),
                     "Note": V("Supplied by the customer, free of charge: the sawmill's own kiln-dried ash, which "
                               "stays its property.", "Why the line has no price."),
-                    "Quantity": qty(MOD_BLANKS, "EA", "The blanks that make the 96 bundles, one slat from each."),
+                    "Quantity": qty(MOD_BLANKS, "EA", f"The blanks that make the {MOD_BUNDLES} bundles, one slat from each."),
                     "Item": item("ash-blank-1830")}}}}
     if d == "OrderResponse":
         out = kit.order_response(f, n, doc, MOD_DAY["load1"], "The plant answers the next morning, when it has put "
@@ -15148,7 +15152,7 @@ def modification(n, doc):
                                                        "truck."),
             "IssueTime": V("09:00:00", "In the morning."),
             "SequenceNumberID": V("1", "The first change of the order."),
-            "Note": V(f"Call-off of job {MOD_JOB}: all 96 bundles for Valdara Industries, Ferrano, collected by "
+            "Note": V(f"Call-off of job {MOD_JOB}: all {MOD_BUNDLES} bundles for Valdara Industries, Ferrano, collected by "
                       "Trasvia Haulage on Thursday 26 February.", "What the change adds: the delivery of the "
                                                                   "finished job."),
             "LineCountNumeric": V("1", "One line."),

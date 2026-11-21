@@ -202,7 +202,7 @@ Inside `OrderLine`:
 
 - `LineItem/ID` = **1**  
   The line number.
-- `LineItem/Note` = **96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.**  
+- `LineItem/Note` = **96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1,800 × 95 × 45 mm.**  
   The output the job is to give: the sawmill's own slat, by its number.
 - `LineItem/Quantity` = **96** (unitCode `EA`)  
   The bundles to be made: the 4,800 blanks give 4,800 slats.
@@ -370,7 +370,7 @@ Inside `OrderLine`:
   <cac:OrderLine>
     <cac:LineItem>
       <cbc:ID>1</cbc:ID>
-      <cbc:Note>96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1800 × 95 × 45 mm.</cbc:Note>
+      <cbc:Note>96 bundles of 50 slats, our park-bench slat MDS-SL-1800, 1,800 × 95 × 45 mm.</cbc:Note>
       <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cbc:LineExtensionAmount currencyID="XUF">1272000</cbc:LineExtensionAmount>
       <cac:Price>

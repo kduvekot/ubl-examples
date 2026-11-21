@@ -129,7 +129,8 @@ def flight(world=None):
         if still > hours:
             raise SystemExit(f"air: the flight ({still:.2f} h in still air) no longer fits its {way}bound block time "
                              f"of {hours} h (world/map.json)")  # O152, O123
-    return {"east": f["block_hours"]["east"], "west": f["block_hours"]["west"], "still_air": still, "km": km}
+    return {"east": f["block_hours"]["east"], "west": f["block_hours"]["west"], "still_air": still, "km": km,
+            "departures": dict(f.get("departures", {}))}
 
 
 def clock_ahead(a, b):

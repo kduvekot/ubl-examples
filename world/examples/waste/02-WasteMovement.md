@@ -2,7 +2,7 @@
 
 *Example 2 of the flow "Production waste to recovery (domestic, Urvania)" · [Waste Movement in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-MOVEMENT-SCHEMA)*
 
-The recovery facility reports to the environment agency the first load it has received under the notified stream: 54 bales, 22.9 tonnes net as its weighbridge found them, under the waste-stream number.
+The recovery facility reports to the environment agency the first load it has received under the notified stream: 54 bales, 22.9 t net as its weighbridge found them, under the waste-stream number.
 
 [The XML file](02-WasteMovement.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

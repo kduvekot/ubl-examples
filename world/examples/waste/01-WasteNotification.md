@@ -2,7 +2,7 @@
 
 *Example 1 of the flow "Production waste to recovery (domestic, Urvania)" · [Waste Notification in the UBL 2.5 specification](https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-WASTE-NOTIFICATION-SCHEMA)*
 
-Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 tonnes in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery. UBL requires a CustomsParty in a waste notification, "the competent authority granting a permit to export or import the waste"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.
+Before the year's movements start, the manufacturer, as producer and notifier, notifies its waste stream to Urvania's environment agency under the national waste law: the baled polyethylene film it sends to Rinova for recycling, about 275 t in twelve loads from April to March, by Trasvia. The agency acknowledges it with a waste-stream number; no consent is needed for a domestic stream of non-hazardous waste for recovery. UBL requires a CustomsParty in a waste notification, "the competent authority granting a permit to export or import the waste"; a domestic stream crosses no border, so it names the environment agency, the only competent authority there is.
 
 [The XML file](01-WasteNotification.xml) is valid against the UBL 2.5 schemas and the world's code lists. Below, every value with its place in the document and the reason for it.
 

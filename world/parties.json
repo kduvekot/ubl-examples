@@ -106,7 +106,7 @@
      },
      {
       "title": "Trade",
-      "text": "The mine sells lump ore with about 62 % iron to Valdara under a yearly supply agreement: one train a month, free carrier at the mine siding, with a deduction for moisture. A train of {fact:ore.wagons} carries about 1,790 t, hauled by [[Ferrano Rail Cargo]]."
+      "text": "The mine sells lump ore with about {fact:ore.iron} iron to Valdara under a yearly supply agreement: one train a month, free carrier at the mine siding, with a deduction for moisture. A train of {fact:ore.wagons} carries about {fact:ore.tonnes_about}, hauled by [[Ferrano Rail Cargo]]."
      }
     ],
     "timeline": [
@@ -965,7 +965,7 @@
      },
      {
       "title": "Fleet",
-      "text": "Trasvia runs 18 tractor units and 24 trailers. Its tractor unit 07 pulls a 13.6 m curtain-side trailer for 33 pallets. Tractor and trailer weigh about 15.3 t empty, which leaves about 24.7 t of payload within the Accord's limit of 40 t."
+      "text": "Trasvia runs 18 tractor units and 24 trailers. Its tractor unit 07 pulls a 13.6 m curtain-side trailer for 33 pallets. Tractor and trailer weigh about {fact:trasvia.t07_tare} empty, which leaves about {fact:trasvia.t07_payload} of payload within the Accord's limit of {fact:road.limit}."
      }
     ],
     "facts": {
@@ -1481,7 +1481,7 @@
      },
      {
       "title": "Operations",
-      "text": "Goods of Accord origin cross free of duty on proof of origin; on imports Urvania levies its value added tax of 20 % on the value with freight and insurance to the border, which a business deducts again. The office clears the exports of [[Valdara Industries]] and [[Rinova Recovery]], and each month the gas that [[Montebrio Power]] and [[Ferrano Energy]] buy from [[Kelpstone Gas]]. It enters goods worked for foreign owners under inward processing, as at [[Tostara Wood Modification]], and releases them into free circulation when they are sold in Urvania. Goods for Bayvarra can travel under the Accord's common transit from the office of departure at the rail hub in [[Ferrano]]."
+      "text": "Goods of Accord origin cross free of duty on proof of origin; on imports Urvania levies its value added tax of {fact:xu.vat} on the value with freight and insurance to the border, which a business deducts again. The office clears the exports of [[Valdara Industries]] and [[Rinova Recovery]], and each month the gas that [[Montebrio Power]] and [[Ferrano Energy]] buy from [[Kelpstone Gas]]. It enters goods worked for foreign owners under inward processing, as at [[Tostara Wood Modification]], and releases them into free circulation when they are sold in Urvania. Goods for Bayvarra can travel under the Accord's common transit from the office of departure at the rail hub in [[Ferrano]]."
      }
     ],
     "facts": {
@@ -2026,11 +2026,11 @@
      },
      {
       "title": "Operations",
-      "text": "The store buys from [[Lumeway Distribution]], among other things the park bench Serra 180 of [[Valdara Industries]], and shares its forecasts, promotions and stock levels with it. It sells the shirts of the [[Lumeport Textile Mill]] under the mill's own brand, Lumeport. In 2026 it renovated the home and garden department of its Lumeport store, which reopened on Monday 11 May with two weeks at 10 % off. The store's van delivers furniture to customers' homes. Besides clothing, home and garden goods it sells toys, kitchenware and stationery. The flagship on Market Street has about 12,000 m² of floor, and the web shop opened in 2008."
+      "text": "The store buys from [[Lumeway Distribution]], among other things the park bench Serra 180 of [[Valdara Industries]], and shares its forecasts, promotions and stock levels with it. It sells the shirts of the [[Lumeport Textile Mill]] under the mill's own brand, Lumeport. In 2026 it renovated the home and garden department of its Lumeport store, which reopened on Monday 11 May with two weeks at {fact:retail.off} off. The store's van delivers furniture to customers' homes. Besides clothing, home and garden goods it sells toys, kitchenware and stationery. The flagship on Market Street has about 12,000 m² of floor, and the web shop opened in 2008."
      },
      {
       "title": "Elderwick",
-      "text": "Elderwick is Brightmarket's own label for home and garden. It began in 1989 with bed and bath linen, towels, cushions and curtains; garden tools and plant pots followed in 1996, and the Marrow line of 2026 is its first furniture. Its Marrow dining bench and chair, in oak or in ash, are made to the store's specification by [[Brackenmere Furniture]] in [[Marrowdale]]; the maker's name is on no label. The store sells the bench at 549 lume and the chair at 199, gives a care kit with each bench, and offers a set of a bench and two chairs."
+      "text": "Elderwick is Brightmarket's own label for home and garden. It began in 1989 with bed and bath linen, towels, cushions and curtains; garden tools and plant pots followed in 1996, and the Marrow line of 2026 is its first furniture. Its Marrow dining bench and chair, in oak or in ash, are made to the store's specification by [[Brackenmere Furniture]] in [[Marrowdale]]; the maker's name is on no label. The store sells the bench at {fact:store.marrow_bench} and the chair at {fact:store.marrow_chair}, gives a care kit with each bench, and offers a set of a bench and two chairs."
      }
     ],
     "timeline": [
@@ -3288,7 +3288,7 @@
      },
      {
       "title": "Fleet",
-      "text": "Both ships are registered in Lumeport. The *Tidewell Harbour*, of 9,940 gross tonnes, takes about 1,000 TEU with a crew of 14; the *Tidewell Reef*, of 7,480 gross tonnes, about 700 TEU with a crew of 12."
+      "text": "Both ships are registered in Lumeport. The *Tidewell Harbour*, of {fact:tidewell.th_gt}, takes about {fact:tidewell.th_teu} with {fact:tidewell.th_crew}; the *Tidewell Reef*, of {fact:tidewell.tr_gt}, about {fact:tidewell.tr_teu} with {fact:tidewell.tr_crew}."
      }
     ],
     "timeline": [
@@ -3751,11 +3751,11 @@
      },
      {
       "title": "Operations",
-      "text": "The freighter flies the route twice a day: KXL207 leaves Lumeport at 07:00 and KXL209 at 15:00. The flight takes about {flight_still_air} over about {flight_km} km; the timetable allows {flight_east} eastbound and {flight_west} westbound. As a freighter it can carry dangerous goods that are for cargo aircraft only, such as lithium batteries, and it carries medicines for [[Selanu General Hospital]] in an active temperature-controlled container. Its cargo sales and operations work every day. It flies no other scheduled route, since no other airport lies within reach of the island; with a stretcher kit fitted, its passenger aircraft also flies patients to Lumeport when the hospital needs it."
+      "text": "The freighter flies the route twice a day: KXL207 leaves Lumeport at {fact:air.kxl207} and KXL209 at {fact:air.kxl209}. The flight takes about {flight_still_air} over about {flight_km} km; the timetable allows {flight_east} eastbound and {flight_west} westbound. As a freighter it can carry dangerous goods that are for cargo aircraft only, such as lithium batteries, and it carries medicines for [[Selanu General Hospital]] in an active temperature-controlled container. Its cargo sales and operations work every day. It flies no other scheduled route, since no other airport lies within reach of the island; with a stretcher kit fitted, its passenger aircraft also flies patients to Lumeport when the hospital needs it."
      },
      {
       "title": "Fleet",
-      "text": "The ATR 72-600F, registered QL-KXA, has seven LD3 positions on its main deck, an aft bulk compartment, a large cargo door of 2.94 × 1.80 m and about 9,200 kg of payload in 75 m³."
+      "text": "The ATR 72-600F, registered QL-KXA, has seven LD3 positions on its main deck, an aft bulk compartment, a large cargo door of 2.94 × 1.80 m and about {fact:kelaro.payload} of payload in {fact:kelaro.volume}."
      }
     ],
     "facts": {
@@ -4635,7 +4635,7 @@
      },
      {
       "title": "Operations",
-      "text": "Under the [[Lumeport Trade Accord]]'s chapter on public services, the supply stays national, and Ferrano Energy is Urvania's supplier. It buys electricity from the state generating company, which runs the Nevola hydro scheme, the run-of-river plants and the Saline Brune solar park, from [[Montebrio Power]], from the roofs of homes and farms, and from [[Bayvarra]] on the Accord's wholesale market, and gas from Kelpstone Gas, which it imports itself across the border. Ferrano Grid carries the energy and reads the meters, and Ferrano Energy collects the grid's network charges with its own bill: of its tariff of 27.3 ferra a kilowatt hour, 21.1 is for the energy and 6.2 for the network. A business is billed every month on its meter reading; households pay instalments on account each month and are settled once a year, after the annual reading at the end of March. Its customers include [[Valdara Industries]]. It supplies about 520,000 electricity customers across Urvania, about 470,000 households and 50,000 businesses, and about 90,000 gas customers in the Province of Ferrano, where [[Ferrano Grid]] has gas mains."
+      "text": "Under the [[Lumeport Trade Accord]]'s chapter on public services, the supply stays national, and Ferrano Energy is Urvania's supplier. It buys electricity from the state generating company, which runs the Nevola hydro scheme, the run-of-river plants and the Saline Brune solar park, from [[Montebrio Power]], from the roofs of homes and farms, and from [[Bayvarra]] on the Accord's wholesale market, and gas from Kelpstone Gas, which it imports itself across the border. Ferrano Grid carries the energy and reads the meters, and Ferrano Energy collects the grid's network charges with its own bill: of its tariff of {fact:elettrica.tariff} a kilowatt hour, 21.1 is for the energy and 6.2 for the network. A business is billed every month on its meter reading; households pay instalments on account each month and are settled once a year, after the annual reading at the end of March. Its customers include [[Valdara Industries]]. It supplies about 520,000 electricity customers across Urvania, about 470,000 households and 50,000 businesses, and about 90,000 gas customers in the Province of Ferrano, where [[Ferrano Grid]] has gas mains."
      }
     ],
     "timeline": [
@@ -4772,7 +4772,7 @@
      },
      {
       "title": "District heating",
-      "text": "The district heating network was built from 1966 to 1970 for the Government Hill quarter and the flats of Westside, at first with oil boilers. Since 2006 a wood-chip plant gives the base heat, burning offcuts of [[Marrowdale Sawmill]] and thinnings of the Upland State Forest. The peak boilers have burned propane in winter since 2012. The company buys it from [[Kelpstone Gas]], whose tankers of [[Gullhaven Tank Haulage]] drive about 515 km from the gas plant at Gullhaven and pump it into the storage at the heating plant on Reservoir Road. Its greenhouse-gas report asks its suppliers' carriers for the emissions of the whole round trip."
+      "text": "The district heating network was built from 1966 to 1970 for the Government Hill quarter and the flats of Westside, at first with oil boilers. Since 2006 a wood-chip plant gives the base heat, burning offcuts of [[Marrowdale Sawmill]] and thinnings of the Upland State Forest. The peak boilers have burned propane in winter since 2012. The company buys it from [[Kelpstone Gas]], whose tankers of [[Gullhaven Tank Haulage]] drive about {fact:lpg.km} from the gas plant at Gullhaven and pump it into the storage at the heating plant on Reservoir Road. Its greenhouse-gas report asks its suppliers' carriers for the emissions of the whole round trip."
      }
     ],
     "timeline": [
@@ -5086,7 +5086,7 @@
      },
      {
       "title": "Operations",
-      "text": "Its logs come from the Upland State Forest, a managed forest on the slope north of Marrowdale. The mill makes the slats of the Serra park bench to the drawing of [[Valdara Industries]], thermally modified ash of 1,800 × 95 × 45 mm, and sells them by the bundle of 50; once a quarter 96 bundles go across the border to Valdara's factory in [[Ferrano]]. It also sells sawn oak and ash by the cubic metre to [[Brackenmere Furniture]] in Marrowdale. Its own timber truck with a crane carries logs and loads."
+      "text": "Its logs come from the Upland State Forest, a managed forest on the slope north of Marrowdale. The mill makes the slats of the Serra park bench to the drawing of [[Valdara Industries]], thermally modified ash of {fact:wood.slat_size}, and sells them by the bundle of {fact:wood.bundle_slats}; once a quarter {fact:wood.bundles} go across the border to Valdara's factory in [[Ferrano]]. It also sells sawn oak and ash by the cubic metre to [[Brackenmere Furniture]] in Marrowdale. Its own timber truck with a crane carries logs and loads."
      },
      {
       "title": "Contract modification",
@@ -5764,7 +5764,7 @@
      },
      {
       "title": "Operations",
-      "text": "Under a season agreement the ginnery advances each farm, such as [[Lisavu Cotton Farm]], a quarter of the value of its expected delivery in January, while the crop grows. When the farms bring their seed cotton after the harvest, from March to May, the ginnery weighs and grades it, settles each delivery for the farm itself, and gins it into compressed bales of about 227 kg. The lint is classed by the [[Selanu Chamber of Commerce]] and certified free of pests by the [[Department of Agriculture of Lisavu]]. About 320 farms deliver their seed cotton to it, a dozen of them old estates."
+      "text": "Under a season agreement the ginnery advances each farm, such as [[Lisavu Cotton Farm]], a quarter of the value of its expected delivery in January, while the crop grows. When the farms bring their seed cotton after the harvest, from March to May, the ginnery weighs and grades it, settles each delivery for the farm itself, and gins it into compressed bales of about {fact:cotton.bale}. The lint is classed by the [[Selanu Chamber of Commerce]] and certified free of pests by the [[Department of Agriculture of Lisavu]]. About 320 farms deliver their seed cotton to it, a dozen of them old estates."
      },
      {
       "title": "Trade",
@@ -6555,11 +6555,11 @@
      },
      {
       "title": "Operations",
-      "text": "The company holds the federal permit to carry dangerous goods by road in tanks. Its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the [[Coastal State Water Company]], which burns it in the peak boilers of [[Lumeport]]'s district heating in winter. A tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, about 515 km, pumps the propane into the customer's storage and returns empty the next day. Its planning desk works around the clock."
+      "text": "The company holds the federal permit to carry dangerous goods by road in tanks. Its tankers carry the propane Kelpstone Gas recovers at its plant to customers in the south, among them the [[Coastal State Water Company]], which burns it in the peak boilers of [[Lumeport]]'s district heating in winter. A tanker is weighed on the plant's weighbridge empty and full, drives the day to Lumeport, about {fact:lpg.km}, pumps the propane into the customer's storage and returns empty the next day. Its planning desk works around the clock."
      },
      {
       "title": "Fleet",
-      "text": "The haulier runs twelve road tankers; besides the water company's heating plant it delivers propane to farms and homes across the dry east and the north, for heating and for grain dryers. Its tractor units pull pressure tank semi-trailers approved for liquefied flammable gas. One such tank holds 49 m³ and up to 20,500 kg; with about 20 t of propane the loaded vehicle weighs about 37 t, within the Accord's limit of 40 t."
+      "text": "The haulier runs twelve road tankers; besides the water company's heating plant it delivers propane to farms and homes across the dry east and the north, for heating and for grain dryers. Its tractor units pull pressure tank semi-trailers approved for liquefied flammable gas. One such tank holds {fact:lpg.tank_m3} and up to {fact:lpg.tank_kg}; with about {fact:lpg.tonnes} of propane the loaded vehicle weighs about {fact:lpg.loaded}, within the Accord's limit of {fact:road.limit}."
      }
     ],
     "facts": {
@@ -6579,7 +6579,7 @@
    ],
    "h": 2,
    "kind": "warehouse",
-   "what": "A pharmaceutical wholesaler founded in 1991 beside Lumeport airport, so that medicines that come in by air and go on by air never wait far from the runway. It buys medicines, vaccines and radiopharmaceuticals from makers abroad, keeps them in its cold rooms at 2 to 8 °C and in a freezer room, and supplies pharmacies and hospitals in the three countries of the Accord. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in Urvania and Lisavu, and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave by the night and early flights; its own van, with a driver trained for class 7, takes radioactive packages to the airport.",
+   "what": "A pharmaceutical wholesaler founded in 1991 beside Lumeport airport, so that medicines that come in by air and go on by air never wait far from the runway. It buys medicines, vaccines and radiopharmaceuticals from makers abroad, keeps them in its cold rooms at {fact:medicines.cold} and in a freezer room, and supplies pharmacies and hospitals in the three countries of the Accord. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in Urvania and Lisavu, and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave by the night and early flights; its own van, with a driver trained for class 7, takes radioactive packages to the airport.",
    "how": "A wholesaler sells many lines to many customers and must show, for medicines, the lot and its expiry date on every delivery. UBL's despatch advice carries the lot of each line and its expiry, and the transport documents the temperatures the goods need, so the hospital can check the cold chain and the lots when it receives them.",
    "identity": {
     "name": "Quillmoor Pharma Distribution",
@@ -6721,7 +6721,7 @@
      },
      {
       "title": "Operations",
-      "text": "It buys medicines, vaccines and radiopharmaceuticals from makers abroad, among them makers in India and the Netherlands, and keeps them in cold rooms at 2 to 8 °C and in a freezer room. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in [[Urvania]] and [[Lisavu]], and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave on night and early flights. On the island it supplies [[Selanu General Hospital]] by air, with vaccines, insulin and technetium generators for its nuclear medicine unit. Its customers are about 150 of Bayvarra's pharmacies and the country's six hospitals; in [[Urvania]] it supplies the nuclear medicine units of the hospitals of [[Ferrano]], taking their radiopharmaceuticals across the border by road overnight."
+      "text": "It buys medicines, vaccines and radiopharmaceuticals from makers abroad, among them makers in India and the Netherlands, and keeps them in cold rooms at {fact:medicines.cold} and in a freezer room. It holds the wholesale distribution authorisation of Bayvarra's medicines regulator, which the Accord's mutual recognition makes valid in [[Urvania]] and [[Lisavu]], and a licence to hold and transport radioactive material. Its warehouse works every day and through the night, because radiopharmaceuticals arrive and leave on night and early flights. On the island it supplies [[Selanu General Hospital]] by air, with vaccines, insulin and technetium generators for its nuclear medicine unit. Its customers are about 150 of Bayvarra's pharmacies and the country's six hospitals; in [[Urvania]] it supplies the nuclear medicine units of the hospitals of [[Ferrano]], taking their radiopharmaceuticals across the border by road overnight."
      },
      {
       "title": "Fleet",
@@ -6805,7 +6805,7 @@
       "van": 2450
      },
      "max_gross_kg": 3500,
-     "description": "The hospital pharmacy's van: a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained for class 7."
+     "description": "The hospital pharmacy's van: a compartment kept at {fact:medicines.cold}, a freezer box and a locked, lined box for radioactive packages; its drivers are trained for class 7."
     }
    ],
    "_refs": {
@@ -6830,7 +6830,7 @@
      },
      {
       "title": "Fleet",
-      "text": "The pharmacy's van has a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained to carry radioactive material."
+      "text": "The pharmacy's van has a compartment kept at {fact:medicines.cold}, a freezer box and a locked, lined box for radioactive packages; its drivers are trained to carry radioactive material."
      }
     ],
     "facts": {
@@ -6956,7 +6956,7 @@
      },
      {
       "title": "Operations",
-      "text": "Its members grow Gala and Granny Smith apples and Packham's Triumph pears, packed in cartons of 18 kg and graded under the [[Lumeport Trade Accord]]'s marketing standard for fresh fruit. Gala and the pears are picked in February and March and kept in its cold store; Granny Smith, the late variety, is picked in April. [[Lisavu]] is among its markets: it sells a reefer container of fruit to [[Hafefo Fresh Produce]] in [[Selanu]], carriage and insurance paid to the port, and has [[Bayforth Forwarding]] book the reefer on [[Tidewell Ocean Lines]], bring it pre-cooled to the packhouse and insure the fruit. Before loading, the Plant Health Service of the [[Federal Department of Agriculture of Bayvarra]] inspects the fruit at the packhouse for the pests the island keeps out. The cooperative has about 85 member growers, with about 1,400 ha of orchards. At home it sells to Bayvarra's grocers and to the markets of Lumeport and Marrowdale."
+      "text": "Its members grow Gala and Granny Smith apples and Packham's Triumph pears, packed in cartons of {fact:reefer.carton} and graded under the [[Lumeport Trade Accord]]'s marketing standard for fresh fruit. Gala and the pears are picked in February and March and kept in its cold store; Granny Smith, the late variety, is picked in April. [[Lisavu]] is among its markets: it sells a reefer container of fruit to [[Hafefo Fresh Produce]] in [[Selanu]], carriage and insurance paid to the port, and has [[Bayforth Forwarding]] book the reefer on [[Tidewell Ocean Lines]], bring it pre-cooled to the packhouse and insure the fruit. Before loading, the Plant Health Service of the [[Federal Department of Agriculture of Bayvarra]] inspects the fruit at the packhouse for the pests the island keeps out. The cooperative has about 85 member growers, with about 1,400 ha of orchards. At home it sells to Bayvarra's grocers and to the markets of Lumeport and Marrowdale."
      }
     ],
     "facts": {

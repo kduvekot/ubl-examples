@@ -867,6 +867,11 @@
      "east": 2.75,
      "west": 3.0
     },
+    "departures": {
+     "KXL207": "07:00",
+     "KXL209": "15:00"
+    },
+    "departures_note": "The freighter's two eastbound departures from Lumeport a day, in Lumeport's time: the morning flight and the afternoon flight.",
     "taxi_min": 10,
     "climb_descent_min": 20,
     "climb_descent_km": 100
