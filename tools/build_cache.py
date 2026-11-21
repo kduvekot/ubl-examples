@@ -75,3 +75,31 @@ def store(name, fp, src, filename):
     with open(stamp + ".tmp", "w") as f:
         f.write(fp + "\n")
     os.replace(stamp + ".tmp", stamp)
+
+
+def passed(name, fp):
+    """Whether a check passed with exactly these inputs (fingerprint fp) the last time it ran."""
+    stamp = os.path.join(cache_dir(name), "fingerprint")
+    return os.path.exists(stamp) and open(stamp).read().strip() == fp
+
+
+def mark_passed(name, fp):
+    """Remember that a check passed with the inputs of fingerprint fp."""
+    d = cache_dir(name)
+    os.makedirs(d, exist_ok=True)
+    stamp = os.path.join(d, "fingerprint")
+    with open(stamp + ".tmp", "w") as f:
+        f.write(fp + "\n")
+    os.replace(stamp + ".tmp", stamp)
+
+
+def tree_files(top, skip=lambda path: False):
+    """Every file under top (relative to the repository), sorted, without those skip() names."""
+    out = []
+    for d, dirs, files in os.walk(os.path.join(ROOT, top)):
+        dirs.sort()
+        for f in sorted(files):
+            p = os.path.relpath(os.path.join(d, f), ROOT)
+            if not skip(p):
+                out.append(p)
+    return out

@@ -81,6 +81,20 @@ jobs:
           key: map-still-ubuntu-26.04-${{ runner.arch }}-${{ hashFiles('site/world.html', 'world/*.json', 'world/terrain/*.png', 'tools/*.py') }}
           restore-keys: map-still-ubuntu-26.04-${{ runner.arch }}-
 
+      # The converted pages (.cache/pages, about 33 MB) and the passing runs of the example checks (.cache/examples-*)
+      # change with almost every commit: each run saves them under a key of its own and starts from the newest
+      # earlier one; the fingerprints in tools/build_site.sh and tools/examples_check.py decide what is reused.
+      - name: Restore the page and check caches
+        if: steps.newest.outputs.newest == 'true'
+        uses: actions/cache@v5
+        with:
+          path: |
+            .cache/pages
+            .cache/examples-check
+            .cache/examples-valid
+          key: pages-ubuntu-26.04-${{ runner.arch }}-${{ github.run_id }}
+          restore-keys: pages-ubuntu-26.04-${{ runner.arch }}-
+
       - name: Build site
         if: steps.newest.outputs.newest == 'true'
         run: tools/build_site.sh _site
