@@ -1751,6 +1751,10 @@ def place_parties(doc, content, top=None):
                     break
                 if target == "Party":
                     block = profiled(top, path, pid)
+                    if step == "TaxRepresentativeParty" and "PartyTaxScheme" in node.get(step, {}):
+                        # the scheme it represents the supplier for, as the scenario gives it, not its own sales tax
+                        # registration merged over it (review 1048 tender/39#F1)
+                        block = {k: v for k, v in block.items() if k != "PartyTaxScheme"}
                 elif target == "FinancialInstitution":
                     block = institution(pid)
                 else:                                   # a wrapper such as SupplierParty, CustomerParty
@@ -3970,6 +3974,17 @@ def check_receipt_goods_items(root, where):
                 seen[key] = item
 
 
+def check_tax_scheme_ids(root, where):
+    """Review 1048 (tender/39#F1): within one document a tax scheme of one name has one identifier, wherever it is
+    named (a party's registration, a tax total, a withholding)."""
+    seen = {}
+    for ts in root.iter(f"{{{NS_CAC}}}TaxScheme"):
+        name, sid = ts.findtext(f"{{{NS_CBC}}}Name"), ts.findtext(f"{{{NS_CBC}}}ID")
+        if name and sid:
+            if seen.setdefault(name, sid) != sid:
+                raise SystemExit(f"{where}: tax scheme {name!r} identified both as {seen[name]} and as {sid}")
+
+
 def check_reminder_interest(root, where):
     """Stage 7, A10 (O70, C55): a reminder's interest or surcharge runs from the day after the due date of the
     invoice it reminds of, and its amount follows from the rate and the period: a surcharge per month
@@ -5045,6 +5060,7 @@ def main(flow_id, check=False):
         check_payment_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_reminder_interest(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_receipt_goods_items(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_tax_scheme_ids(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_totals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_originals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_emissions(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")

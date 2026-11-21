@@ -6066,7 +6066,8 @@
    "why": "The department accepts the release: 39 benches and their installation, one bench rejected as damaged; the contract's 30 days of payment run from this acceptance.",
    "parties": {
     "DeliveryCustomerParty": "2-xb",
-    "DespatchSupplierParty": "5-xu"
+    "DespatchSupplierParty": "8-xu",
+    "SellerSupplierParty": "5-xu"
    },
    "_refs": {
     "why": "D28 point 9, O69"
