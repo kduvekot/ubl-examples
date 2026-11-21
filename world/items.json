@@ -32,6 +32,11 @@
    },
    "net_kg": 1000,
    "gross_kg": 1000,
+   "physics": {
+    "by": "mass",
+    "lift": "machine",
+    "why": "Sold by the tonne, loaded in bulk by the mine's loader."
+   },
    "quantity_properties": [
     [
      "Iron content",
@@ -93,6 +98,11 @@
    ],
    "net_kg": 44.1,
    "gross_kg": 47.0,
+   "physics": {
+    "by": "parts",
+    "lift": "machine",
+    "why": "Its parts make up its weight (parts); on its pallet of four it is moved by fork-lift, in parcels by hand (parcels)."
+   },
    "package": {
     "type": "PX",
     "per_package": 4
@@ -429,6 +439,11 @@
    ],
    "net_kg": 44.1,
    "gross_kg": 47.0,
+   "physics": {
+    "by": "parts",
+    "lift": "machine",
+    "why": "As the bench in Ferro grey."
+   },
    "package": {
     "type": "PX",
     "per_package": 4
@@ -769,6 +784,18 @@
    "description": "Replacement side frame for the Serra bench, ductile cast iron, galvanised and powder-coated.",
    "net_kg": 11.1,
    "gross_kg": 12.2,
+   "physics": {
+    "by": "envelope",
+    "material": "ductile-iron",
+    "envelope_mm": [
+     730,
+     620,
+     70
+    ],
+    "solid_fraction": 0.05,
+    "lift": 1,
+    "why": "An open frame: legs, armrest and seat and back rails in one casting; of its envelope of 730 × 620 × 70 mm about a twentieth is iron."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -843,6 +870,11 @@
    "description": "Polyethylene granulate recovered from production waste, density below 0.94, in jumbo bags of 1 tonne.",
    "net_kg": 1000,
    "gross_kg": 1004,
+   "physics": {
+    "by": "mass",
+    "lift": "machine",
+    "why": "Sold by the tonne, in jumbo bags of one tonne lifted by their loops."
+   },
    "package": {
     "type": "JB",
     "per_package": 1
@@ -1019,6 +1051,18 @@
    ],
    "net_kg": 4.24,
    "gross_kg": 4.24,
+   "physics": {
+    "by": "envelope",
+    "material": "ash-tm",
+    "envelope_mm": [
+     1800,
+     95,
+     45
+    ],
+    "solid_fraction": 1,
+    "lift": "machine",
+    "why": "A solid slat, planed to size; sold in bundles of fifty, which a fork-lift moves."
+   },
    "package": {
     "type": "BE",
     "per_package": 50
@@ -1184,6 +1228,11 @@
    ],
    "net_kg": 212.0,
    "gross_kg": 212.5,
+   "physics": {
+    "by": "content",
+    "lift": "machine",
+    "why": "Fifty slats, strapped: the bundle's weight is theirs; 212.5 kg is lifted by fork-lift."
+   },
    "package": {
     "type": "BE",
     "per_package": 1
@@ -1241,8 +1290,14 @@
    "cpc": "31102",
    "origin": "XB",
    "description": "Sawn oak boards and beams for furniture, kiln dried, per cubic metre.",
-   "net_kg": 700,
-   "gross_kg": 700,
+   "net_kg": 720,
+   "gross_kg": 720,
+   "physics": {
+    "by": "volume",
+    "material": "oak",
+    "lift": "machine",
+    "why": "Sold by the cubic metre, kiln dried: a cubic metre weighs what the oak's density says."
+   },
    "package": {
     "type": "BE",
     "per_package": 1
@@ -1278,8 +1333,14 @@
    "cpc": "31102",
    "origin": "XB",
    "description": "Sawn ash boards and beams for furniture, kiln dried, per cubic metre.",
-   "net_kg": 700,
-   "gross_kg": 700,
+   "net_kg": 670,
+   "gross_kg": 670,
+   "physics": {
+    "by": "volume",
+    "material": "ash",
+    "lift": "machine",
+    "why": "Sold by the cubic metre, kiln dried."
+   },
    "package": {
     "type": "BE",
     "per_package": 1
@@ -1316,8 +1377,20 @@
    "cpc": "38112",
    "origin": "XB",
    "description": "Dining bench, 1400 mm, in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
-   "net_kg": 21.0,
-   "gross_kg": 24.0,
+   "net_kg": 22.6,
+   "gross_kg": 25.6,
+   "physics": {
+    "by": "envelope",
+    "material": "oak",
+    "envelope_mm": [
+     1400,
+     380,
+     450
+    ],
+    "solid_fraction": 0.131,
+    "lift": 2,
+    "why": "A backless bench of 1400 × 380 mm, 450 mm high: a closed seat on four legs with rails; the same wood volume as in ash, so oak makes it heavier. A carton of 1.4 m and over 25 kg is carried by two."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -1383,6 +1456,18 @@
    "description": "Dining bench, 1400 mm, in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
    "net_kg": 21.0,
    "gross_kg": 24.0,
+   "physics": {
+    "by": "envelope",
+    "material": "ash",
+    "envelope_mm": [
+     1400,
+     380,
+     450
+    ],
+    "solid_fraction": 0.131,
+    "lift": 1,
+    "why": "As the oak bench, in ash."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -1446,8 +1531,20 @@
    "cpc": "38112",
    "origin": "XB",
    "description": "Dining chair in solid kiln-dried oak with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
-   "net_kg": 10.5,
-   "gross_kg": 11.5,
+   "net_kg": 11.3,
+   "gross_kg": 12.3,
+   "physics": {
+    "by": "envelope",
+    "material": "oak",
+    "envelope_mm": [
+     450,
+     520,
+     880
+    ],
+    "solid_fraction": 0.076,
+    "lift": 1,
+    "why": "A chair of 450 × 520 mm with its back 880 mm high, seat 450 mm."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -1508,6 +1605,18 @@
    "description": "Dining chair in solid kiln-dried ash with a hard-wax oil finish: closed seat, glued joints, felt pads under the legs, seat height 45 cm.",
    "net_kg": 10.5,
    "gross_kg": 11.5,
+   "physics": {
+    "by": "envelope",
+    "material": "ash",
+    "envelope_mm": [
+     450,
+     520,
+     880
+    ],
+    "solid_fraction": 0.076,
+    "lift": 1,
+    "why": "As the oak chair, in ash."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -1571,6 +1680,21 @@
    "description": "Care kit for the Marrow dining furniture: a 250 ml tin of hard-wax oil and a lint-free cloth, in one pack. One comes free with each bench.",
    "net_kg": 0.3,
    "gross_kg": 0.35,
+   "physics": {
+    "by": "contents",
+    "contents": [
+     [
+      "tin of hard-wax oil, 250 ml",
+      0.27
+     ],
+     [
+      "cloth",
+      0.03
+     ]
+    ],
+    "lift": 1,
+    "why": "Its contents make up its weight; the pack adds 0.05 kg."
+   },
    "package": {
     "type": "BX",
     "per_package": 1
@@ -1609,6 +1733,21 @@
    "description": "Seat pad for the Marrow dining chair: a foam pad in a removable linen cover, with ties, 400 × 400 mm. Sold under Brackenmere's brand; Brackenmere has it made by a textile workshop and does not make it itself.",
    "net_kg": 0.4,
    "gross_kg": 0.5,
+   "physics": {
+    "by": "contents",
+    "contents": [
+     [
+      "foam pad, 400 × 400 × 40 mm",
+      0.22
+     ],
+     [
+      "linen cover with ties",
+      0.18
+     ]
+    ],
+    "lift": 1,
+    "why": "A foam pad in its cover."
+   },
    "package": {
     "type": "BG",
     "per_package": 1
@@ -1650,6 +1789,19 @@
    ],
    "net_kg": 48.0,
    "gross_kg": 55.0,
+   "physics": {
+    "by": "envelope",
+    "material": "oak",
+    "envelope_mm": [
+     1600,
+     800,
+     740
+    ],
+    "solid_fraction": 0.07,
+    "lift": 2,
+    "aid": "Delivered by the maker's own fitters, two of them, on a furniture trolley and the van's tail lift: the carton of 55 kg is never carried by hand.",
+    "why": "A desk in oak: a top of 30 mm and a frame of legs and rails, about 0.067 m³ of wood."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -1718,6 +1870,17 @@
    "description": "Men's shirt, woven cotton from Lisavu, in a garment bag.",
    "net_kg": 0.25,
    "gross_kg": 0.28,
+   "physics": {
+    "by": "contents",
+    "contents": [
+     [
+      "shirt",
+      0.25
+     ]
+    ],
+    "lift": 1,
+    "why": "A shirt; thirty bagged shirts to a carton of about 8.4 kg."
+   },
    "package": {
     "type": "BG",
     "per_package": 1
@@ -1773,6 +1936,12 @@
    "description": "Stretch film of recycled polyethylene for pallet wrapping, on rolls of 16 kg.",
    "net_kg": 1,
    "gross_kg": 1.02,
+   "physics": {
+    "by": "mass",
+    "material": "pe",
+    "lift": 1,
+    "why": "Sold by the kilogram, on rolls of 16 kg lifted by one person."
+   },
    "package": {
     "type": "RO",
     "per_package": 16
@@ -1829,6 +1998,18 @@
    "description": "Garment bag of recycled polyethylene, 60 cm, boxes of 500.",
    "net_kg": 0.012,
    "gross_kg": 0.012,
+   "physics": {
+    "by": "sheet",
+    "material": "pe",
+    "sheet_mm": [
+     600,
+     900
+    ],
+    "layers": 2,
+    "thickness_um": 12,
+    "lift": 1,
+    "why": "A bag of 600 × 900 mm, two layers of 12 µm film; 500 to a box of 6 kg."
+   },
    "package": {
     "type": "BX",
     "per_package": 500
@@ -2137,6 +2318,11 @@
    "description": "Cotton as harvested, not ginned, delivered loose by trailer.",
    "net_kg": 1,
    "gross_kg": 1,
+   "physics": {
+    "by": "mass",
+    "lift": "machine",
+    "why": "Sold by the kilogram, delivered loose by trailer."
+   },
    "package": {
     "type": "NE"
    },
@@ -2172,6 +2358,11 @@
    "description": "Ginned cotton lint, not carded or combed, in compressed bales of about 227 kg.",
    "net_kg": 1,
    "gross_kg": 1.01,
+   "physics": {
+    "by": "mass",
+    "lift": "machine",
+    "why": "Sold by the kilogram, in bales of about 227 kg moved by clamp truck."
+   },
    "package": {
     "type": "BL",
     "per_package": 227
@@ -2416,6 +2607,11 @@
    "description": "Back-up battery module for telecom masts, lithium-ion, 2.4 kWh, in a steel case.",
    "net_kg": 24,
    "gross_kg": 27,
+   "physics": {
+    "by": "unit",
+    "lift": 2,
+    "why": "A module in a steel case, 24 kg; in its crate 27 kg, so two lift it."
+   },
    "package": {
     "type": "CR",
     "per_package": 1
@@ -2461,6 +2657,17 @@
    "description": "Ten ionisation smoke detectors for the mast's equipment room, each with a small americium-241 source.",
    "net_kg": 2,
    "gross_kg": 3,
+   "physics": {
+    "by": "contents",
+    "contents": [
+     [
+      "ten smoke detectors",
+      2
+     ]
+    ],
+    "lift": 1,
+    "why": "Ten detectors of about 0.2 kg."
+   },
    "package": {
     "type": "BX",
     "per_package": 1
@@ -2509,6 +2716,12 @@
    "description": "Remover for the protective coating of circuit boards, in 1-litre tins, five to a box.",
    "net_kg": 1.1,
    "gross_kg": 1.35,
+   "physics": {
+    "by": "volume",
+    "material": "stripper",
+    "lift": 1,
+    "why": "Sold by the litre; a box of five tins is about 6.8 kg."
+   },
    "package": {
     "type": "BX",
     "per_package": 5
@@ -2557,6 +2770,16 @@
    "description": "Natural gas from the Kelpstone offshore field, treated to pipeline quality; per megawatt hour, measured at the border station.",
    "net_kg": 75,
    "gross_kg": 75,
+   "physics": {
+    "by": "energy",
+    "kg_per_mwh": [
+     71.4,
+     77.4
+    ],
+    "lift": null,
+    "source": "IPCC 2006 Guidelines for National Greenhouse Gas Inventories, vol. 2, Table 1.2: net calorific value of natural gas 48.0 TJ/Gg (46.5 to 50.4), cited, not copied.",
+    "why": "Sold by energy: 75 kg of gas to the megawatt hour of its net calorific value."
+   },
    "purchase": "energy",
    "origin_criterion": "P"
   },
@@ -2588,6 +2811,11 @@
    "description": "Commercial propane separated from the field's gas at the Gullhaven plant and liquefied under pressure, hydrocarbon gas mixture C; sold by the tonne, weighed on the plant's weighbridge, and delivered by road tanker.",
    "net_kg": 1000,
    "gross_kg": 1000,
+   "physics": {
+    "by": "mass",
+    "lift": null,
+    "why": "Sold by the tonne, by road tanker."
+   },
    "purchase": "energy",
    "business_use": "consumed",
    "origin_criterion": "P",
@@ -2691,6 +2919,11 @@
    "description": "Apples of the variety Gala, Class I, 100 fruit to an 18 kg carton, on trays; picked in February and March and kept in the cooperative's cold store.",
    "net_kg": 18.0,
    "gross_kg": 18.9,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "An 18 kg carton of fruit."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -2775,6 +3008,11 @@
    "description": "Apples of the variety Granny Smith, Class I, 100 fruit to an 18 kg carton, on trays; picked in April, the season's late variety.",
    "net_kg": 18.0,
    "gross_kg": 18.9,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "An 18 kg carton of fruit."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -2859,6 +3097,11 @@
    "description": "Pears of the variety Packham's Triumph, Class I, 80 fruit to an 18 kg carton, on trays; picked in March and kept in the cooperative's cold store.",
    "net_kg": 18.0,
    "gross_kg": 18.9,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "An 18 kg carton of fruit."
+   },
    "package": {
     "type": "CT",
     "per_package": 1
@@ -2941,6 +3184,11 @@
    "description": "Seasonal influenza vaccine, inactivated split virion, of the southern hemisphere formula for 2026: a pack of ten prefilled syringes of 0.5 ml, one dose each. Store at 2 to 8 °C; do not freeze.",
    "net_kg": 0.12,
    "gross_kg": 0.2,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "A pack of ten prefilled syringes; thirty to a carton."
+   },
    "package": {
     "type": "CT",
     "per_package": 30
@@ -2984,6 +3232,11 @@
    "description": "Soluble human insulin, 100 international units per ml, in a vial of 10 ml. Store unopened at 2 to 8 °C; do not freeze.",
    "net_kg": 0.03,
    "gross_kg": 0.05,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "A vial; sixty to a carton."
+   },
    "package": {
     "type": "CT",
     "per_package": 60
@@ -3026,6 +3279,11 @@
    "description": "Live attenuated varicella vaccine, freeze-dried, one dose in a vial with its diluent. Store frozen at -50 to -15 °C until it is used.",
    "net_kg": 0.02,
    "gross_kg": 0.04,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "A single-dose vial; forty to a box."
+   },
    "package": {
     "type": "BX",
     "per_package": 40
@@ -3069,6 +3327,11 @@
    "description": "A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.",
    "net_kg": 15.5,
    "gross_kg": 18,
+   "physics": {
+    "by": "unit",
+    "lift": 1,
+    "why": "The shielding makes the generator heavy for its size: 18 kg in its Type A package, lifted by one."
+   },
    "package": {
     "type": "BX",
     "per_package": 1
@@ -3200,6 +3463,18 @@
    ],
    "net_kg": 5.89,
    "gross_kg": 5.89,
+   "physics": {
+    "by": "envelope",
+    "material": "ash",
+    "envelope_mm": [
+     1830,
+     101,
+     51
+    ],
+    "solid_fraction": 1,
+    "lift": "machine",
+    "why": "A solid blank, sawn and kiln dried, with planing allowance; two hundred to a strapped pallet."
+   },
    "package": {
     "type": "BE",
     "per_package": 200
@@ -3260,6 +3535,72 @@
    "purchase": "services"
   }
  ],
+ "materials": {
+  "note": "Densities of the materials the items are made of, with a range and its source (O62). tools/world_goods.py checks each item's physics sheet against them: The weight the item's dimensions, density and solid fraction give, within the material's density range.",
+  "oak": {
+   "name": "Oak, kiln dried",
+   "kg_m3": 720,
+   "range": [
+    680,
+    775
+   ],
+   "moisture": "about 12 %",
+   "source": "Forest Products Laboratory, Wood handbook: wood as an engineering material, General Technical Report FPL-GTR-282 (2021), Table 5-3a (specific gravity at 12 % moisture of the white and red oaks 0.61 to 0.69, live oak 0.88 left out) read through Table 4-6a (density of wood by specific gravity and moisture content: 0.61 is 683, 0.69 is 773 kg/m³ at 12 %).",
+   "why": "The oak of the Upland State Forest, a European oak somewhat lighter than the American white oaks: 720 kg/m³ kiln dried, about 7 % denser than its ash."
+  },
+  "ash": {
+   "name": "Ash, kiln dried",
+   "kg_m3": 670,
+   "range": [
+    600,
+    700
+   ],
+   "moisture": "8 to 12 %",
+   "source": "Forest Products Laboratory, Wood handbook: wood as an engineering material, General Technical Report FPL-GTR-282 (2021), Table 5-3a (white ash 0.60, green ash 0.56 at 12 %) and the worked example in chapter 4: white ash at 12 % moisture content is 678 kg/m³ (Table 4-6a: 0.56 is 627, 0.60 is 672 kg/m³).",
+   "why": "The ash of the Upland State Forest, kiln dried: about 670 kg/m³; a blank dried to 8 % is a little lighter."
+  },
+  "ash-tm": {
+   "name": "Ash, thermally modified",
+   "kg_m3": 585,
+   "range": [
+    550,
+    620
+   ],
+   "moisture": "4 to 6 %",
+   "source": "Forest Products Laboratory, Wood handbook: wood as an engineering material, General Technical Report FPL-GTR-282 (2021), chapter 19, Heat treatments: heating wood to 180 to 260 °C drives out its water and degrades part of the hemicelluloses, a weight loss; the wood is then conditioned to 4 to 6 % moisture. The range is the kiln-dried ash's, less that loss.",
+   "why": "Thermal modification makes the ash lighter: drier and with part of its substance driven off."
+  },
+  "ductile-iron": {
+   "name": "Ductile cast iron EN-GJS-400-15",
+   "kg_m3": 7100,
+   "range": [
+    6800,
+    7400
+   ],
+   "source": "Ductile cast iron, ispatguru.com (after the Ductile Iron Society's data for design engineers): 'The generally accepted value for the room temperature density of ductile iron is 7.1 g/cc ... densities varying from 6.8 g/cc to 7.4 g/cc for high carbon ferritic and low carbon pearlitic irons respectively.'",
+   "why": "Valdara's frame iron, a ferritic grade."
+  },
+  "pe": {
+   "name": "Polyethylene, recycled",
+   "kg_m3": 920,
+   "range": [
+    910,
+    965
+   ],
+   "source": "Low and linear low density polyethylene 910 to 940 kg/m³, high density 941 to 965 kg/m³ (ASTM D883 terms, cited, not copied); 21 CFR 177.1520 (eCFR) treats olefin polymers of 'a minimum density of 0.94 grams per cubic centimeter' as high density; Rinova's granulate states 0.92 g/cm³ (items.json quantity_properties).",
+   "why": "Recycled film-grade polyethylene, mostly low density."
+  },
+  "stripper": {
+   "name": "Coating stripper",
+   "kg_m3": 1100,
+   "range": [
+    1050,
+    1150
+   ],
+   "source": "The maker's data sheet: 1.1 kg a litre.",
+   "why": "A solvent blend, a little heavier than water."
+  }
+ },
  "resales": {
   "note": "Every resale of the world, with what the reseller paid and the freight the documents state, for the build check of decision D14 and open point O30: nobody resells below what they paid plus the stated freight and the import tax they bear, and a reseller's gross margin on the sale, (price - cost) / price, falls in the band for its kind of business (parties.json identity.legal.business), or for the kind of goods where a sale names one (band: clothing, whose margins are higher), except during a promotion, when only the upper limit applies. A price agreed for the buyer (items.json buyer_prices) is the sale's price where it holds for the sale's delivery terms (terms). Freight the buyer pays on top at cost (recharged, a pass-through) is neither the reseller's cost nor part of its price. What the reseller paid is the price its seller asks it (items.json buyer_prices, else the seller's price). Freight is shared over the goods a transport carries by their gross weight. Prices before tax; amounts compared in lume at the reference rates. A sale listed under awaiting_owner fails the check for a reason the owner has still to decide.",
   "margin_bands": {
@@ -3925,6 +4266,406 @@
      }
     ]
    }
+  }
+ },
+ "production_records": {
+  "note": "The production records of the makers that number their lots or serials, as Valdara's is in goods_chain: each lot or serial with its item, the day it was made and the quantity made, in the item's unit. A lot made from another lot names it (from). The documents quote these numbers unchanged; tools/world_goods.py checks that every lot or serial in the built examples is in its maker's record (Valdara's in goods_chain), on the same item, with the same manufacture and expiry dates, that no line ships more than its lots made, and that a number is never written in another form.",
+  "makers": {
+   "36-xb": {
+    "patterns": [
+     "MDS-(?:BL|L)26-\\d{4}"
+    ],
+    "why": "The sawmill numbers a lot by its prefix and the day: MDS-BL for blanks, MDS-L for slats, 26 for the year, then month and day. Slats keep the lot of their kiln charge, also when the wood modification plant at Conciaro modifies them under contract: the plant's own number for the charge (charge) travels with the lot.",
+    "records": [
+     {
+      "lot": "MDS-BL26-0109",
+      "item": "ash-blank-1830",
+      "made": "2026-01-09",
+      "qty": 2400,
+      "why": "The first load of blanks, out of the sawmill's drying kiln on 9 January: twelve pallets of 200."
+     },
+     {
+      "lot": "MDS-BL26-0116",
+      "item": "ash-blank-1830",
+      "made": "2026-01-16",
+      "qty": 2400,
+      "why": "The second load of blanks, dried a week later and taken to Conciaro on 20 January; it travels like the first, under the documents of its own load."
+     },
+     {
+      "lot": "MDS-L26-0119",
+      "item": "slat-bundle-1800",
+      "made": "2026-01-19",
+      "qty": 48,
+      "from": [
+       {
+        "lot": "MDS-BL26-0109",
+        "qty": 2400
+       }
+      ],
+      "charge": "TWM-K1-26-03",
+      "processor": "59-xu",
+      "why": "Kiln charge 1 at Conciaro: the 2,400 blanks of the first load, modified, planed, end-sealed and bundled as 48 bundles of 50 slats."
+     },
+     {
+      "lot": "MDS-L26-0126",
+      "item": "slat-bundle-1800",
+      "made": "2026-01-26",
+      "qty": 48,
+      "from": [
+       {
+        "lot": "MDS-BL26-0116",
+        "qty": 2400
+       }
+      ],
+      "charge": "TWM-K1-26-04",
+      "processor": "59-xu",
+      "why": "Kiln charge 2: the second load's 2,400 blanks, 48 bundles."
+     }
+    ]
+   },
+   "59-xu": {
+    "patterns": [
+     "TWM-K\\d-\\d{2}-\\d{2}"
+    ],
+    "why": "The wood modification plant numbers its kiln charges by kiln, season year and a running count; it works on its customers' wood, so the charge is recorded with the owner's lot (the sawmill's records, charge).",
+    "charges_of": [
+     "36-xb"
+    ]
+   },
+   "7-xu": {
+    "patterns": [
+     "RR-PE-\\d{4}"
+    ],
+    "why": "The recycler numbers a lot of granulate by the day it was made (month and day).",
+    "records": [
+     {
+      "lot": "RR-PE-0417",
+      "item": "granulate-pe",
+      "made": "2026-04-17",
+      "qty": 120,
+      "why": "One day's granulate for the packaging maker's order: 120 jumbo bags of a tonne, made three days before the barge loads."
+     }
+    ]
+   },
+   "39-xl": {
+    "patterns": [
+     "SCG-L\\d{2}-\\d{3}"
+    ],
+    "why": "The ginnery numbers its lots of lint by season and a running count; a lot is the bales the chamber classes together.",
+    "records": [
+     {
+      "lot": "SCG-L26-017",
+      "item": "cotton-bale",
+      "made": "2026-04-17",
+      "qty": 6129,
+      "packages": 27,
+      "why": "The season's seventeenth lot: 27 bales ginned and pressed in three runs from 23 March, the last on 17 April; classed by the chamber on 20 April."
+     }
+    ]
+   },
+   "55-xb": {
+    "patterns": [
+     "HRW-L\\d{2}-\\d{4}"
+    ],
+    "why": "The packhouse numbers a lot by season and a running count: one grower's fruit of one variety and size, packed in one run; the lot keeps the grower's number.",
+    "records": [
+     {
+      "lot": "HRW-L26-0401",
+      "item": "apples-gala",
+      "made": "2026-04-20",
+      "qty": 224,
+      "grower": "G-017",
+      "why": "Gala from the cold store, packed on 20 April: four pallets of 56 cartons."
+     },
+     {
+      "lot": "HRW-L26-0402",
+      "item": "apples-gala",
+      "made": "2026-04-20",
+      "qty": 224,
+      "grower": "G-023",
+      "why": "Gala, a second grower, the same run."
+     },
+     {
+      "lot": "HRW-L26-0403",
+      "item": "apples-gala",
+      "made": "2026-04-20",
+      "qty": 224,
+      "grower": "G-041",
+      "why": "Gala, a third grower."
+     },
+     {
+      "lot": "HRW-L26-0431",
+      "item": "apples-granny",
+      "made": "2026-04-21",
+      "qty": 168,
+      "grower": "G-008",
+      "why": "Granny Smith picked this month, packed on 21 April: three pallets."
+     },
+     {
+      "lot": "HRW-L26-0432",
+      "item": "apples-granny",
+      "made": "2026-04-21",
+      "qty": 112,
+      "grower": "G-031",
+      "why": "Granny Smith, a second grower: two pallets."
+     },
+     {
+      "lot": "HRW-L26-0451",
+      "item": "pears-packham",
+      "made": "2026-04-20",
+      "qty": 168,
+      "grower": "G-012",
+      "why": "Packham's Triumph from the cold store: three pallets, all the stored pears the cooperative had left of that size."
+     }
+    ]
+   },
+   "58-in": {
+    "patterns": [
+     "NLB-FLU\\d{2}[NS]-\\d{4}",
+     "NLB-INS-\\d{4}-\\d{3}",
+     "NLB-VZV-\\d{4}-\\d{3}"
+    ],
+    "why": "The vaccine maker numbers its lots by product, season or year and month, and a running count; its certificate of release for each lot gives the lot and its expiry date.",
+    "records": [
+     {
+      "lot": "NLB-FLU26S-0412",
+      "item": "flu-vaccine",
+      "made": "2026-03-04",
+      "qty": 40000,
+      "expiry": "2027-02-28",
+      "why": "A lot of the southern hemisphere formula of 2026: 400,000 doses in packs of ten, filled in March."
+     },
+     {
+      "lot": "NLB-INS-2603-118",
+      "item": "insulin-vial",
+      "made": "2026-03-10",
+      "qty": 120000,
+      "expiry": "2028-02-29",
+      "why": "A lot of human insulin of March 2026."
+     },
+     {
+      "lot": "NLB-VZV-2602-031",
+      "item": "varicella-vaccine",
+      "made": "2026-02-12",
+      "qty": 20000,
+      "expiry": "2027-08-31",
+      "why": "A lot of the live varicella vaccine of February 2026, kept frozen."
+     }
+    ]
+   },
+   "51-nl": {
+    "patterns": [
+     "HVI-TCG\\d{2}-\\d{2}-\\d{4}"
+    ],
+    "why": "The isotope maker gives each generator a serial number: model, year and a running count.",
+    "records": [
+     {
+      "serial": "HVI-TCG20-26-0137",
+      "item": "tc-generator",
+      "made": "2026-06-12",
+      "qty": 1,
+      "why": "Filled on Friday 12 June for the hospital's week from Monday 15 June."
+     }
+    ]
+   },
+   "5-xu": {
+    "patterns": [
+     "VI-LOT-\\d{6}",
+     "VI-SF-\\d{5}",
+     "VI-TR-\\d{5}"
+    ],
+    "why": "Valdara's record is the production record of the goods chain (goods_chain): a bench lot by the day, a side frame by its serial, and its trace number the same count.",
+    "records_in": "goods_chain"
+   }
+  }
+ },
+ "chains": {
+  "note": "The goods chains of the world with their conversion rates: for each, what goes in and what comes out in the documents over a period, the rate's range and its source. tools/world_goods.py sums the quantities of the lines in the built documents and checks that what comes out is no more than what went in times the highest rate (a balance: equal to it). Quantities outside the documents come from the production records. The bench's chain has its ledgers in goods_chain.",
+  "cotton": {
+   "what": "Seed cotton ginned into lint",
+   "unit": "KGM",
+   "rate": [
+    0.33,
+    0.4
+   ],
+   "source": "FAO Statistics Division, Technical Conversion Factors for Agricultural Commodities (about 2000): the extraction rate of cotton lint from seed cotton is 26 to 44 % by country, 33 % the most common, 31 to 39 % for most; ICAC Cotton Data Book 2021, Figure 9: 'Ginning outturn percentage is the lint proportional recovery of lint from seed cotton after ginning expressed as percentage by weight ... it ranges from 30-43.5% across the globe.' The world's ginnery works its farms' cotton at a third or a little more: 33 to 40 %.",
+   "period": [
+    "2026-03-23",
+    "2026-05-07"
+   ],
+   "in": [
+    {
+     "doc": "cotton/03",
+     "item": "seed-cotton"
+    }
+   ],
+   "out": [
+    {
+     "doc": "cotton/16",
+     "item": "cotton-bale"
+    }
+   ],
+   "why": "The farm's 18,000 kg of seed cotton against the lot of lint the mill buys: the ginnery's lot is ginned from this and other farms' cotton, and it keeps part of its lint for the island's own market, so the lint exported is at most what the seed cotton gives."
+  },
+  "ore": {
+   "what": "Iron ore smelted and cast into ductile iron castings",
+   "unit": "KGM",
+   "rate": [
+    0.43,
+    0.76
+   ],
+   "steps": [
+    {
+     "what": "iron content of the ore",
+     "rate": 0.62,
+     "source": "The mine's analysis, items.json ore-lump quantity_properties: 62 % Fe."
+    },
+    {
+     "what": "the iron of the ore as part of the melt, the rest scrap",
+     "rate": 1.538,
+     "source": "Valdara's charge: about 35 % steel and iron scrap (parties.json), so a tonne of ore iron makes 1 / 0.65 tonnes of melt."
+    },
+    {
+     "what": "foundry yield, good castings per tonne poured",
+     "rate": [
+      0.45,
+      0.8
+     ],
+     "source": "N. T. Rizzo Downes, R. D. Duque, S. Kannan, Ten Steps to Improving Casting Yield in Ductile Iron Foundries (SELEE Corporation): yield is 'the ratio of the casting weight to the total pour weight'; its examples run from 48 % to 80 %."
+    }
+   ],
+   "period": [
+    "2026-03-10",
+    "2026-04-13"
+   ],
+   "in": [
+    {
+     "doc": "ore/04",
+     "item": "ore-lump"
+    }
+   ],
+   "out": [
+    {
+     "doc": "road/04",
+     "item": "bench-serra",
+     "part": "side frame"
+    },
+    {
+     "doc": "road/04",
+     "item": "bench-casting"
+    },
+    {
+     "doc": "tender/29",
+     "item": "bench-serra",
+     "part": "side frame"
+    },
+    {
+     "doc": "rail/15",
+     "item": "bench-serra",
+     "part": "side frame"
+    }
+   ],
+   "why": "A month's ore train feeds the foundry until the next: about 1,100 t of iron, of which the bench frames are a few tonnes; the rest goes into Valdara's other castings."
+  },
+  "slats": {
+   "what": "Ash blanks planed into slats",
+   "unit": "EA",
+   "rate": [
+    1,
+    1
+   ],
+   "source": "Each blank of 1830 × 101 × 51 mm is modified, planed and cut to one slat of 1800 × 95 × 45 mm (items.json): one slat a blank at most.",
+   "period": [
+    "2026-01-09",
+    "2026-02-26"
+   ],
+   "in": [
+    {
+     "doc": "modification/03",
+     "item": "ash-blank-1830"
+    },
+    {
+     "record": "MDS-BL26-0116"
+    }
+   ],
+   "out": [
+    {
+     "doc": "wood/06",
+     "item": "slat-bundle-1800",
+     "content": true
+    }
+   ],
+   "why": "Two loads of 2,400 blanks; the second travels under documents outside the examples, so its lot comes from the sawmill's record."
+  },
+  "film": {
+   "what": "Granulate extruded into film and bags",
+   "unit": "KGM",
+   "rate": [
+    0.95,
+    1.0
+   ],
+   "source": "Mass: film and bags cannot weigh more than the granulate they are made of; edge trim and start-up scrap go back into the extruder.",
+   "period": [
+    "2026-04-20",
+    "2026-05-31"
+   ],
+   "in": [
+    {
+     "doc": "plastics/08",
+     "item": "granulate-pe"
+    }
+   ],
+   "out": [
+    {
+     "doc": "packaging/02",
+     "item": "film-pe"
+    },
+    {
+     "doc": "packaging/04",
+     "item": "garment-bag"
+    }
+   ],
+   "why": "The packaging maker's 120 t of granulate against what the documents sell of its film and bags; it has many other customers."
+  },
+  "gas": {
+   "what": "Natural gas sold at the border, and declared by its buyers",
+   "unit": "MWH",
+   "balance": true,
+   "rate": [
+    1,
+    1
+   ],
+   "source": "A balance: what the producer invoices is what its buyers declare into Urvania.",
+   "period": [
+    "2026-03-01",
+    "2026-04-30"
+   ],
+   "in": [
+    {
+     "doc": "energy/06",
+     "item": "natural-gas"
+    },
+    {
+     "doc": "energy/07",
+     "item": "natural-gas"
+    }
+   ],
+   "out": [
+    {
+     "doc": "energy/05",
+     "goods": true
+    },
+    {
+     "doc": "energy/10",
+     "goods": true
+    }
+   ],
+   "why": "March's gas: the power station's and the retail company's parts."
+  },
+  "bench": {
+   "what": "The park bench from the foundry to its buyers",
+   "ledger": "goods_chain",
+   "why": "Lots and serials matter here, so the chain has ledgers (goods_chain), checked by tools/world_items.py."
   }
  }
 }

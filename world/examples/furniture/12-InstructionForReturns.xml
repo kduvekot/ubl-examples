@@ -126,7 +126,7 @@
   </cac:ManufacturerParty>
   <cac:Shipment>
     <cbc:ID>7400343283</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">285.45</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">295.85</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="GS1 GLN">9523710900015</cbc:ID>

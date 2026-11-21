@@ -107,7 +107,7 @@
   </cac:DeliveryCustomerParty>
   <cac:Shipment>
     <cbc:ID>26-0202</cbc:ID>
-    <cbc:GrossWeightMeasure unitCode="KGM">947</cbc:GrossWeightMeasure>
+    <cbc:GrossWeightMeasure unitCode="KGM">985.4</cbc:GrossWeightMeasure>
     <cac:Delivery>
       <cac:DeliveryLocation>
         <cbc:ID schemeID="GS1 GLN">9522610900019</cbc:ID>
