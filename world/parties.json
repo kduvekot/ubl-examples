@@ -832,7 +832,7 @@
      },
      {
       "title": "Fleet",
-      "text": "Its tractor unit 07 pulls a 13.6 m curtain-side trailer for 33 pallets. Tractor and trailer weigh about 15.3 t empty, which leaves about 24.7 t of payload within the Accord's limit of 40 t."
+      "text": "Trasvia runs 18 tractor units and 24 trailers. Its tractor unit 07 pulls a 13.6 m curtain-side trailer for 33 pallets. Tractor and trailer weigh about 15.3 t empty, which leaves about 24.7 t of payload within the Accord's limit of 40 t."
      }
     ]
    }
@@ -942,7 +942,7 @@
      },
      {
       "title": "Fleet",
-      "text": "Its dry-cargo barge Fiumella IV, of 1,210 gross tonnes, is registered at Ferrano."
+      "text": "Fiumella runs six dry-cargo barges, each with a crew of three; besides recycled granulate they carry sand and gravel, grain and fertiliser. Its barge Fiumella IV, of 1,210 gross tonnes, is registered at Ferrano."
      }
     ]
    }
@@ -1025,7 +1025,7 @@
      },
      {
       "title": "Operations",
-      "text": "The terminal stands in Ferrano's industrial zone along the railway east of the centre. It takes containers in by road, stacks them and lifts them onto the container trains of [[Ferrano Rail Cargo]], to which it reports what it has loaded. The tracks and the train paths belong to the [[Rail Infrastructure Agency of Urvania]], since Urvania separated its rail infrastructure from its train operators. Among the goods that pass through it are the park benches of [[Valdara Industries]] for [[Lumeway Distribution]], brought in containers from the warehouse of [[Castrano Logistics]]. The terminal works around the clock."
+      "text": "The terminal stands in Ferrano's industrial zone along the railway east of the centre. It takes containers in by road, stacks them and lifts them onto the container trains of [[Ferrano Rail Cargo]], to which it reports what it has loaded. The tracks and the train paths belong to the [[Rail Infrastructure Agency of Urvania]], since Urvania separated its rail infrastructure from its train operators. Among the goods that pass through it are the park benches of [[Valdara Industries]] for [[Lumeway Distribution]], brought in containers from the warehouse of [[Castrano Logistics]]. The terminal has four sidings of 600 m, two reach stackers and room to stack about 1,200 containers, and handles about 40,000 a year. It works around the clock."
      }
     ]
    }
@@ -3085,7 +3085,7 @@
      },
      {
       "title": "Operations",
-      "text": "Selanu is the island's only port, on a sheltered bay of the east coast, out of the westerly swell. Ships from [[Lumeport]], among them the weekly service of [[Tidewell Ocean Lines]], sail about 1,200 km to reach it in about 48 hours. Selanu's pilots bring ships in by daylight only, so a ship that arrives in the dark waits under way and berths at first light. The container yard has a reefer rack where refrigerated containers wait on the port's power until they are collected, at a daily charge. The port reports discharged containers to the shippers' forwarders, among them [[Bayforth Forwarding]]."
+      "text": "Selanu is the island's only port, on a sheltered bay of the east coast, out of the westerly swell. Ships from [[Lumeport]], among them the weekly service of [[Tidewell Ocean Lines]], sail about 1,200 km to reach it in about 48 hours. The port has two deep-water berths, 10 m deep, enough for the feeders of 1,000 containers, and a container yard for about 800 of them. Its own pilots bring ships in by daylight only, so a ship that arrives in the dark waits under way and berths at first light. The container yard has a reefer rack where refrigerated containers wait on the port's power until they are collected, at a daily charge. The port reports discharged containers to the shippers' forwarders, among them [[Bayforth Forwarding]]."
      },
      {
       "title": "Harbour parks and branch",
@@ -3544,7 +3544,7 @@
      },
      {
       "title": "Operations",
-      "text": "Nalevi receives goods for [[Velumi Trading]] and confirms what arrived. Its container truck collects containers at the [[Port of Selanu]] and air cargo at [[Selanu Airport Cargo]], and carries for others on the island: the bales of [[Selanu Cotton Ginnery]] to the port, batteries to the mast site of [[Selanu Telecom]] on Mast Hill, reefers of fruit to the cold store of [[Hafefo Fresh Produce]], and sample benches between the airport and the trade fair of the [[Selanu Chamber of Commerce]]. Its goods-inwards desk is open Monday to Saturday."
+      "text": "Nalevi receives goods for [[Velumi Trading]] and confirms what arrived. Its container truck collects containers at the [[Port of Selanu]] and air cargo at [[Selanu Airport Cargo]], and carries for others on the island: the bales of [[Selanu Cotton Ginnery]] to the port, batteries to the mast site of [[Selanu Telecom]] on Mast Hill, reefers of fruit to the cold store of [[Hafefo Fresh Produce]], and sample benches between the airport and the trade fair of the [[Selanu Chamber of Commerce]]. Its warehouse has about 4,000 m² of floor; its goods-inwards desk is open Monday to Saturday."
      }
     ]
    }
@@ -5434,7 +5434,7 @@
    },
    "wiki": {
     "short": "Electricity and gas network operator of the Ferrano region, Urvania",
-    "lead": "**Ferrano Grid** runs the electricity and gas networks of the Ferrano region of [[Urvania]], from its offices on the Via della Rete in [[Ferrano]]. It was founded in {founded_year} and employs about {employees} people.",
+    "lead": "**Ferrano Grid** runs the electricity and gas networks of the Province of Ferrano, [[Urvania]] (the other provinces have network companies of their own), from its offices on the Via della Rete in [[Ferrano]]. It was founded in {founded_year} and employs about {employees} people.",
     "sections": [
      {
       "title": "History",
@@ -5566,7 +5566,7 @@
      },
      {
       "title": "Operations",
-      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station."
+      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. It also maintains the lines' bridges, among them the ore line's river bridge, 78 m high. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station."
      }
     ]
    }
@@ -5773,7 +5773,7 @@
      },
      {
       "title": "Fleet",
-      "text": "Its tractor units pull pressure tank semi-trailers approved for liquefied flammable gas. One such tank holds 49 m³ and up to 20,500 kg; with about 20 t of propane the loaded vehicle weighs about 37 t, within the Accord's limit of 40 t."
+      "text": "The haulier runs twelve road tankers; besides the water company's heating plant it delivers propane to farms and homes across the dry east and the north, for heating and for grain dryers. Its tractor units pull pressure tank semi-trailers approved for liquefied flammable gas. One such tank holds 49 m³ and up to 20,500 kg; with about 20 t of propane the loaded vehicle weighs about 37 t, within the Accord's limit of 40 t."
      }
     ]
    }

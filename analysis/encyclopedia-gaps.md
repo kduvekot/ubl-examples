@@ -134,12 +134,12 @@ decided with the owner one at a time, like the gaps here.
 - ~~Which company it was split off from in 2007 (Ferrano Energy or a state utility)~~ Filled 2026-11-20 (OW009).
 - ~~Who owns it~~ Filled 2026-11-20 (OW009).
 - The size of its networks (length, connections) and the extent of the Ferrano region
-- Whether other grid operators serve the rest of Urvania
+- ~~Whether other grid operators serve the rest of Urvania~~ Filled 2026-11-21 (OW015).
 
 ### Ferrano Intermodal Hub (18-xu)
 
 - ~~who owns the hub (the state, the rail carrier or private investors)~~ Filled 2026-11-20 (OW010).
-- its size: tracks, cranes, stacking capacity, yearly volume
+- ~~its size: tracks, cranes, stacking capacity, yearly volume~~ Filled 2026-11-21 (OW015).
 
 ### Ferrano Rail Cargo (14-xu)
 
@@ -151,14 +151,14 @@ decided with the owner one at a time, like the gaps here.
 ### Fiumella Barges (15-xu)
 
 - ~~Who founded Fiumella and why in 1953; how its business changed with the Lumeport Agreement and the Trade Accord.~~ Filled 2026-11-20 (OW011).
-- How many barges it runs besides Fiumella IV, and what other bulk it carries.
+- ~~How many barges it runs besides Fiumella IV, and what other bulk it carries.~~ Filled 2026-11-21 (OW015).
 - ~~The founding table calls Urvania landlocked, but the story gives it a south coast (Lanternino, Marina Ligure); the reason for river shipping needs a consistent wording.~~ Settled 2026-11-20 (O264): a rugged coast without a deep-water port.
 
 ### Gullhaven Tank Haulage (52-xb)
 
 - ~~Who founded it in 2012 and whether its founding is tied to Kelpstone Gas's start of production in 2011~~ Filled 2026-11-20 (OW013).
-- How many tankers it runs
-- Its customers besides the Coastal State Water Company
+- ~~How many tankers it runs~~ Filled 2026-11-21 (OW015).
+- ~~Its customers besides the Coastal State Water Company~~ Filled 2026-11-21 (OW015).
 
 ### Hafefo Fresh Produce (56-xl)
 
@@ -246,13 +246,13 @@ decided with the owner one at a time, like the gaps here.
 ### Nalevi Warehousing (9-xl)
 
 - ~~Who founded Nalevi~~ Filled 2026-11-20 (OW010).
-- The size of its warehouse
+- ~~The size of its warehouse~~ Filled 2026-11-21 (OW015).
 - Whether it has customers besides those named, and whether it runs more than one truck
 
 ### Port of Selanu (16-xl)
 
-- the size of the port: berths, depth, yard capacity, yearly traffic
-- who runs the pilot service (the port or another body)
+- ~~the size of the port: berths, depth, yard capacity, yearly traffic~~ Filled 2026-11-21 (OW015).
+- ~~who runs the pilot service (the port or another body)~~ Filled 2026-11-21 (OW015).
 
 ### Procurement Review Board of Bayvarra (28-xb)
 
@@ -269,7 +269,7 @@ decided with the owner one at a time, like the gaps here.
 
 - ~~The year Urvania separated its railway (and so when the agency was set up), and what body ran the tracks before.~~ Filled 2026-11-20 (OW009).
 - The length of the network, the number of stations and the agency's staff.
-- Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.
+- ~~Whether it also maintains the line's bridges, such as the ore line's river bridge, 78 m high.~~ Filled 2026-11-21 (OW015).
 
 ### Rinova Recovery (7-xu)
 
@@ -290,7 +290,7 @@ decided with the owner one at a time, like the gaps here.
 
 ### Selanu Airport Cargo (17-xl)
 
-- Whether it is still owned by the Port of Selanu or by the state
+- ~~Whether it is still owned by the Port of Selanu or by the state~~ Filled 2026-11-21 (OW015).
 - Who runs the airport itself (runway, passenger terminal)
 - Whether it also handles outbound cargo and passenger baggage
 
@@ -342,7 +342,7 @@ decided with the owner one at a time, like the gaps here.
 ### Trasvia Haulage (13-xu)
 
 - ~~who founded the company~~ Filled 2026-11-20 (OW010).
-- how many vehicles the fleet has besides tractor unit 07
+- ~~how many vehicles the fleet has besides tractor unit 07~~ Filled 2026-11-21 (OW015).
 
 ### Velumi Trading (1-xl)
 
