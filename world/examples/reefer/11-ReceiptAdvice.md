@@ -190,7 +190,7 @@ Inside `ReceiptLine`:
 - `Shipment/ID` = **HRW-SH-26-0730**  
   The shipment the fruit came in.
 - `Shipment/GoodsItem/ID` = **1**  
-  The fruit of this line.
+  The goods item of this line's variety, numbered as in the phytosanitary certificate and the customs declarations.
 - `Shipment/GoodsItem/Temperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   What the temperature is of: the fruit itself, its pulp. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Shipment/GoodsItem/Temperature/Measure` = **0.8** (unitCode `CEL`)  
@@ -221,8 +221,8 @@ Inside `ReceiptLine`:
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
 - `Shipment/ID` = **HRW-SH-26-0730**  
   The shipment the fruit came in.
-- `Shipment/GoodsItem/ID` = **1**  
-  The fruit of this line.
+- `Shipment/GoodsItem/ID` = **2**  
+  The goods item of this line's variety, numbered as in the phytosanitary certificate and the customs declarations.
 - `Shipment/GoodsItem/Temperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   What the temperature is of: the fruit itself, its pulp. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Shipment/GoodsItem/Temperature/Measure` = **0.7** (unitCode `CEL`)  
@@ -253,8 +253,8 @@ Inside `ReceiptLine`:
   The GTIN Harrowmead Fruit Growers gives the item, under its GS1 company prefix, which starts with 952: GS1 reserves that prefix for demonstrations and examples, so the number belongs to no real product; under GS1 rules the brand owner numbers the item, and the brand Harrowmead is Harrowmead Fruit Growers'.
 - `Shipment/ID` = **HRW-SH-26-0730**  
   The shipment the fruit came in.
-- `Shipment/GoodsItem/ID` = **1**  
-  The fruit of this line.
+- `Shipment/GoodsItem/ID` = **3**  
+  The goods item of this line's variety, numbered as in the phytosanitary certificate and the customs declarations.
 - `Shipment/GoodsItem/Temperature/AttributeID` = **PRODUCT** (schemeID `urn:ubl-examples:world:codelist:TemperatureAttributeCode`)  
   What the temperature is of: the fruit itself, its pulp. The code is from the Trade Accord's temperature attribute list: PRODUCT = Product temperature. An identifier that holds a code names the code's list in its schemeID.
 - `Shipment/GoodsItem/Temperature/Measure` = **0.6** (unitCode `CEL`)  
@@ -435,7 +435,7 @@ Inside `ReceiptLine`:
     <cac:Shipment>
       <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>2</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">0.7</cbc:Measure>
@@ -471,7 +471,7 @@ Inside `ReceiptLine`:
     <cac:Shipment>
       <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>3</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">0.6</cbc:Measure>

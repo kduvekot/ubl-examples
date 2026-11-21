@@ -123,9 +123,9 @@
     <cac:Item>
       <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
       <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
-      <cac:SellersItemIdentification>
+      <cac:BuyersItemIdentification>
         <cbc:ID>MDS-BL-1830</cbc:ID>
-      </cac:SellersItemIdentification>
+      </cac:BuyersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-01-09</cbc:ManufactureDate>
         <cac:LotIdentification>

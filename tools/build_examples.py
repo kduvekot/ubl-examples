@@ -3949,6 +3949,27 @@ def check_plan_terms(flow_id, roots, docs):
                                      f"{sorted(got)}, not the plan's terms {sorted(terms)}")  # stage 7 A10
 
 
+def check_receipt_goods_items(root, where):
+    """Review 1048 (reefer/11#F1): in a receipt advice, the receipt lines are numbered one after the other, and two
+    lines with different goods never point to the same goods item of the same shipment."""
+    if etree.QName(root).localname != "ReceiptAdvice":
+        return
+    lines = root.findall(f"{{{NS_CAC}}}ReceiptLine")
+    ids = [x.findtext(f"{{{NS_CBC}}}ID") for x in lines]
+    if all(i and i.isdigit() for i in ids) and ids != [str(k) for k in range(1, len(ids) + 1)]:
+        raise SystemExit(f"{where}: receipt lines numbered {ids}, not 1 to {len(ids)}")
+    seen = {}
+    for x in lines:
+        item = x.findtext(f"{{{NS_CAC}}}Item/{{{NS_CBC}}}Name")
+        for sh in x.findall(f"{{{NS_CAC}}}Shipment"):
+            for g in sh.findall(f"{{{NS_CAC}}}GoodsItem"):
+                key = (sh.findtext(f"{{{NS_CBC}}}ID"), g.findtext(f"{{{NS_CBC}}}ID"))
+                if key in seen and seen[key] != item:
+                    raise SystemExit(f"{where}: goods item {key[1]} of shipment {key[0]} holds both {seen[key]!r} "
+                                     f"and {item!r}")
+                seen[key] = item
+
+
 def check_reminder_interest(root, where):
     """Stage 7, A10 (O70, C55): a reminder's interest or surcharge runs from the day after the due date of the
     invoice it reminds of, and its amount follows from the rate and the period: a surcharge per month
@@ -5023,6 +5044,7 @@ def main(flow_id, check=False):
         check_due_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_payment_dates(root, doc, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_reminder_interest(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
+        check_receipt_goods_items(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_totals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_originals(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")
         check_emissions(root, f"world/examples/{flow_id}/{xmlname(n, doc)}")

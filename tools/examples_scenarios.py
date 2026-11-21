@@ -14628,9 +14628,11 @@ def reefer(n, doc):
                         "Granny Smith and three of pears. The reefer's log read at the door: the supply air stayed "
                         "between 0.2 and 0.9 °C from loading to unloading.", "How the fruit was received: the "
                         "wholesaler takes the changed mix it agreed to, and the cold chain as the log shows it.")
-        for d_, line in zip(f.deal, out["ReceiptLine"]):
+        for i, (d_, line) in enumerate(zip(f.deal, out["ReceiptLine"]), 1):
             line["Shipment"] = {"ID": V(f.numbers["shipment"], "The shipment the fruit came in."),
-                                "GoodsItem": {"ID": V("1", "The fruit of this line."),
+                                "GoodsItem": {"ID": V(str(i), "The goods item of this line's variety, numbered as "
+                                                              "in the phytosanitary certificate and the customs "
+                                                              "declarations."),  # review 1048 reefer/11#F1
                                               "Temperature": rf_cel({"apples-gala": "0.8", "apples-granny": "0.7", "pears-packham": "0.6"}[d_["item"]],
                                                                     "The pulp temperature measured in a sample of "
                                                                     "the cartons at unloading: within the range.",
@@ -14985,6 +14987,23 @@ for _k, _p, _t in (("order", "36-xb", "Order"), ("order-response", "59-xu", "Ord
     MOD.number(_k, _p, _t)      # allotted in this order whatever flow is built first: the wood flow cites them
 
 
+def mod_own_blank(it):
+    """The blank as the item of the sawmill's own goods (review 1048 modification/01#F1, 03#F1): the sawmill, the
+    buyer of the processing job, numbers its material, and nobody sells it, so its number is the buyer's item
+    identification, not the seller's."""
+    sid = it.pop("SellersItemIdentification")
+    out = {}
+    for k, v in it.items():
+        if k == "Name":
+            out[k] = v
+            out["BuyersItemIdentification"] = {"ID": V(sid["ID"].value, "The sawmill's own number for its blank: "
+                                                       "the blank is the material of the buyer of the job, supplied "
+                                                       "for processing and never sold, so the buyer numbers it.")}
+        else:
+            out[k] = v
+    return out
+
+
 def mod_entry_value():
     """The customs value of one load of blanks entered into inward processing, in ferra: no sale, so the value the
     sawmill puts on the blanks (its pro forma invoice), with the carriage to the border (D16)."""
@@ -15049,7 +15068,7 @@ def modification(n, doc):
                     "Note": V("Supplied by the customer, free of charge: the sawmill's own kiln-dried ash, which "
                               "stays its property.", "Why the line has no price."),
                     "Quantity": qty(MOD_BLANKS, "EA", f"The blanks that make the {MOD_BUNDLES} bundles, one slat from each."),
-                    "Item": item("ash-blank-1830")}}}}
+                    "Item": mod_own_blank(item("ash-blank-1830"))}}}}
     if d == "OrderResponse":
         out = kit.order_response(f, n, doc, MOD_DAY["load1"], "The plant answers the next morning, when it has put "
                                                              "the job into its kiln plan.")
@@ -15070,6 +15089,7 @@ def modification(n, doc):
         out["Shipment"]["Consignment"]["ID"] = V(f.numbers["consignment"], "The sawmill's number for the load.")
         out["Shipment"]["TotalTransportHandlingUnitQuantity"] = qty(12, "EA", "The pallets of the load, 200 blanks "
                                                                               "on each.")
+        out["DespatchLine"][0]["Item"] = mod_own_blank(out["DespatchLine"][0]["Item"])
         out["DespatchLine"][0]["Item"]["ItemInstance"] = {
             "ManufactureDate": V("2026-01-09", "The day the blanks came out of the sawmill's drying kiln."),
             "LotIdentification": {"LotNumberID": V("MDS-BL26-0109", "The sawmill's lot of the blanks, from its "

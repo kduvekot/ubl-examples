@@ -181,8 +181,8 @@ Inside `DespatchLine`:
   The seller's description.
 - `Item/Name` = **Ash blank 1830, kiln dried**  
   The item's short name.
-- `Item/SellersItemIdentification/ID` = **MDS-BL-1830**  
-  The seller's own item number; as Marrowdale Sawmill describes the item.
+- `Item/BuyersItemIdentification/ID` = **MDS-BL-1830**  
+  The sawmill's own number for its blank: the blank is the material of the buyer of the job, supplied for processing and never sold, so the buyer numbers it.
 - `Item/ItemInstance/ManufactureDate` = **2026-01-09**  
   The day the blanks came out of the sawmill's drying kiln.
 - `Item/ItemInstance/LotIdentification/LotNumberID` = **MDS-BL26-0109**  
@@ -316,9 +316,9 @@ Inside `DespatchLine`:
     <cac:Item>
       <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
       <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
-      <cac:SellersItemIdentification>
+      <cac:BuyersItemIdentification>
         <cbc:ID>MDS-BL-1830</cbc:ID>
-      </cac:SellersItemIdentification>
+      </cac:BuyersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-01-09</cbc:ManufactureDate>
         <cac:LotIdentification>
