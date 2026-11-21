@@ -206,10 +206,10 @@
     "title": "Ore line",
     "short": "Railway in Urvania from the mine to the works at Ferrano",
     "facts": {
-     "Length": "about 166 km",
+     "Length": "about {fact:ore.line_km}",
      "Country": "Urvania"
     },
-    "lead": "The **Ore line** is a railway in [[Urvania]] that carries iron ore from the mine on the lower flank of the massif down to the works at [[Ferrano]]. It is about 166 km long.",
+    "lead": "The **Ore line** is a railway in [[Urvania]] that carries iron ore from the mine on the lower flank of the massif down to the works at [[Ferrano]]. It is about {fact:ore.line_km} long.",
     "sections": [
      {
       "title": "Route",
@@ -843,15 +843,15 @@
     "title": "Lumeport–Selanu shipping service",
     "short": "Weekly container service between Lumeport and Lisavu",
     "facts": {
-     "Distance": "about 1,200 km",
-     "Passage": "about 48 hours",
+     "Distance": "about {fact:sea.km}",
+     "Passage": "about {fact:sea.hours}",
      "Since": "1974"
     },
     "lead": "The **Lumeport–Selanu shipping service** links [[Lumeport]] and [[Selanu]] by container ship. [[Tidewell Ocean Lines]] was founded in 1974 to run it, under the Lumeport Agreement between [[Bayvarra]] and [[Lisavu]].",
     "sections": [
      {
       "title": "Route",
-      "text": "The ships sail out through the estuary and the bay and round Cape Lavase, the island's southern cape, to the lee side, about 1,200 km, in about 48 hours at 13.5 knots."
+      "text": "The ships sail out through the estuary and the bay and round Cape Lavase, the island's southern cape, to the lee side, about {fact:sea.km}, in about {fact:sea.hours} at {fact:sea.knots}."
      }
     ]
    }
@@ -1216,7 +1216,7 @@
     "title": "Kelpstone–Ferrano gas pipeline",
     "short": "Gas pipeline from Bayvarra's north coast to Urvania",
     "facts": {
-     "Length": "about 207 km",
+     "Length": "about {fact:gas.pipeline_km}",
      "Countries": "Bayvarra, Urvania",
      "Opened": "2011"
     },
@@ -1224,7 +1224,7 @@
     "sections": [
      {
       "title": "Route",
-      "text": "The gas comes ashore from an offshore field by a subsea line of about 83 km, from the production platform to the plant of [[Kelpstone Gas]] near Gullhaven. From the plant the pipeline runs about 207 km to [[Montebrio Power]]; a branch of about 97 km leads to the city gate of [[Ferrano Grid]]. A metering station on Bayvarra's side of the border measures the gas that crosses into Urvania."
+      "text": "The gas comes ashore from an offshore field by a subsea line of about {fact:gas.field_km}, from the production platform to the plant of [[Kelpstone Gas]] near Gullhaven. From the plant the pipeline runs about {fact:gas.pipeline_km} to [[Montebrio Power]]; a branch of about {fact:gas.grid_km} leads to the city gate of [[Ferrano Grid]]. A metering station on Bayvarra's side of the border measures the gas that crosses into Urvania."
      }
     ]
    }

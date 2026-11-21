@@ -32,7 +32,8 @@ import world_data  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 out = sys.argv[1]
-world = world_data.load()
+import world_facts  # noqa: E402
+world = world_facts.fill_world(world_data.load())   # {fact:…} in the published texts (stage 7 B2)
 world_data.number_documents(world)
 countries = world["countries"]
 PARTY = {p["id"]: p for p in world["parties"]}
