@@ -157,7 +157,8 @@ def fleet(p):
     """The party's vehicles, ships and aircraft as its documents name them (the people on board are not listed)."""
     if not p.get("fleet"):
         return []
-    kinds = {"road": "Road vehicle", "rail": "Train", "inland": "Barge", "sea": "Ship", "air": "Aircraft"}
+    kinds = {"road": "Road vehicle", "rail": "Train", "inland": "Barge", "sea": "Ship", "air": "Aircraft",
+             "pipeline": "Pipeline"}
     rows = []
     for f in p["fleet"]:
         if f.get("vessel_id"):
@@ -167,12 +168,12 @@ def fleet(p):
         elif isinstance(f.get("aircraft"), str):
             reg = f"`{f['aircraft']}`"
         elif f.get("train"):
-            reg = f"train `{f['train']}`"
+            reg = f"`{f['train']}`"
         else:
             reg = ""
         rows.append(f"| {f['name']} | {kinds.get(f['kind'], f['kind'])} | {reg} |")
         if f.get("ore_train"):          # the ore train shares the carrier's wagon record with its container train
-            rows.append(f"| {f.get('ore_train_name', 'Ore train')} | {kinds['rail']} | train `{f['ore_train']}` |")
+            rows.append(f"| {f.get('ore_train_name', 'Ore train')} | {kinds['rail']} | `{f['ore_train']}` |")
     return ["## Fleet", "", "| Name | Kind | Registration |", "|---|---|---|"] + rows + [""]
 
 
@@ -442,6 +443,17 @@ PARTY_DATA = {"PartyIdentification", "AdditionalPartyIdentification", "PartyName
 BY_NAME = {label(p): p["id"] for p in world["parties"]}
 
 
+EXAMPLE_ADDR = re.compile(r"(?:https?://|\b[\w.+-]+@)[\w.-]*\.example\b[^\s)<>`]*")
+
+
+def plain_example_addresses(line):
+    """The world's web and mail addresses end in .example and lead nowhere: shown as text, not as links."""
+    parts = line.split("`")
+    for k in range(0, len(parts), 2):          # outside code spans only
+        parts[k] = EXAMPLE_ADDR.sub(lambda m: f"`{m[0]}`", parts[k])
+    return "`".join(parts)
+
+
 def fold_party_data(lines):
     """Fold the party's own data in every block of an example page: the values under a party (the block's own party,
     `Party/…` under a customer or supplier party, or `DeliveryParty/…` inside another aggregate)."""
@@ -522,6 +534,7 @@ for f in world["flows"]:
         lines[at + 1:at + 1] = ["", f"From {link(x['from'])} to {link(x['to'])}, under the Trade Accord's "
                                     f"transaction {spec}.", "", nav]
         lines = fold_party_data(lines)
+        lines = [plain_example_addresses(l) for l in lines]
         lines += ["", "---", "", nav, ""]
         os.makedirs(os.path.join(exdir, f["id"]), exist_ok=True)
         open(os.path.join(exdir, f["id"], name + ".md"), "w", encoding="utf-8").write("\n".join(lines))
