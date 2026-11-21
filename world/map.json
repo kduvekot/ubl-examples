@@ -29240,5 +29240,11 @@
   {"name": "the Sallow Downs", "kind": "downs", "land": "mainland", "country": "XB", "at": [145.0, 65.0], "names": {"en": "the Sallow Downs"}},
   {"name": "the Gull Coast", "kind": "coast", "land": "mainland", "country": "XB", "at": [80.0, 40.0], "names": {"en": "the Gull Coast"}},
   {"name": "Lark Head", "kind": "headland", "land": "mainland", "country": "XB", "at": [156.0, 84.0], "names": {"en": "Lark Head"}}
+ ],
+ "installations": [
+  {"id": "lisavu-wind", "kind": "wind turbines", "country": "XL", "at": [213, 112], "count": 3, "mw": 12, "opened": 2019, "operator": "the island's electricity department", "why": "On the high ground above the west cliffs, open rock at about 1,300 m, where the westerlies blow strongest."},
+  {"id": "lintwell-solar", "kind": "solar park", "country": "XL", "at": [236, 108], "mw": 25, "opened": 2015, "operator": "the island's electricity department", "why": "Beside the airfield at Lintwell, on the dry, flat plain in the island's rain shadow."},
+  {"id": "tapetu-intake", "kind": "hydro intake", "country": "XL", "at": [217, 114], "river": "Tapetu", "opened": 1968, "operator": "the island's electricity department", "why": "High in the valley of the Tapetu, where the river is taken into the tunnel to the power house; its small reservoir lets the plant run in the evening and at night."},
+  {"id": "tapetu-power", "kind": "hydro power house", "country": "XL", "at": [218, 121], "river": "Tapetu", "mw": 8, "opened": 1968, "operator": "the island's electricity department", "why": "By the Tapetu above Nihekemo, at the foot of the tunnel from the intake."}
  ]
 }
