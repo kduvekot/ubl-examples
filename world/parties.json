@@ -404,6 +404,10 @@
      "name": "Box truck 12",
      "plate": "UR 4160 CL",
      "type": "34",
+     "tare_kg": {
+      "truck": 6900
+     },
+     "max_gross_kg": 18000,
      "driver": {
       "first": "Nadia",
       "family": "Orsello",
@@ -671,7 +675,11 @@
      "kind": "road",
      "name": "Container tractor for carrier haulage",
      "plate": "UR 4160 RC",
-     "type": "37"
+     "type": "37",
+     "tare_kg": {
+      "tractor": 7600,
+      "chassis": 4400
+     }
     }
    ],
    "_refs": {
@@ -1770,7 +1778,11 @@
      "kind": "road",
      "name": "Store van",
      "plate": "BV LP 2601",
-     "type": "341"
+     "type": "341",
+     "tare_kg": {
+      "van": 2050
+     },
+     "max_gross_kg": 3500
     }
    ],
    "numbering": {
@@ -2654,6 +2666,10 @@
      "plate": "BV LP 2203",
      "trailer": "BV TR 0817",
      "type": "395",
+     "tare_kg": {
+      "tractor": 7700,
+      "trailer": 7400
+     },
      "loading_m": "13.6",
      "pallets": 33
     },
@@ -2663,7 +2679,11 @@
      "name": "Container chassis truck",
      "plate": "BV LP 2205",
      "trailer": "BV CH 0412",
-     "type": "37"
+     "type": "37",
+     "tare_kg": {
+      "tractor": 7600,
+      "chassis": 4300
+     }
     },
     {
      "id": "B-08",
@@ -2672,6 +2692,11 @@
      "plate": "BV LP 2208",
      "trailer": "BV CH 0436",
      "type": "37",
+     "tare_kg": {
+      "tractor": 7600,
+      "chassis": 4300,
+      "generator set": 1100
+     },
      "genset": "A diesel generator set clipped to the chassis, which powers a reefer's refrigeration on the road"
     }
    ],
@@ -3296,7 +3321,7 @@
      },
      {
       "title": "Operations",
-      "text": "The freighter flies the route twice a day: KXL207 leaves Lumeport at 07:00 and KXL209 at 15:00. The flight takes about 2½ hours over about 1,080 km; the timetable allows 2 h 45 eastbound and 3 h 00 westbound. As a freighter it can carry dangerous goods that are for cargo aircraft only, such as lithium batteries, and it carries medicines for [[Selanu General Hospital]] in an active temperature-controlled container. Its cargo sales and operations work every day."
+      "text": "The freighter flies the route twice a day: KXL207 leaves Lumeport at 07:00 and KXL209 at 15:00. The flight takes about {flight_still_air} over about {flight_km} km; the timetable allows {flight_east} eastbound and {flight_west} westbound. As a freighter it can carry dangerous goods that are for cargo aircraft only, such as lithium batteries, and it carries medicines for [[Selanu General Hospital]] in an active temperature-controlled container. Its cargo sales and operations work every day."
      },
      {
       "title": "Fleet",
@@ -3526,7 +3551,11 @@
      "kind": "road",
      "name": "Container truck of Nalevi Warehousing",
      "plate": "LV SL 101",
-     "type": "37"
+     "type": "37",
+     "tare_kg": {
+      "tractor": 7400,
+      "chassis": 4300
+     }
     }
    ],
    "numbering": {
@@ -4072,11 +4101,11 @@
     "sections": [
      {
       "title": "History",
-      "text": "The British administration set up Ferrano Energy in 1949, after the war, to bring electricity to the valley. At independence in 1962 it passed to the new state and became one of the pillars of Urvania's protected economy, beside state mining and the country's own manufacturers. When Urvania opened its economy in the early 1990s, the state sold a minority of the shares on the Ferrano Stock Exchange and kept the majority. The Trade Accord's energy protocol of 2007 asked for networks to be run apart from supply, and Urvania chose the full split: Ferrano Energy's networks became [[Ferrano Grid]] that year. Until 2011 Ferrano Energy sold only electricity; when [[Kelpstone Gas]] began producing and the pipeline brought gas to Urvania, it took up gas as a second business."
+      "text": "The British administration set up Ferrano Energy in 1949, after the war, to bring electricity to the valley; its first great work was the Nevola hydro scheme in the massif, built from 1956 to 1961. At independence in 1962 it passed to the new state and became one of the pillars of Urvania's protected economy, beside state mining and the country's own manufacturers. When Urvania opened its economy in the early 1990s, the state sold a minority of the shares on the Ferrano Stock Exchange and kept the majority. The Trade Accord's energy protocol of 2007 asked for networks to be run apart from supply, and Urvania chose the full split: Ferrano Energy's networks became [[Ferrano Grid]] that year, and its power stations went to a state generating company. Until 2011 Ferrano Energy sold only electricity; when [[Kelpstone Gas]] began producing and the pipeline brought gas to Urvania, it took up gas as a second business."
      },
      {
       "title": "Operations",
-      "text": "Supply to end customers stays national under the Accord, and Ferrano Energy is Urvania's supplier. It buys electricity from [[Montebrio Power]] and other power stations, and gas from Kelpstone Gas, which it imports itself across the border. Ferrano Grid carries the energy and reads the meters, and Ferrano Energy collects the grid's network charges with its own bill: of its tariff of 27.3 ferra a kilowatt hour, 21.1 is for the energy and 6.2 for the network. A business is billed every month on its meter reading; a household pays a twelfth of the year's estimate each month by direct debit, and the meters are read once a year at the end of March. Its customers include [[Valdara Industries]]."
+      "text": "Supply to end customers stays national under the Accord, and Ferrano Energy is Urvania's supplier. It buys electricity from the state generating company, which runs the Nevola hydro scheme, the run-of-river plants and the Saline Brune solar park, from [[Montebrio Power]], from the roofs of homes and farms, and from [[Bayvarra]] on the Accord's wholesale market, and gas from Kelpstone Gas, which it imports itself across the border. Ferrano Grid carries the energy and reads the meters, and Ferrano Energy collects the grid's network charges with its own bill: of its tariff of 27.3 ferra a kilowatt hour, 21.1 is for the energy and 6.2 for the network. A business is billed every month on its meter reading; a household pays a twelfth of the year's estimate each month by direct debit, and the meters are read once a year at the end of March. Its customers include [[Valdara Industries]]."
      }
     ]
    }
@@ -4406,7 +4435,11 @@
      "kind": "road",
      "name": "Timber truck with crane",
      "plate": "BV MD 3610",
-     "type": "3131"
+     "type": "3131",
+     "tare_kg": {
+      "truck": 13800,
+      "trailer": 5200
+     }
     }
    ],
    "numbering": {
@@ -4933,7 +4966,12 @@
      "kind": "road",
      "name": "Tractor with two cotton trailers",
      "plate": "LV FARM 7",
-     "type": "33"
+     "type": "33",
+     "tare_kg": {
+      "tractor": 5400,
+      "first trailer": 2600,
+      "second trailer": 2600
+     }
     }
    ],
    "numbering": {
@@ -5338,7 +5376,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The state built the station in 1974, in the years of the protected economy, below Monte Brio, the hill near Serravona that gave it its name. It burned heavy fuel oil, which came up the river by barge to Ferrano and on by rail. In 1998, as Urvania opened its economy, the state sold the company to Urvanian pension funds, which own it still. Since 2011 it has burned gas from the offshore field of [[Kelpstone Gas]], brought by pipeline across the border, under the energy protocol of the [[Lumeport Trade Accord]], which opened the wholesale trade in gas and electricity in 2007. In 1999 it was among the first members of the [[Codana Identification Agency]]."
+      "text": "The state built the station in 1974, after the dry winter of 1973 had left the reservoirs of the hydro plants low, to cover the peaks and the dry years, below Monte Brio, the hill near Serravona that gave it its name. It burned heavy fuel oil, which came up the river by barge to Ferrano and on by rail. In 1998, as Urvania opened its economy, the state sold the company to Urvanian pension funds, which own it still. Since 2011 it has burned gas from the offshore field of [[Kelpstone Gas]], brought by pipeline across the border, under the energy protocol of the [[Lumeport Trade Accord]], which opened the wholesale trade in gas and electricity in 2007. In 1999 it was among the first members of the [[Codana Identification Agency]]."
      },
      {
       "title": "Operations",
@@ -5907,6 +5945,10 @@
      "name": "Van for radioactive packages",
      "plate": "BV LP 4917",
      "type": "341",
+     "tare_kg": {
+      "van": 2250
+     },
+     "max_gross_kg": 3500,
      "description": "A closed van with a locked, lined cargo compartment, placarded for class 7 when it carries a package with a Yellow label, driven by a driver trained for radioactive material."
     }
    ],
@@ -6002,6 +6044,10 @@
      "name": "Pharmacy van with a cooled compartment",
      "plate": "LV SL 517",
      "type": "341",
+     "tare_kg": {
+      "van": 2450
+     },
+     "max_gross_kg": 3500,
      "description": "The hospital pharmacy's van: a compartment kept at 2 to 8 °C, a freezer box and a locked, lined box for radioactive packages; its drivers are trained for class 7."
     }
    ],

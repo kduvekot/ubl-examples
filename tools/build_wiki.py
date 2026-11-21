@@ -325,8 +325,21 @@ def town_of(p):
     return p["identity"]["address"].get("CityName", "")
 
 
+def flight_values():
+    """The air route's timetable as the texts write it, from world/map.json (route "air", "flight") and the map's
+    distance between the airports (tools/world_map.py flight): one block time everywhere (stage 7 A3)."""
+    import world_map
+    f = world_map.flight(world)
+    m = round(f["still_air"] * 4) / 4                 # still air to the quarter hour, in words as a timetable is not
+    words = f"{int(m)}{dict([(0.0, ''), (0.25, '¼'), (0.5, '½'), (0.75, '¾')])[m - int(m)]} hours"
+    return {"flight_km": n0(int(round(f["km"], -1))), "flight_east": world_map.duration(f["east"]),
+            "flight_west": world_map.duration(f["west"]), "flight_still_air": words}
+
+
 def values(a):
     d = a["data"]
+    if a["kind"] == "route" and d["mode"] == "air":
+        return flight_values()
     if a["kind"] == "country":
         pop = d.get("population", {})
         tot = pop.get("total", 0)
@@ -349,7 +362,8 @@ def values(a):
     if a["kind"] == "party":
         lg = d["identity"].get("legal", {})
         return {"founded_year": lg.get("founded", "")[:4], "employees": n0(lg.get("headcount", 0)),
-                "town": town_of(d)}
+                "town": town_of(d), **(flight_values() if any(f.get("kind") == "air"
+                                                                for f in d.get("fleet") or []) else {})}
     return {}
 
 
@@ -389,7 +403,8 @@ def infobox(a):
                 ("Population", f"{n0(d['population'][0])} to {n0(d['population'][1])}")]
     elif a["kind"] == "route":
         rows = [("Kind", {"rail": "Railway", "pipeline": "Pipeline", "river": "River", "sea": "Shipping route",
-                          "air": "Air route"}[d["mode"]])] + [(k, v) for k, v in a["wiki"].get("facts", {}).items()]
+                          "air": "Air route"}[d["mode"]])] + [(k, fill(v, values(a), a["wiki"]["title"]))
+                                                              for k, v in a["wiki"].get("facts", {}).items()]
     elif a["kind"] == "language":
         rows = [("Own name", d.get("own_name", "")), ("Spoken in", f"[[{countries[d['country']]['name']}]]" if d.get("country") in countries else "")]
     elif a["kind"] == "currency":

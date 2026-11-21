@@ -222,6 +222,11 @@
           </cac:Contact>
           <cac:OccurrenceLocation>
             <cbc:Name>Selanu fairway buoy</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
           </cac:OccurrenceLocation>
         </cac:RequestedArrivalEvent>
       </cac:DestinationPortCall>

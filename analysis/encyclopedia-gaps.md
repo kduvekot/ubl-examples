@@ -127,7 +127,7 @@ decided with the owner one at a time, like the gaps here.
 
 - ~~How Ferrano Energy began in 1949 (as a state or a private company, and under the Italian or British era) and who owns it now.~~ Filled 2026-11-20 (OW009).
 - ~~Whether Ferrano Grid was split off from Ferrano Energy itself or from another body.~~ Filled 2026-11-20 (OW009).
-- How many customers it serves, and the other power stations it buys from.
+- ~~How many customers it serves, and the other power stations it buys from.~~ Filled 2026-11-21 (OW022, OW009); the number of customers open.
 
 ### Ferrano Grid (44-xu)
 

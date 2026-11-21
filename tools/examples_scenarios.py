@@ -1779,7 +1779,7 @@ def retail(n, doc):
                              "invoice_why": "The kilometres driven loaded, from the distribution centre in "
                                             "Marrowdale to the store in Lumeport: the truck's leg on the map"
                                             "."}],  # O152
-                           key="freight-invoice",
+                           key="freight-invoice", terms="plan",   # the transport plan's freight term, stage 7 A10
                            extra={"Delivery": {"Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
                                                                                    "The consignment carried.")}}}})}
     if doc["doc"] == "ReceiptAdvice":
@@ -2190,8 +2190,10 @@ def sea_invoice_terms(f, out):
     balance = total - DEPOSIT
     out["PrepaidPayment"] = {"ID": V(SEA.number("deposit-payment", "1-xl", "Payment"), "The buyer's payment of the deposit."),
                              "PaidAmount": amount(DEPOSIT, "XBL", "The deposit asked for in the order response."),
-                             "ReceivedDate": V(f.date(5), "Credited to the distributor's account."),
-                             "PaidDate": V(f.date(4), "Paid by the buyer the day after the order was accepted."),
+                             "ReceivedDate": V(f.date(kit.due_day(f, 5, "6-xb")), "Credited to the distributor's "
+                                               "account on the next business day of Bayvarra's banks after the "
+                                               "Friday it was paid."),  # stage 7 A9
+                             "PaidDate": V(f.date(4), "Paid by the buyer the day the order was accepted."),
                              "InstructionID": V(SEA.number("deposit-order", "1-xl", "PaymentOrder"), "The buyer's payment order.")}
     lmt["PrepaidAmount"] = amount(DEPOSIT, "XBL", "The deposit, already paid.")
     lmt["PayableAmount"] = amount(balance, "XBL", "What is still to pay: the total less the deposit.")
@@ -2700,7 +2702,8 @@ def sea(n, doc):
             "BalanceAmount": amount(total, cur, "Open after the deposit: what the buyer still owes."),
             "CollectedPayment": {"ID": V(SEA.number("deposit-payment", "1-xl", "Payment"), "The deposit payment."),
                                  "PaidAmount": amount(DEPOSIT, cur, "Paid."),
-                                 "ReceivedDate": V(f.date(5), "Received by the distributor."),
+                                 "ReceivedDate": V(f.date(kit.due_day(f, 5, "6-xb")), "Received by the "
+                                                   "distributor on the next business day of Bayvarra's banks."),
                                  "PaidDate": V(f.date(4), "Paid by the buyer the day the order was accepted: the "
                                                           "payment's dates, not an invoice period.")},  # sea/25#F3
             "PaymentMeans": {"PaymentMeansCode": V("30", "Paid by credit transfer.", listID="UN/EDIFACT EDED 4461")}}]
@@ -2840,17 +2843,19 @@ def air_charge(c):
             "Amount": amount(c["amount"], "XBL", c["amount_why"])}
 
 
-# the morning flight Lumeport - Selanu (D19 as corrected with D36, O123): the ATR's block time eastbound is 2 h 45,
-# a margin over the flight the great circle between the airports needs in still air (taxiing 10 minutes, climb and
-# descent 20, the rest at 500 km/h); the island's clocks are an hour ahead
-FLIGHT_BLOCK_EAST = 2.75
-if (10 + 20) / 60 + max(0.0, wmap.air_km() - 100) / 500 > FLIGHT_BLOCK_EAST:
-    raise SystemExit("air: the flight no longer fits its block time of 2 h 45")  # O152, O123
-FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", "07:00"), FLIGHT_BLOCK_EAST + 1)
+# the morning flight Lumeport - Selanu (D19 as corrected with D36, O123): the ATR's block time eastbound, a margin
+# over the flight the great circle between the airports needs in still air, is world data (world/map.json, route
+# "air", "flight"; world_map.flight stops the build when the map no longer fits it, stage 7 A3); the island's clocks
+# are ahead by the difference of the two countries' timezones
+FLIGHT_BLOCK_EAST = wmap.flight()["east"]
+FLIGHT_CLOCKS = wmap.clock_ahead("XB", "XL")      # hours the island's clocks are ahead of Lumeport's
+FLIGHT_BLOCK_TEXT = (f"in island time, {'an hour' if FLIGHT_CLOCKS == 1 else f'{FLIGHT_CLOCKS:g} hours'} ahead of "
+                     f"Lumeport's: a block time of {wmap.duration(FLIGHT_BLOCK_EAST)} eastbound")
+FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", "07:00"), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS)
 # D39: the frames are booked on the afternoon flight KXL209 of Wednesday 13 May (day 2), Lumeport 15:00 to Selanu
 # 18:45; the truck from Ferrano is late, the cargo reaches the terminal after the acceptance cut-off at 12:00, is
 # accepted on arrival and flies on the morning flight KXL207 of Thursday 14 May (day 3), landing at about 10:30
-AIR_BOOKED = ("KXL209", 2, "15:00", wmap.hm(wmap.after(wmap.at("2026-05-13", "15:00"), FLIGHT_BLOCK_EAST + 1)))
+AIR_BOOKED = ("KXL209", 2, "15:00", wmap.hm(wmap.after(wmap.at("2026-05-13", "15:00"), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS)))
 AIR_FLOWN = ("KXL207", 3, "07:00", wmap.hm(FLIGHT_ARRIVES))
 AIR_CUTOFF = "12:00:00"
 # read-through air A3 (owner, 2026-11-20): Bayforth's truck leaves the cross-dock before the cut-off, late because
@@ -2884,9 +2889,7 @@ def air_flight(f, flight, why, planned=True):
             f"{kind}DepartureTransportEvent": kit.event(f, day, dep + ":00-01:00", "The flight's timetabled "
                                                         "departure, in Lumeport's time, with its offset.",  # D27
                                                         location=kit.place("XBLMA", "The airport of departure.")),
-            f"{kind}ArrivalTransportEvent": kit.event(f, day, arr + "+00:00", "The timetabled arrival, in island "
-                                                      "time, an hour ahead of Lumeport's: a block time of 2 h 45 "
-                                                      "eastbound.",  # D19, D36, O123
+            f"{kind}ArrivalTransportEvent": kit.event(f, day, arr + "+00:00", f"The timetabled arrival, {FLIGHT_BLOCK_TEXT}.",  # D19, D36, O123
                                                       location=kit.place("XLSLA", "The airport of destination."))}
 
 
@@ -8352,7 +8355,10 @@ def _(f, n, doc, out):
                                                   "Telephone": V("+999 2 7900 702 117", "The ship's phone, a Bayvarran mobile number, as the "
                                                                         "ship flies Bayvarra's flag.")},
                                       "OccurrenceLocation": {"Name": V("Selanu fairway buoy", "Where the pilot "
-                                                                                              "boards.")}}},
+                                                                                              "boards."),
+                                                             "Address": {"Country": {"IdentificationCode": V(
+                                                                 "XL", "The buoy lies in Lisavu's waters, off the "
+                                                                       "port of Selanu.")}}}}},  # stage 7 A1
         "ShipStoreArticle": [{"ID": V("ST-1", "Spirits in the bonded store."), "Name": V("Spirits", "What."),
                               "Quantity": qty(24, "LTR", "Litres."),
                               "OfficialUse": V("Sealed by customs at Lumeport.", "Under seal."),
@@ -8691,7 +8697,7 @@ def mast_consignment(f, full):
                uld("20516", f"The container of the stripper's box, {ake}.", True, strip_loaded, strip_box),
                uld("20514", f"The container of the smoke detectors, {ake}.", False, det_loaded, det_box)]}
     flight, dep = MAST_FLIGHT
-    arrives = wmap.hm(wmap.after(wmap.at(f.date(3), dep[:5]), FLIGHT_BLOCK_EAST + 1))
+    arrives = wmap.hm(wmap.after(wmap.at(f.date(3), dep[:5]), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS))
     out["MainCarriageShipmentStage"] = {
         "ID": V("1", "The flight."),
         "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of Transport"),
@@ -8703,9 +8709,7 @@ def mast_consignment(f, full):
         "PlannedDepartureTransportEvent": kit.event(f, 3, dep + "-01:00", "The flight's timetabled departure, in "
                                                                           "Lumeport's time, with its offset.", location=kit.place("XBLMA", "The airport of "  # D27
                                                                                                     "departure.")),
-        "PlannedArrivalTransportEvent": kit.event(f, 3, arrives + "+00:00", "The timetabled arrival, in island time, an hour "
-                                                                 "ahead of Lumeport's: a block time of 2 h 45 "
-                                                                 "eastbound.",  # D19, D36, O123
+        "PlannedArrivalTransportEvent": kit.event(f, 3, arrives + "+00:00", f"The timetabled arrival, {FLIGHT_BLOCK_TEXT}.",  # D19, D36, O123
                                                   location=kit.place("XLSLA", "The airport of destination."))}
     return out
 
@@ -8976,7 +8980,7 @@ def med_units(f, full):
 def med_flight(f, why):
     flight, dep = MED_FLIGHT
     day = MED_DAY["flight"]
-    arrives = wmap.hm(wmap.after(wmap.at(f.date(day), dep), FLIGHT_BLOCK_EAST + 1))
+    arrives = wmap.hm(wmap.after(wmap.at(f.date(day), dep), FLIGHT_BLOCK_EAST + FLIGHT_CLOCKS))
     return {"ID": V("1", "The flight."),
             "TransportModeCode": V("4", "Air transport.", listID="UNECE Recommendation 19 - Codes for Modes of "
                                                                 "Transport"),
@@ -8987,9 +8991,7 @@ def med_flight(f, why):
             "PlannedDepartureTransportEvent": kit.event(f, day, dep + ":00-01:00", "The flight's timetabled "
                                                         "departure, in Lumeport's time, with its offset.",  # D27
                                                         location=kit.place("XBLMA", "The airport of departure.")),
-            "PlannedArrivalTransportEvent": kit.event(f, day, arrives + "+00:00", "The timetabled arrival, in island "
-                                                      "time, an hour ahead of Lumeport's: a block time of 2 h 45 "
-                                                      "eastbound.",  # D19, D36, O123
+            "PlannedArrivalTransportEvent": kit.event(f, day, arrives + "+00:00", f"The timetabled arrival, {FLIGHT_BLOCK_TEXT}.",  # D19, D36, O123
                                                       location=kit.place("XLSLA", "The airport of destination."))}
 
 

@@ -8,7 +8,7 @@
   <cbc:UUID>bd9692ab-c902-5cad-bc2f-37c7464afe3c</cbc:UUID>
   <cbc:IssueDate>2026-04-30</cbc:IssueDate>
   <cbc:IssueTime>11:30:00-01:00</cbc:IssueTime>
-  <cbc:DueDate>2026-06-01</cbc:DueDate>
+  <cbc:DueDate>2026-05-29</cbc:DueDate>
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
   <cbc:AccountingCostCode>4600</cbc:AccountingCostCode>
@@ -204,7 +204,7 @@
     <cbc:ID>1</cbc:ID>
     <cbc:PaymentMeansCode listID="UN/EDIFACT EDED 4461">30</cbc:PaymentMeansCode>
     <cbc:PaymentMeansDescription>Credit transfer</cbc:PaymentMeansDescription>
-    <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
+    <cbc:PaymentDueDate>2026-05-29</cbc:PaymentDueDate>
     <cbc:PaymentChannelCode listID="ISO 20022 ClearingChannel2Code">MPNS</cbc:PaymentChannelCode>
     <cbc:PaymentRailID>LUMEPAY</cbc:PaymentRailID>
     <cbc:InstructionNote>Quote RF67BYFINV262292</cbc:InstructionNote>
@@ -249,16 +249,14 @@
     </cac:PayeeFinancialAccount>
   </cac:PaymentMeans>
   <cac:PaymentTerms>
-    <cbc:ID>XB-STD</cbc:ID>
     <cbc:PaymentMeansID>1</cbc:PaymentMeansID>
-    <cbc:Note>30 days net; 1.5 % surcharge per month late.</cbc:Note>
-    <cbc:PenaltySurchargePercent>1.5</cbc:PenaltySurchargePercent>
-    <cbc:PenaltyAmount currencyID="XBL">3.12</cbc:PenaltyAmount>
-    <cbc:PaymentTermsDetailsURI>https://www.bayforth.example/terms</cbc:PaymentTermsDetailsURI>
-    <cbc:PaymentDueDate>2026-06-01</cbc:PaymentDueDate>
-    <cac:PenaltyPeriod>
-      <cbc:StartDate>2026-06-02</cbc:StartDate>
-    </cac:PenaltyPeriod>
+    <cbc:Note>30 days net from the consignment note.</cbc:Note>
+    <cbc:PaymentDueDate>2026-05-29</cbc:PaymentDueDate>
+    <cac:PenaltyInterestRate>
+      <cbc:InterestRatePercent>7</cbc:InterestRatePercent>
+      <cbc:TimeBasisCode listID="UNECE Recommendation N°. 20 - Codes for Units of Measure Used in International Trade">ANN</cbc:TimeBasisCode>
+      <cbc:CalculationMethodCode listID="urn:ubl-examples:world:codelist:InterestCalculationCode">SIMPLE</cbc:CalculationMethodCode>
+    </cac:PenaltyInterestRate>
   </cac:PaymentTerms>
   <cac:TaxTotal>
     <cbc:TaxAmount currencyID="XBL">0.00</cbc:TaxAmount>
