@@ -2523,7 +2523,7 @@
      },
      {
       "title": "Status",
-      "text": "The Council is entered in Bayvarra's federal list of public bodies under its seat agreement with Bayvarra, so that it can deal with Bayvarran bodies, banks and the exchange network. Like other public bodies it carries no commercial register entry. Its secretariat works from Exchange Street in the Old Town. As an international body under its seat agreement it answers to the governments of the three members, not to a ministry of any one of them. Besides the agreement on electronic documents it keeps the Accord's shared code lists and its uniform rules for carriage, reviews the parities of the three currencies every five years, next on 1 January 2031, and hears disputes between the members in a panel. Its secretariat has a staff of about 45."
+      "text": "The Council is entered in Bayvarra's federal list of public bodies under its seat agreement with Bayvarra, so that it can deal with Bayvarran bodies, banks and the exchange network. Like other public bodies it carries no commercial register entry. Its secretariat works from Exchange Street in the Old Town. As an international body under its seat agreement it answers to the governments of the three members, not to a ministry of any one of them. Besides the agreement on electronic documents it keeps the Accord's shared code lists and its uniform rules for carriage, reviews the parities of the three currencies every five years, next on 1 January 2031 (no review has yet changed a rate), and hears disputes between the members in a panel. Its secretariat has a staff of about 45."
      }
     ],
     "facts": {
@@ -4193,7 +4193,7 @@
    },
    "wiki": {
     "short": "Bank in Selanu, Lisavu",
-    "lead": "**Bank of Selanu** is the bank of [[Lisavu]], at Reef House on Reef Street in [[Selanu]]. Founded in {founded_year} by the island's own leaders, it holds the accounts of the island's buyers, producers, carriers and brokers and makes and receives their payments; it employs about {employees} people.",
+    "lead": "**Bank of Selanu** is the oldest bank of [[Lisavu]], at Reef House on Reef Street in [[Selanu]]. Founded in {founded_year} by the island's own leaders, it holds the accounts of the island's buyers, producers, carriers and brokers and makes and receives their payments; it employs about {employees} people.",
     "sections": [
      {
       "title": "History",
@@ -6219,7 +6219,7 @@
      },
      {
       "title": "Operations",
-      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. It also maintains the lines' bridges, among them the ore line's river bridge, 78 m high. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station. Its network has about 420 km of line and 26 stations; the ore line is about {fact:ore.line_km} long and the line from Ferrano to the border about 67 km."
+      "text": "The agency's network covers the ore line from the mine siding at Fucinalta down to [[Valdara Industries]]' works at Ferrano and the line from Ferrano to the border station on the way to [[Marrowdale]]. It also maintains the lines' bridges, among them the ore line's river bridge, about 100 m high. Its traffic control works around the clock. Train operators such as [[Ferrano Rail Cargo]] run their trains on the paths it gives them, and it reports a train's position and timetable on its network to the operator, from the intermodal hub at Ferrano to the border station. Its network has about 420 km of line and 26 stations; the ore line is about {fact:ore.line_km} long and the line from Ferrano to the border about 67 km."
      }
     ],
     "facts": {
