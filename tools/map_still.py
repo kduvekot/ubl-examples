@@ -4,7 +4,7 @@
 Usage: python3 tools/map_still.py <site-dir>/world.html <out.jpg>
 
 Opens world.html?still (the map alone, without toolbar and panel: see site/world.html), waits for it to be
-drawn, takes a screenshot at twice the size and makes it 1600 pixels wide. Chrome is found as $CHROME, on the
+drawn, and takes a screenshot of 1600 x 1000 pixels (the home page shows it at most about 1100 pixels wide). Chrome is found as $CHROME, on the
 PATH (google-chrome, chromium, ...) or in Playwright's browser folder. The picture is kept in the build cache
 (tools/build_cache.py, "map-still") with the fingerprint of the page (which carries all the map's data), this script
 and Chrome's version, and taken again only when one of them changes.
@@ -63,7 +63,7 @@ def _playwright(sync_playwright, shot):
     with sync_playwright() as pw:
         b = pw.chromium.launch(**({"executable_path": exe} if os.environ.get("CHROME") else {}))
         try:
-            pg = b.new_page(viewport={"width": W, "height": H}, device_scale_factor=2)
+            pg = b.new_page(viewport={"width": W, "height": H}, device_scale_factor=1)
             pg.route(lambda url: url.startswith(("http:", "https:")), lambda route: route.abort())
             pg.goto(f"file://{page}?still")
             pg.wait_for_function("document.documentElement.dataset.ready === '1'", timeout=45000)
@@ -77,21 +77,27 @@ def by_command_line(shot, tmp):
     """The picture through Chrome's command line (GitHub Actions): the still page stops animating once it is drawn,
     so that the virtual time budget ends."""
     subprocess.run([exe, "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars", "--mute-audio",
-                    f"--user-data-dir={tmp}/profile", f"--window-size={W},{H}", "--force-device-scale-factor=2",
+                    f"--user-data-dir={tmp}/profile", f"--window-size={W},{H}", "--force-device-scale-factor=1",
                     # no outside requests (the web fonts): headless Chrome's virtual time waits for every request;
                     # the labels fall back to a system font, and the picture is the same everywhere
                     "--host-resolver-rules=MAP * ~NOTFOUND",
-                    "--virtual-time-budget=15000", f"--screenshot={shot}", f"file://{page}?still"],
+                    # the still page is drawn in its first frame (the whole world at the opening zoom comes from the
+                    # overview, with no chunks to wait for) and then stops: a short budget is enough, and where
+                    # virtual time runs slowly (as it did in GitHub Actions) a long one is waited for in full
+                    "--virtual-time-budget=5000", f"--screenshot={shot}", f"file://{page}?still"],
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=45)
 
 
+import time  # noqa: E402
+t0 = time.time()
 with tempfile.TemporaryDirectory() as tmp:
     shot = os.path.join(tmp, "still.png")
-    if not by_playwright(shot):
+    how = "Playwright" if by_playwright(shot) else "Chrome's command line"
+    if how != "Playwright":
         by_command_line(shot, tmp)
     im = Image.open(shot).convert("RGB")
 if im.width < W or len(im.resize((32, 20)).getcolors(1024) or []) < 8:      # a blank or broken page has a handful of colours
     sys.exit(f"map_still.py: the screenshot looks empty ({im.size})")
 im.resize((W, round(im.height * W / im.width)), Image.LANCZOS).save(out, quality=84, optimize=True, progressive=True)
 build_cache.store("map-still", fp, out, "world-preview.jpg")
-print(f"map still: taken ({fp[:12]})")
+print(f"map still: taken ({fp[:12]}) with {how} in {time.time() - t0:.1f} s")
