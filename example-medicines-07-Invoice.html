@@ -105,11 +105,8 @@ The wholesaler's call-off.</li>
 <ul>
 <li><code>Party/PartyName/Name</code> = <strong>Haarvliet
 Isotopes</strong><br />
-The trading name; as Haarvliet Isotopes, a maker outside the three
-countries, gives it. It carries no identifier of a real register: a
-Dutch Chamber of Commerce number or VAT number in the real format could
-be someone's; the documents identify it by its name and address, as a
-supplier outside the world.</li>
+The trading name; as Haarvliet Isotopes, a maker abroad, gives it. The
+documents identify the maker by its name and address.</li>
 <li><code>Party/PostalAddress/AddressTypeCode</code> =
 <strong>BUSINESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:AddressTypeCode</code>)<br />
@@ -117,55 +114,51 @@ The kind of address. The code is from the Trade Accord's address type
 list: BUSINESS = Business address.</li>
 <li><code>Party/PostalAddress/StreetName</code> =
 <strong>Isotopenweg</strong><br />
-Street of the postal address.; the address is fictional, in a real
-town.</li>
+Street of the postal address.</li>
 <li><code>Party/PostalAddress/BuildingNumber</code> =
 <strong>14</strong><br />
-Building number.; the address is fictional, in a real town.</li>
+Building number.</li>
 <li><code>Party/PostalAddress/CityName</code> =
 <strong>Alkmaar</strong><br />
-The town.; the address is fictional, in a real town.</li>
+The town.</li>
 <li><code>Party/PostalAddress/PostalZone</code> = <strong>1812
 RN</strong><br />
-Postal code in the format of Netherlands.; the address is fictional, in
-a real town.</li>
+Postal code in the format of the Netherlands.</li>
 <li><code>Party/PostalAddress/TimezoneOffset</code> =
 <strong>+02:00</strong><br />
 The offset from UTC of Central European Summer Time, the legal time
 there in June.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>NL</strong> (listID <code>ISO 3166</code>)<br />
-Netherlands, a real country outside the world. The code is from the
-world's copy of UBL's Country identification (ISO 3166) list: NL =
-Netherlands (the).</li>
+Netherlands: the maker is abroad. The code is from the world's copy of
+UBL's Country identification (ISO 3166) list: NL = Netherlands
+(the).</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Netherlands</strong><br />
 The country's name, for readers of the address.</li>
 <li><code>Party/PartyLegalEntity/RegistrationName</code> =
 <strong>Haarvliet Isotopes B.V.</strong><br />
 The company's registered name, with the legal form of its country; as
-Haarvliet Isotopes, a maker outside the three countries, gives it.</li>
+Haarvliet Isotopes, a maker abroad, gives it.</li>
 <li><code>Party/Contact/Name</code> = <strong>Order desk</strong><br />
 The party's desk that handles this document; as Haarvliet Isotopes, a
-maker outside the three countries, gives it.</li>
+maker abroad, gives it.</li>
 <li><code>Party/Contact/JobTitle</code> = <strong>Order
 coordinator</strong><br />
 The job of the person who answers at the desk; as Haarvliet Isotopes, a
-maker outside the three countries, gives it.</li>
+maker abroad, gives it.</li>
 <li><code>Party/Contact/Department</code> = <strong>Customer
 service</strong><br />
 The department the desk belongs to; as Haarvliet Isotopes, a maker
-outside the three countries, gives it.</li>
+abroad, gives it.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:orders@haarvliet-isotopes.example">orders@haarvliet-isotopes.example</a></strong><br />
-E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone; no telephone number is given, as one in the real country's plan
-could reach someone; as Haarvliet Isotopes, a maker outside the three
-countries, gives it.</li>
+The desk's e-mail address; as Haarvliet Isotopes, a maker abroad, gives
+it.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
-When the desk can be reached; as Haarvliet Isotopes, a maker outside the
-three countries, gives it.</li>
+When the desk can be reached; as Haarvliet Isotopes, a maker abroad,
+gives it.</li>
 </ul>
 <p>The same in every document Haarvliet Isotopes is named in.</p>
 </details>
@@ -250,9 +243,9 @@ The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year:
 there is no summer time.</li>
 <li><code>Party/PostalAddress/Country/IdentificationCode</code> =
 <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
-Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code
-list. The code is from the world's copy of UBL's Country identification
-(ISO 3166) list: XB = Bayvarra.</li>
+Bayvarra, by its code in the world's country code list. The code is from
+the world's copy of UBL's Country identification (ISO 3166) list: XB =
+Bayvarra.</li>
 <li><code>Party/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
@@ -288,8 +281,7 @@ borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
 with 7.</li>
 <li><code>Party/Contact/ElectronicMail</code> = <strong><a
 href="mailto:payables@quillmoor.example">payables@quillmoor.example</a></strong><br />
-E-mail under the reserved .example domain (RFC 2606), so it cannot reach
-anyone.</li>
+The contact's e-mail address.</li>
 <li><code>Party/Contact/Note</code> = <strong>Every day, around the
 clock</strong><br />
 When the desk can be reached.</li>
@@ -716,6 +708,6 @@ href="example-medicines-08-ImportCustomsDeclaration.html">Import Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/bb872459727437f08d175a1c16d9861f3994f581"><code>bb87245</code></a> of 2026-11-21 11:59 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/db8082bf1d75b705f79b0f2f5c02bacab928967d"><code>db8082b</code></a> of 2026-11-21 12:03 UTC</p></div></footer>
 </body>
 </html>
