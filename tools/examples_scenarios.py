@@ -7782,7 +7782,7 @@ def contact(name, why, tel_of=None, email=None):
     if tel_of:
         c["Telephone"] = V(PARTY[tel_of]["identity"]["contact"]["telephone"], "The number.")
     if email:
-        c["ElectronicMail"] = V(email, "The address, under the reserved .example domain.")
+        c["ElectronicMail"] = V(email, "The e-mail address.")
     return c
 
 

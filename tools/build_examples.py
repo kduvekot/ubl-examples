@@ -217,7 +217,7 @@ def party(pid, short=False, desk=None, lang=None, tax_country=None):
     src = f"as {idn['name']} gives it"  # its identity in world/parties.json
     out = {"_pid": pid}
     if idn.get("website"):
-        out["WebsiteURI"] = V(idn["website"], f"The party's website, under the reserved .example domain (RFC 2606); {src}.")
+        out["WebsiteURI"] = V(idn["website"], f"The party's website; {src}.")  # every address uses the reserved .example domain (RFC 2606): checked in world_parties.py
     if idn.get("logo"):
         out["LogoReferenceID"] = V(idn["logo"], f"The reference of the logo the store prints on its documents; {src}.")
     if idn.get("industry"):
@@ -347,8 +347,7 @@ def party(pid, short=False, desk=None, lang=None, tax_country=None):
                                                       f"plan: {c['phone_plan']['note']} {src[:1].upper()}{src[1:]}.")
         if ct.get("telefax"):
             contact["Telefax"] = V(ct["telefax"], f"The customs office still lists a fax number; {src}.")
-        contact["ElectronicMail"] = V(ct["email"], "E-mail under the reserved .example domain (RFC 2606), so it cannot "
-                                                   f"reach anyone; {src}.")
+        contact["ElectronicMail"] = V(ct["email"], f"The contact's e-mail address; {src}.")  # .example domain (RFC 2606), checked in world_parties.py
         if ct.get("hours"):
             contact["Note"] = V(ct["hours"], f"When the desk can be reached; {src}.")
         if ct.get("mobile"):
@@ -396,14 +395,14 @@ def party(pid, short=False, desk=None, lang=None, tax_country=None):
                                                                           "The kind of certificate, in words.")}}
     if idn.get("shop_website"):
         out["AdditionalWebSite"] = {"Name": V("Online shop", "The store's second website, where consumers buy."),
-                                    "URI": V(idn["shop_website"], "Under the reserved .example domain.")}
+                                    "URI": V(idn["shop_website"], "The address of the store's online shop.")}
     if idn.get("social"):
         so = idn["social"]
         out["SocialMediaProfile"] = {**({"ID": V(so["id"], "The profile's number on the medium.")} if so.get("id")
                                         else {}),
                                      "Name": V(so["name"], "The store's profile name."),
                                      "SocialMediaTypeCode": V(so["type"], "The kind of social medium."),
-                                     "URI": V(so["uri"], "The profile's address, under the reserved .example domain.")}
+                                     "URI": V(so["uri"], "The profile's address on the medium.")}
     out["_keys"] = set(out)
     return out
 
@@ -445,8 +444,7 @@ def abroad_party(pid, desk=None):
            "Contact": {"Name": V(ct["name"], f"The party's desk that handles this document; {src}."),
                        "JobTitle": V(ct["job_title"], f"The job of the person who answers at the desk; {src}."),
                        "Department": V(ct["department"], f"The department the desk belongs to; {src}."),
-                       "ElectronicMail": V(ct["email"], "E-mail under the reserved .example domain (RFC 2606), so it "
-                                                        f"cannot reach anyone; {src}."),  # no telephone: a number in
+                       "ElectronicMail": V(ct["email"], f"The desk's e-mail address; {src}."),  # .example (RFC 2606)  # no telephone: a number in
                                                         # the real country's plan could reach someone (O229)
                        "Note": V(ct["hours"], f"When the desk can be reached; {src}.")}}
     out["_keys"] = set(out)
