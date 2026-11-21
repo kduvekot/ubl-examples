@@ -45,16 +45,50 @@ fp = fp.hexdigest()
 if build_cache.fetch("map-still", fp, out, "world-preview.jpg"):
     print(f"map still: unchanged inputs ({fp[:12]}), taken from the cache")
     sys.exit(0)
-with tempfile.TemporaryDirectory() as tmp:
-    shot = os.path.join(tmp, "still.png")
+def by_playwright(shot):
+    """The picture through Python's Playwright, where it is installed: no outside requests, and taken when the page
+    says it is drawn (data-ready). False when Playwright is not there."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return False
+    try:
+        return _playwright(sync_playwright, shot)
+    except Exception as e:                     # no browser for this Playwright, or it failed: the command line
+        print(f"map still: Playwright failed ({type(e).__name__}), using Chrome's command line", file=sys.stderr)
+        return False
+
+
+def _playwright(sync_playwright, shot):
+    with sync_playwright() as pw:
+        b = pw.chromium.launch(**({"executable_path": exe} if os.environ.get("CHROME") else {}))
+        try:
+            pg = b.new_page(viewport={"width": W, "height": H}, device_scale_factor=2)
+            pg.route(lambda url: url.startswith(("http:", "https:")), lambda route: route.abort())
+            pg.goto(f"file://{page}?still")
+            pg.wait_for_function("document.documentElement.dataset.ready === '1'", timeout=45000)
+            pg.screenshot(path=shot)
+        finally:
+            b.close()
+    return True
+
+
+def by_command_line(shot, tmp):
+    """The picture through Chrome's command line (GitHub Actions): the still page stops animating once it is drawn,
+    so that the virtual time budget ends."""
     subprocess.run([exe, "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars", "--mute-audio",
                     f"--user-data-dir={tmp}/profile", f"--window-size={W},{H}", "--force-device-scale-factor=2",
-                    # no outside requests (the web fonts): headless Chrome's virtual time waits for every request,
-                    # and where the network does not answer it would wait until the timeout; the labels fall back
-                    # to a system font, and the picture is the same everywhere
+                    # no outside requests (the web fonts): headless Chrome's virtual time waits for every request;
+                    # the labels fall back to a system font, and the picture is the same everywhere
                     "--host-resolver-rules=MAP * ~NOTFOUND",
                     "--virtual-time-budget=15000", f"--screenshot={shot}", f"file://{page}?still"],
                    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=45)
+
+
+with tempfile.TemporaryDirectory() as tmp:
+    shot = os.path.join(tmp, "still.png")
+    if not by_playwright(shot):
+        by_command_line(shot, tmp)
     im = Image.open(shot).convert("RGB")
 if im.width < W or len(im.resize((32, 20)).getcolors(1024) or []) < 8:      # a blank or broken page has a handful of colours
     sys.exit(f"map_still.py: the screenshot looks empty ({im.size})")
