@@ -70,7 +70,7 @@ Inside `Consignment`:
 - `ConsigneeParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ConsigneeParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `ConsigneeParty/Contact/Name` = **Goods-in**  
@@ -82,7 +82,7 @@ Inside `Consignment`:
 - `ConsigneeParty/Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `ConsigneeParty/Contact/ElectronicMail` = **goodsin@velumi.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
+  The contact's e-mail address; as Velumi Trading gives it.
 - `ConsigneeParty/Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; as Velumi Trading gives it.
 - `CarrierParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
@@ -108,7 +108,7 @@ Inside `Consignment`:
 - `CarrierParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `CarrierParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `CarrierParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `CarrierParty/Contact/Name` = **Cargo operations**  
@@ -120,7 +120,7 @@ Inside `Consignment`:
 - `CarrierParty/Contact/Telephone` = **+999 3 721 1044**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Kelaro Air Cargo gives it.
 - `CarrierParty/Contact/ElectronicMail` = **cargoops@kelaro.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Kelaro Air Cargo gives it.
+  The contact's e-mail address; as Kelaro Air Cargo gives it.
 - `CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Kelaro Air Cargo gives it.
 - `MainCarriageShipmentStage/ID` = **1**  
@@ -154,7 +154,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `MainCarriageShipmentStage/TerminalOperatorParty/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Name` = **Import desk**  
@@ -166,7 +166,7 @@ Inside `Consignment`:
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Telephone` = **+999 3 724 5671**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Airport Cargo gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/ElectronicMail` = **import@selanu-cargo.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Airport Cargo gives it.
+  The contact's e-mail address; as Selanu Airport Cargo gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Selanu Airport Cargo gives it.
 - `MainCarriageShipmentStage/TerminalOperatorParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -257,7 +257,7 @@ Inside `ReceiverParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
@@ -269,7 +269,7 @@ Inside `ReceiverParty`:
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Bayforth Forwarding gives it.
 - `Contact/ElectronicMail` = **export@bayforth.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bayforth Forwarding gives it.
+  The contact's e-mail address; as Bayforth Forwarding gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Bayforth Forwarding gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  

@@ -76,7 +76,7 @@ Inside `ExporterParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Valdara Industries SUA**  
@@ -92,7 +92,7 @@ Inside `ExporterParty`:
 - `Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Valdara Industries gives it.
 - `Contact/ElectronicMail` = **customs@valdara.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
+  The contact's e-mail address; as Valdara Industries gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Valdara Industries gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -147,7 +147,7 @@ Inside `CustomsDeclaration`:
 - `Shipment/Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Shipment/Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Shipment/Consignment/CarrierParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Shipment/GoodsItem/ID` = **1**  
@@ -353,7 +353,7 @@ Inside `CustomsDeclaration`:
 - `ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `ConsigneeParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `CustomsParty/PartyIdentification/ID` = **xu_k4r7** (schemeID `urn:ubl-examples:world:XU:public-body-register`)  
@@ -385,7 +385,7 @@ Inside `CustomsDeclaration`:
 - `CustomsParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `CustomsParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `CustomsParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `CustomsParty/PartyLegalEntity/RegistrationName` = **Customs Administration of Urvania**  
@@ -401,7 +401,7 @@ Inside `CustomsDeclaration`:
 - `CustomsParty/Contact/Telephone` = **+999 1 041 850 3855**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Customs Administration of Urvania gives it.
 - `CustomsParty/Contact/ElectronicMail` = **export@customs-xu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Customs Administration of Urvania gives it.
+  The contact's e-mail address; as Customs Administration of Urvania gives it.
 - `CustomsParty/Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Customs Administration of Urvania gives it.
 - `CustomsParty/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  

@@ -80,7 +80,7 @@ Inside `SenderParty`:
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brightmarket Stores gives it.
 - `Contact/ElectronicMail` = **buying@brightmarket.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brightmarket Stores gives it.
+  The contact's e-mail address; as Brightmarket Stores gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; as Brightmarket Stores gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  

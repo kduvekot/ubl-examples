@@ -79,7 +79,7 @@ Inside `SenderParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Order desk**  
@@ -91,7 +91,7 @@ Inside `SenderParty`:
 - `Contact/Telephone` = **+999 1 041 386 4551**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Valdara Industries gives it.
 - `Contact/ElectronicMail` = **order@valdara.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
+  The contact's e-mail address; as Valdara Industries gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Valdara Industries gives it.
 - `Contact/OtherCommunication/ChannelCode` = **AL** (listID `UN/EDIFACT EDED 3155`)  
@@ -134,7 +134,7 @@ Inside `ReceiverParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Waste reporting office**  
@@ -146,7 +146,7 @@ Inside `ReceiverParty`:
 - `Contact/Telephone` = **+999 1 041 732 5019**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Environment Agency of Urvania gives it.
 - `Contact/ElectronicMail` = **waste@environment-xu.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Environment Agency of Urvania gives it.
+  The contact's e-mail address; as Environment Agency of Urvania gives it.
 - `Contact/Note` = **Weekdays 08:00–16:00**  
   When the desk can be reached; as Environment Agency of Urvania gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -205,7 +205,7 @@ Inside `RecoveryFacilityParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Customer service**  
@@ -217,7 +217,7 @@ Inside `RecoveryFacilityParty`:
 - `Contact/Telephone` = **+999 1 041 697 6856**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Rinova Recovery gives it.
 - `Contact/ElectronicMail` = **customer@rinova.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Rinova Recovery gives it.
+  The contact's e-mail address; as Rinova Recovery gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Rinova Recovery gives it.
 - `PartyAuthorization/PurposeCode` = **R3** (listID `Basel Convention Annex IV`)  
@@ -281,7 +281,7 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Consignment/CarrierParty/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Consignment/CarrierParty/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Consignment/CarrierParty/Contact/Name` = **Planning desk**  
@@ -293,7 +293,7 @@ Inside `Shipment`:
 - `Consignment/CarrierParty/Contact/Telephone` = **+999 1 041 266 7643**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/ElectronicMail` = **planning@trasvia.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Trasvia Haulage gives it.
+  The contact's e-mail address; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Trasvia Haulage gives it.
 - `Consignment/CarrierParty/PartyAuthorization/Purpose` = **Transport of non-hazardous waste by road**  

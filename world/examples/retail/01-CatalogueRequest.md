@@ -94,7 +94,7 @@ Inside `ReceiverParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Sales office**  
@@ -106,7 +106,7 @@ Inside `ReceiverParty`:
 - `Contact/Telephone` = **+999 2 7121 955 964**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeway Distribution gives it.
 - `Contact/ElectronicMail` = **sales@lumeway.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeway Distribution gives it.
+  The contact's e-mail address; as Lumeway Distribution gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Lumeway Distribution gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -119,7 +119,7 @@ Inside `ReceiverParty`:
 Inside `ProviderParty`:
 
 - `WebsiteURI` = **https://www.brightmarket.example**  
-  The party's website, under the reserved .example domain (RFC 2606); as Brightmarket Stores gives it.
+  The party's website; as Brightmarket Stores gives it.
 - `LogoReferenceID` = **BM-LOGO-2024**  
   The reference of the logo the store prints on its documents; as Brightmarket Stores gives it.
 - `IndustryClassificationCode` = **4719** (listID `ISIC Rev.4`)  
@@ -161,7 +161,7 @@ Inside `ProviderParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `PartyLegalEntity/RegistrationName` = **Brightmarket Stores Corp**  
@@ -193,13 +193,13 @@ Inside `ProviderParty`:
 - `Contact/Telephone` = **+999 2 38 4609 7100**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brightmarket Stores gives it.
 - `Contact/ElectronicMail` = **service@brightmarket.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brightmarket Stores gives it.
+  The contact's e-mail address; as Brightmarket Stores gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; as Brightmarket Stores gives it.
 - `AdditionalWebSite/Name` = **Online shop**  
   The store's second website, where consumers buy.
 - `AdditionalWebSite/URI` = **https://shop.brightmarket.example**  
-  Under the reserved .example domain.
+  The address of the store's online shop.
 - `SocialMediaProfile/ID` = **10442197**  
   The profile's number on the medium.
 - `SocialMediaProfile/Name` = **brightmarket**  
@@ -207,7 +207,7 @@ Inside `ProviderParty`:
 - `SocialMediaProfile/SocialMediaTypeCode` = **PHOTO** (listID `urn:ubl-examples:world:codelist:SocialMediaTypeCode`)  
   The kind of social medium. The code is from the Trade Accord's social media type list: PHOTO = Photo sharing.
 - `SocialMediaProfile/URI` = **https://social.example/brightmarket**  
-  The profile's address, under the reserved .example domain.
+  The profile's address on the medium.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
   The network in which the address is registered: the world's own exchange network.
 - `ElectronicAddress/ElectronicAddressID` = **XB:20410411** (schemeID `urn:ubl-examples:world:endpoint`)  

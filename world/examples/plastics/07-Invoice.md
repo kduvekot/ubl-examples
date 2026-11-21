@@ -87,7 +87,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Fiumella Barges SRU**  
@@ -135,7 +135,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Contact/Telephone` = **+999 1 041 672 6403**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Fiumella Barges gives it.
 - `Party/Contact/ElectronicMail` = **receivables@fiumella.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Fiumella Barges gives it.
+  The contact's e-mail address; as Fiumella Barges gives it.
 - `Party/Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Fiumella Barges gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -176,7 +176,7 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Rinova Recovery SRU**  
@@ -192,7 +192,7 @@ Inside `AccountingCustomerParty`:
 - `Party/Contact/Telephone` = **+999 1 041 697 6856**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Rinova Recovery gives it.
 - `Party/Contact/ElectronicMail` = **payables@rinova.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Rinova Recovery gives it.
+  The contact's e-mail address; as Rinova Recovery gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Rinova Recovery gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -275,7 +275,7 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CountrySubentity` = **Province of Ferrano**  
   The province, part of an address in Urvania: a subdivision of the country. As Crevalto Bank gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Ruldraz** (languageID `qau`)  

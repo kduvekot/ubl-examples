@@ -155,7 +155,7 @@ Inside `AccountingCustomerParty`:
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Selanu Cotton Ginnery Ltd**  
@@ -191,7 +191,7 @@ Inside `AccountingCustomerParty`:
 - `Party/Contact/Telephone` = **+999 3 721 0486**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Cotton Ginnery gives it.
 - `Party/Contact/ElectronicMail` = **payables@selanuginnery.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Cotton Ginnery gives it.
+  The contact's e-mail address; as Selanu Cotton Ginnery gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Selanu Cotton Ginnery gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -232,7 +232,7 @@ Inside `AccountingSupplierParty`:
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/PostalAddress/LocationCoordinate/CoordinateSystemCode` = **4326** (listID `EPSG`)  
@@ -302,7 +302,7 @@ Inside `AccountingSupplierParty`:
 - `Party/Contact/Telephone` = **+999 3 724 6676**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Lisavu Cotton Farm gives it.
 - `Party/Contact/ElectronicMail` = **farm@lisavufarm.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lisavu Cotton Farm gives it.
+  The contact's e-mail address; as Lisavu Cotton Farm gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Lisavu Cotton Farm gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -406,7 +406,7 @@ Inside `PaymentMeans`:
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/CityName` = **Port Wrenfield** (languageID `en-XL`)  
   The town's English name, which its English-speaking settlers gave it, official beside the Lisavan one. The town or locality nearest to the party's place on the map, in its own country and state. As Bank of Selanu gives it.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/FinancialInstitution/Address/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `PayeeFinancialAccount/FinancialInstitutionBranch/Address/CityName` = **Selanu** (languageID `qal`)  

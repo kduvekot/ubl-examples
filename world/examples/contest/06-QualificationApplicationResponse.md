@@ -80,7 +80,7 @@ Inside `ContractingParty`:
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
@@ -96,7 +96,7 @@ Inside `ContractingParty`:
 - `Party/Contact/Telephone` = **+999 2 38 8235 3927**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeport Public Works Department gives it.
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Public Works Department gives it.
+  The contact's e-mail address; as Lumeport Public Works Department gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Lumeport Public Works Department gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -113,7 +113,7 @@ Inside `EconomicOperatorParty`:
 - `EconomicOperatorRole/RoleDescription` = **Represents the group towards the department.**  
   The role in words.
 - `Party/WebsiteURI` = **https://www.brackenmere.example**  
-  The party's website, under the reserved .example domain (RFC 2606); as Brackenmere Furniture gives it.
+  The party's website; as Brackenmere Furniture gives it.
 - `Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; as Brackenmere Furniture gives it. The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `Party/PartyIdentification/ID` = **20412466** (schemeID `urn:ubl-examples:world:XB:register`)  
@@ -149,7 +149,7 @@ Inside `EconomicOperatorParty`:
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyTaxScheme/RegistrationName` = **Brackenmere Furniture Ltd**  
@@ -201,7 +201,7 @@ Inside `EconomicOperatorParty`:
 - `Party/Contact/Telephone` = **+999 2 7121 602 606**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Brackenmere Furniture gives it.
 - `Party/Contact/ElectronicMail` = **tenders@brackenmere.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Brackenmere Furniture gives it.
+  The contact's e-mail address; as Brackenmere Furniture gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Brackenmere Furniture gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  

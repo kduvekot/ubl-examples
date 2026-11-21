@@ -90,7 +90,7 @@ Inside `SenderParty`:
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Billing**  
@@ -102,7 +102,7 @@ Inside `SenderParty`:
 - `Contact/Telephone` = **+999 3 727 3193**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Telecom gives it.
 - `Contact/ElectronicMail` = **billing@selanutelecom.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Telecom gives it.
+  The contact's e-mail address; as Selanu Telecom gives it.
 - `Contact/Note` = **Every day, around the clock**  
   When the desk can be reached; as Selanu Telecom gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -137,7 +137,7 @@ Inside `ReceiverParty`:
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Accounts payable**  
@@ -149,7 +149,7 @@ Inside `ReceiverParty`:
 - `Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Contact/ElectronicMail` = **payables@velumi.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
+  The contact's e-mail address; as Velumi Trading gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; as Velumi Trading gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -203,7 +203,7 @@ Inside `SubscriberConsumption`:
 - `UtilityConsumptionPoint/Address/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `UtilityConsumptionPoint/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `UtilityConsumptionPoint/Address/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Consumption/UtilityStatementTypeCode` = **TEL** (listID `urn:ubl-examples:world:codelist:UtilityTypeCode`)  

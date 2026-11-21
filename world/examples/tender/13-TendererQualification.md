@@ -133,7 +133,7 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Declaration/SuppliedEvidence/ID` = **EV-DEC-1**  
   The signed declaration.
 - `MainQualifyingParty/Party/WebsiteURI` = **https://www.valdara.example**  
-  The party's website, under the reserved .example domain (RFC 2606); as Valdara Industries gives it.
+  The party's website; as Valdara Industries gives it.
 - `MainQualifyingParty/Party/IndustryClassificationCode` = **3100** (listID `ISIC Rev.4`)  
   What the party does, as an ISIC Rev. 4 class of the United Nations' industry classification; as Valdara Industries gives it. The code is from the world's copy of International Standard Industrial Classification of All Economic Activities, Revision 4: 3100 = Manufacture of furniture.
 - `MainQualifyingParty/Party/PartyIdentification/ID` = **XU-R-104274** (schemeID `urn:ubl-examples:world:XU:register`)  
@@ -171,7 +171,7 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Urvanian Time, Urvania's legal time, all year: there is no summer time.
 - `MainQualifyingParty/Party/PostalAddress/Country/IdentificationCode` = **XU** (listID `ISO 3166`)  
-  Urvania: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
+  Urvania, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XU = Urvania.
 - `MainQualifyingParty/Party/PostalAddress/Country/Name` = **Urvania**  
   The country's name, for readers of the address.
 - `MainQualifyingParty/Party/PartyTaxScheme/RegistrationName` = **Valdara Industries SUA**  
@@ -233,7 +233,7 @@ Inside `TendererPartyQualification`:
 - `MainQualifyingParty/Party/Contact/Telephone` = **+999 1 041 386 4551**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Urvania's own plan: Open numbering, kept from Italian times: the area code starts with 0 and stays in the number, also from abroad; the longer the area code, the shorter the number: Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9). Mobiles start with 3 and have 10 digits. As Valdara Industries gives it.
 - `MainQualifyingParty/Party/Contact/ElectronicMail` = **tenders@valdara.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Valdara Industries gives it.
+  The contact's e-mail address; as Valdara Industries gives it.
 - `MainQualifyingParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Valdara Industries gives it.
 - `MainQualifyingParty/Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -281,7 +281,7 @@ Inside `TendererPartyQualification`:
 - `AdditionalQualifyingParty/Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `AdditionalQualifyingParty/Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `AdditionalQualifyingParty/Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `AdditionalQualifyingParty/Party/PartyLegalEntity/RegistrationName` = **Saltmere Engineering Ltd**  
@@ -319,7 +319,7 @@ Inside `TendererPartyQualification`:
 - `AdditionalQualifyingParty/Party/Contact/Telephone` = **+999 2 7121 930 729**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/ElectronicMail` = **bids@saltmere.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Saltmere Engineering gives it.
+  The contact's e-mail address; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Saltmere Engineering gives it.
 - `AdditionalQualifyingParty/Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -364,7 +364,7 @@ Inside `ContractingParty`:
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/PartyLegalEntity/RegistrationName` = **Lumeport Public Works Department**  
@@ -380,7 +380,7 @@ Inside `ContractingParty`:
 - `Party/Contact/Telephone` = **+999 2 38 8235 3927**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeport Public Works Department gives it.
 - `Party/Contact/ElectronicMail` = **procurement@publicworks-lumeport.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Public Works Department gives it.
+  The contact's e-mail address; as Lumeport Public Works Department gives it.
 - `Party/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Lumeport Public Works Department gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  

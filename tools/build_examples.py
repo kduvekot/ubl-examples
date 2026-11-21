@@ -751,8 +751,8 @@ def address(pid, register=False):
                                                "that lines and fields agree. A name in both languages is given in "
                                                "both on the line, the national language first.")}
                               for line in world_data.address_lines(c["address"], fields)]
-    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}: a user-assigned ISO 3166-1 code, in the world's "
-                                                      "country code list."),  # world/codelists
+    out["Country"] = {"IdentificationCode": V(p["c"], f"{c['name']}, by its code in the world's country code list."),
+                                                      # a user-assigned ISO 3166-1 code (world/codelists)
                       "Name": V(c["name"], "The country's name, for readers of the address.")}
     if idn.get("site") and pid == "38-xl":
         out["LocationCoordinate"] = coordinate(p["at"])

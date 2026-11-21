@@ -64,7 +64,7 @@ Inside `ConsignorParty`:
 - `PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Despatch office**  
@@ -76,7 +76,7 @@ Inside `ConsignorParty`:
 - `Contact/Telephone` = **+999 3 721 0486**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Selanu Cotton Ginnery gives it.
 - `Contact/ElectronicMail` = **despatch@selanuginnery.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Selanu Cotton Ginnery gives it.
+  The contact's e-mail address; as Selanu Cotton Ginnery gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Selanu Cotton Ginnery gives it.
 
@@ -117,7 +117,7 @@ Inside `CarrierParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Bookings**  
@@ -129,7 +129,7 @@ Inside `CarrierParty`:
 - `Contact/Telephone` = **+999 2 38 2058 7929**  
   Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Tidewell Ocean Lines gives it.
 - `Contact/ElectronicMail` = **bookings@tidewell.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Tidewell Ocean Lines gives it.
+  The contact's e-mail address; as Tidewell Ocean Lines gives it.
 - `Contact/Note` = **Every day 06:00–22:00**  
   When the desk can be reached; as Tidewell Ocean Lines gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -174,7 +174,7 @@ Inside `FreightForwarderParty`:
 - `PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Contact/Name` = **Export desk**  
@@ -186,7 +186,7 @@ Inside `FreightForwarderParty`:
 - `Contact/Telephone` = **+999 2 38 5155 2404**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Bayforth Forwarding gives it.
 - `Contact/ElectronicMail` = **export@bayforth.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Bayforth Forwarding gives it.
+  The contact's e-mail address; as Bayforth Forwarding gives it.
 - `Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Bayforth Forwarding gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -237,7 +237,7 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Consignment/ConsigneeParty/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Consignment/ConsigneeParty/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Consignment/ConsigneeParty/Contact/Name` = **Goods-in**  
@@ -249,7 +249,7 @@ Inside `Shipment`:
 - `Consignment/ConsigneeParty/Contact/Telephone` = **+999 2 38 2837 6029**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Lumeport Textile Mill gives it.
 - `Consignment/ConsigneeParty/Contact/ElectronicMail` = **goodsin@lumeporttextile.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Lumeport Textile Mill gives it.
+  The contact's e-mail address; as Lumeport Textile Mill gives it.
 - `Consignment/ConsigneeParty/Contact/Note` = **Weekdays 08:00–17:00**  
   When the desk can be reached; as Lumeport Textile Mill gives it.
 - `Consignment/CollectPaymentTerms/Note` = **Ocean freight collect at Lumeport, paid by the consignee's forwarder.**  

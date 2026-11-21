@@ -65,7 +65,7 @@ Inside `SenderParty`:
 - `Contact/Telephone` = **+999 3 729 5794**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Velumi Trading gives it.
 - `Contact/ElectronicMail` = **payables@velumi.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Velumi Trading gives it.
+  The contact's e-mail address; as Velumi Trading gives it.
 - `Contact/Note` = **Monday to Saturday 09:00–18:00**  
   When the desk can be reached; as Velumi Trading gives it.
 - `ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  

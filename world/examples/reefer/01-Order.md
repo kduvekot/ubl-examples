@@ -68,7 +68,7 @@ Inside `BuyerCustomerParty`:
 - `Party/PostalAddress/TimezoneOffset` = **+00:00**  
   The offset from UTC of Lisavu Time, Lisavu's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
-  Lisavu: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
+  Lisavu, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `Party/PostalAddress/Country/Name` = **Lisavu**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Purchasing**  
@@ -80,7 +80,7 @@ Inside `BuyerCustomerParty`:
 - `Party/Contact/Telephone` = **+999 3 726 8104**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Lisavu's own plan: A small island: 7-digit numbers without area codes; fixed lines start with 72, mobiles with 77, ships with 79. As Hafefo Fresh Produce gives it.
 - `Party/Contact/ElectronicMail` = **purchasing@hafefo.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Hafefo Fresh Produce gives it.
+  The contact's e-mail address; as Hafefo Fresh Produce gives it.
 - `Party/Contact/Note` = **Monday to Saturday 05:00–14:00**  
   When the desk can be reached; as Hafefo Fresh Produce gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
@@ -119,7 +119,7 @@ Inside `SellerSupplierParty`:
 - `Party/PostalAddress/TimezoneOffset` = **-01:00**  
   The offset from UTC of Bayvarran Time, Bayvarra's legal time, all year: there is no summer time.
 - `Party/PostalAddress/Country/IdentificationCode` = **XB** (listID `ISO 3166`)  
-  Bayvarra: a user-assigned ISO 3166-1 code, in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
+  Bayvarra, by its code in the world's country code list. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XB = Bayvarra.
 - `Party/PostalAddress/Country/Name` = **Bayvarra**  
   The country's name, for readers of the address.
 - `Party/Contact/Name` = **Sales office**  
@@ -131,7 +131,7 @@ Inside `SellerSupplierParty`:
 - `Party/Contact/Telephone` = **+999 2 7164 281 590**  
   The party's switchboard, which puts the caller through to the desk. Telephone under +999, a country code the ITU reserves for a future global service (ITU-T E.164), so the number reaches no one; then the country digit and a number in Bayvarra's own plan: British-style closed numbering: always 10 digits after the country digit; the area code takes 2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the Northern Territory: the plan is national and does not follow state borders) and the trunk prefix 0 is dropped from abroad. Mobiles start with 7. As Harrowmead Fruit Growers gives it.
 - `Party/Contact/ElectronicMail` = **sales@harrowmeadfruit.example**  
-  E-mail under the reserved .example domain (RFC 2606), so it cannot reach anyone; as Harrowmead Fruit Growers gives it.
+  The contact's e-mail address; as Harrowmead Fruit Growers gives it.
 - `Party/Contact/Note` = **Weekdays 07:00–16:00**  
   When the desk can be reached; as Harrowmead Fruit Growers gives it.
 - `Party/ElectronicAddress/ExchangeNetworkID` = **urn:ubl-examples:world:network**  
