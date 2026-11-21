@@ -15912,7 +15912,7 @@
      },
      {
       "title": "History",
-      "text": "Ruldraz was the Urvanians' town before the Europeans came: its lanes, market and old bridgehead are the old town. A Tuscan trading post of 1609–10 at the landing below the rapids left the walled warehouse court of Borgo Toscano. From 1840 the Sardinian and then Italian protectorate laid out Città Nuova on the higher terrace, and the railway and the first works came in the 1880s. The British administration of 1941 to 1962 added a garden suburb; after independence the town grew along its roads and its railway, with the works and depots of the protected economy and of the Accord."
+      "text": "Ruldraz was the Urvanians' town before the Europeans came: its lanes, market and old bridgehead are the old town. A Tuscan trading post of 1609–10 at the landing below the rapids left the walled warehouse court of Borgo Toscano. The treaty of protection, signed in the town on 4 September 1840, made it the protectorate's seat under its Italian name, Ferrano, and the city keeps that day as its Founders' Day, though Ruldraz is older. From 1840 the Sardinian and then Italian protectorate laid out Città Nuova on the higher terrace, and the railway and the first works came in the 1880s. The British administration of 1941 to 1962 added a garden suburb; after independence the town grew along its roads and its railway, with the works and depots of the protected economy and of the Accord."
      }
     ]
    }
@@ -16206,7 +16206,7 @@
     "sections": [
      {
       "title": "History",
-      "text": "The Lisavan village on the bay gave the town its name; by about the 14th century it was the seat of the rulers of the whole island. In the 19th century the English settlers built Port Wrenfield on the wharf north of the village, with its street of stores and its customs house, and offices, churches and houses rose on the slope behind the wharf. The Lumeport Agreement of 1974 brought the warehouses, brokers and trades of the Agreement Quarter."
+      "text": "The Lisavan village on the bay gave the town its name; by about the 14th century it was the seat of the rulers of the whole island, whose meeting ground drew the elders of every village each spring. In the 19th century the English settlers built Port Wrenfield on the wharf north of the village, with its street of stores and its customs house, and offices, churches and houses rose on the slope behind the wharf. The Lumeport Agreement of 1974 brought the warehouses, brokers and trades of the Agreement Quarter."
      }
     ]
    }
@@ -16324,6 +16324,7 @@
    ],
    "built_km": 1,
    "note": "The mining village at the ore mine.",
+   "wiki": {"short": "Mining village at the iron ore mine, Urvania", "lead": "**Serravona** is the mining village of [[Serravona Mining]]'s iron ore mine, on the lower flank of the volcanic massif in the north-west of [[Urvania]].", "sections": [{"title": "History", "text": "The village grew around the mine from 4 December 1958, the day the first ore left it. That day is Saint Barbara's day, the miners' patron in the Italian tradition, and Serravona keeps it under a civil name as Miners' Day, which is also its Founders' Day."}]},
    "farming": "mixed"
   },
   {
