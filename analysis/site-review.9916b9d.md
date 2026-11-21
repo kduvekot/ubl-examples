@@ -38,7 +38,12 @@ or `dropped (reason)`); the part findings stay as written. Its open point is **O
 
 ## Status
 
-- **SR2-01, SR2-02, SR2-09, SR2-10, SR2-12:** open, handed to the working session with instructions (2026-11-21). SR2-02's phrases are warnings in `tools/check_published.py` until the texts are rewritten, then failures.
+- **SR2-01:** solved in `ae97dc698` (Saltmere Engineering's role "Engineering Firm", its subcontract for Valdara in its text; Saltmere a town on its page; no staff member named on its page).
+- **SR2-02:** solved on the working session's side in `dd13e60c4` and `c7646b6ba` (every phrase of A-05, B-04 and B-13 rewritten in-world at the source; makers abroad read "a maker in India / the Netherlands"; the .example reasons on contacts and websites; the country code reason without "user-assigned"); the built site has 0 hits of the project-voice phrases: they can become failures.
+- **SR2-09:** partly solved in `dd13e60c4` (the ore train in Ferrano Rail Cargo's fleet; Owner and Staff rows on the party pages); open on the Encyclopedia's side: C-09, B-08's pipeline route and "village of", B-17's fleet formatting.
+- **SR2-10:** solved on the working session's side in `ae97dc698` (the reefer "like most imports"; the medicines introduction with all 14 documents); B-12 is the Encyclopedia's.
+- **SR2-07 (c), SR2-08 (d, e):** solved in `dd13e60c4` (the country notes describe the current economies, the map's opening card matches; party languages follow their country; ISIC 0124, 7410, 8610, 4630 added, Hafefo 4631 → 4630).
+- **SR2-12:** solved (U-A24 in `analysis/ubl-findings.md`).
 - **SR2-03:** solved in `46091d39` (the port community by its rule: every flow with a sea leg from or to XBLMP; the reefer's forwarding instructions, export declaration and bill of lading now claim it; no flow keys on the page).
 - **SR2-04:** solved in `46091d39` (transport infoboxes once and filled; descriptions keep proper names; villages and localities together; the capitals' climate at the town's own ground, "solar radiation"; the main page titled "The UBL World").
 - **SR2-05:** solved in `46091d39` (long dates in infoboxes, weekday dates in the holiday tables).
