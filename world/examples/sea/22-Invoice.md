@@ -434,10 +434,10 @@ Inside `PrepaidPayment`:
   The buyer's payment of the deposit.
 - `PaidAmount` = **10000.00** (currencyID `XBL`)  
   The deposit asked for in the order response.
-- `ReceivedDate` = **2026-05-09**  
-  Credited to the distributor's account.
+- `ReceivedDate` = **2026-05-11**  
+  Credited to the distributor's account on the next business day of Bayvarra's banks after the Friday it was paid.
 - `PaidDate` = **2026-05-08**  
-  Paid by the buyer the day after the order was accepted.
+  Paid by the buyer the day the order was accepted.
 - `InstructionID` = **26-0024**  
   The buyer's payment order.
 
@@ -985,7 +985,7 @@ Inside `InvoiceLine`:
   <cac:PrepaidPayment>
     <cbc:ID>26-0025</cbc:ID>
     <cbc:PaidAmount currencyID="XBL">10000.00</cbc:PaidAmount>
-    <cbc:ReceivedDate>2026-05-09</cbc:ReceivedDate>
+    <cbc:ReceivedDate>2026-05-11</cbc:ReceivedDate>
     <cbc:PaidDate>2026-05-08</cbc:PaidDate>
     <cbc:InstructionID>26-0024</cbc:InstructionID>
   </cac:PrepaidPayment>

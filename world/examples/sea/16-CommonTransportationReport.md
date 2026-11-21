@@ -314,6 +314,8 @@ Inside `Shipment`:
   The ship's phone, a Bayvarran mobile number, as the ship flies Bayvarra's flag.
 - `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceLocation/Name` = **Selanu fairway buoy**  
   Where the pilot boards.
+- `ShipmentStage/DestinationPortCall/RequestedArrivalEvent/OccurrenceLocation/Address/Country/IdentificationCode` = **XL** (listID `ISO 3166`)  
+  The buoy lies in Lisavu's waters, off the port of Selanu. The code is from the world's copy of UBL's Country identification (ISO 3166) list: XL = Lisavu.
 - `ShipmentStage/ShipStoreArticle/ID` = **ST-1**  
   Spirits in the bonded store.
 - `ShipmentStage/ShipStoreArticle/Name` = **Spirits**  
@@ -1017,6 +1019,11 @@ Inside `Signature`:
           </cac:Contact>
           <cac:OccurrenceLocation>
             <cbc:Name>Selanu fairway buoy</cbc:Name>
+            <cac:Address>
+              <cac:Country>
+                <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+              </cac:Country>
+            </cac:Address>
           </cac:OccurrenceLocation>
         </cac:RequestedArrivalEvent>
       </cac:DestinationPortCall>
