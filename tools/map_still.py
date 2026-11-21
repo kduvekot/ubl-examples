@@ -25,12 +25,12 @@ W, H = 1600, 1000                          # the browser window (CSS pixels); th
 
 
 def chrome():
-    for c in [os.environ.get("CHROME"), "google-chrome", "google-chrome-stable", "chromium", "chromium-browser"]:
-        if c and shutil.which(c):
-            return shutil.which(c)
-    for c in ["/opt/pw-browsers/chromium/chrome-linux/chrome", "/opt/pw-browsers/chromium/chrome-linux64/chrome"]:
-        if os.path.exists(c):
-            return c
+    """$CHROME, else Playwright's Chromium where it is installed (in the cloud sessions), else a Chrome or Chromium on
+    the PATH (GitHub Actions has google-chrome)."""
+    for c in [os.environ.get("CHROME"), "/opt/pw-browsers/chromium", "chromium", "chromium-browser", "google-chrome",
+              "google-chrome-stable"]:
+        if c and (shutil.which(c) or (os.path.isfile(c) and os.access(c, os.X_OK))):
+            return shutil.which(c) or c
     return None
 
 
@@ -49,8 +49,12 @@ with tempfile.TemporaryDirectory() as tmp:
     shot = os.path.join(tmp, "still.png")
     subprocess.run([exe, "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars", "--mute-audio",
                     f"--user-data-dir={tmp}/profile", f"--window-size={W},{H}", "--force-device-scale-factor=2",
+                    # no outside requests (the web fonts): headless Chrome's virtual time waits for every request,
+                    # and where the network does not answer it would wait until the timeout; the labels fall back
+                    # to a system font, and the picture is the same everywhere
+                    "--host-resolver-rules=MAP * ~NOTFOUND",
                     "--virtual-time-budget=15000", f"--screenshot={shot}", f"file://{page}?still"],
-                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=180)
+                   check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=45)
     im = Image.open(shot).convert("RGB")
 if im.width < W or len(im.resize((32, 20)).getcolors(1024) or []) < 8:      # a blank or broken page has a handful of colours
     sys.exit(f"map_still.py: the screenshot looks empty ({im.size})")
