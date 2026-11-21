@@ -44,6 +44,7 @@ For every tile the model records:
   es  1 for river water at least ESTUARY wide (the estuary): drawn as open water, the
       rest of the river as a narrower stream within its tiles
   ms  1 for a pipeline's border metering station (map "stations")
+  in  the index of the installation standing here (map "installations": wind turbines, solar parks, hydro plants)
   mf  on a square of a managed forest (world/terrain.json "managed_forests", the forest of Upland State): its
       compartments, a string of SUB x SUB characters (the sub-square a along i, b along j at a * SUB + b), each the
       number of its age class (0 felled and replanted, 1 young, 2 pole, 3 mature) or "." outside the forest
@@ -190,6 +191,10 @@ TERRACE_M = 80                                    # metres a built square's corn
                                                   # a town, a party's buildings and yards follow their ground in small steps
 RUNWAY_M = 20                                     # metres an airport's corners may differ (0.6 %; a runway may slope 1 %)
 TERRAIN = os.path.join(ROOT, "world", "terrain.json")
+
+
+SOLAR_SPAN_M = 60          # a solar park's square: its corners within this many metres (MO021)
+WIND_MIN_M = 300           # wind turbines: the square's lowest corner at least this high (MO021)
 
 
 def load_terrain():
@@ -423,6 +428,56 @@ def build(world):
         if t and t["k"] == "f":
             t["k"] = "g"
 
+    # 3b'. installations (map "installations", owner 2026-11-21, MO021): the works that stand on their own in the land and
+    #     are no party's: wind turbines, solar parks, the intake and the power house of a hydro plant. Each stands on a
+    #     free square of its country, kept from roads, towns and houses like a station, and where its kind can stand:
+    #     a solar park on flat ground (its corners within SOLAR_SPAN_M), wind turbines on high open ground (no forest, the
+    #     square's lowest corner at WIND_MIN_M or more), a hydro plant's intake and power house on its river's course
+    #     (world/terrain.json, the river matched by its mouth in map "rivers"), the intake above the power house. Its
+    #     square keeps its terrain (no levelling, no land use); a wood there is cleared to grass. Power lines are under
+    #     the ground (owner, 2026-11-21): none is drawn.
+    installs = {}
+    river_course = {}
+    for rv in world.get("rivers", []):
+        cs = terrain.get("rivers", {}).get(rv.get("land", "mainland"), [])
+        if cs:
+            best = min(cs, key=lambda c: abs(c["mouth"][0] - rv["mouth"][0]) + abs(c["mouth"][1] - rv["mouth"][1]))
+            if abs(best["mouth"][0] - rv["mouth"][0]) + abs(best["mouth"][1] - rv["mouth"][1]) < 1:
+                river_course[rv["name"]] = [(x - .5, y - .5) for x, y in best["course"]]   # in square coordinates
+    for n_in, ins in enumerate(world.get("installations", [])):
+        q = tuple(ins["at"])
+        t = tile(*q)
+        where = f"installation '{ins['id']}' at {q}"
+        if not t or t["k"] in ("s", "w") or q in owner or q in harbours or q in stations or q in installs:
+            problems.append(f"{where} must stand on free land")
+            continue
+        if t.get("c") != ins.get("country"):
+            problems.append(f"{where} is not in {ins.get('country')}")
+        cs = [E[q[0]][q[1]], E[q[0] + 1][q[1]], E[q[0]][q[1] + 1], E[q[0] + 1][q[1] + 1]]
+        kind = ins["kind"]
+        if kind == "solar park" and max(cs) - min(cs) > SOLAR_SPAN_M:
+            problems.append(f"{where}: a solar park needs flat ground (its corners differ {max(cs) - min(cs)} m)")
+        if kind == "wind turbines" and (t["k"] == "f" or min(cs) < WIND_MIN_M):
+            problems.append(f"{where}: wind turbines stand on high open ground")
+        if kind in ("hydro intake", "hydro power house"):
+            rc = river_course.get(ins.get("river"))
+            if not rc:
+                problems.append(f"{where}: no course for the river '{ins.get('river')}'")
+            elif min(math.hypot(x - q[0], y - q[1]) for x, y in rc) > .75:
+                problems.append(f"{where} is not on the course of the {ins['river']}")
+        installs[q] = ins
+        if t["k"] == "f":
+            t["k"] = "g"
+        t["in"] = n_in
+    for ins in world.get("installations", []):
+        if ins["kind"] == "hydro intake":
+            ph = [o for o in world["installations"] if o["kind"] == "hydro power house" and o.get("river") == ins.get("river")]
+            hi = lambda o: E[o["at"][0]][o["at"][1]]
+            if not ph:
+                problems.append(f"installation '{ins['id']}': no power house on the {ins.get('river')}")
+            elif hi(ins) <= hi(ph[0]):
+                problems.append(f"installation '{ins['id']}' must stand above its power house")
+
     # 3c. a sea route is a shipping lane: land on it becomes water, unless something is built there
     for r in world["routes"]:
         if r["mode"] == "sea":
@@ -537,7 +592,7 @@ def build(world):
 
     def free(q, water_ok=False):
         t = tile(*q)
-        return bool(t) and q not in owner and q not in rails and q not in stations and q not in harbours and q not in struct \
+        return bool(t) and q not in owner and q not in rails and q not in stations and q not in installs and q not in harbours and q not in struct \
             and q not in abut \
             and (t["k"] not in ("s", "w") or (water_ok and t["k"] == "w"))
 
@@ -645,7 +700,7 @@ def build(world):
         for path in pipes.values():
             built_.add("pipeline", path)
         built_.add("river", course)
-        built_.blocked = set(owner) | set(stations) | set(harbours)
+        built_.blocked = set(owner) | set(stations) | set(installs) | set(harbours)
         built_.structures = set(struct) | set(abut)
         goals = {q for q in goal if q not in rails and q not in struct and q not in abut and q not in corridor}
         starts = [q for q in starts if q not in rails and q not in struct and q not in abut]
@@ -703,7 +758,7 @@ def build(world):
     #     right of way nothing is planted (its wood is open grass).
     for (i, j), (lu, kind) in LU.items():
         t = T[i][j]
-        if t["k"] in ("s", "w") or "b" in t or "hb" in t or "ms" in t or kind is None or (i, j) in managed_sq:
+        if t["k"] in ("s", "w") or "b" in t or "hb" in t or "ms" in t or "in" in t or kind is None or (i, j) in managed_sq:
             continue
         if (i, j) in corridor:
             lu = lu.replace("f", "g")
@@ -765,7 +820,7 @@ def build(world):
     def buildable(q):
         t = tile(*q)
         o = owner.get(q)
-        return bool(t) and t["k"] not in ("s", "w") and q not in approach and q not in near_pipe and q not in stations \
+        return bool(t) and t["k"] not in ("s", "w") and q not in approach and q not in near_pipe and q not in stations and q not in installs \
             and not (o and o["kind"] == "airport")
 
     villages = {id(v) for v in world.get("villages", [])}
@@ -1570,6 +1625,7 @@ def build(world):
     model = {"W": W, "H": H, "grid": GRID, "km": KM, "approach": APPROACH, "level_m": LEVEL_M, "fitted_m": round(fitted[0]),
              "tiles": [[T[i][j] for j in range(H)] for i in range(W)], "v": V, "legs": legs, "structures": structures,
              "rapids": [list(q) for q in rapids], "access": access, "quarters": quarters_out,
+             "installations": world.get("installations", []),
              "river_level": [[i, j, round(lv, 1)] for (i, j), lv in river_level.items()],
              # the border on the water (the river below the crossing, the estuary's axis), in tile coordinates (a
              # square's centre at its index)
