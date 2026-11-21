@@ -59,7 +59,7 @@ The collaboration this document belongs to: Quillmoor's order of a
 biological medicine from Nilavar Biologics. Quillmoor Pharma
 Distribution started it and gave it this identifier, which every
 document of it repeats.</li>
-<li><code>ID</code> = <strong>NLB-INV-26-1731</strong><br />
+<li><code>ID</code> = <strong>NLB-INV-26-1732</strong><br />
 The maker's invoice number.</li>
 <li><code>UUID</code> =
 <strong>2508e7e3-8979-5015-9f6c-23e390dec466</strong><br />
@@ -67,7 +67,7 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-05-07</strong><br />
 Issued when the goods left for Hyderabad airport.</li>
-<li><code>IssueTime</code> = <strong>08:40:00+05:30</strong><br />
+<li><code>IssueTime</code> = <strong>09:45:00+05:30</strong><br />
 The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
 <li><code>DueDate</code> = <strong>2026-06-08</strong><br />
@@ -462,8 +462,8 @@ The total without tax: the line amounts, no allowances or charges.</li>
 The total without tax plus the tax.</li>
 <li><code>PayableAmount</code> = <strong>4050000.00</strong> (currencyID
 <code>INR</code>)<br />
-What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
-2.2.2 Manifest Values).</li>
+What the buyer is to pay, stated in full so that it books the amount
+without working it out.</li>
 </ul>
 <h3 id="invoice-line">Invoice Line</h3>
 <p>Inside <code>InvoiceLine</code>:</p>
@@ -631,10 +631,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:billing:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;QLM-TX-26-2699&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;NLB-INV-26-1731&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;NLB-INV-26-1732&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;2508e7e3-8979-5015-9f6c-23e390dec466&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-05-07&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:40:00+05:30&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:45:00+05:30&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DueDate</span>&gt;2026-06-08&lt;/<span class="kw">cbc:DueDate</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:InvoiceTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;380&lt;/<span class="kw">cbc:InvoiceTypeCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Payable in euro: 4,050,000.00 rupees at 88.8595 rupees per euro, 45,577.57 euro.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -887,6 +887,6 @@ href="example-medicines-03-ImportCustomsDeclaration.html">Import Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/cebd240b256cc694e2d918ae2fdc8068f9516544"><code>cebd240</code></a> of 2026-11-21 09:38 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6346a0b9dfc77b6e9f2dbd54e85b1630687b3bea"><code>6346a0b</code></a> of 2026-11-21 09:54 UTC</p></div></footer>
 </body>
 </html>

@@ -754,8 +754,8 @@ The total without tax: the line amounts, no allowances or charges.</li>
 The total without tax plus the tax.</li>
 <li><code>PayableAmount</code> = <strong>3810.00</strong> (currencyID
 <code>XBL</code>)<br />
-What the buyer is to pay; stated, not left to be calculated (UBL 2.5,
-2.2.2 Manifest Values).</li>
+What the buyer is to pay, stated in full so that it books the amount
+without working it out.</li>
 </ul>
 <h3 id="credit-note-line">Credit Note Line</h3>
 <p>Inside <code>CreditNoteLine</code>:</p>
@@ -789,10 +789,10 @@ The attribute the variant differs in. The code is from the Trade
 Accord's attribute list: WOOD = Wood. An identifier that holds a code
 names the code's list in its schemeID.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
-= <strong>OAK</strong> (listID
+= <strong>QCXE</strong> (listID
 <code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
 The variant's code for it. The code is from the Trade Accord's wood
-list: OAK = Oak.</li>
+list: QCXE = European oak.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
 = <strong>Solid oak</strong><br />
 The variant in words.</li>
@@ -871,10 +871,10 @@ The attribute the variant differs in. The code is from the Trade
 Accord's attribute list: WOOD = Wood. An identifier that holds a code
 names the code's list in its schemeID.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
-= <strong>ASH</strong> (listID
+= <strong>FXEX</strong> (listID
 <code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
 The variant's code for it. The code is from the Trade Accord's wood
-list: ASH = Ash.</li>
+list: FXEX = European ash.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
 = <strong>Solid ash</strong><br />
 The variant in words.</li>
@@ -953,10 +953,10 @@ The attribute the variant differs in. The code is from the Trade
 Accord's attribute list: WOOD = Wood. An identifier that holds a code
 names the code's list in its schemeID.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
-= <strong>OAK</strong> (listID
+= <strong>QCXE</strong> (listID
 <code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
 The variant's code for it. The code is from the Trade Accord's wood
-list: OAK = Oak.</li>
+list: QCXE = European oak.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
 = <strong>Solid oak</strong><br />
 The variant in words.</li>
@@ -1035,10 +1035,10 @@ The attribute the variant differs in. The code is from the Trade
 Accord's attribute list: WOOD = Wood. An identifier that holds a code
 names the code's list in its schemeID.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/DescriptionCode</code>
-= <strong>ASH</strong> (listID
+= <strong>FXEX</strong> (listID
 <code>urn:ubl-examples:world:codelist:WoodCode</code>)<br />
 The variant's code for it. The code is from the Trade Accord's wood
-list: ASH = Ash.</li>
+list: FXEX = European ash.</li>
 <li><code>Item/SellersItemIdentification/PhysicalAttribute/Description</code>
 = <strong>Solid ash</strong><br />
 The variant in words.</li>
@@ -1373,7 +1373,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;OAK&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;OAK&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;QCXE&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
 <span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid oak&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1408,7 +1408,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;ASH&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
 <span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;ASH&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;FXEX&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
 <span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid ash&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1443,7 +1443,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;OAK&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
 <span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;OAK&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;QCXE&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid oak&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1478,7 +1478,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;ASH&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
 <span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;WOOD&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;ASH&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:WoodCode&quot;</span>&gt;FXEX&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
 <span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Solid ash&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
 <span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
@@ -1509,6 +1509,6 @@ documents of the flow</a> · <a
 href="example-furniture-18-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/cebd240b256cc694e2d918ae2fdc8068f9516544"><code>cebd240</code></a> of 2026-11-21 09:38 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6346a0b9dfc77b6e9f2dbd54e85b1630687b3bea"><code>6346a0b</code></a> of 2026-11-21 09:54 UTC</p></div></footer>
 </body>
 </html>

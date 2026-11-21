@@ -53,11 +53,11 @@ world's pages.</li>
 <strong>urn:ubl-examples:world:profile:ordering:1.0</strong><br />
 The Trade Accord's process profile the document belongs to: ordering, a
 generic, versioned profile, not the flow.</li>
-<li><code>ProfileExecutionID</code> = <strong>9900339316</strong><br />
+<li><code>ProfileExecutionID</code> = <strong>9900339320</strong><br />
 The collaboration this document belongs to: the store's order from
 Lumeway, from the order to the credit note. Brightmarket Stores started
 it and gave it this identifier, which every document of it repeats.</li>
-<li><code>ID</code> = <strong>7100452422</strong><br />
+<li><code>ID</code> = <strong>7100452426</strong><br />
 The buyer's order number.</li>
 <li><code>UUID</code> =
 <strong>38f1ecfc-42b0-532a-921c-171e17782563</strong><br />
@@ -65,9 +65,10 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-24</strong><br />
 The store replenishes before the promotion.</li>
-<li><code>IssueTime</code> = <strong>08:15:00-01:00</strong><br />
-Sent from the store's replenishment system each morning; in the issuer's
-local time, with its offset from UTC.</li>
+<li><code>IssueTime</code> = <strong>09:15:00-01:00</strong><br />
+Sent from the store's replenishment system each morning, once the buying
+office has opened and checked it; in the issuer's local time, with its
+offset from UTC.</li>
 <li><code>OrderTypeCode</code> = <strong>220</strong> (listID
 <code>UN/EDIFACT EDED 1001</code>)<br />
 UN/EDIFACT 1001 code 220: order. The code is from the world's copy of
@@ -589,8 +590,7 @@ the code's list in its schemeID.</li>
 The sum of the tax of all categories.</li>
 <li><code>TaxSubtotal/TaxableAmount</code> = <strong>11856.00</strong>
 (currencyID <code>XBL</code>)<br />
-The lines of this category plus the document's charges less its
-allowances of the category.</li>
+The goods less the promotion support.</li>
 <li><code>TaxSubtotal/TaxAmount</code> = <strong>0.00</strong>
 (currencyID <code>XBL</code>)<br />
 0 % of the taxable amount, rounded to the minor unit of the
@@ -725,11 +725,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UBLVersionID</span>&gt;2.5&lt;/<span class="kw">cbc:UBLVersionID</span>&gt;</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:order:1.0#compliant#urn:ubl-examples:world:community:retail:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:ordering:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;9900339316&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;7100452422&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;9900339320&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;7100452426&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;38f1ecfc-42b0-532a-921c-171e17782563&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-24&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;08:15:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;09:15:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OrderTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;220&lt;/<span class="kw">cbc:OrderTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:DocumentCurrencyCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 4217 Alpha&quot;</span>&gt;XBL&lt;/<span class="kw">cbc:DocumentCurrencyCode</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:AccountingCostCode</span>&gt;6120&lt;/<span class="kw">cbc:AccountingCostCode</span>&gt;</span>
@@ -1004,6 +1004,6 @@ href="example-retail-11-TransportExecutionPlanRequest.html">Transport
 Execution Plan Request →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/cebd240b256cc694e2d918ae2fdc8068f9516544"><code>cebd240</code></a> of 2026-11-21 09:38 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6346a0b9dfc77b6e9f2dbd54e85b1630687b3bea"><code>6346a0b</code></a> of 2026-11-21 09:54 UTC</p></div></footer>
 </body>
 </html>

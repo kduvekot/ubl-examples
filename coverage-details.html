@@ -23,7 +23,7 @@ missing elements</a>
 id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
-<li><a href="#extend-498" id="toc-extend-498">extend (498)</a></li>
+<li><a href="#extend-500" id="toc-extend-500">extend (500)</a></li>
 <li><a href="#add-structure-39" id="toc-add-structure-39">add structure
 (39)</a></li>
 </ul></li>
@@ -41,7 +41,7 @@ missing elements</a>
 id="toc-missing-elements-per-placement">Missing elements per
 placement</a>
 <ul>
-<li><a href="#extend-498" id="toc-extend-498">extend (498)</a></li>
+<li><a href="#extend-500" id="toc-extend-500">extend (500)</a></li>
 <li><a href="#add-structure-39" id="toc-add-structure-39">add structure
 (39)</a></li>
 </ul></li>
@@ -54,7 +54,7 @@ missing elements</h1>
 <p><a href="coverage.html">The summary</a></p>
 <h2 id="missing-elements-per-placement">Missing elements per
 placement</h2>
-<h3 id="extend-498">extend (498)</h3>
+<h3 id="extend-500">extend (500)</h3>
 <details><summary><b>rail-12-DebitNote.xml</b> — 56 elements</summary>
 
 <table>
@@ -777,6 +777,143 @@ Billed Credit Note.</td>
 </table>
 </details>
 
+<details><summary><b>sea-26-CreditNote.xml</b> — 18 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CreditNote</td>
+<td>Annotation</td>
+<td>0..n</td>
+<td>A structured annotation providing contextual or explanatory
+information related to this Credit Note.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>ContractDocumentReference</td>
+<td>0..n</td>
+<td>A reference to a contract associated with this document.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>DeliveryNoteDocumentReference</td>
+<td>0..n</td>
+<td>A reference to a Delivery Note associated with this document.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PayeeParty</td>
+<td>0..1</td>
+<td>The Party who receives the Payment.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PaymentAlternativeCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the alternative currency used for payment in the
+Credit Note.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PaymentAlternativeExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the payment
+alternative currency.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PaymentCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency used for payment in the Credit
+Note.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PaymentExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the payment
+currency.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PricingCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency used for prices in the Credit
+Note.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PricingExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the pricing
+currency.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>ProjectReference</td>
+<td>0..n</td>
+<td>A reference to a project associated with this document.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>PurchaseReference</td>
+<td>0..n</td>
+<td>A reference to an object, such as a subscription number, telephone
+number, meter, vehicle, person, etc., to which this Credit Note
+relates.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>TaxCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency used for tax amounts in the Credit
+Note.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>TaxExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the tax
+currency.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>TaxPointDate</td>
+<td>0..1</td>
+<td>The date of the Credit Note, used to indicate the point at which tax
+becomes applicable.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>TaxRepresentativeParty</td>
+<td>0..1</td>
+<td>The Party authorized to act as the Tax Representative for this
+Credit Note.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>WithholdingTaxTotal</td>
+<td>0..n</td>
+<td>The total withholding tax.</td>
+</tr>
+<tr>
+<td>CreditNote</td>
+<td>WorkReportDocumentReference</td>
+<td>0..n</td>
+<td>A reference to a Work Report associated with this document.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
 <details><summary><b>tender-02-ContractNotice.xml</b> — 18 elements</summary>
 
 <table>
@@ -906,129 +1043,6 @@ clearance.</td>
 <td>0..1</td>
 <td>An indicator that variants are allowed and unconstrained in number
 (true) or not allowed (false).</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>sea-26-CreditNote.xml</b> — 16 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CreditNote</td>
-<td>Annotation</td>
-<td>0..n</td>
-<td>A structured annotation providing contextual or explanatory
-information related to this Credit Note.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>ContractDocumentReference</td>
-<td>0..n</td>
-<td>A reference to a contract associated with this document.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>DeliveryNoteDocumentReference</td>
-<td>0..n</td>
-<td>A reference to a Delivery Note associated with this document.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PayeeParty</td>
-<td>0..1</td>
-<td>The Party who receives the Payment.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PaymentAlternativeCurrencyCode</td>
-<td>0..1</td>
-<td>A code signifying the alternative currency used for payment in the
-Credit Note.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PaymentAlternativeExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the payment
-alternative currency.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PaymentCurrencyCode</td>
-<td>0..1</td>
-<td>A code signifying the currency used for payment in the Credit
-Note.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PaymentExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the payment
-currency.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PricingCurrencyCode</td>
-<td>0..1</td>
-<td>A code signifying the currency used for prices in the Credit
-Note.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PricingExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the pricing
-currency.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>ProjectReference</td>
-<td>0..n</td>
-<td>A reference to a project associated with this document.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>PurchaseReference</td>
-<td>0..n</td>
-<td>A reference to an object, such as a subscription number, telephone
-number, meter, vehicle, person, etc., to which this Credit Note
-relates.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>TaxPointDate</td>
-<td>0..1</td>
-<td>The date of the Credit Note, used to indicate the point at which tax
-becomes applicable.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>TaxRepresentativeParty</td>
-<td>0..1</td>
-<td>The Party authorized to act as the Tax Representative for this
-Credit Note.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>WithholdingTaxTotal</td>
-<td>0..n</td>
-<td>The total withholding tax.</td>
-</tr>
-<tr>
-<td>CreditNote</td>
-<td>WorkReportDocumentReference</td>
-<td>0..n</td>
-<td>A reference to a Work Report associated with this document.</td>
 </tr>
 </tbody>
 </table>
@@ -1887,6 +1901,82 @@ currency.</td>
 </table>
 </details>
 
+<details><summary><b>sea-22-Invoice.xml</b> — 9 elements</summary>
+
+<table>
+<thead>
+<tr>
+<th>Parent</th>
+<th>Element</th>
+<th>Card.</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invoice</td>
+<td>Annotation</td>
+<td>0..n</td>
+<td>A structured annotation providing contextual or explanatory
+information related to this Invoice.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>BeneficiaryParty</td>
+<td>0..n</td>
+<td>A Party for whom the associated transaction is ultimately intended
+or who derives benefit from it.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>DeliveryNoteDocumentReference</td>
+<td>0..n</td>
+<td>A reference to a Delivery Note associated with this document.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>OriginatorCustomerParty</td>
+<td>0..1</td>
+<td>The Party who originated the Order to which this Invoice is
+related.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>OriginatorDocumentReference</td>
+<td>0..n</td>
+<td>A reference to an originator document associated with this
+document.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>PricingCurrencyCode</td>
+<td>0..1</td>
+<td>A code signifying the currency used for prices in the Invoice.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>PricingExchangeRate</td>
+<td>0..1</td>
+<td>The exchange rate between the document currency and the pricing
+currency.</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>StatementDocumentReference</td>
+<td>0..n</td>
+<td>A reference to a Statement associated with this document.</td>
+</tr>
+<tr>
+<td>TradeFinancing</td>
+<td>FinancingFinancialAccount</td>
+<td>0..1</td>
+<td>An internal bank account used by the bank or its first agent to
+manage the line of credit granted to the financing requester.</td>
+</tr>
+</tbody>
+</table>
+</details>
+
 <details><summary><b>tender-06-QualificationApplicationRequest.xml</b> — 9 elements</summary>
 
 <table>
@@ -2029,75 +2119,6 @@ operations.</td>
 <td>TransshipPortLocation</td>
 <td>0..1</td>
 <td>The location of transshipment relating to a shipment stage.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
-<details><summary><b>tender-39-Invoice.xml</b> — 8 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Invoice</td>
-<td>Annotation</td>
-<td>0..n</td>
-<td>A structured annotation providing contextual or explanatory
-information related to this Invoice.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>BeneficiaryParty</td>
-<td>0..n</td>
-<td>A Party for whom the associated transaction is ultimately intended
-or who derives benefit from it.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>DeliveryNoteDocumentReference</td>
-<td>0..n</td>
-<td>A reference to a Delivery Note associated with this document.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>OriginatorCustomerParty</td>
-<td>0..1</td>
-<td>The Party who originated the Order to which this Invoice is
-related.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>OriginatorDocumentReference</td>
-<td>0..n</td>
-<td>A reference to an originator document associated with this
-document.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>PricingCurrencyCode</td>
-<td>0..1</td>
-<td>A code signifying the currency used for prices in the Invoice.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>PricingExchangeRate</td>
-<td>0..1</td>
-<td>The exchange rate between the document currency and the pricing
-currency.</td>
-</tr>
-<tr>
-<td>Invoice</td>
-<td>StatementDocumentReference</td>
-<td>0..n</td>
-<td>A reference to a Statement associated with this document.</td>
 </tr>
 </tbody>
 </table>
@@ -4742,29 +4763,6 @@ referenced by the parent DocumentReference, expressed as an XPath</td>
 </table>
 </details>
 
-<details><summary><b>sea-22-Invoice.xml</b> — 1 elements</summary>
-
-<table>
-<thead>
-<tr>
-<th>Parent</th>
-<th>Element</th>
-<th>Card.</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TradeFinancing</td>
-<td>FinancingFinancialAccount</td>
-<td>0..1</td>
-<td>An internal bank account used by the bank or its first agent to
-manage the line of credit granted to the financing requester.</td>
-</tr>
-</tbody>
-</table>
-</details>
-
 <details><summary><b>sea-24-InvoiceStatusResponse.xml</b> — 1 elements</summary>
 
 <table>
@@ -5372,6 +5370,6 @@ to provide the same content in multiple natural languages).</td>
 </details>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/cebd240b256cc694e2d918ae2fdc8068f9516544"><code>cebd240</code></a> of 2026-11-21 09:38 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/6346a0b9dfc77b6e9f2dbd54e85b1630687b3bea"><code>6346a0b</code></a> of 2026-11-21 09:54 UTC</p></div></footer>
 </body>
 </html>
