@@ -3,7 +3,7 @@
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2543</cbc:ProfileExecutionID>
   <cbc:ID>POS-TS-26-8776</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
@@ -136,7 +136,7 @@
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-00694536</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

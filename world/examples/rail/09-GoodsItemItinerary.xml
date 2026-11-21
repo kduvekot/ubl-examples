@@ -119,6 +119,9 @@
   <cac:ReferencedGoodsItem>
     <cbc:ID>1</cbc:ID>
   </cac:ReferencedGoodsItem>
+  <cac:ReferencedGoodsItem>
+    <cbc:ID>2</cbc:ID>
+  </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>
     <cbc:TransportExecutionPlanReferenceID>9500055446</cbc:TransportExecutionPlanReferenceID>

@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
+  <cbc:CustomizationID>urn:ubl-examples:world:trns:despatch-advice:1.0</cbc:CustomizationID>
+  <cbc:ProfileID>urn:ubl-examples:world:profile:despatch-receipt:1.0</cbc:ProfileID>
+  <cbc:ProfileExecutionID>LMW-TX-26-0734</cbc:ProfileExecutionID>
+  <cbc:ID>CAS-DA-26-1688</cbc:ID>
+  <cbc:UUID>90034252-78a8-5fce-b89e-b163818b7065</cbc:UUID>
+  <cbc:IssueDate>2026-04-13</cbc:IssueDate>
+  <cbc:IssueTime>15:20:00-01:00</cbc:IssueTime>
+  <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
+  <cbc:Note>Please check the goods on arrival and report any damage on the consignment note.</cbc:Note>
+  <cbc:LineCountNumeric>2</cbc:LineCountNumeric>
+  <cac:OrderReference>
+    <cbc:ID>LMW-PO-26-0734</cbc:ID>
+  </cac:OrderReference>
+  <cac:DespatchSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104411</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:10519</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Castrano Logistics</cbc:Name>
+      </cac:PartyName>
+      <cac:Language>
+        <cbc:ID schemeID="ISO 639">en</cbc:ID>
+        <cbc:Name>English</cbc:Name>
+        <cbc:LocaleCode listID="urn:ubl-examples:world:codelist:LocaleCode">en-XU</cbc:LocaleCode>
+      </cac:Language>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160203920705699</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qau">Bek Han Stalvek</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via del Magazzino</cbc:StreetName>
+        <cbc:BuildingNumber>24</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Zhildir</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Conciaro</cbc:CityName>
+        <cbc:PostalZone>4190</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Loading bays</cbc:Name>
+        <cbc:JobTitle>Shift supervisor</cbc:JobTitle>
+        <cbc:Department>Operations</cbc:Department>
+        <cbc:Telephone>+999 1 041 909 1454</cbc:Telephone>
+        <cbc:ElectronicMail>loading@castrano.example</cbc:ElectronicMail>
+        <cbc:Note>Every day 06:00–22:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XU:XU-R-104411</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
+  <cac:DeliveryCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="GS1 GLN">9520610900008</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:UL:address-register">UL-ADR-693911</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XB</cbc:AddressFormatCode>
+        <cbc:StreetName>Distribution Drive</cbc:StreetName>
+        <cbc:BlockName>Marrowdale Business Park</cbc:BlockName>
+        <cbc:BuildingNumber>43</cbc:BuildingNumber>
+        <cbc:PlotIdentification>Plot 14</cbc:PlotIdentification>
+        <cbc:CityName>Marrowdale</cbc:CityName>
+        <cbc:PostalZone>71214</cbc:PostalZone>
+        <cbc:CountrySubentity>Upland State</cbc:CountrySubentity>
+        <cbc:CountrySubentityCode listID="urn:ubl-examples:world:XB:codelist:CountrySubentityCode">XB-UL</cbc:CountrySubentityCode>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          <cbc:Name>Bayvarra</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Goods-in</cbc:Name>
+        <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
+        <cbc:Department>Warehouse</cbc:Department>
+        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+        <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+      </cac:Contact>
+      <cac:ElectronicAddress>
+        <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
+        <cbc:ElectronicAddressID schemeID="urn:ubl-examples:world:endpoint">XB:20410274</cbc:ElectronicAddressID>
+      </cac:ElectronicAddress>
+    </cac:Party>
+  </cac:DeliveryCustomerParty>
+  <cac:BuyerCustomerParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20410274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Lumeway Distribution</cbc:Name>
+      </cac:PartyName>
+    </cac:Party>
+  </cac:BuyerCustomerParty>
+  <cac:SellerSupplierParty>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104274</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:AdditionalPartyIdentification>
+        <cbc:ID schemeID="ISO 6523">0990:10014</cbc:ID>
+      </cac:AdditionalPartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>Valdara Industries</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4160200467394686</cbc:ID>
+        <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+        <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+        <cbc:StreetName languageID="qau">Bek Stuzman Nulban</cbc:StreetName>
+        <cbc:StreetName languageID="en-XU">Via delle Officine</cbc:StreetName>
+        <cbc:BuildingNumber>17</cbc:BuildingNumber>
+        <cbc:CityName languageID="qau">Ruldraz</cbc:CityName>
+        <cbc:CityName languageID="en-XU">Ferrano</cbc:CityName>
+        <cbc:PostalZone>4120</cbc:PostalZone>
+        <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+        <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+          <cbc:Name>Urvania</cbc:Name>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:Contact>
+        <cbc:Name>Order desk</cbc:Name>
+        <cbc:JobTitle>Order administrator</cbc:JobTitle>
+        <cbc:Department>Sales</cbc:Department>
+        <cbc:Telephone>+999 1 041 386 4551</cbc:Telephone>
+        <cbc:ElectronicMail>order@valdara.example</cbc:ElectronicMail>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
+        <cac:OtherCommunication>
+          <cbc:ChannelCode listID="UN/EDIFACT EDED 3155">AL</cbc:ChannelCode>
+          <cbc:Value>+999 1 351 400 5258</cbc:Value>
+        </cac:OtherCommunication>
+      </cac:Contact>
+    </cac:Party>
+  </cac:SellerSupplierParty>
+  <cac:Shipment>
+    <cbc:ID>7400043688</cbc:ID>
+    <cac:Consignment>
+      <cbc:ID>7300043586</cbc:ID>
+      <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
+      <cac:CarrierParty>
+        <cac:PartyIdentification>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:register">XU-R-104685</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyName>
+          <cbc:Name>Ferrano Rail Cargo</cbc:Name>
+        </cac:PartyName>
+        <cac:PostalAddress>
+          <cbc:ID schemeID="urn:ubl-examples:world:XU:address-register">4170201115930918</cbc:ID>
+          <cbc:AddressTypeCode listID="urn:ubl-examples:world:codelist:AddressTypeCode">BUSINESS</cbc:AddressTypeCode>
+          <cbc:AddressFormatCode listID="urn:ubl-examples:world:codelist:AddressFormatCode">XU</cbc:AddressFormatCode>
+          <cbc:StreetName languageID="qau">Rumir Hekrul Zhuzkek</cbc:StreetName>
+          <cbc:StreetName languageID="en-XU">Viale della Stazione</cbc:StreetName>
+          <cbc:BuildingNumber>38</cbc:BuildingNumber>
+          <cbc:CityName languageID="qau">Drinzul</cbc:CityName>
+          <cbc:CityName languageID="en-XU">Serravona</cbc:CityName>
+          <cbc:PostalZone>4310</cbc:PostalZone>
+          <cbc:CountrySubentity>Province of Ferrano</cbc:CountrySubentity>
+          <cbc:TimezoneOffset>-01:00</cbc:TimezoneOffset>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XU</cbc:IdentificationCode>
+            <cbc:Name>Urvania</cbc:Name>
+          </cac:Country>
+        </cac:PostalAddress>
+        <cac:Contact>
+          <cbc:Name>Freight desk</cbc:Name>
+          <cbc:JobTitle>Freight planner</cbc:JobTitle>
+          <cbc:Department>Operations</cbc:Department>
+          <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+          <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
+          <cbc:Note>Every day 06:00–22:00</cbc:Note>
+        </cac:Contact>
+      </cac:CarrierParty>
+    </cac:Consignment>
+    <cac:Delivery>
+      <cac:Despatch>
+        <cbc:ID>CAS-OUT-26-0942</cbc:ID>
+        <cbc:ActualDespatchDate>2026-04-13</cbc:ActualDespatchDate>
+        <cbc:ActualDespatchTime>15:00:00-01:00</cbc:ActualDespatchTime>
+      </cac:Despatch>
+    </cac:Delivery>
+  </cac:Shipment>
+  <cac:DespatchLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Note>Container FRXU1044175, seal XU-VI-30411: the lot of 9 April.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
+      <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>LMW-10442</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+        <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+        <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
+      </cac:StandardItemIdentification>
+      <cac:ItemInstance>
+        <cbc:ManufactureDate>2026-04-09</cbc:ManufactureDate>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>VI-LOT-260409</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Coating batch</cbc:Name>
+            <cbc:Value>ZN-26-071</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:Note>Container FRXU1044180, seal XU-VI-30412: the lot of 10 April.</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="EA">96</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <cbc:LineID>1</cbc:LineID>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Description languageID="qau">Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.</cbc:Description>
+      <cbc:Description languageID="en-XU">Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.</cbc:Description>
+      <cbc:Name languageID="qau">Haz nanskir Serra 180</cbc:Name>
+      <cbc:Name languageID="en-XU">Park bench Serra 180</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>LMW-10442</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>VI-B180</cbc:ID>
+        <cbc:ExtendedID>GRY</cbc:ExtendedID>
+        <cac:PhysicalAttribute>
+          <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:OtherAttributeCode">COLOUR</cbc:AttributeID>
+          <cbc:PositionCode listID="urn:ubl-examples:world:codelist:ItemPartPositionCode">FRM</cbc:PositionCode>
+          <cbc:DescriptionCode listID="urn:ubl-examples:world:codelist:ColourCode">GRY</cbc:DescriptionCode>
+          <cbc:Description>Frame in Ferro grey</cbc:Description>
+        </cac:PhysicalAttribute>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="ISO 15459-6">KXU10014B180</cbc:ID>
+        <cbc:BarcodeSymbologyID>Code128</cbc:BarcodeSymbologyID>
+        <cbc:IssuerScopeID>KXU10014</cbc:IssuerScopeID>
+      </cac:StandardItemIdentification>
+      <cac:ItemInstance>
+        <cbc:ManufactureDate>2026-04-10</cbc:ManufactureDate>
+        <cac:LotIdentification>
+          <cbc:LotNumberID>VI-LOT-260410</cbc:LotNumberID>
+          <cac:AdditionalItemProperty>
+            <cbc:Name>Coating batch</cbc:Name>
+            <cbc:Value>ZN-26-072</cbc:Value>
+          </cac:AdditionalItemProperty>
+        </cac:LotIdentification>
+      </cac:ItemInstance>
+    </cac:Item>
+  </cac:DespatchLine>
+</DespatchAdvice>

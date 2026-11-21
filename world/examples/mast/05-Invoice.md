@@ -31,7 +31,7 @@ Goods and carriage to the site; an export, so no sales tax.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Carriage paid to the mast site: the prices include the carriage by air and road. The exporter of the goods covered by this document declares that these goods are of Bayvarran preferential origin under the Trade Accord (criterion S).**  
-  Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference.
+  Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference; the seller makes it as the exporter, since it sends the goods across an Accord border to the buyer.
 - `DocumentCurrencyCode` = **XBL** (listID `ISO 4217 Alpha`)  
   The lume, the seller's currency; it has two decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XBL = Lume.
 - `LineCountNumeric` = **3**  

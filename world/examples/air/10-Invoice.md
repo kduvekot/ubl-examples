@@ -45,10 +45,10 @@ The forwarder invoices the airport-to-airport air freight at the chargeable weig
 
 Inside `AdditionalDocumentReference`:
 
-- `ID` = **KXL-00694562**  
+- `ID` = **KXL-00694536**  
   The air waybill.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: KXL-00694562 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: KXL-00694536 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Accounting Supplier Party
 
@@ -421,7 +421,7 @@ Inside `InvoiceLine`:
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-00694536</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:AccountingSupplierParty>

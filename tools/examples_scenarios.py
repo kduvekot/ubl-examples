@@ -1010,6 +1010,50 @@ def rail_consignment(f, view):
     return out
 
 
+def rail_lots(f):
+    """The rail delivery's two production lots (O271, D37, O128), one per container in the order of RAIL_BOXES: the
+    lots Valdara's production record ships in the flow (world/items.json goods_chain), with what the record says of
+    each. One container per lot fits only while each lot fills a box exactly: half the order."""
+    _, lines = kit.chain_despatch(f, "5-xu", "bench-serra")
+    half = Decimal(str(f.deal[0]["ordered"])) / 2
+    if len(lines) != len(RAIL_BOXES) or any(Decimal(str(ln["qty"])) != half for ln in lines):
+        raise SystemExit("rail: the production record's lots no longer fill one container each")  # O271
+    return [(ln, kit.produced(ln)) for ln in lines]
+
+
+def rail_lot_lines(f):
+    """One line per container and lot of the rail delivery (O271): the deal's line split by the goods chain's lots."""
+    d = f.deal[0]
+    return [({**d, "ordered": ln["qty"]}, ln, p, k) for k, (ln, p) in enumerate(rail_lots(f))]
+
+
+def rail_lot_instance(ln, p):
+    return kit.lot_instance(ITEM[ln["item"]], ln["lot"], p["made"], p)
+
+
+def rail_goods(f):
+    """The consignment note's goods (O271): one goods item per container, each with its production lot, so the
+    carrier's note says which lot rides in which box."""
+    base = kit.transport_goods(f)[0]
+    out = []
+    for d, ln, p, k in rail_lot_lines(f):
+        nth = ("first", "second")[k]
+        out.append({**base,
+                    "ID": V(str(k + 1), f"The goods item number: the benches in the {nth} container."),
+                    "GrossWeightMeasure": qty(kit.line_gross(f, d, "ordered"), "KGM", "The gross weight of these "
+                                              "benches, in their parcels and with the 24 pallets they travel on."),
+                    "Quantity": qty(d["ordered"], ITEM[d["item"]]["unit"], f"The benches of one lot, which fill the "
+                                                                           f"{nth} container."),
+                    "Item": {**base["Item"], "ItemInstance": {"LotIdentification": {"LotNumberID": V(
+                        ln["lot"], "The production lot the box holds, as the consignor declared it; the lot's other "
+                                   "facts are in the despatch advice.")}}},
+                    "GoodsItemContainer": {
+                        "ID": V("1", "The goods item travels in one container only."),
+                        "TransportEquipment": {"ID": V(RAIL_BOXES[k], f"The {nth} container, the box this lot was "
+                                                                      "packed in.", schemeID="ISO6346")}}})
+    return out
+
+
 def rail_places(out, f):
     """The service a rail plan or request is about runs from the warehouse, where the carrier takes the boxes over,
     to Lumeway's siding, where it hands them over; the hub is a stage location (D37 point 6, rail/02#F3, 03#F3)."""
@@ -1220,6 +1264,39 @@ def rail(n, doc):
                                "Marrowdale, under the Accord's common transit.", "The rail carriage in words, with "
                                                                                  "its road pre-carriage.")  # D37 point 5
         kit.deep_merge(out["Shipment"]["Consignment"], rail_consignment(f, "note"))
+        out["Shipment"]["GoodsItem"] = rail_goods(f)        # the lot of each container (O271)
+        return out
+    if doc["doc"] == "DespatchAdvice":
+        # the 3PL that packs the boxes announces the despatch, as in the road flow; one line per container and lot,
+        # both lines fulfilling the order's one line (O271, D37)
+        pday, ptime = RAIL_PICKUP[-1]
+        out = kit.despatch_advice(f, n, doc, pday, "The day the carrier's tractor took the two packed containers from "
+                                                    "the warehouse.",
+                                  "The gross weight of the benches in the two containers, with their pallets.",
+                                  {"IssueTime": V("15:20:00", "Sent once the second box had left the warehouse."),
+                                   "Shipment": {"Consignment": {"ID": V(f.numbers["consignment"],
+                                                                        "The manufacturer's consignment, as booked "
+                                                                        "with the rail carrier.")},
+                                                "Delivery": {"Despatch": {
+                                                    "ID": V("CAS-OUT-26-0942", "The 3PL's outbound number."),
+                                                    "ActualDespatchDate": V(f.date(pday), "Packed and gone."),
+                                                    "ActualDespatchTime": V(ptime + ":00", "The carrier's tractor took "
+                                                                            "over the second box: the despatch is "
+                                                                            "the pickup.")}}}})
+        line = out["DespatchLine"][0]
+        lines = []
+        for d, ln, p, k in rail_lot_lines(f):
+            made = datetime.date.fromisoformat(p["made"])
+            lines.append({**line,
+                          "ID": V(str(k + 1), "The line number."),
+                          "Note": V(f"Container {RAIL_BOXES[k]}, seal {RAIL_SEALS[k]}: the lot of {made.day} "
+                                    f"{made:%B}.", f"The {('first', 'second')[k]} container and the lot it holds: "
+                                                   "one lot in each box."),
+                          "DeliveredQuantity": qty(d["ordered"], ITEM[d["item"]]["unit"], "What was despatched in "
+                                                                                         "this container."),
+                          "Item": {**line["Item"], "ItemInstance": rail_lot_instance(ln, p)}})
+        out["DespatchLine"] = lines
+        out["LineCountNumeric"] = V(str(len(lines)), "The number of lines: one per container and lot.")
         return out
     if doc["doc"] == "Invoice" and doc["from"] == "14-xu":
         return kit.invoice(f, n, doc, 11, "Issued after delivery at the siding.",
@@ -2772,10 +2849,25 @@ if (10 + 20) / 60 + max(0.0, wmap.air_km() - 100) / 500 > FLIGHT_BLOCK_EAST:
 FLIGHT_ARRIVES = wmap.after(wmap.at("2026-05-14", "07:00"), FLIGHT_BLOCK_EAST + 1)
 # D39: the frames are booked on the afternoon flight KXL209 of Wednesday 13 May (day 2), Lumeport 15:00 to Selanu
 # 18:45; the truck from Ferrano is late, the cargo reaches the terminal after the acceptance cut-off at 12:00, is
-# accepted that evening and flies on the morning flight KXL207 of Thursday 14 May (day 3), landing at about 10:30
+# accepted on arrival and flies on the morning flight KXL207 of Thursday 14 May (day 3), landing at about 10:30
 AIR_BOOKED = ("KXL209", 2, "15:00", wmap.hm(wmap.after(wmap.at("2026-05-13", "15:00"), FLIGHT_BLOCK_EAST + 1)))
 AIR_FLOWN = ("KXL207", 3, "07:00", wmap.hm(FLIGHT_ARRIVES))
 AIR_CUTOFF = "12:00:00"
+# read-through air A3 (owner, 2026-11-20): Bayforth's truck leaves the cross-dock before the cut-off, late because
+# Trasvia's truck from Ferrano came in late, and needs about an hour for the leg on the map; the terminal, which works
+# around the clock, accepts the skid on arrival, for the next flight. The documents of the afternoon follow from it.
+AIR_ROAD_KM = wmap.leg_km("air", "6-xb", "17-xb", "road")
+AIR_TRUCK_KMH = 60
+AIR_TRUCK_LEAVES = wmap.at("2026-05-13", "11:40")
+AIR_AT_TERMINAL = wmap.after(AIR_TRUCK_LEAVES, AIR_ROAD_KM / AIR_TRUCK_KMH)
+AIR_ACCEPTED = wmap.after(AIR_AT_TERMINAL, 10 / 60)         # checked in, weighed and measured on arrival
+_cutoff = wmap.at("2026-05-13", AIR_CUTOFF[:5])
+if not (AIR_TRUCK_LEAVES < _cutoff < AIR_AT_TERMINAL and AIR_AT_TERMINAL - _cutoff < datetime.timedelta(hours=1)):
+    raise SystemExit("air: the forwarder's truck no longer leaves before the cut-off and arrives after it")  # O152
+AIR_WAYBILL_AT = wmap.after(AIR_ACCEPTED, 5 / 60)           # Lumeport time; the airline writes it in island time
+AIR_STATUS_AT = wmap.after(AIR_ACCEPTED, 10 / 60)
+AIR_CANCELLED_AT = wmap.after(AIR_STATUS_AT, 25 / 60)       # once the distributor has the terminal's status
+AIR_REPLACED_AT = wmap.after(AIR_CANCELLED_AT, 15 / 60)
 AIR_TRANSIT = kit.cited_number("valdara-transit-declaration-air")      # Valdara's transit declaration, Ferrano to Selanu airport (D39, a cited document)
 
 
@@ -2964,9 +3056,11 @@ def air(n, doc):
                                                            "examples.")}}
     if doc["doc"] == "Waybill":
         out = kit.waybill(f, n, doc, AIR_FLOWN[1] - 1, "The air waybill, issued when the airline accepted the "
-                                                      "cargo on the evening of 13 May, after the cut-off for KXL209.",
+                                                      "cargo on 13 May, after the cut-off for KXL209.",
                           air_gross(f), "The gross weight of the cargo: the eight frame cartons and their skid.")
-        out["IssueTime"] = V("20:15:00", "At acceptance, 19:15 in Lumeport.")  # D39
+        out["IssueTime"] = V(wmap.hm(wmap.after(AIR_WAYBILL_AT, 1)), f"At acceptance, {wmap.hm(AIR_WAYBILL_AT)[:5]} "
+                                                                    "in Lumeport, in the island time of the "
+                                                                    "airline.")  # D39, read-through air A3
         out["DocumentReference"] = {"ID": V(AIR_TRANSIT, "The transit declaration the frames travel under to Selanu "
                                                          "airport, the office of destination; a document "  # D39
                                                          "outside the examples.")}
@@ -2993,23 +3087,26 @@ def air(n, doc):
                                                                   "13 May.")})  # D39
         return out
     if doc["doc"] == "TransportationStatus" and doc["from"] == "17-xb":
-        out = kit.transportation_status(f, n, doc, 2, "Reported when the cargo was accepted, on the evening of 13 "
-                                                      "May.",
+        out = kit.transportation_status(f, n, doc, 2, "Reported when the cargo was accepted, on 13 May, after the "
+                                                      "cut-off.",
                                         "Cargo accepted after the cut-off for KXL209 of 13 May and built up for "
                                         "KXL207 of 14 May.", "Lumeport airport, cargo terminal",
                                         {"Consignment": {"MainCarriageShipmentStage": {"ID": V("1", "The flight.")}}},
                                         event_type="ACCEPTANCE")
-        out["IssueTime"] = V("19:20:00", "When the cargo had been accepted.")
-        out["TransportEvent"]["OccurrenceTime"] = V("19:10:00-01:00", "Accepted at 19:10, long after the cut-off at "
-                                                                "12:00 for the afternoon flight.")  # D39
+        out["IssueTime"] = V(wmap.hm(AIR_STATUS_AT), "When the cargo had been accepted.")
+        out["TransportEvent"]["OccurrenceTime"] = V(
+            wmap.hm(AIR_ACCEPTED)[:5] + ":00-01:00", f"Accepted on arrival: the forwarder's truck came in at about "
+            f"{wmap.about(AIR_AT_TERMINAL)}, after the cut-off at 12:00 for the afternoon flight, so the skid waits "
+            "for the next morning's.")  # D39, read-through air A3
         return out
     if doc["doc"] == "DespatchAdvice":
         out = kit.despatch_advice(f, n, doc, 2, "Sent to the buyer's 3PL when the forwarder's truck left the "
                                                 "dispatch area for the airport.",
                                   "The gross weight of the frame cartons and their skid.")
-        return air_despatch(f, out, AIR_BOOKED, "12:15:00", "When the forwarder's truck left the dispatch area, "
-                                                            "late: Trasvia's truck from Ferrano had arrived late"
-                                                            ".")  # D39
+        return air_despatch(f, out, AIR_BOOKED, wmap.hm(AIR_TRUCK_LEAVES), "When the forwarder's truck left the "
+                            f"dispatch area for the cargo terminal, {wmap.whole(AIR_ROAD_KM)} km and about an hour "
+                            "away: late, because Trasvia's truck from Ferrano had come in late; the frames are "
+                            "still booked on the afternoon flight.")  # D39, read-through air A3
     if doc["doc"] == "TransportationStatus":
         out = kit.transportation_status(f, n, doc, 3, "Reported when the cargo had landed and been unloaded.",
                                         "Cargo arrived on KXL207 and ready for customs clearance.",
@@ -3041,6 +3138,16 @@ def air(n, doc):
                                                "customs of both countries need the terms on the invoice.",
                                         schemeID="INCOTERMS"),
                                 "DeliveryLocation": kit.place("XLSLA", "The named place: Selanu airport.")}
+        # the statement on origin stays (read-through air A5, owner 2026-11-20): the sale crosses an Accord border,
+        # Bayvarra to Lisavu, and Velumi's import claims the preference on it; Lumeway makes it as the exporter in
+        # the Accord's sense (the rule in examples_kit.origin_statement)
+        if "_origin" not in out:
+            raise SystemExit("air: Lumeway's invoice to Velumi has lost its statement on origin")
+        out["_origin_why"] = ("The exporter's statement on origin: the proof of origin Velumi's import declaration "
+                              "on the island refers to, to claim the Trade Accord's preference. Lumeway makes it as "
+                              "the exporter in the Accord's sense: it sells the frames across the Accord border from "
+                              "Bayvarra to Lisavu, though they came from Urvania in transit and never entered "
+                              "Bayvarra's free circulation; their origin is Valdara's, Urvanian.")
         return out
     if doc["doc"] == "Invoice":
         return kit.invoice(f, n, doc, 4, "Issued after the flight.",
@@ -5965,16 +6072,17 @@ def air(n, doc):
     f, d = AIR, doc["doc"]
     if d == "FulfilmentCancellation":
         return {**head(f, "fulfilment-cancellation", doc, AIR_BOOKED[1], "On 13 May, the day of the missed flight."),
-                "IssueTime": V("19:50:00", "In the evening, when the terminal reported the cargo accepted for the "
-                                           "next morning's flight, before the new despatch advice it announces"
-                                           "."),  # air/07#F1, air/08#F1
+                "IssueTime": V(wmap.hm(AIR_CANCELLED_AT), "Once the terminal had reported the cargo accepted for "
+                                                          "the next morning's flight, before the new despatch "
+                                                          "advice it announces."),  # air/07#F1, air/08#F1, A3
                 "CancellationNote": V("The cargo reached the cargo terminal after the cut-off for the afternoon flight "
                                       "KXL209 of 13 May; it flies on KXL207 on the morning of 14 May under a new "
                                       "despatch advice.", "Why the despatch advice is cancelled: the flight and the "
                                                           "arrival it gave do not hold."),  # air/07#F2, F7
                 "DespatchDocumentReference": {"ID": V(f.numbers["despatch"], "The despatch advice cancelled.")}}
     if d == "DespatchAdvice" and nth("air", n, doc) == 2:
-        out = kit.despatch_advice(f, n, doc, AIR_BOOKED[1], "Sent the same evening for the next morning's flight.",
+        out = kit.despatch_advice(f, n, doc, AIR_BOOKED[1], "Sent the same afternoon for the next morning's "
+                                                            "flight.",
                                   "The gross weight of the frame cartons and their skid.")
         out["ID"] = V(f.number("despatch-2", doc["from"], "DespatchAdvice"), "A new number: the first despatch "
                                                                              "advice was cancelled.")
@@ -5983,7 +6091,7 @@ def air(n, doc):
             "DocumentDescription": V("Replaced: the frames missed KXL209 of 13 May and fly on KXL207 of 14 May.",
                                      "What changed.")}
         f.numbers["delivery-day"] = AIR_FLOWN[1]
-        return air_despatch(f, out, AIR_FLOWN, "20:05:00", "Right after the cancellation.")
+        return air_despatch(f, out, AIR_FLOWN, wmap.hm(AIR_REPLACED_AT), "Right after the cancellation.")
     return _air(n, doc)
 
 
@@ -6805,7 +6913,10 @@ def _(f, n, doc, out):
                                                                      ".", schemeID="ISO6346")}  # rail/09#F1
                                              for k in range(2)],
             "ReferencedPackage": {"ID": kit.unit_id("8-xu", f, 1, "The first pallet in it, made up by the 3PL")},
-            "ReferencedGoodsItem": {"ID": V("1", "The benches.")}}
+            # the consignment note's two goods items, one lot in each container (O271)
+            "ReferencedGoodsItem": [{"ID": V(str(k + 1), f"The benches in the {('first', 'second')[k]} container, "
+                                                         "as the consignment note numbers its goods items.")}
+                                    for k in range(2)]}
 
 
 @enrich("sea", "TransportServiceDescriptionRequest")
@@ -8033,7 +8144,7 @@ def _(f, n, doc, out):
 
 @enrich("air", "FulfilmentCancellation")
 def _(f, n, doc, out):
-    return {"Note": V("A new despatch advice follows this evening.", "What happens next."),
+    return {"Note": V("A new despatch advice follows within the hour.", "What happens next."),
             "OrderReference": {"ID": V(f.numbers["order-change"], "The order change of the frames."),
                                "SalesOrderID": V(SEA.number("sales-order", "6-xb", "SalesOrder"), "The distributor's sales order."),
                                "UUID": V(str(uuid.uuid5(uuid.NAMESPACE_URL, "urn:ubl-examples:world:air:1:OrderChange")),
@@ -8607,6 +8718,20 @@ def mast(n, doc):
                         "Carriage paid to the telecom company's mast site: the seller arranges the dangerous goods "
                         "transport.", "Selanu Telecom's mast site on Mast Hill")
         out["DeliveryTerms"]["DeliveryLocation"]["Address"] = address("35-xl")    # the named place (mast/01#F8)
+        # D36 point 5, this flow's own decision, wins over the general item table of D11/O86 (which leaves dangerous
+        # goods data out of an order): the order keeps the dangerous goods' identification, UN number, proper
+        # shipping name and class (with the subsidiary hazard where the entry has one), so that the seller ships
+        # what was ordered as the dangerous goods they are (read-through mast M3)
+        for d_, line in zip(f.deal, out["OrderLine"]):
+            if not kit.maker(d_["item"]).get("hazard"):
+                continue
+            full = build_examples.hazardous_item(kit.maker(d_["item"]))
+            dg = {k: full[k] for k in ("UNDGCode", "ProperShippingName", "HazardClassID")}
+            dg["UNDGCode"] = V(full["UNDGCode"].value, "The UN number of the goods ordered, so that the seller ships "
+                                                        "them as the dangerous goods they are.")
+            if full.get("SecondaryHazard"):
+                dg["SecondaryHazard"] = {"ID": full["SecondaryHazard"]["ID"]}
+            line["LineItem"]["Item"]["HazardousItem"] = dg
         return out
     if d == "ForwardingInstructions":
         return {"ID": V(f.number("instructions", doc["from"], "ForwardingInstructions"), "The instruction number."),

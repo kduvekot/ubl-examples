@@ -245,7 +245,7 @@ Inside `NotifierParty`:
 
 Inside `Shipment`:
 
-- `ID` = **7400043689**  
+- `ID` = **7400043688**  
   The shipment under transit.
 - `GrossWeightMeasure` = **18177.6** (unitCode `KGM`)  
   The gross weights of the transport equipment with the goods in it (9088.8 + 9088.8 kg): a shipment's gross weight includes the equipment.
@@ -667,7 +667,7 @@ Inside `Signature`:
     </cac:PartyName>
   </cac:NotifierParty>
   <cac:Shipment>
-    <cbc:ID>7400043689</cbc:ID>
+    <cbc:ID>7400043688</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>7300043586</cbc:ID>

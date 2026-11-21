@@ -24,8 +24,8 @@ The distributor announces the frames to the buyer's 3PL with the flight they are
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
 - `IssueDate` = **2026-05-13**  
   Sent to the buyer's 3PL when the forwarder's truck left the dispatch area for the airport.
-- `IssueTime` = **12:15:00-01:00**  
-  When the forwarder's truck left the dispatch area, late: Trasvia's truck from Ferrano had arrived late; in the issuer's local time, with its offset from UTC.
+- `IssueTime` = **11:40:00-01:00**  
+  When the forwarder's truck left the dispatch area for the cargo terminal, 59 km and about an hour away: late, because Trasvia's truck from Ferrano had come in late; the frames are still booked on the afternoon flight; in the issuer's local time, with its offset from UTC.
 - `DespatchAdviceTypeCode` = **DELIVERY** (listID `urn:ubl-examples:world:codelist:DespatchAdviceTypeCode`)  
   Advice of goods despatched for delivery. The code is from the Trade Accord's despatch advice type list: DELIVERY = Delivery.
 - `Note` = **Please check the goods on arrival and report any damage on the air waybill.**  
@@ -412,7 +412,7 @@ Inside `DespatchLine`:
   <cbc:ID>LMW-DA-26-1017</cbc:ID>
   <cbc:UUID>93132e8b-1df2-5401-9265-5f8de7ffa70a</cbc:UUID>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>12:15:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>11:40:00-01:00</cbc:IssueTime>
   <cbc:DespatchAdviceTypeCode listID="urn:ubl-examples:world:codelist:DespatchAdviceTypeCode">DELIVERY</cbc:DespatchAdviceTypeCode>
   <cbc:Note>Please check the goods on arrival and report any damage on the air waybill.</cbc:Note>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>

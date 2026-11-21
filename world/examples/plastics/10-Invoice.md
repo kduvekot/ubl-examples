@@ -31,7 +31,7 @@ Granulate and barge freight (CPT). An export from Urvania: no VAT charged, with 
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **Carriage paid to: the price includes the barge to the river quay. The exporter of the goods covered by this document declares that these goods are of Urvanian preferential origin under the Trade Accord (criterion P).**  
-  Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference.
+  Why the invoice has no separate freight line. The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference; the seller makes it as the exporter, since it sends the goods across an Accord border to the buyer.
 - `TaxPointDate` = **2026-04-21**  
   Urvania's value added tax becomes due on the invoice date.
 - `DocumentCurrencyCode` = **XUF** (listID `ISO 4217 Alpha`)  

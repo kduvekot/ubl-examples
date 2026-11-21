@@ -16,7 +16,7 @@ The island's air cargo terminal reports the cargo arrived and ready for customs 
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Transportation status". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **BYF-TX-26-2548**  
+- `ProfileExecutionID` = **BYF-TX-26-2543**  
   The collaboration this document belongs to: the air carriage Bayforth books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
 - `ID` = **POS-TS-26-8776**  
   The sender's status report number.
@@ -195,10 +195,10 @@ Inside `TransportEvent`:
 
 Inside `DocumentReference`:
 
-- `ID` = **KXL-00694562**  
+- `ID` = **KXL-00694536**  
   The transport document of the consignment.
 - `DocumentTypeCode` = **Waybill** (listID `urn:ubl-examples:world:codelist:UBLDocumentTypeCode`)  
-  The kind of document referred to: KXL-00694562 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
+  The kind of document referred to: KXL-00694536 is the example air/04, a Waybill; a generic reference names the UBL document type. The code is from the Trade Accord's UBL document type list: Waybill.
 
 ### Signature
 
@@ -303,7 +303,7 @@ Inside `StatusPeriod`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:transportation-status:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2543</cbc:ProfileExecutionID>
   <cbc:ID>POS-TS-26-8776</cbc:ID>
   <cbc:UUID>699cd30a-3784-5a9d-8770-15e1898e75ec</cbc:UUID>
   <cbc:IssueDate>2026-05-14</cbc:IssueDate>
@@ -436,7 +436,7 @@ Inside `StatusPeriod`:
     </cac:Location>
   </cac:TransportEvent>
   <cac:DocumentReference>
-    <cbc:ID>KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-00694536</cbc:ID>
     <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Waybill</cbc:DocumentTypeCode>
   </cac:DocumentReference>
   <cac:Signature>

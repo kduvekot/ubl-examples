@@ -16,9 +16,9 @@ The direct air waybill, issued when the airline accepted the cargo after the cut
   The specification the document follows, at each level it claims, chained with #compliant#: the Trade Accord's transaction "Waybill". Each has a public description on the world's pages.
 - `ProfileID` = **urn:ubl-examples:world:profile:transport:1.0**  
   The Trade Accord's process profile the document belongs to: transport, a generic, versioned profile, not the flow.
-- `ProfileExecutionID` = **BYF-TX-26-2548**  
+- `ProfileExecutionID` = **BYF-TX-26-2543**  
   The collaboration this document belongs to: the air carriage Bayforth books with Kelaro Air Cargo. Bayforth Forwarding started it and gave it this identifier, which every document of it repeats.
-- `ID` = **KXL-00694562**  
+- `ID` = **KXL-00694536**  
   The consignment note number.
 - `UUID` = **cbf5d04c-eecc-510a-b84b-bf76e2526b98**  
   A universally unique identifier of the document, derived from its place in the world (UUID version 5), so it stays the same on every build.
@@ -27,9 +27,9 @@ The direct air waybill, issued when the airline accepted the cargo after the cut
 - `StatusCode` = **ISSUED** (listID `urn:ubl-examples:world:codelist:RecordStatusCode`)  
   The note is issued and in force. The code is from the Trade Accord's record status list: ISSUED = Issued.
 - `IssueDate` = **2026-05-13**  
-  The air waybill, issued when the airline accepted the cargo on the evening of 13 May, after the cut-off for KXL209.
-- `IssueTime` = **20:15:00+00:00**  
-  At acceptance, 19:15 in Lumeport; in the issuer's local time, with its offset from UTC.
+  The air waybill, issued when the airline accepted the cargo on 13 May, after the cut-off for KXL209.
+- `IssueTime` = **13:54:00+00:00**  
+  At acceptance, 12:54 in Lumeport, in the island time of the airline; in the issuer's local time, with its offset from UTC.
 - `Name` = **Air waybill under the Montreal Convention**  
   The kind of transport document.
 - `Description` = **The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.**  
@@ -400,7 +400,7 @@ Inside `Shipment`:
 
 Inside `DocumentReference`:
 
-- `ID` = **7800004419**  
+- `ID` = **7800004418**  
   The transit declaration the frames travel under to Selanu airport, the office of destination; a document outside the examples.
 - `DocumentType` = **Transit declaration**  
   The kind of document referred to, Valdara's transit declaration under the Trade Accord's common transit, from Ferrano to Selanu airport, a document outside the examples, in words: no list has an exact code for it (cited).
@@ -436,7 +436,7 @@ Inside `DocumentDistribution`:
 
 Inside `Signature`:
 
-- `ID` = **KXL-SIG-KXL-00694562**  
+- `ID` = **KXL-SIG-KXL-00694536**  
   The carrier's signature on taking over the goods.
 - `SignatoryParty/PartyIdentification/ID` = **IC41311** (schemeID `urn:ubl-examples:world:XL:register`)  
   A party referred to from another party's details: its identifier and name are enough.
@@ -451,13 +451,13 @@ Inside `Signature`:
   <cbc:UBLVersionID>2.5</cbc:UBLVersionID>
   <cbc:CustomizationID>urn:ubl-examples:world:trns:waybill:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:transport:1.0</cbc:ProfileID>
-  <cbc:ProfileExecutionID>BYF-TX-26-2548</cbc:ProfileExecutionID>
-  <cbc:ID>KXL-00694562</cbc:ID>
+  <cbc:ProfileExecutionID>BYF-TX-26-2543</cbc:ProfileExecutionID>
+  <cbc:ID>KXL-00694536</cbc:ID>
   <cbc:UUID>cbf5d04c-eecc-510a-b84b-bf76e2526b98</cbc:UUID>
   <cbc:VersionID>1</cbc:VersionID>
   <cbc:StatusCode listID="urn:ubl-examples:world:codelist:RecordStatusCode">ISSUED</cbc:StatusCode>
   <cbc:IssueDate>2026-05-13</cbc:IssueDate>
-  <cbc:IssueTime>20:15:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>13:54:00+00:00</cbc:IssueTime>
   <cbc:Name>Air waybill under the Montreal Convention</cbc:Name>
   <cbc:Description>The flight to the island: booked on KXL209 of 13 May, flown on KXL207 of 14 May.</cbc:Description>
   <cbc:Note>Three originals: the consignor's, handed over when the carrier took over the goods; the consignee's, with the goods; the carrier's, kept by the carrier.</cbc:Note>
@@ -760,7 +760,7 @@ Inside `Signature`:
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>
-    <cbc:ID>7800004419</cbc:ID>
+    <cbc:ID>7800004418</cbc:ID>
     <cbc:DocumentType>Transit declaration</cbc:DocumentType>
   </cac:DocumentReference>
   <cac:DocumentDistribution>
@@ -791,7 +791,7 @@ Inside `Signature`:
     </cac:Party>
   </cac:DocumentDistribution>
   <cac:Signature>
-    <cbc:ID>KXL-SIG-KXL-00694562</cbc:ID>
+    <cbc:ID>KXL-SIG-KXL-00694536</cbc:ID>
     <cac:SignatoryParty>
       <cac:PartyIdentification>
         <cbc:ID schemeID="urn:ubl-examples:world:XL:register">IC41311</cbc:ID>

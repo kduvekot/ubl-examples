@@ -182,7 +182,9 @@ Inside `ReferencedPackage`:
 Inside `ReferencedGoodsItem`:
 
 - `ID` = **1**  
-  The benches.
+  The benches in the first container, as the consignment note numbers its goods items.
+- `ID` = **2**  
+  The benches in the second container, as the consignment note numbers its goods items.
 
 ### Transportation Segment
 
@@ -344,6 +346,9 @@ Inside `TransportationSegment`:
   </cac:ReferencedPackage>
   <cac:ReferencedGoodsItem>
     <cbc:ID>1</cbc:ID>
+  </cac:ReferencedGoodsItem>
+  <cac:ReferencedGoodsItem>
+    <cbc:ID>2</cbc:ID>
   </cac:ReferencedGoodsItem>
   <cac:TransportationSegment>
     <cbc:SequenceNumeric>1</cbc:SequenceNumeric>

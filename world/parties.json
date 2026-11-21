@@ -4259,7 +4259,7 @@
    ],
    "h": 2,
    "kind": "sawmill",
-   "what": "Fells timber in the forests of Upland State and saws it into planks, slats and beams at its mill on the north bank of the river; modifies ash in a thermal modification kiln of its own, and in the southern summer, when the kiln is full with its own decking and cladding, has the bench slats modified under contract across the border; sells slats for the benches across the border and timber to the furniture maker.",
+   "what": "Buys its logs from the Upland State Forest, the managed forest on the slope north of Marrowdale, and saws them into planks, slats and beams at its mill on the north bank of the river; modifies ash in a thermal modification kiln of its own, and in the southern summer, when the kiln is full with its own decking and cladding, has the bench slats modified under contract across the border; sells slats for the benches across the border and timber to the furniture maker.",
    "how": "Wood is sold by dimensions and volume, in lots. UBL carries the measurements and the lot of every item in quotations, orders and despatch advices, so a buyer that orders slats to size gets exactly what it ordered and can trace each lot.",
    "identity": {
     "name": "Marrowdale Sawmill",

@@ -2389,10 +2389,15 @@ def customs_values(content, doc):
 def origin_notes(content):
     """The exporter's statement on origin (examples_kit.origin_statement) goes into the invoice's note."""
     stmt = content.pop("_origin", None)
+    own_why = content.pop("_origin_why", None)     # a scenario's own reason for who makes the statement
     if not stmt:
+        if own_why:
+            raise SystemExit("origin_notes: a reason for a statement on origin, but no statement")
         return
-    why = ("The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, "
-           "to claim the Trade Accord's preference.")  # D18
+    why = own_why or (
+        "The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim "
+        "the Trade Accord's preference; the seller makes it as the exporter, since it sends the goods across an "
+        "Accord border to the buyer.")  # D18, read-through air A5
     note = content.get("Note")
     if note is None:
         content["Note"] = V(stmt, why)

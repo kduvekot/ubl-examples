@@ -1470,8 +1470,14 @@ def maker_of(iid):
 def origin_statement(flow, seller, buyer, iids):
     """The exporter's statement on origin for an invoice of goods from one Accord country to another, the proof of
     origin an import declaration refers to where no certificate of origin is issued (D18, O49), worded as the
-    origin declarations of the EU's preferential arrangements."""
-    if PARTY[seller]["c"] == PARTY[buyer]["c"]:
+    origin declarations of the EU's preferential arrangements.
+
+    The rule (owner, 2026-11-20, read-through air A5): a statement on origin appears on an invoice when the goods
+    cross an Accord border to the buyer, never on a domestic sale. The seller that sends them across the border makes
+    it as the exporter in the Accord's sense, even where the goods came to it in transit from another Accord country
+    and never entered its own free circulation (air/11: Lumeway, Bayvarra, for Velumi's import into Lisavu of
+    Urvanian frames that crossed Bayvarra under the common transit)."""
+    if PARTY[seller]["c"] == PARTY[buyer]["c"]:     # a domestic sale crosses no Accord border: no statement
         return None
     if any((seller, buyer, i) in TAXED_IN for i in iids):     # the sale takes nothing across a border
         return None

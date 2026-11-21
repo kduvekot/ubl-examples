@@ -132,7 +132,7 @@
     </cac:PartyName>
   </cac:CarrierParty>
   <cac:Shipment>
-    <cbc:ID>7400043689</cbc:ID>
+    <cbc:ID>7400043688</cbc:ID>
     <cbc:GrossWeightMeasure unitCode="KGM">18177.6</cbc:GrossWeightMeasure>
     <cac:Consignment>
       <cbc:ID>7300043586</cbc:ID>
@@ -685,14 +685,48 @@
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>
       <cbc:Description>Park bench Serra 180</cbc:Description>
-      <cbc:GrossWeightMeasure unitCode="KGM">10377.6</cbc:GrossWeightMeasure>
-      <cbc:Quantity unitCode="EA">192</cbc:Quantity>
+      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
       <cac:Item>
         <cbc:Name>Park bench Serra 180</cbc:Name>
         <cac:CommodityClassification>
           <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
         </cac:CommodityClassification>
+        <cac:ItemInstance>
+          <cac:LotIdentification>
+            <cbc:LotNumberID>VI-LOT-260409</cbc:LotNumberID>
+          </cac:LotIdentification>
+        </cac:ItemInstance>
       </cac:Item>
+      <cac:GoodsItemContainer>
+        <cbc:ID>1</cbc:ID>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
+        </cac:TransportEquipment>
+      </cac:GoodsItemContainer>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>2</cbc:ID>
+      <cbc:Description>Park bench Serra 180</cbc:Description>
+      <cbc:GrossWeightMeasure unitCode="KGM">5188.8</cbc:GrossWeightMeasure>
+      <cbc:Quantity unitCode="EA">96</cbc:Quantity>
+      <cac:Item>
+        <cbc:Name>Park bench Serra 180</cbc:Name>
+        <cac:CommodityClassification>
+          <cbc:CommodityCode listID="WCO HS 2022">940179</cbc:CommodityCode>
+        </cac:CommodityClassification>
+        <cac:ItemInstance>
+          <cac:LotIdentification>
+            <cbc:LotNumberID>VI-LOT-260410</cbc:LotNumberID>
+          </cac:LotIdentification>
+        </cac:ItemInstance>
+      </cac:Item>
+      <cac:GoodsItemContainer>
+        <cbc:ID>1</cbc:ID>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+        </cac:TransportEquipment>
+      </cac:GoodsItemContainer>
     </cac:GoodsItem>
   </cac:Shipment>
   <cac:DocumentReference>

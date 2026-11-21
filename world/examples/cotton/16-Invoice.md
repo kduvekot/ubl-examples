@@ -31,7 +31,7 @@ The bales, free on board. No tax applies on the island, and the invoice says so.
 - `InvoiceTypeCode` = **380** (listID `UN/EDIFACT EDED 1001`)  
   A commercial invoice, as UN/EDIFACT 1001 codes it. The code is from the world's copy of UN/EDIFACT 1001 Document name: 380 = Commercial invoice.
 - `Note` = **The exporter of the goods covered by this document declares that these goods are of Lisavan preferential origin under the Trade Accord (criterion P).**  
-  The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference.
+  The exporter's statement on origin: the proof of origin the buyer's import declaration refers to, to claim the Trade Accord's preference; the seller makes it as the exporter, since it sends the goods across an Accord border to the buyer.
 - `DocumentCurrencyCode` = **XLC** (listID `ISO 4217 Alpha`)  
   The coral, the seller's currency; it has three decimals. The code is from the world's copy of UBL's Currency (ISO 4217) list: XLC = Coral.
 - `AccountingCostCode` = **2200**  
