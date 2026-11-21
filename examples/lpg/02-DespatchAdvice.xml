@@ -62,7 +62,7 @@
         <cbc:Name>Despatch office</cbc:Name>
         <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
+        <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
         <cbc:ElectronicMail>despatch@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
@@ -97,11 +97,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Customer service</cbc:Name>
-        <cbc:JobTitle>Customer service officer</cbc:JobTitle>
-        <cbc:Department>Customer service</cbc:Department>
-        <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
-        <cbc:ElectronicMail>customer@coastalwater.example</cbc:ElectronicMail>
+        <cbc:Name>Plant control room</cbc:Name>
+        <cbc:JobTitle>Plant operator</cbc:JobTitle>
+        <cbc:Department>District heating</cbc:Department>
+        <cbc:Telephone>+999 2 38 9310 7590</cbc:Telephone>
+        <cbc:ElectronicMail>plant@coastalwater.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -142,7 +142,7 @@
           <cbc:Name>Tanker planning</cbc:Name>
           <cbc:JobTitle>Tanker planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 2 38522 41906</cbc:Telephone>
+          <cbc:Telephone>+999 2 1563 419 060</cbc:Telephone>
           <cbc:ElectronicMail>planning@gullhaventank.example</cbc:ElectronicMail>
           <cbc:Note>Every day, around the clock</cbc:Note>
         </cac:Contact>

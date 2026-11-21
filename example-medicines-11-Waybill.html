@@ -349,10 +349,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>export@bayforth.example**</code><br />
 The contact's e-mail address.</li>
@@ -478,10 +480,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>despatch@quillmoor.example**</code><br />
 The contact's e-mail address.</li>
@@ -524,12 +528,12 @@ only its identifier and name are repeated.</li>
 The shipment as the despatching party numbered it.</li>
 <li><code>Consignment/ID</code> = <strong>QLM-CS-26-3980</strong><br />
 The consignment of the transport booking.</li>
-<li><code>Consignment/GrossWeightMeasure</code> = <strong>101.1</strong>
+<li><code>Consignment/GrossWeightMeasure</code> = <strong>105.3</strong>
 (unitCode <code>KGM</code>)<br />
 The gross weight of the goods with their packaging, without the
 transport equipment, as a consignment's weight is defined. The goods in
-their packages, the dry ice and its box; the airline's container is not
-part of the shipment.</li>
+their packs and shipping cartons, the dry ice and its box; the airline's
+container is not part of the shipment.</li>
 <li><code>Consignment/HazardousRiskIndicator</code> =
 <strong>true</strong><br />
 The consignment holds dangerous goods.</li>
@@ -1808,7 +1812,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;QLM-SH-26-3980&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Consignment</span>&gt;</span>
 <span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;QLM-CS-26-3980&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;101.1&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;105.3&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:HazardousRiskIndicator</span>&gt;true&lt;/<span class="kw">cbc:HazardousRiskIndicator</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:SpecialServiceInstructions</span>&gt;Cold chain: deliver the active container to the island&#39;s cold room on arrival; radioactive package to the strong room.&lt;/<span class="kw">cbc:SpecialServiceInstructions</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
@@ -2271,6 +2275,6 @@ documents of the flow</a> · <a
 href="example-medicines-14-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

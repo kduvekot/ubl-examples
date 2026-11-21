@@ -16,7 +16,7 @@ Logistics · The UBL World</title>
 <main class="prose">
 <h1 id="utility-statement-ferrano-energy-to-castrano-logistics">Utility
 Statement: Ferrano Energy to Castrano Logistics</h1>
-<p><em>Document 7 of 14 in the flow <a
+<p><em>Document 8 of 14 in the flow <a
 href="examples.html#flow-utilities">Electricity, water and telecom (one
 utility in each country)</a> · <a
 href="https://docs.oasis-open.org/ubl/os-UBL-2.5/UBL-2.5.html#S-UTILITY-STATEMENT-SCHEMA">Utility
@@ -26,7 +26,7 @@ href="world-8-xu.html">Castrano Logistics</a>, under the Trade Accord's
 transaction <a
 href="world-spec-transaction-utility-statement.html">Utility
 statement</a>.</p>
-<p><a href="example-utilities-08-UtilityStatement.html">← Utility
+<p><a href="example-utilities-01-UtilityStatement.html">← Utility
 Statement</a> · <a href="examples.html#flow-utilities">all documents of
 the flow</a> · <a
 href="example-utilities-12-UtilityStatement.html">Utility Statement
@@ -58,7 +58,7 @@ billing, a generic, versioned profile, not the flow.</li>
 The collaboration this document belongs to: Ferrano Energy's bill for
 March to Valdara. Ferrano Energy started it and gave it this identifier,
 which every document of it repeats.</li>
-<li><code>ID</code> = <strong>9409901530</strong><br />
+<li><code>ID</code> = <strong>9409901473</strong><br />
 The utility's statement number.</li>
 <li><code>UUID</code> =
 <strong>a67867a6-9a78-55a4-b129-4e9157f53cff</strong><br />
@@ -66,7 +66,7 @@ A universally unique identifier of the document, derived from its place
 in the world (UUID version 5), so it stays the same on every build.</li>
 <li><code>IssueDate</code> = <strong>2026-04-02</strong><br />
 Issued with the bill for March.</li>
-<li><code>IssueTime</code> = <strong>17:10:00-01:00</strong><br />
+<li><code>IssueTime</code> = <strong>16:45:00-01:00</strong><br />
 The time the sender's system issued the document, in the sender's local
 time, with its offset from UTC.</li>
 <li><code>UtilityStatementTypeCode</code> = <strong>ELEC</strong>
@@ -221,13 +221,14 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>payables@ferranoenergy.example**</code><br />
 The contact's e-mail address.</li>
-<li><code>Contact/Note</code> = <strong>Every day, around the
-clock</strong><br />
+<li><code>Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
 When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
@@ -347,8 +348,9 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>payables@castrano.example**</code><br />
 The contact's e-mail address.</li>
@@ -1296,10 +1298,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:CustomizationID</span>&gt;urn:ubl-examples:world:trns:utility-statement:1.0&lt;/<span class="kw">cbc:CustomizationID</span>&gt;</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileID</span>&gt;urn:ubl-examples:world:profile:utility-billing:1.0&lt;/<span class="kw">cbc:ProfileID</span>&gt;</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ProfileExecutionID</span>&gt;9909901005&lt;/<span class="kw">cbc:ProfileExecutionID</span>&gt;</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;9409901530&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ID</span>&gt;9409901473&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UUID</span>&gt;a67867a6-9a78-55a4-b129-4e9157f53cff&lt;/<span class="kw">cbc:UUID</span>&gt;</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-04-02&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;17:10:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:45:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:UtilityStatementTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UtilityTypeCode&quot;</span>&gt;ELEC&lt;/<span class="kw">cbc:UtilityStatementTypeCode</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Gir zharhan narmir drek binmaz vukrek taz rir.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;This statement explains the consumption behind your bill.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -1349,7 +1351,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Finance&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 041 474 7922&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`payables@ferranoenergy.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
@@ -1821,13 +1823,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SubscriberConsumption</span>&gt;</span>
 <span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">UtilityStatement</span>&gt;</span></code></pre></div>
 <hr />
-<p><a href="example-utilities-08-UtilityStatement.html">← Utility
+<p><a href="example-utilities-01-UtilityStatement.html">← Utility
 Statement</a> · <a href="examples.html#flow-utilities">all documents of
 the flow</a> · <a
 href="example-utilities-12-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

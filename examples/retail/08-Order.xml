@@ -134,7 +134,7 @@
         <cbc:Name>Sales office</cbc:Name>
         <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
         <cbc:Department>Sales</cbc:Department>
-        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>sales@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -145,7 +145,7 @@
     </cac:Party>
     <cac:DespatchContact>
       <cbc:Name>Despatch office</cbc:Name>
-      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
     </cac:DespatchContact>
     <cac:AccountingContact>
       <cbc:Name>Accounts receivable</cbc:Name>
@@ -153,7 +153,7 @@
     </cac:AccountingContact>
     <cac:SellerContact>
       <cbc:Name>Key account manager, retail</cbc:Name>
-      <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
     </cac:SellerContact>
   </cac:SellerSupplierParty>
   <cac:Delivery>

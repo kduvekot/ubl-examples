@@ -96,7 +96,7 @@
         <cbc:Name>Despatch office</cbc:Name>
         <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
         <cbc:Department>Packhouse</cbc:Department>
-        <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+        <cbc:Telephone>+999 2 5164 281 590</cbc:Telephone>
         <cbc:ElectronicMail>despatch@harrowmeadfruit.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
       </cac:Contact>
@@ -170,7 +170,7 @@
     <cac:Shipment>
       <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>2</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">0.7</cbc:Measure>
@@ -206,7 +206,7 @@
     <cac:Shipment>
       <cbc:ID>HRW-SH-26-0730</cbc:ID>
       <cac:GoodsItem>
-        <cbc:ID>1</cbc:ID>
+        <cbc:ID>3</cbc:ID>
         <cac:Temperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
           <cbc:Measure unitCode="CEL">0.6</cbc:Measure>

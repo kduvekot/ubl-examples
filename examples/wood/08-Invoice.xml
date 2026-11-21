@@ -92,7 +92,7 @@
         <cbc:Name>Accounts receivable</cbc:Name>
         <cbc:JobTitle>Credit controller</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 338 173</cbc:Telephone>
         <cbc:ElectronicMail>receivables@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -169,7 +169,6 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-02-26</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:ID schemeID="UN/LOCODE">XUFER</cbc:ID>
       <cbc:Name>Valdara Industries works, Ferrano</cbc:Name>
@@ -179,6 +178,9 @@
         </cac:Country>
       </cac:Address>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-02-26</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:PaymentMeans>
     <cbc:ID>1</cbc:ID>

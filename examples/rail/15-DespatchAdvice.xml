@@ -94,7 +94,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -189,7 +189,7 @@
           <cbc:Name>Freight desk</cbc:Name>
           <cbc:JobTitle>Freight planner</cbc:JobTitle>
           <cbc:Department>Operations</cbc:Department>
-          <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+          <cbc:Telephone>+999 1 0425 67100</cbc:Telephone>
           <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
           <cbc:Note>Every day 06:00–22:00</cbc:Note>
         </cac:Contact>
@@ -244,6 +244,26 @@
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>7400043688</cbc:ID>
+      <cac:Delivery>
+        <cac:Despatch>
+          <cbc:ActualDespatchDate>2026-04-13</cbc:ActualDespatchDate>
+          <cbc:ActualDespatchTime>13:00:00-01:00</cbc:ActualDespatchTime>
+        </cac:Despatch>
+      </cac:Delivery>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044175</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30411</cbc:ID>
+            <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">SHIPPER</cbc:SealIssuerTypeCode>
+            <cbc:SealStatusCode listID="urn:ubl-examples:world:codelist:SealStatusCode">APPLIED</cbc:SealStatusCode>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+    </cac:Shipment>
   </cac:DespatchLine>
   <cac:DespatchLine>
     <cbc:ID>2</cbc:ID>
@@ -286,5 +306,25 @@
         </cac:LotIdentification>
       </cac:ItemInstance>
     </cac:Item>
+    <cac:Shipment>
+      <cbc:ID>7400043688</cbc:ID>
+      <cac:Delivery>
+        <cac:Despatch>
+          <cbc:ActualDespatchDate>2026-04-13</cbc:ActualDespatchDate>
+          <cbc:ActualDespatchTime>15:00:00-01:00</cbc:ActualDespatchTime>
+        </cac:Despatch>
+      </cac:Delivery>
+      <cac:TransportHandlingUnit>
+        <cac:TransportEquipment>
+          <cbc:ID schemeID="ISO6346">FRXU1044180</cbc:ID>
+          <cbc:TransportEquipmentTypeCode listID="UN/EDIFACT EDED 8053">CN</cbc:TransportEquipmentTypeCode>
+          <cac:TransportEquipmentSeal>
+            <cbc:ID>XU-VI-30412</cbc:ID>
+            <cbc:SealIssuerTypeCode listID="urn:ubl-examples:world:codelist:SealIssuerTypeCode">SHIPPER</cbc:SealIssuerTypeCode>
+            <cbc:SealStatusCode listID="urn:ubl-examples:world:codelist:SealStatusCode">APPLIED</cbc:SealStatusCode>
+          </cac:TransportEquipmentSeal>
+        </cac:TransportEquipment>
+      </cac:TransportHandlingUnit>
+    </cac:Shipment>
   </cac:DespatchLine>
 </DespatchAdvice>

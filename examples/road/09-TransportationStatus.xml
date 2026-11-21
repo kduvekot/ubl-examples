@@ -11,7 +11,7 @@
   <cbc:Name>Transportation status</cbc:Name>
   <cbc:Description>Border crossing passed; customs cleared on both sides.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>Delivery now expected at the goods-in of Lumeway Distribution on 25 March at 09:30; reply only if that slot must change.</cbc:OtherInstruction>
   <cbc:TransportationStatusTypeCode listID="urn:ubl-examples:world:codelist:TransportationStatusTypeCode">PROGRESS</cbc:TransportationStatusTypeCode>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
@@ -61,7 +61,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

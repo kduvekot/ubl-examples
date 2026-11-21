@@ -12,7 +12,7 @@
   <cbc:Description>Two containers loaded on the container train.</cbc:Description>
   <cbc:Note languageID="qau">Krerdan skuskek mir drek stalkan sazhir kaztrir.</cbc:Note>
   <cbc:Note languageID="en-XU">Automatic report from the sender's tracking system.</cbc:Note>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
+  <cbc:OtherInstruction>Tell the terminal before the train leaves if a container must come off it.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>7300043586</cbc:ID>
@@ -48,7 +48,7 @@
         <cbc:Name>Freight desk</cbc:Name>
         <cbc:JobTitle>Freight planner</cbc:JobTitle>
         <cbc:Department>Operations</cbc:Department>
-        <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+        <cbc:Telephone>+999 1 0425 67100</cbc:Telephone>
         <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
         <cbc:Note>Every day 06:00–22:00</cbc:Note>
       </cac:Contact>

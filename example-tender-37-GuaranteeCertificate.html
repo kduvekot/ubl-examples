@@ -82,15 +82,18 @@ A tender guarantee. The code is from the Trade Accord's financial
 guarantee type list: TENDER = Tender guarantee.</li>
 <li><code>Purpose</code> = <strong>Guarantee of Brackenmere Furniture's
 tender in the bench procedure, given by pledging Bayvarran government
-bonds deposited with the bank.</strong><br />
-Its purpose and how it is given.</li>
+bonds deposited with the bank, immobilized and pledged in favour of the
+department on 18 February.</strong><br />
+Its purpose and how it is given, with the day the bonds were pledged,
+from which the guarantee runs, the day before the bank's certificate of
+it.</li>
 <li><code>LiabilityAmount</code> = <strong>2500.00</strong> (currencyID
 <code>XBL</code>)<br />
 The tender guarantee: the fixed 2,500 lume the procurement documents
 ask.</li>
 <li><code>ConstitutionCode</code> = <strong>SECURITIES</strong> (listID
 <code>urn:ubl-examples:world:codelist:GuaranteeConstitutionCode</code>)<br />
-Immobilised securities: public debt securities pledged in favour of the
+Immobilized securities: public debt securities pledged in favour of the
 department, which the notices allow. The code is from the Trade Accord's
 guarantee constitution list: SECURITIES = Immobilised securities.</li>
 <li><code>Note</code> = <strong>Released for every tenderer once the
@@ -102,7 +105,7 @@ When it ends.</li>
 <p>Inside <code>ApplicablePeriod</code>:</p>
 <ul>
 <li><code>StartDate</code> = <strong>2026-02-18</strong><br />
-From the immobilisation.</li>
+From the immobilization.</li>
 <li><code>EndDate</code> = <strong>2026-05-26</strong><br />
 Until 90 days after the deadline, the validity of the tenders, at the
 latest.</li>
@@ -122,7 +125,7 @@ The reference; no ontology URI for an article of the act.</li>
 <ul>
 <li><code>ImmobilizationCertificateID</code> =
 <strong>1600002271</strong><br />
-The bank's certificate of the immobilised bonds.</li>
+The bank's certificate of the immobilized bonds.</li>
 <li><code>SecurityID</code> = <strong>XB0000260313</strong> (schemeID
 <code>ISO 6166</code>)<br />
 Bayvarran federal bonds, the securities of a third issuer. The schemeID
@@ -131,10 +134,10 @@ Identification Number (the issuer's country code, nine letters or
 digits, a check digit (Luhn)).</li>
 <li><code>IssueDate</code> = <strong>2023-09-15</strong><br />
 The day the federal government issued the bond (option b: the security's
-issue date, not the immobilisation).</li>
+issue date, not the immobilization).</li>
 <li><code>FaceValueAmount</code> = <strong>2632.50</strong> (currencyID
 <code>XBL</code>)<br />
-Their value on 18 February, the day they were immobilised.</li>
+Their value on 18 February, the day they were immobilized.</li>
 <li><code>MarketValueAmount</code> = <strong>2640.00</strong>
 (currencyID <code>XBL</code>)<br />
 Their market value on the certificate's day, above the 2,500
@@ -291,10 +294,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>trade@bankoflumeport.example**</code><br />
 The contact's e-mail address.</li>
@@ -446,10 +451,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>procurement@publicworks-lumeport.example**</code><br />
 The contact's e-mail address.</li>
@@ -485,7 +492,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueDate</span>&gt;2026-02-19&lt;/<span class="kw">cbc:IssueDate</span>&gt;</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:IssueTime</span>&gt;16:19:00-01:00&lt;/<span class="kw">cbc:IssueTime</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:GuaranteeTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:GuaranteeTypeCode&quot;</span>&gt;TENDER&lt;/<span class="kw">cbc:GuaranteeTypeCode</span>&gt;</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Purpose</span>&gt;Guarantee of Brackenmere Furniture&#39;s tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank.&lt;/<span class="kw">cbc:Purpose</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Purpose</span>&gt;Guarantee of Brackenmere Furniture&#39;s tender in the bench procedure, given by pledging Bayvarran government bonds deposited with the bank, immobilized and pledged in favour of the department on 18 February.&lt;/<span class="kw">cbc:Purpose</span>&gt;</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:LiabilityAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;2500.00&lt;/<span class="kw">cbc:LiabilityAmount</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:ConstitutionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:GuaranteeConstitutionCode&quot;</span>&gt;SECURITIES&lt;/<span class="kw">cbc:ConstitutionCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Released for every tenderer once the contract is signed, so that each tenderer stays bound to its tender until then.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
@@ -633,6 +640,6 @@ href="example-tender-10-UnsubscribeFromProcedureRequest.html">Unsubscribe
 From Procedure Request →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

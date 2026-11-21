@@ -12,7 +12,6 @@
   <cbc:Description>Consignment accepted for KXL207: the active container at 5.6 °C, the dry-ice box and the Type A package checked.</cbc:Description>
   <cbc:Note>Automatic report from the sender's tracking system.</cbc:Note>
   <cbc:ShippingOrderID>QLM-FI-26-2388</cbc:ShippingOrderID>
-  <cbc:OtherInstruction>Reply only if the delivery slot must change.</cbc:OtherInstruction>
   <cbc:TransportExecutionStatusCode listID="urn:ubl-examples:world:codelist:TransportExecutionStatusCode">INPROGRESS</cbc:TransportExecutionStatusCode>
   <cac:Consignment>
     <cbc:ID>QLM-CS-26-3980</cbc:ID>

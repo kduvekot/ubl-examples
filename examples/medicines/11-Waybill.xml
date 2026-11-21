@@ -166,7 +166,7 @@
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">105.3</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cbc:SpecialServiceInstructions>Cold chain: deliver the active container to the island's cold room on arrival; radioactive package to the strong room.</cbc:SpecialServiceInstructions>
       <cac:ConsigneeParty>

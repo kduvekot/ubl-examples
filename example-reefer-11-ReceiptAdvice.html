@@ -336,17 +336,19 @@ The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Packhouse</strong><br />
 The department the desk belongs to.</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7164 281
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 5164 281
 590</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
 **<code>despatch@harrowmeadfruit.example**</code><br />
 The contact's e-mail address.</li>
@@ -415,7 +417,8 @@ Harrowmead is Harrowmead Fruit Growers'.</li>
 <li><code>Shipment/ID</code> = <strong>HRW-SH-26-0730</strong><br />
 The shipment the fruit came in.</li>
 <li><code>Shipment/GoodsItem/ID</code> = <strong>1</strong><br />
-The fruit of this line.</li>
+The goods item of this line's variety, numbered as in the phytosanitary
+certificate and the customs declarations.</li>
 <li><code>Shipment/GoodsItem/Temperature/AttributeID</code> =
 <strong>PRODUCT</strong> (schemeID
 <code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code>)<br />
@@ -470,8 +473,9 @@ under GS1 rules the brand owner numbers the item, and the brand
 Harrowmead is Harrowmead Fruit Growers'.</li>
 <li><code>Shipment/ID</code> = <strong>HRW-SH-26-0730</strong><br />
 The shipment the fruit came in.</li>
-<li><code>Shipment/GoodsItem/ID</code> = <strong>1</strong><br />
-The fruit of this line.</li>
+<li><code>Shipment/GoodsItem/ID</code> = <strong>2</strong><br />
+The goods item of this line's variety, numbered as in the phytosanitary
+certificate and the customs declarations.</li>
 <li><code>Shipment/GoodsItem/Temperature/AttributeID</code> =
 <strong>PRODUCT</strong> (schemeID
 <code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code>)<br />
@@ -526,8 +530,9 @@ under GS1 rules the brand owner numbers the item, and the brand
 Harrowmead is Harrowmead Fruit Growers'.</li>
 <li><code>Shipment/ID</code> = <strong>HRW-SH-26-0730</strong><br />
 The shipment the fruit came in.</li>
-<li><code>Shipment/GoodsItem/ID</code> = <strong>1</strong><br />
-The fruit of this line.</li>
+<li><code>Shipment/GoodsItem/ID</code> = <strong>3</strong><br />
+The goods item of this line's variety, numbered as in the phytosanitary
+certificate and the customs declarations.</li>
 <li><code>Shipment/GoodsItem/Temperature/AttributeID</code> =
 <strong>PRODUCT</strong> (schemeID
 <code>urn:ubl-examples:world:codelist:TemperatureAttributeCode</code>)<br />
@@ -640,7 +645,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Despatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Despatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Packhouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7164 281 590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5164 281 590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`despatch@harrowmeadfruit.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 07:00–16:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -714,7 +719,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;HRW-SH-26-0730&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Temperature</span>&gt;</span>
 <span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;PRODUCT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
 <span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;0.7&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
@@ -750,7 +755,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
 <span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;HRW-SH-26-0730&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;3&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Temperature</span>&gt;</span>
 <span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;PRODUCT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
 <span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;0.6&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
@@ -767,6 +772,6 @@ href="example-reefer-12-RemittanceAdvice.html">Remittance Advice
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

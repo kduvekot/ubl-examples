@@ -209,16 +209,18 @@ coordinator</strong><br />
 The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to.</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 7164 281
+<li><code>Contact/Telephone</code> = <strong>+999 2 5164 281
 590</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>sales@harrowmeadfruit.example**</code><br />
 The contact's e-mail address.</li>
@@ -569,10 +571,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>export.certification@agriculture-xb.example**</code><br />
 The contact's e-mail address.</li>
@@ -792,9 +796,10 @@ The inspector's attestation.</li>
 pests</strong><br />
 What is attested.</li>
 <li><code>Description</code> = <strong>Sampled at the packhouse and
-found free of codling moth and fire blight.</strong><br />
+found free of codling moth; the orchards of origin inspected this season
+and found free of fire blight.</strong><br />
 In words: the two pests of apples and pears that the island, which has
-neither, keeps out.</li>
+neither, keeps out, each checked in its own way.</li>
 <li><code>Note</code> = <strong>Two per cent of the cartons sampled: 23
 of 1,120.</strong><br />
 The sample.</li>
@@ -810,44 +815,53 @@ of Agriculture of Bayvarra</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
 <li><code>AttestationLine/ID</code> = <strong>1</strong><br />
-The pests checked.</li>
+The island's rule on the pests of pome fruit.</li>
 <li><code>AttestationLine/TypeCode</code> = <strong>PEST</strong>
 (listID
 <code>urn:ubl-examples:world:codelist:AttestationTypeCode</code>)<br />
 A pest check. The code is from the Trade Accord's attestation type list:
 PEST = Pest check.</li>
-<li><code>AttestationLine/Description</code> = <strong>Codling moth
-(Cydia pomonella): none found.</strong><br />
-The finding.</li>
+<li><code>AttestationLine/Description</code> = <strong>Freedom from
+quarantine pests of pome fruit.</strong><br />
+What the line attests, pest by pest below.</li>
 <li><code>AttestationLine/CriterionItem/ID</code> =
 <strong>XL-PH-12</strong><br />
 The island's import rule for pome fruit.</li>
 <li><code>AttestationLine/CriterionItem/CriterionDescription</code> =
-<strong>No live larvae and no entry holes in a sample of 2 % of the
-cartons.</strong><br />
-The criterion.</li>
+<strong>Free of codling moth and fire blight.</strong><br />
+The criterion: the two pests the rule names.</li>
 <li><code>AttestationLine/CriterionItem/DeclaredPropertyItem/Name</code>
 = <strong>Apples and pears, fresh</strong><br />
 The goods it is about.</li>
 <li><code>AttestationLine/SubAttestationLine/ID</code> =
 <strong>1.1</strong><br />
+The first pest.</li>
+<li><code>AttestationLine/SubAttestationLine/Description</code> =
+<strong>Codling moth (Cydia pomonella): no live larvae and no entry
+holes in the packhouse sample of 2 % of the cartons.</strong><br />
+The finding, and how it was checked.</li>
+<li><code>AttestationLine/SubAttestationLine/ID</code> =
+<strong>1.2</strong><br />
 The second pest.</li>
 <li><code>AttestationLine/SubAttestationLine/Description</code> =
 <strong>Fire blight (Erwinia amylovora): no symptoms in the orchards of
-origin this season.</strong><br />
-The finding.</li>
+origin at this season's inspection.</strong><br />
+The finding, and how it was checked.</li>
 </ul>
 <h3 id="additional-document-reference">Additional Document
 Reference</h3>
 <p>Inside <code>AdditionalDocumentReference</code>:</p>
 <ul>
-<li><code>ID</code> = <strong>26-0215</strong><br />
-The wholesaler's order.</li>
-<li><code>DocumentTypeCode</code> = <strong>Order</strong> (listID
+<li><code>ID</code> = <strong>HRW-OR-26-0674</strong><br />
+The cooperative's order response, whose quantities the certificate
+covers.</li>
+<li><code>DocumentTypeCode</code> = <strong>OrderResponse</strong>
+(listID
 <code>urn:ubl-examples:world:codelist:UBLDocumentTypeCode</code>)<br />
-The kind of document referred to: 26-0215 is the example reefer/01, a
-Order; a generic reference names the UBL document type. The code is from
-the Trade Accord's UBL document type list: Order.</li>
+The kind of document referred to: HRW-OR-26-0674 is the example
+reefer/02, a OrderResponse; a generic reference names the UBL document
+type. The code is from the Trade Accord's UBL document type list:
+OrderResponse = Order Response.</li>
 </ul>
 <h3 id="signature">Signature</h3>
 <p>Inside <code>Signature</code>:</p>
@@ -926,7 +940,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Export sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7164 281 590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5164 281 590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`sales@harrowmeadfruit.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 07:00–16:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1145,7 +1159,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Attestation</span>&gt;</span>
 <span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FDAB/2026/7265&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Name</span>&gt;Freedom from quarantine pests&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Sampled at the packhouse and found free of codling moth and fire blight.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Description</span>&gt;Sampled at the packhouse and found free of codling moth; the orchards of origin inspected this season and found free of fire blight.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Two per cent of the cartons sampled: 23 of 1,120.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AcceptanceIndicator</span>&gt;true&lt;/<span class="kw">cbc:AcceptanceIndicator</span>&gt;</span>
 <span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:IssuerParty</span>&gt;</span>
@@ -1159,36 +1173,40 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AttestationLine</span>&gt;</span>
 <span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
 <span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:TypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AttestationTypeCode&quot;</span>&gt;PEST&lt;/<span class="kw">cbc:TypeCode</span>&gt;</span>
-<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Codling moth (Cydia pomonella): none found.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Freedom from quarantine pests of pome fruit.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:CriterionItem</span>&gt;</span>
 <span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;XL-PH-12&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CriterionDescription</span>&gt;No live larvae and no entry holes in a sample of 2 % of the cartons.&lt;/<span class="kw">cbc:CriterionDescription</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CriterionDescription</span>&gt;Free of codling moth and fire blight.&lt;/<span class="kw">cbc:CriterionDescription</span>&gt;</span>
 <span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DeclaredPropertyItem</span>&gt;</span>
 <span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Apples and pears, fresh&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DeclaredPropertyItem</span>&gt;</span>
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:CriterionItem</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubAttestationLine</span>&gt;</span>
 <span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Fire blight (Erwinia amylovora): no symptoms in the orchards of origin this season.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Codling moth (Cydia pomonella): no live larvae and no entry holes in the packhouse sample of 2 % of the cartons.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubAttestationLine</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AttestationLine</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Attestation</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;26-0215&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FDA-SIG-26-PH&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;5946128073&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal Department of Agriculture of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">GoodsCertificate</span>&gt;</span></code></pre></div>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SubAttestationLine</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Fire blight (Erwinia amylovora): no symptoms in the orchards of origin at this season&#39;s inspection.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SubAttestationLine</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AttestationLine</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Attestation</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;HRW-OR-26-0674&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;OrderResponse&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;FDA-SIG-26-PH&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;5946128073&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Federal Department of Agriculture of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">GoodsCertificate</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-reefer-03-ForwardingInstructions.html">← Forwarding
 Instructions</a> · <a href="examples.html#flow-reefer">all documents of
@@ -1197,6 +1215,6 @@ href="example-reefer-05-ExportCustomsDeclaration.html">Export Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

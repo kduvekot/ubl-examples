@@ -135,7 +135,7 @@
       <cbc:Name>Despatch office</cbc:Name>
       <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
       <cbc:Department>Warehouse</cbc:Department>
-      <cbc:Telephone>+999 2 7121 930 729</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 930 729</cbc:Telephone>
       <cbc:ElectronicMail>despatch@saltmere.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
@@ -288,7 +288,7 @@
               </cac:PartyName>
               <cac:Contact>
                 <cbc:Name>Dangerous goods emergency line</cbc:Name>
-                <cbc:Telephone>+999 2 7121 930 486</cbc:Telephone>
+                <cbc:Telephone>+999 2 5121 930 486</cbc:Telephone>
                 <cbc:Note>Every day, around the clock</cbc:Note>
               </cac:Contact>
             </cac:ContactParty>
@@ -410,7 +410,7 @@
               </cac:PartyName>
               <cac:Contact>
                 <cbc:Name>Dangerous goods emergency line</cbc:Name>
-                <cbc:Telephone>+999 2 7121 930 486</cbc:Telephone>
+                <cbc:Telephone>+999 2 5121 930 486</cbc:Telephone>
                 <cbc:Note>Every day, around the clock</cbc:Note>
               </cac:Contact>
             </cac:ContactParty>
@@ -455,7 +455,7 @@
               </cac:PartyName>
               <cac:Contact>
                 <cbc:Name>Dangerous goods emergency line</cbc:Name>
-                <cbc:Telephone>+999 2 7121 930 486</cbc:Telephone>
+                <cbc:Telephone>+999 2 5121 930 486</cbc:Telephone>
                 <cbc:Note>Every day, around the clock</cbc:Note>
               </cac:Contact>
             </cac:ContactParty>

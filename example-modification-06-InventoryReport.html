@@ -209,8 +209,9 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
 **<code>sales@tostara.example**</code><br />
 The contact's e-mail address.</li>
@@ -331,16 +332,18 @@ coordinator</strong><br />
 The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> = <strong>Sales</strong><br />
 The department the desk belongs to.</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 338
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 5121 338
 173</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
 **<code>sales@marrowdalesawmill.example**</code><br />
 The contact's e-mail address.</li>
@@ -368,8 +371,8 @@ Sawmill</a> is named in.</p>
 <li><code>ID</code> = <strong>1</strong><br />
 Kiln charge 1, from the first load of blanks.</li>
 <li><code>Note</code> = <strong>Kiln charge 1, from the first load of
-blanks, lot MDS-L26-0119: modified, planed, sealed and
-bundled.</strong><br />
+blanks (lot MDS-BL26-0109), output lot MDS-L26-0119: modified, planed,
+sealed and bundled.</strong><br />
 What the line holds.</li>
 <li><code>Quantity</code> = <strong>48</strong> (unitCode
 <code>EA</code>)<br />
@@ -403,12 +406,14 @@ Where the sawmill's bundles stand, kept apart as its goods.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 Kiln charge 2, from the second load of blanks.</li>
 <li><code>Note</code> = <strong>Kiln charge 2, from the second load of
-blanks, lot MDS-L26-0126: modified; still being planed and
-sealed.</strong><br />
+blanks (lot MDS-BL26-0116), output lot MDS-L26-0126: modified; still
+being planed and sealed, so the 48 bundles are the expected output,
+available from 4 February.</strong><br />
 What the line holds.</li>
 <li><code>Quantity</code> = <strong>48</strong> (unitCode
 <code>EA</code>)<br />
-The bundles of the charge.</li>
+The bundles the charge will give: stock that will be in store once
+bundled.</li>
 <li><code>AvailabilityDate</code> = <strong>2026-02-04</strong><br />
 Available from Wednesday 4 February, when its planing, sealing and
 bundling are finished.</li>
@@ -535,7 +540,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Sales office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Sales coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Sales&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5121 338 173&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`sales@marrowdalesawmill.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -547,7 +552,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:SellerSupplierParty</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InventoryReportLine</span>&gt;</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Kiln charge 1, from the first load of blanks, lot MDS-L26-0119: modified, planed, sealed and bundled.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Kiln charge 1, from the first load of blanks (lot MDS-BL26-0109), output lot MDS-L26-0119: modified, planed, sealed and bundled.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;48&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AvailabilityStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AvailabilityStatusCode&quot;</span>&gt;AVAILABLE&lt;/<span class="kw">cbc:AvailabilityStatusCode</span>&gt;</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
@@ -565,7 +570,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:InventoryReportLine</span>&gt;</span>
 <span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:InventoryReportLine</span>&gt;</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Kiln charge 2, from the second load of blanks, lot MDS-L26-0126: modified; still being planed and sealed.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Kiln charge 2, from the second load of blanks (lot MDS-BL26-0116), output lot MDS-L26-0126: modified; still being planed and sealed, so the 48 bundles are the expected output, available from 4 February.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Quantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;48&lt;/<span class="kw">cbc:Quantity</span>&gt;</span>
 <span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:AvailabilityDate</span>&gt;2026-02-04&lt;/<span class="kw">cbc:AvailabilityDate</span>&gt;</span>
 <span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
@@ -590,6 +595,6 @@ href="examples.html#flow-modification">all documents of the flow</a> ·
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

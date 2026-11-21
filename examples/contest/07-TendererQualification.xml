@@ -106,7 +106,7 @@
           <cbc:Name>Bids office</cbc:Name>
           <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
-          <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
+          <cbc:Telephone>+999 2 5121 602 606</cbc:Telephone>
           <cbc:ElectronicMail>tenders@brackenmere.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>
@@ -177,7 +177,7 @@
           <cbc:Name>Bids office</cbc:Name>
           <cbc:JobTitle>Bid manager</cbc:JobTitle>
           <cbc:Department>Sales</cbc:Department>
-          <cbc:Telephone>+999 2 7121 930 729</cbc:Telephone>
+          <cbc:Telephone>+999 2 5121 930 729</cbc:Telephone>
           <cbc:ElectronicMail>bids@saltmere.example</cbc:ElectronicMail>
           <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
         </cac:Contact>

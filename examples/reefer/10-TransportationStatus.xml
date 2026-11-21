@@ -101,6 +101,17 @@
         <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
         <cbc:OccurrenceTime>08:10:00+00:00</cbc:OccurrenceTime>
         <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
+        <cac:CurrentStatus>
+          <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
+          <cbc:Description>The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.</cbc:Description>
+          <cac:Condition>
+            <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
+            <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
+            <cbc:Description>Supply air, every hour of the voyage.</cbc:Description>
+            <cbc:MinimumMeasure unitCode="CEL">0.2</cbc:MinimumMeasure>
+            <cbc:MaximumMeasure unitCode="CEL">0.9</cbc:MaximumMeasure>
+          </cac:Condition>
+        </cac:CurrentStatus>
         <cac:Location>
           <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
           <cbc:Name>Port of Selanu</cbc:Name>
@@ -137,17 +148,6 @@
           <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
           <cbc:OccurrenceTime>08:25:00+00:00</cbc:OccurrenceTime>
           <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">STORAGE</cbc:TransportEventTypeCode>
-          <cac:CurrentStatus>
-            <cbc:ConditionCode listID="urn:ubl-examples:world:codelist:StatusConditionCode">COMPLETED</cbc:ConditionCode>
-            <cbc:Description>The reefer's own log, read by the carrier's monitoring at sea, over the voyage from loading at Lumeport to discharge.</cbc:Description>
-            <cac:Condition>
-              <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">TRANSPORT</cbc:AttributeID>
-              <cbc:Measure unitCode="CEL">0.5</cbc:Measure>
-              <cbc:Description>Supply air, every hour of the voyage.</cbc:Description>
-              <cbc:MinimumMeasure unitCode="CEL">0.2</cbc:MinimumMeasure>
-              <cbc:MaximumMeasure unitCode="CEL">0.9</cbc:MaximumMeasure>
-            </cac:Condition>
-          </cac:CurrentStatus>
           <cac:Location>
             <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
             <cbc:Name>Port of Selanu</cbc:Name>
@@ -163,11 +163,17 @@
   </cac:Consignment>
   <cac:TransportEvent>
     <cbc:OccurrenceDate>2026-04-26</cbc:OccurrenceDate>
-    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">DISCHARGE</cbc:TransportEventTypeCode>
-    <cbc:Description>Reefer TWLU5316047 discharged and on the port's power; released by customs.</cbc:Description>
+    <cbc:OccurrenceTime>08:30:00+00:00</cbc:OccurrenceTime>
+    <cbc:TransportEventTypeCode listID="urn:ubl-examples:world:codelist:TransportEventTypeCode">CUSTOMSRELEASE</cbc:TransportEventTypeCode>
+    <cbc:Description>Reefer TWLU5316047 released by customs on its arrival, on the import declaration lodged before; ready for collection.</cbc:Description>
     <cac:Location>
       <cbc:ID schemeID="UN/LOCODE">XLSEL</cbc:ID>
       <cbc:Name>Port of Selanu</cbc:Name>
+      <cac:Address>
+        <cac:Country>
+          <cbc:IdentificationCode listID="ISO 3166">XL</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
     </cac:Location>
   </cac:TransportEvent>
   <cac:SenderParty>

@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>9909901005</cbc:ProfileExecutionID>
-  <cbc:ID>9409901530</cbc:ID>
+  <cbc:ID>9409901473</cbc:ID>
   <cbc:UUID>a67867a6-9a78-55a4-b129-4e9157f53cff</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:10:00-01:00</cbc:IssueTime>
+  <cbc:IssueTime>16:45:00-01:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">ELEC</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qau">Gir zharhan narmir drek binmaz vukrek taz rir.</cbc:Note>
   <cbc:Note languageID="en-XU">This statement explains the consumption behind your bill.</cbc:Note>
@@ -57,7 +57,7 @@
       <cbc:Department>Finance</cbc:Department>
       <cbc:Telephone>+999 1 041 474 7922</cbc:Telephone>
       <cbc:ElectronicMail>payables@ferranoenergy.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>

@@ -98,7 +98,7 @@
     <cbc:ID>QLM-SH-26-3980</cbc:ID>
     <cac:Consignment>
       <cbc:ID>QLM-CS-26-3980</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">101.1</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">105.3</cbc:GrossWeightMeasure>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:RequestedPickupTransportEvent>
         <cbc:OccurrenceDate>2026-06-15</cbc:OccurrenceDate>
@@ -206,7 +206,6 @@
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
         <cbc:ID>QLM-TC-1</cbc:ID>
-        <cbc:TransportHandlingUnitTypeCode listID="UNECE Recommendation 21 - Codes for Passengers, Types of Cargo, Packages and Packaging Materials (with Complementary Codes for Package Names)">CT</cbc:TransportHandlingUnitTypeCode>
         <cbc:HandlingInstructions>Keep at 2 to 8 °C; do not freeze; do not open before the island's cargo terminal.</cbc:HandlingInstructions>
         <cac:MinimumTemperature>
           <cbc:AttributeID schemeID="urn:ubl-examples:world:codelist:TemperatureAttributeCode">PRODUCT</cbc:AttributeID>
@@ -436,6 +435,31 @@
             <cbc:SpecialFormDescription>Non-special form: molybdate adsorbed on an alumina column, in its shielded housing.</cbc:SpecialFormDescription>
             <cbc:TransportIndexNumeric>1.5</cbc:TransportIndexNumeric>
           </cac:RadioactiveMaterial>
+        </cac:HazardousItem>
+      </cac:Item>
+    </cac:GoodsItem>
+    <cac:GoodsItem>
+      <cbc:ID>5</cbc:ID>
+      <cbc:Description>Dry ice, refrigerant of the frozen vaccine (goods item 3)</cbc:Description>
+      <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
+      <cbc:NetWeightMeasure unitCode="KGM">6</cbc:NetWeightMeasure>
+      <cac:Item>
+        <cbc:Name>Carbon dioxide, solid (dry ice)</cbc:Name>
+        <cac:HazardousItem>
+          <cbc:ID>QLM-DRYICE-0615</cbc:ID>
+          <cbc:PlacardNotation>9</cbc:PlacardNotation>
+          <cbc:UNDGCode listID="UN Model Regulations Dangerous Goods List">1845</cbc:UNDGCode>
+          <cbc:MedicalFirstAidGuideCode listID="ERG 2024">120</cbc:MedicalFirstAidGuideCode>
+          <cbc:ProperShippingName>Carbon dioxide, solid</cbc:ProperShippingName>
+          <cbc:HazardousCategoryCode listID="UN Model Regulations hazard class">9</cbc:HazardousCategoryCode>
+          <cbc:MarkingID>UN1845</cbc:MarkingID>
+          <cbc:HazardClassID schemeID="UN Model Regulations hazard class">9</cbc:HazardClassID>
+          <cbc:NetWeightMeasure unitCode="KGM">6</cbc:NetWeightMeasure>
+          <cbc:Quantity unitCode="EA">1</cbc:Quantity>
+          <cac:HazardousGoodsTransit>
+            <cbc:PackingCriteriaCode listID="urn:ubl-examples:world:codelist:PackingInstructionCode">PI954</cbc:PackingCriteriaCode>
+            <cbc:HazardousRegulationCode listID="UN/EDIFACT EDED 8273">ICA</cbc:HazardousRegulationCode>
+          </cac:HazardousGoodsTransit>
         </cac:HazardousItem>
       </cac:Item>
     </cac:GoodsItem>

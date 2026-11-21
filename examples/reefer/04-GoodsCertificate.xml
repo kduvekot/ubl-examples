@@ -58,7 +58,7 @@
       <cbc:Name>Sales office</cbc:Name>
       <cbc:JobTitle>Export sales coordinator</cbc:JobTitle>
       <cbc:Department>Sales</cbc:Department>
-      <cbc:Telephone>+999 2 7164 281 590</cbc:Telephone>
+      <cbc:Telephone>+999 2 5164 281 590</cbc:Telephone>
       <cbc:ElectronicMail>sales@harrowmeadfruit.example</cbc:ElectronicMail>
       <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
     </cac:Contact>
@@ -277,7 +277,7 @@
   <cac:Attestation>
     <cbc:ID>FDAB/2026/7265</cbc:ID>
     <cbc:Name>Freedom from quarantine pests</cbc:Name>
-    <cbc:Description>Sampled at the packhouse and found free of codling moth and fire blight.</cbc:Description>
+    <cbc:Description>Sampled at the packhouse and found free of codling moth; the orchards of origin inspected this season and found free of fire blight.</cbc:Description>
     <cbc:Note>Two per cent of the cartons sampled: 23 of 1,120.</cbc:Note>
     <cbc:AcceptanceIndicator>true</cbc:AcceptanceIndicator>
     <cac:IssuerParty>
@@ -291,23 +291,27 @@
     <cac:AttestationLine>
       <cbc:ID>1</cbc:ID>
       <cbc:TypeCode listID="urn:ubl-examples:world:codelist:AttestationTypeCode">PEST</cbc:TypeCode>
-      <cbc:Description>Codling moth (Cydia pomonella): none found.</cbc:Description>
+      <cbc:Description>Freedom from quarantine pests of pome fruit.</cbc:Description>
       <cac:CriterionItem>
         <cbc:ID>XL-PH-12</cbc:ID>
-        <cbc:CriterionDescription>No live larvae and no entry holes in a sample of 2 % of the cartons.</cbc:CriterionDescription>
+        <cbc:CriterionDescription>Free of codling moth and fire blight.</cbc:CriterionDescription>
         <cac:DeclaredPropertyItem>
           <cbc:Name>Apples and pears, fresh</cbc:Name>
         </cac:DeclaredPropertyItem>
       </cac:CriterionItem>
       <cac:SubAttestationLine>
         <cbc:ID>1.1</cbc:ID>
-        <cbc:Description>Fire blight (Erwinia amylovora): no symptoms in the orchards of origin this season.</cbc:Description>
+        <cbc:Description>Codling moth (Cydia pomonella): no live larvae and no entry holes in the packhouse sample of 2 % of the cartons.</cbc:Description>
+      </cac:SubAttestationLine>
+      <cac:SubAttestationLine>
+        <cbc:ID>1.2</cbc:ID>
+        <cbc:Description>Fire blight (Erwinia amylovora): no symptoms in the orchards of origin at this season's inspection.</cbc:Description>
       </cac:SubAttestationLine>
     </cac:AttestationLine>
   </cac:Attestation>
   <cac:AdditionalDocumentReference>
-    <cbc:ID>26-0215</cbc:ID>
-    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">Order</cbc:DocumentTypeCode>
+    <cbc:ID>HRW-OR-26-0674</cbc:ID>
+    <cbc:DocumentTypeCode listID="urn:ubl-examples:world:codelist:UBLDocumentTypeCode">OrderResponse</cbc:DocumentTypeCode>
   </cac:AdditionalDocumentReference>
   <cac:Signature>
     <cbc:ID>FDA-SIG-26-PH</cbc:ID>

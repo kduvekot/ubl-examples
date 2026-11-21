@@ -213,8 +213,9 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
 **<code>loading@castrano.example**</code><br />
 The contact's e-mail address.</li>
@@ -336,17 +337,19 @@ The job of the person who answers at the desk.</li>
 <li><code>Party/Contact/Department</code> =
 <strong>Warehouse</strong><br />
 The department the desk belongs to.</li>
-<li><code>Party/Contact/Telephone</code> = <strong>+999 2 7121 955
+<li><code>Party/Contact/Telephone</code> = <strong>+999 2 5121 955
 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
 **<code>goodsin@lumeway.example**</code><br />
 The contact's e-mail address.</li>
@@ -486,8 +489,9 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits.</li>
 <li><code>Party/Contact/ElectronicMail</code> =
 **<code>order@valdara.example**</code><br />
 The contact's e-mail address.</li>
@@ -614,15 +618,15 @@ gives it.</li>
 <strong>Operations</strong><br />
 The department the desk belongs to; as Ferrano Rail Cargo gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/Telephone</code> =
-<strong>+999 1 0413 67100</strong><br />
+<strong>+999 1 0425 67100</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits. As Ferrano Rail Cargo gives
-it.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits. As Ferrano Rail Cargo gives it.</li>
 <li><code>Consignment/CarrierParty/Contact/ElectronicMail</code> =
 **<code>freight@ferranorail.example**</code><br />
 The contact's e-mail address; as Ferrano Rail Cargo gives it.</li>
@@ -637,8 +641,9 @@ The 3PL's outbound number.</li>
 Packed and gone.</li>
 <li><code>Delivery/Despatch/ActualDespatchTime</code> =
 <strong>15:00:00-01:00</strong><br />
-The carrier's tractor took over the second box: the despatch is the
-pickup; in the issuer's local time, with its offset from UTC.</li>
+The carrier's tractor took over the second box, the last to leave: the
+despatch is the pickup; each line gives its own box's time; in the
+issuer's local time, with its offset from UTC.</li>
 </ul>
 <h3 id="despatch-line">Despatch Line</h3>
 <p>Inside <code>DespatchLine</code>:</p>
@@ -734,6 +739,39 @@ frames went through.</li>
 = <strong>ZN-26-071</strong><br />
 Its batch: each lot has its own, in the coating line's running count of
 the year (the production record).</li>
+<li><code>Shipment/ID</code> = <strong>7400043688</strong><br />
+The shipment of the despatch advice; this line's part of it travelled in
+the first container.</li>
+<li><code>Shipment/Delivery/Despatch/ActualDespatchDate</code> =
+<strong>2026-04-13</strong><br />
+The day the box left the warehouse.</li>
+<li><code>Shipment/Delivery/Despatch/ActualDespatchTime</code> =
+<strong>13:00:00-01:00</strong><br />
+The carrier's tractor took over the first box: the despatch of this line
+is its pickup; in the issuer's local time, with its offset from
+UTC.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/ID</code> =
+<strong>FRXU1044175</strong> (schemeID <code>ISO6346</code>)<br />
+The container's number: owner code, U for a freight container, six
+digits and the ISO 6346 check digit.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode</code>
+= <strong>CN</strong> (listID <code>UN/EDIFACT EDED 8053</code>)<br />
+UN/EDIFACT 8053 code CN: container. The code is from UBL's default
+Transport equipment type (UN/EDIFACT 8053) list: CN = Container.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID</code>
+= <strong>XU-VI-30411</strong><br />
+The number of the bolt seal the 3PL put on the doors, for goods-in to
+check on arrival.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode</code>
+= <strong>SHIPPER</strong> (listID
+<code>urn:ubl-examples:world:codelist:SealIssuerTypeCode</code>)<br />
+The seal was issued by the shipper. The code is from the Trade Accord's
+seal issuer type list: SHIPPER = Shipper.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealStatusCode</code>
+= <strong>APPLIED</strong> (listID
+<code>urn:ubl-examples:world:codelist:SealStatusCode</code>)<br />
+The seal is in place. The code is from the Trade Accord's seal status
+list: APPLIED = Applied.</li>
 <li><code>ID</code> = <strong>2</strong><br />
 The line number.</li>
 <li><code>Note</code> = <strong>Container FRXU1044180, seal XU-VI-30412:
@@ -825,6 +863,39 @@ frames went through.</li>
 = <strong>ZN-26-072</strong><br />
 Its batch: each lot has its own, in the coating line's running count of
 the year (the production record).</li>
+<li><code>Shipment/ID</code> = <strong>7400043688</strong><br />
+The shipment of the despatch advice; this line's part of it travelled in
+the second container.</li>
+<li><code>Shipment/Delivery/Despatch/ActualDespatchDate</code> =
+<strong>2026-04-13</strong><br />
+The day the box left the warehouse.</li>
+<li><code>Shipment/Delivery/Despatch/ActualDespatchTime</code> =
+<strong>15:00:00-01:00</strong><br />
+The carrier's tractor took over the second box: the despatch of this
+line is its pickup; in the issuer's local time, with its offset from
+UTC.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/ID</code> =
+<strong>FRXU1044180</strong> (schemeID <code>ISO6346</code>)<br />
+The container's number: owner code, U for a freight container, six
+digits and the ISO 6346 check digit.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentTypeCode</code>
+= <strong>CN</strong> (listID <code>UN/EDIFACT EDED 8053</code>)<br />
+UN/EDIFACT 8053 code CN: container. The code is from UBL's default
+Transport equipment type (UN/EDIFACT 8053) list: CN = Container.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/ID</code>
+= <strong>XU-VI-30412</strong><br />
+The number of the bolt seal the 3PL put on the doors, for goods-in to
+check on arrival.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealIssuerTypeCode</code>
+= <strong>SHIPPER</strong> (listID
+<code>urn:ubl-examples:world:codelist:SealIssuerTypeCode</code>)<br />
+The seal was issued by the shipper. The code is from the Trade Accord's
+seal issuer type list: SHIPPER = Shipper.</li>
+<li><code>Shipment/TransportHandlingUnit/TransportEquipment/TransportEquipmentSeal/SealStatusCode</code>
+= <strong>APPLIED</strong> (listID
+<code>urn:ubl-examples:world:codelist:SealStatusCode</code>)<br />
+The seal is in place. The code is from the Trade Accord's seal status
+list: APPLIED = Applied.</li>
 </ul>
 <h2 id="the-document">The document</h2>
 <div class="sourceCode" id="cb1"><pre
@@ -924,7 +995,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Goods-in&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Goods-in supervisor&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`goodsin@lumeway.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1019,7 +1090,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Freight desk&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Freight planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 0413 67100&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 1 0425 67100&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`freight@ferranorail.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Every day 06:00–22:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1074,50 +1145,90 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
 <span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180, seal XU-VI-30412: the lot of 10 April.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
-<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
-<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
-<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
-<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LMW-10442&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
-<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
-<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;COLOUR&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPartPositionCode&quot;</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
-<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ColourCode&quot;</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
-<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
-<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
-<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
-<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
-<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
-<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
-<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManufactureDate</span>&gt;2026-04-10&lt;/<span class="kw">cbc:ManufactureDate</span>&gt;</span>
-<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LotIdentification</span>&gt;</span>
-<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LotNumberID</span>&gt;VI-LOT-260410&lt;/<span class="kw">cbc:LotNumberID</span>&gt;</span>
-<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Coating batch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Value</span>&gt;ZN-26-072&lt;/<span class="kw">cbc:Value</span>&gt;</span>
-<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
-<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
-<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
-<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
-<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;7400043688&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ActualDespatchTime</span>&gt;13:00:00-01:00&lt;/<span class="kw">cbc:ActualDespatchTime</span>&gt;</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO6346&quot;</span>&gt;FRXU1044175&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEquipmentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8053&quot;</span>&gt;CN&lt;/<span class="kw">cbc:TransportEquipmentTypeCode</span>&gt;</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TransportEquipmentSeal</span>&gt;</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XU-VI-30411&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SealIssuerTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SealIssuerTypeCode&quot;</span>&gt;SHIPPER&lt;/<span class="kw">cbc:SealIssuerTypeCode</span>&gt;</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SealStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SealStatusCode&quot;</span>&gt;APPLIED&lt;/<span class="kw">cbc:SealStatusCode</span>&gt;</span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TransportEquipmentSeal</span>&gt;</span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:Note</span>&gt;Container FRXU1044180, seal XU-VI-30412: the lot of 10 April.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:DeliveredQuantity</span> <span class="ot">unitCode=</span><span class="st">&quot;EA&quot;</span>&gt;96&lt;/<span class="kw">cbc:DeliveredQuantity</span>&gt;</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:LineID</span>&gt;1&lt;/<span class="kw">cbc:LineID</span>&gt;</span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:OrderLineReference</span>&gt;</span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir, 1800 mm, manskan skul vazzhan stan krarhir-trunnir zhukvan stezir gek, bukdrek kalnan skul zhaznul dunnir darhir, gan zharsul krir drek tarkul.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench, 1800 mm, frame of galvanised and powder-coated ductile cast iron, five slats of thermally modified ash, for bolting to the ground.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;qau&quot;</span>&gt;Haz nanskir Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span> <span class="ot">languageID=</span><span class="st">&quot;en-XU&quot;</span>&gt;Park bench Serra 180&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;LMW-10442&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:BuyersItemIdentification</span>&gt;</span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;VI-B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExtendedID</span>&gt;GRY&lt;/<span class="kw">cbc:ExtendedID</span>&gt;</span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:OtherAttributeCode&quot;</span>&gt;COLOUR&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:PositionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ItemPartPositionCode&quot;</span>&gt;FRM&lt;/<span class="kw">cbc:PositionCode</span>&gt;</span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:DescriptionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:ColourCode&quot;</span>&gt;GRY&lt;/<span class="kw">cbc:DescriptionCode</span>&gt;</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Description</span>&gt;Frame in Ferro grey&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PhysicalAttribute</span>&gt;</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:SellersItemIdentification</span>&gt;</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO 15459-6&quot;</span>&gt;KXU10014B180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BarcodeSymbologyID</span>&gt;Code128&lt;/<span class="kw">cbc:BarcodeSymbologyID</span>&gt;</span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:IssuerScopeID</span>&gt;KXU10014&lt;/<span class="kw">cbc:IssuerScopeID</span>&gt;</span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:StandardItemIdentification</span>&gt;</span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ManufactureDate</span>&gt;2026-04-10&lt;/<span class="kw">cbc:ManufactureDate</span>&gt;</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:LotIdentification</span>&gt;</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:LotNumberID</span>&gt;VI-LOT-260410&lt;/<span class="kw">cbc:LotNumberID</span>&gt;</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Coating batch&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Value</span>&gt;ZN-26-072&lt;/<span class="kw">cbc:Value</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:AdditionalItemProperty</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:LotIdentification</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ItemInstance</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;7400043688&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ActualDespatchDate</span>&gt;2026-04-13&lt;/<span class="kw">cbc:ActualDespatchDate</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ActualDespatchTime</span>&gt;15:00:00-01:00&lt;/<span class="kw">cbc:ActualDespatchTime</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Despatch</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Delivery</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;ISO6346&quot;</span>&gt;FRXU1044180&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:TransportEquipmentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 8053&quot;</span>&gt;CN&lt;/<span class="kw">cbc:TransportEquipmentTypeCode</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:TransportEquipmentSeal</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;XU-VI-30412&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SealIssuerTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SealIssuerTypeCode&quot;</span>&gt;SHIPPER&lt;/<span class="kw">cbc:SealIssuerTypeCode</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:SealStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:SealStatusCode&quot;</span>&gt;APPLIED&lt;/<span class="kw">cbc:SealStatusCode</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:TransportEquipmentSeal</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:DespatchLine</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">DespatchAdvice</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-rail-03-TransportExecutionPlan.html">← Transport
 Execution Plan</a> · <a href="examples.html#flow-rail">all documents of
@@ -1126,6 +1237,6 @@ href="example-rail-06-TransitCustomsDeclaration.html">Transit Customs
 Declaration →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

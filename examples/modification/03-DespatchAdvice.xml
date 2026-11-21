@@ -47,7 +47,7 @@
         <cbc:Name>Despatch office</cbc:Name>
         <cbc:JobTitle>Despatch coordinator</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 338 173</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 338 173</cbc:Telephone>
         <cbc:ElectronicMail>despatch@marrowdalesawmill.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
@@ -83,11 +83,11 @@
         </cac:Country>
       </cac:PostalAddress>
       <cac:Contact>
-        <cbc:Name>Sales office</cbc:Name>
-        <cbc:JobTitle>Sales coordinator</cbc:JobTitle>
-        <cbc:Department>Sales</cbc:Department>
+        <cbc:Name>Timber store</cbc:Name>
+        <cbc:JobTitle>Store keeper</cbc:JobTitle>
+        <cbc:Department>Yard</cbc:Department>
         <cbc:Telephone>+999 1 041 573 2290</cbc:Telephone>
-        <cbc:ElectronicMail>sales@tostara.example</cbc:ElectronicMail>
+        <cbc:ElectronicMail>store@tostara.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:00–16:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
@@ -123,9 +123,9 @@
     <cac:Item>
       <cbc:Description>Sawn and kiln-dried European ash, 1830 × 101 × 51 mm, a blank for the bench slat MDS-SL-1800 before it is modified and planed.</cbc:Description>
       <cbc:Name>Ash blank 1830, kiln dried</cbc:Name>
-      <cac:SellersItemIdentification>
+      <cac:BuyersItemIdentification>
         <cbc:ID>MDS-BL-1830</cbc:ID>
-      </cac:SellersItemIdentification>
+      </cac:BuyersItemIdentification>
       <cac:ItemInstance>
         <cbc:ManufactureDate>2026-01-09</cbc:ManufactureDate>
         <cac:LotIdentification>

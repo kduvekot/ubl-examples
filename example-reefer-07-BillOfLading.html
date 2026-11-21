@@ -176,17 +176,19 @@ coordinator</strong><br />
 The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Packhouse</strong><br />
 The department the desk belongs to.</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 7164 281
+<li><code>Contact/Telephone</code> = <strong>+999 2 5164 281
 590</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>despatch@harrowmeadfruit.example**</code><br />
 The contact's e-mail address.</li>
@@ -305,10 +307,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>bookings@tidewell.example**</code><br />
 The contact's e-mail address.</li>
@@ -439,10 +443,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>export@bayforth.example**</code><br />
 The contact's e-mail address.</li>
@@ -905,15 +911,15 @@ name are enough.</li>
 = <strong>Nalevi Warehousing</strong><br />
 A party referred to from another party's details: its identifier and
 name are enough.</li>
-<li><code>Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/OccurrenceDate</code>
+<li><code>Consignment/OnCarriageShipmentStage/DeliveryTransportEvent/OccurrenceDate</code>
 = <strong>2026-04-27</strong><br />
 Planned delivery at the cold store on the Monday morning, the day after
 discharge.</li>
-<li><code>Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/CompletionIndicator</code>
+<li><code>Consignment/OnCarriageShipmentStage/DeliveryTransportEvent/CompletionIndicator</code>
 = <strong>false</strong><br />
 Whether the event has taken place (true) or is still to come
 (false).</li>
-<li><code>Consignment/OnCarriageShipmentStage/ReceiptTransportEvent/Location/Name</code>
+<li><code>Consignment/OnCarriageShipmentStage/DeliveryTransportEvent/Location/Name</code>
 = <strong>Hafefo Fresh Produce, cold store, Selanu</strong><br />
 The wholesaler's cold store by the port.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/ID</code>
@@ -1426,13 +1432,21 @@ UN/EDIFACT 7161 code ABK: miscellaneous. The code is from the world's
 copy of UN/EDIFACT 7161 Special service description: ABK =
 Miscellaneous.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/AllowanceChargeReason</code>
-= <strong>Reefer power and monitoring at Selanu after discharge, a
-day</strong><br />
-The carrier's tariff for the days the reefer stands on the port's power
+= <strong>Reefer power and monitoring at Selanu after
+discharge</strong><br />
+The carrier's service for the days the reefer stands on the port's power
 until the consignee collects it, collect from the consignee.</li>
+<li><code>Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/MultiplierFactorNumeric</code>
+= <strong>1</strong><br />
+The days planned on the port's power: discharged on the Sunday,
+collected on the Monday morning.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/Amount</code>
 = <strong>45.00</strong> (currencyID <code>XBL</code>)<br />
-A day's power and monitoring, at the carrier's tariff.</li>
+The charge for the planned stay: the days times the tariff's daily rate;
+a longer stay is charged at the same rate.</li>
+<li><code>Consignment/TransportHandlingUnit/TransportEquipment/ServiceAllowanceCharge/BaseAmount</code>
+= <strong>45.00</strong> (currencyID <code>XBL</code>)<br />
+The carrier's tariff: power and monitoring for one day.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/VerifiedGrossMass/ID</code>
 = <strong>VGM-26-0422</strong><br />
 The shipper's weight declaration.</li>
@@ -1610,7 +1624,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Despatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Despatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Packhouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7164 281 590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5164 281 590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`despatch@harrowmeadfruit.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 07:00–16:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1908,13 +1922,13 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Nalevi Warehousing&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:CarrierParty</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:ReceiptTransportEvent</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:DeliveryTransportEvent</span>&gt;</span>
 <span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:OccurrenceDate</span>&gt;2026-04-27&lt;/<span class="kw">cbc:OccurrenceDate</span>&gt;</span>
 <span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:CompletionIndicator</span>&gt;false&lt;/<span class="kw">cbc:CompletionIndicator</span>&gt;</span>
 <span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:Location</span>&gt;</span>
 <span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Name</span>&gt;Hafefo Fresh Produce, cold store, Selanu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Location</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:ReceiptTransportEvent</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:DeliveryTransportEvent</span>&gt;</span>
 <span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:OnCarriageShipmentStage</span>&gt;</span>
 <span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
 <span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:TransportEquipment</span>&gt;</span>
@@ -2085,94 +2099,96 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-519"><a href="#cb1-519" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:ServiceAllowanceCharge</span>&gt;</span>
 <span id="cb1-520"><a href="#cb1-520" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ChargeIndicator</span>&gt;true&lt;/<span class="kw">cbc:ChargeIndicator</span>&gt;</span>
 <span id="cb1-521"><a href="#cb1-521" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AllowanceChargeReasonCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 7161&quot;</span>&gt;ABK&lt;/<span class="kw">cbc:AllowanceChargeReasonCode</span>&gt;</span>
-<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Reefer power and monitoring at Selanu after discharge, a day&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
-<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;45.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
-<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ServiceAllowanceCharge</span>&gt;</span>
-<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:VerifiedGrossMass</span>&gt;</span>
-<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;VGM-26-0422&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDate</span>&gt;2026-04-22&lt;/<span class="kw">cbc:WeighingDate</span>&gt;</span>
-<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingTime</span>&gt;11:30:00-01:00&lt;/<span class="kw">cbc:WeighingTime</span>&gt;</span>
-<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO SOLAS&quot;</span>&gt;SM2&lt;/<span class="kw">cbc:WeighingMethodCode</span>&gt;</span>
-<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceID</span>&gt;HRW-SCALE-02&lt;/<span class="kw">cbc:WeighingDeviceID</span>&gt;</span>
-<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceType</span>&gt;Pallet scale&lt;/<span class="kw">cbc:WeighingDeviceType</span>&gt;</span>
-<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:GrossMassMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;26528&lt;/<span class="kw">cbc:GrossMassMeasure</span>&gt;</span>
-<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:WeighingParty</span>&gt;</span>
-<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20415873&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Harrowmead Fruit Growers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:WeighingParty</span>&gt;</span>
-<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ShipperParty</span>&gt;</span>
-<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20415873&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Harrowmead Fruit Growers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ShipperParty</span>&gt;</span>
-<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ResponsibleParty</span>&gt;</span>
-<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20415873&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Harrowmead Fruit Growers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ResponsibleParty</span>&gt;</span>
-<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span>&gt;VGM-26-0422&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;749&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
-<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:VerifiedGrossMass</span>&gt;</span>
-<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
-<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
-<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
-<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Fresh apples and pears in cartons, on 20 pallets&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21728&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
-<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;SETPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;0.5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
-<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
-<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Fresh apples&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Fresh apples&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;080810&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
-<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
-<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Fresh pears&lt;/<span class="kw">cbc:Description</span>&gt;</span>
-<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Fresh pears&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;080830&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
-<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
-<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
-<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
-<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;0&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
-<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
-<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;1&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
-<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
-<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
-<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">BillOfLading</span>&gt;</span></code></pre></div>
+<span id="cb1-522"><a href="#cb1-522" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:AllowanceChargeReason</span>&gt;Reefer power and monitoring at Selanu after discharge&lt;/<span class="kw">cbc:AllowanceChargeReason</span>&gt;</span>
+<span id="cb1-523"><a href="#cb1-523" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:MultiplierFactorNumeric</span>&gt;1&lt;/<span class="kw">cbc:MultiplierFactorNumeric</span>&gt;</span>
+<span id="cb1-524"><a href="#cb1-524" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:Amount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;45.00&lt;/<span class="kw">cbc:Amount</span>&gt;</span>
+<span id="cb1-525"><a href="#cb1-525" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:BaseAmount</span> <span class="ot">currencyID=</span><span class="st">&quot;XBL&quot;</span>&gt;45.00&lt;/<span class="kw">cbc:BaseAmount</span>&gt;</span>
+<span id="cb1-526"><a href="#cb1-526" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:ServiceAllowanceCharge</span>&gt;</span>
+<span id="cb1-527"><a href="#cb1-527" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:VerifiedGrossMass</span>&gt;</span>
+<span id="cb1-528"><a href="#cb1-528" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:ID</span>&gt;VGM-26-0422&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-529"><a href="#cb1-529" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDate</span>&gt;2026-04-22&lt;/<span class="kw">cbc:WeighingDate</span>&gt;</span>
+<span id="cb1-530"><a href="#cb1-530" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingTime</span>&gt;11:30:00-01:00&lt;/<span class="kw">cbc:WeighingTime</span>&gt;</span>
+<span id="cb1-531"><a href="#cb1-531" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingMethodCode</span> <span class="ot">listID=</span><span class="st">&quot;IMO SOLAS&quot;</span>&gt;SM2&lt;/<span class="kw">cbc:WeighingMethodCode</span>&gt;</span>
+<span id="cb1-532"><a href="#cb1-532" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceID</span>&gt;HRW-SCALE-02&lt;/<span class="kw">cbc:WeighingDeviceID</span>&gt;</span>
+<span id="cb1-533"><a href="#cb1-533" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:WeighingDeviceType</span>&gt;Pallet scale&lt;/<span class="kw">cbc:WeighingDeviceType</span>&gt;</span>
+<span id="cb1-534"><a href="#cb1-534" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:GrossMassMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;26528&lt;/<span class="kw">cbc:GrossMassMeasure</span>&gt;</span>
+<span id="cb1-535"><a href="#cb1-535" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:WeighingParty</span>&gt;</span>
+<span id="cb1-536"><a href="#cb1-536" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-537"><a href="#cb1-537" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20415873&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-538"><a href="#cb1-538" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-539"><a href="#cb1-539" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-540"><a href="#cb1-540" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Harrowmead Fruit Growers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-541"><a href="#cb1-541" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-542"><a href="#cb1-542" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:WeighingParty</span>&gt;</span>
+<span id="cb1-543"><a href="#cb1-543" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ShipperParty</span>&gt;</span>
+<span id="cb1-544"><a href="#cb1-544" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-545"><a href="#cb1-545" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20415873&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-546"><a href="#cb1-546" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-547"><a href="#cb1-547" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-548"><a href="#cb1-548" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Harrowmead Fruit Growers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-549"><a href="#cb1-549" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-550"><a href="#cb1-550" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ShipperParty</span>&gt;</span>
+<span id="cb1-551"><a href="#cb1-551" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:ResponsibleParty</span>&gt;</span>
+<span id="cb1-552"><a href="#cb1-552" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-553"><a href="#cb1-553" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20415873&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-554"><a href="#cb1-554" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-555"><a href="#cb1-555" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-556"><a href="#cb1-556" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Harrowmead Fruit Growers&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-557"><a href="#cb1-557" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-558"><a href="#cb1-558" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ResponsibleParty</span>&gt;</span>
+<span id="cb1-559"><a href="#cb1-559" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-560"><a href="#cb1-560" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:ID</span>&gt;VGM-26-0422&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-561"><a href="#cb1-561" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;UN/EDIFACT EDED 1001&quot;</span>&gt;749&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-562"><a href="#cb1-562" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:DocumentReference</span>&gt;</span>
+<span id="cb1-563"><a href="#cb1-563" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:VerifiedGrossMass</span>&gt;</span>
+<span id="cb1-564"><a href="#cb1-564" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:TransportEquipment</span>&gt;</span>
+<span id="cb1-565"><a href="#cb1-565" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:TransportHandlingUnit</span>&gt;</span>
+<span id="cb1-566"><a href="#cb1-566" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Consignment</span>&gt;</span>
+<span id="cb1-567"><a href="#cb1-567" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-568"><a href="#cb1-568" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-569"><a href="#cb1-569" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Description</span>&gt;Fresh apples and pears in cartons, on 20 pallets&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-570"><a href="#cb1-570" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:GrossWeightMeasure</span> <span class="ot">unitCode=</span><span class="st">&quot;KGM&quot;</span>&gt;21728&lt;/<span class="kw">cbc:GrossWeightMeasure</span>&gt;</span>
+<span id="cb1-571"><a href="#cb1-571" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-572"><a href="#cb1-572" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;SETPOINT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-573"><a href="#cb1-573" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;0.5&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-574"><a href="#cb1-574" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Temperature</span>&gt;</span>
+<span id="cb1-575"><a href="#cb1-575" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
+<span id="cb1-576"><a href="#cb1-576" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.1&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-577"><a href="#cb1-577" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Fresh apples&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-578"><a href="#cb1-578" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-579"><a href="#cb1-579" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Fresh apples&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-580"><a href="#cb1-580" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-581"><a href="#cb1-581" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;080810&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-582"><a href="#cb1-582" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-583"><a href="#cb1-583" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-584"><a href="#cb1-584" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
+<span id="cb1-585"><a href="#cb1-585" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
+<span id="cb1-586"><a href="#cb1-586" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span>&gt;1.2&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-587"><a href="#cb1-587" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Description</span>&gt;Fresh pears&lt;/<span class="kw">cbc:Description</span>&gt;</span>
+<span id="cb1-588"><a href="#cb1-588" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-589"><a href="#cb1-589" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Fresh pears&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-590"><a href="#cb1-590" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-591"><a href="#cb1-591" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">cbc:CommodityCode</span> <span class="ot">listID=</span><span class="st">&quot;WCO HS 2022&quot;</span>&gt;080830&lt;/<span class="kw">cbc:CommodityCode</span>&gt;</span>
+<span id="cb1-592"><a href="#cb1-592" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:CommodityClassification</span>&gt;</span>
+<span id="cb1-593"><a href="#cb1-593" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Item</span>&gt;</span>
+<span id="cb1-594"><a href="#cb1-594" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ContainedGoodsItem</span>&gt;</span>
+<span id="cb1-595"><a href="#cb1-595" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-596"><a href="#cb1-596" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-597"><a href="#cb1-597" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;0&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-598"><a href="#cb1-598" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MinimumTemperature</span>&gt;</span>
+<span id="cb1-599"><a href="#cb1-599" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-600"><a href="#cb1-600" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AttributeID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TemperatureAttributeCode&quot;</span>&gt;TRANSPORT&lt;/<span class="kw">cbc:AttributeID</span>&gt;</span>
+<span id="cb1-601"><a href="#cb1-601" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Measure</span> <span class="ot">unitCode=</span><span class="st">&quot;CEL&quot;</span>&gt;1&lt;/<span class="kw">cbc:Measure</span>&gt;</span>
+<span id="cb1-602"><a href="#cb1-602" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:MaximumTemperature</span>&gt;</span>
+<span id="cb1-603"><a href="#cb1-603" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:GoodsItem</span>&gt;</span>
+<span id="cb1-604"><a href="#cb1-604" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
+<span id="cb1-605"><a href="#cb1-605" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">BillOfLading</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-reefer-06-DespatchAdvice.html">← Despatch Advice</a>
 · <a href="examples.html#flow-reefer">all documents of the flow</a> · <a
 href="example-reefer-08-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

@@ -4,10 +4,10 @@
   <cbc:CustomizationID>urn:ubl-examples:world:trns:utility-statement:1.0</cbc:CustomizationID>
   <cbc:ProfileID>urn:ubl-examples:world:profile:utility-billing:1.0</cbc:ProfileID>
   <cbc:ProfileExecutionID>STL-TX-26-75183</cbc:ProfileExecutionID>
-  <cbc:ID>STL-UST-26-75398</cbc:ID>
+  <cbc:ID>STL-UST-26-75370</cbc:ID>
   <cbc:UUID>7b60d4fc-8fd7-5124-9e01-cfc520caed86</cbc:UUID>
   <cbc:IssueDate>2026-04-02</cbc:IssueDate>
-  <cbc:IssueTime>17:37:00+00:00</cbc:IssueTime>
+  <cbc:IssueTime>16:48:00+00:00</cbc:IssueTime>
   <cbc:UtilityStatementTypeCode listID="urn:ubl-examples:world:codelist:UtilityTypeCode">TEL</cbc:UtilityStatementTypeCode>
   <cbc:Note languageID="qal">Mikake votetaka hanano mofilufo kisala vepili vafosu.</cbc:Note>
   <cbc:Note languageID="en-XL">This statement explains the consumption behind your bill.</cbc:Note>
@@ -55,7 +55,7 @@
       <cbc:Department>Business sales</cbc:Department>
       <cbc:Telephone>+999 3 727 3193</cbc:Telephone>
       <cbc:ElectronicMail>billing@selanutelecom.example</cbc:ElectronicMail>
-      <cbc:Note>Every day, around the clock</cbc:Note>
+      <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
     </cac:Contact>
     <cac:ElectronicAddress>
       <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -168,7 +168,7 @@
             <cbc:ID>C-0311-01</cbc:ID>
             <cbc:CallDate>2026-03-11</cbc:CallDate>
             <cbc:CallTime>10:14:00+00:00</cbc:CallTime>
-            <cbc:ServiceNumberCalled>+999 2 7121 955 ***</cbc:ServiceNumberCalled>
+            <cbc:ServiceNumberCalled>+999 2 5121 955 ***</cbc:ServiceNumberCalled>
             <cbc:TelecommunicationsServiceCategory>International: a call to Bayvarra</cbc:TelecommunicationsServiceCategory>
             <cbc:TelecommunicationsServiceCategoryCode listID="urn:ubl-examples:world:codelist:TelecomServiceCategoryCode">INT</cbc:TelecommunicationsServiceCategoryCode>
             <cbc:Quantity unitCode="MIN">12</cbc:Quantity>

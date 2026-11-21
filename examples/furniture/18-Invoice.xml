@@ -12,8 +12,8 @@
   <cbc:InvoiceTypeCode listID="UN/EDIFACT EDED 1001">380</cbc:InvoiceTypeCode>
   <cbc:Note>The stock above the target at the end of the sale-or-return trial went back at the maker's cost, as the own-label agreement says; the store carried it with its own van.</cbc:Note>
   <cbc:DocumentCurrencyCode listID="ISO 4217 Alpha">XBL</cbc:DocumentCurrencyCode>
-  <cbc:AccountingCostCode>1100</cbc:AccountingCostCode>
-  <cbc:AccountingCost>Timber and materials</cbc:AccountingCost>
+  <cbc:AccountingCostCode>4100</cbc:AccountingCostCode>
+  <cbc:AccountingCost>Freight and carriage</cbc:AccountingCost>
   <cbc:LineCountNumeric>1</cbc:LineCountNumeric>
   <cbc:DefaultLanguageCode listID="ISO 639">en</cbc:DefaultLanguageCode>
   <cac:ContractDocumentReference>
@@ -160,7 +160,7 @@
         <cbc:Name>Accounts payable</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 2 7121 602 606</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 602 606</cbc:Telephone>
         <cbc:ElectronicMail>payables@brackenmere.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

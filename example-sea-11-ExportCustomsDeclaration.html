@@ -787,10 +787,12 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Bayforth Forwarding gives it.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does. As Bayforth Forwarding gives it.</li>
 <li><code>Shipment/ShipmentStage/CustomsAgentParty/Contact/ElectronicMail</code>
 = **<code>customs@bayforth.example**</code><br />
 The contact's e-mail address; as Bayforth Forwarding gives it.</li>
@@ -829,17 +831,6 @@ At the container quay of the Port of Lumeport.</li>
 <li><code>Shipment/ShipmentStage/EstimatedDepartureTransportEvent/Location/Address/Country/IdentificationCode</code>
 = <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
 The country the place is in. The code is from the world's copy of UBL's
-Country identification (ISO 3166) list: XB = Bayvarra.</li>
-<li><code>CustomsExitOfficeLocation/ID</code> =
-<strong>XB002001</strong> (schemeID
-<code>urn:ubl-examples:world:XB:customs-office</code>)<br />
-The office's number in the customs office list of Bayvarra.</li>
-<li><code>CustomsExitOfficeLocation/Name</code> = <strong>Customs
-office, port of Lumeport</strong><br />
-Where the goods leave the country.</li>
-<li><code>CustomsExitOfficeLocation/Address/Country/IdentificationCode</code>
-= <strong>XB</strong> (listID <code>ISO 3166</code>)<br />
-The country the office is in. The code is from the world's copy of UBL's
 Country identification (ISO 3166) list: XB = Bayvarra.</li>
 <li><code>ConsignorParty/PartyIdentification/ID</code> =
 <strong>20410274</strong> (schemeID
@@ -1046,17 +1037,19 @@ The job of the person who answers at the desk.</li>
 <li><code>CustomsParty/Contact/Department</code> =
 <strong>Customs</strong><br />
 The department the desk belongs to.</li>
-<li><code>CustomsParty/Contact/Telephone</code> = <strong>+999 2 7121
+<li><code>CustomsParty/Contact/Telephone</code> = <strong>+999 2 5121
 503 398</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>CustomsParty/Contact/ElectronicMail</code> =
 **<code>export@customs-xb.example**</code><br />
 The contact's e-mail address.</li>
@@ -1432,122 +1425,113 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:EstimatedDepartureTransportEvent</span>&gt;</span>
 <span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ShipmentStage</span>&gt;</span>
 <span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Shipment</span>&gt;</span>
-<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsExitOfficeLocation</span>&gt;</span>
-<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:customs-office&quot;</span>&gt;XB002001&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Customs office, port of Lumeport&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Address</span>&gt;</span>
-<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsExitOfficeLocation</span>&gt;</span>
-<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
-<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:customs-trader&quot;</span>&gt;XL-TR-041859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
-<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:delivery-point&quot;</span>&gt;40351721&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Kavama Timeku&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Reef Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;16&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Port Wrenfield&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;+00:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
-<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:FreightForwarderParty</span>&gt;</span>
-<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayforth Forwarding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:FreightForwarderParty</span>&gt;</span>
-<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsParty</span>&gt;</span>
-<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;3071845926&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customs and Border Service of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:UL:address-register&quot;</span>&gt;UL-ADR-479100&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
-<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
-<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span>&gt;Border Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
-<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;36&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
-<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Euridice Crossing&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
-<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;71950&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
-<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
-<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
-<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
-<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
-<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
-<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
-<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Customs and Border Service of Bayvarra&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
-<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;3071845926&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
-<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
-<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Export office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customs officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Customs&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 503 398&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`export@customs-xb.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
-<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:3071845926&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
-<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
-<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsParty</span>&gt;</span>
-<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PreviousCustomsDeclaration</span>&gt;</span>
-<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-IM-26-0161&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FunctionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:FunctionCode</span>&gt;</span>
-<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PreviousCustomsDeclaration</span>&gt;</span>
-<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;26-0417&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-IM-26-0127&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ImportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
-<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
-<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CustomsDeclaration</span>&gt;</span>
-<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-EX-sea&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-410"><a href="#cb1-410" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-411"><a href="#cb1-411" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
-<span id="cb1-412"><a href="#cb1-412" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
-<span id="cb1-413"><a href="#cb1-413" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-414"><a href="#cb1-414" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayforth Forwarding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-415"><a href="#cb1-415" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
-<span id="cb1-416"><a href="#cb1-416" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
-<span id="cb1-417"><a href="#cb1-417" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
-<span id="cb1-418"><a href="#cb1-418" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExportCustomsDeclaration</span>&gt;</span></code></pre></div>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20410274&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Lumeway Distribution&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsignorParty</span>&gt;</span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ConsigneeParty</span>&gt;</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:register&quot;</span>&gt;IC41859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:customs-trader&quot;</span>&gt;XL-TR-041859&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:AdditionalPartyIdentification</span>&gt;</span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Velumi Trading&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XL:delivery-point&quot;</span>&gt;40351721&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XL&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Kavama Timeku&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Reef Street&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;16&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;qal&quot;</span>&gt;Selanu&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span> <span class="ot">languageID=</span><span class="st">&quot;en-XL&quot;</span>&gt;Port Wrenfield&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;+00:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XL&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Lisavu&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-336"><a href="#cb1-336" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
+<span id="cb1-337"><a href="#cb1-337" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:FreightForwarderParty</span>&gt;</span>
+<span id="cb1-338"><a href="#cb1-338" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-339"><a href="#cb1-339" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-340"><a href="#cb1-340" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-341"><a href="#cb1-341" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-342"><a href="#cb1-342" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayforth Forwarding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-343"><a href="#cb1-343" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-344"><a href="#cb1-344" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:FreightForwarderParty</span>&gt;</span>
+<span id="cb1-345"><a href="#cb1-345" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:CustomsParty</span>&gt;</span>
+<span id="cb1-346"><a href="#cb1-346" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-347"><a href="#cb1-347" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;3071845926&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-348"><a href="#cb1-348" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-349"><a href="#cb1-349" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-350"><a href="#cb1-350" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Customs and Border Service of Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-351"><a href="#cb1-351" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-352"><a href="#cb1-352" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-353"><a href="#cb1-353" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:UL:address-register&quot;</span>&gt;UL-ADR-479100&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-354"><a href="#cb1-354" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressTypeCode&quot;</span>&gt;BUSINESS&lt;/<span class="kw">cbc:AddressTypeCode</span>&gt;</span>
+<span id="cb1-355"><a href="#cb1-355" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:AddressFormatCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:AddressFormatCode&quot;</span>&gt;XB&lt;/<span class="kw">cbc:AddressFormatCode</span>&gt;</span>
+<span id="cb1-356"><a href="#cb1-356" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:StreetName</span>&gt;Border Road&lt;/<span class="kw">cbc:StreetName</span>&gt;</span>
+<span id="cb1-357"><a href="#cb1-357" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:BuildingNumber</span>&gt;36&lt;/<span class="kw">cbc:BuildingNumber</span>&gt;</span>
+<span id="cb1-358"><a href="#cb1-358" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CityName</span>&gt;Euridice Crossing&lt;/<span class="kw">cbc:CityName</span>&gt;</span>
+<span id="cb1-359"><a href="#cb1-359" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:PostalZone</span>&gt;71950&lt;/<span class="kw">cbc:PostalZone</span>&gt;</span>
+<span id="cb1-360"><a href="#cb1-360" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentity</span>&gt;Upland State&lt;/<span class="kw">cbc:CountrySubentity</span>&gt;</span>
+<span id="cb1-361"><a href="#cb1-361" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CountrySubentityCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:XB:codelist:CountrySubentityCode&quot;</span>&gt;XB-UL&lt;/<span class="kw">cbc:CountrySubentityCode</span>&gt;</span>
+<span id="cb1-362"><a href="#cb1-362" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:TimezoneOffset</span>&gt;-01:00&lt;/<span class="kw">cbc:TimezoneOffset</span>&gt;</span>
+<span id="cb1-363"><a href="#cb1-363" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-364"><a href="#cb1-364" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:IdentificationCode</span> <span class="ot">listID=</span><span class="st">&quot;ISO 3166&quot;</span>&gt;XB&lt;/<span class="kw">cbc:IdentificationCode</span>&gt;</span>
+<span id="cb1-365"><a href="#cb1-365" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Bayvarra&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-366"><a href="#cb1-366" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Country</span>&gt;</span>
+<span id="cb1-367"><a href="#cb1-367" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
+<span id="cb1-368"><a href="#cb1-368" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-369"><a href="#cb1-369" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:RegistrationName</span>&gt;Customs and Border Service of Bayvarra&lt;/<span class="kw">cbc:RegistrationName</span>&gt;</span>
+<span id="cb1-370"><a href="#cb1-370" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:CompanyID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:public-body-register&quot;</span>&gt;3071845926&lt;/<span class="kw">cbc:CompanyID</span>&gt;</span>
+<span id="cb1-371"><a href="#cb1-371" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyLegalEntity</span>&gt;</span>
+<span id="cb1-372"><a href="#cb1-372" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-373"><a href="#cb1-373" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Export office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-374"><a href="#cb1-374" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Customs officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-375"><a href="#cb1-375" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Customs&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-376"><a href="#cb1-376" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5121 503 398&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-377"><a href="#cb1-377" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`export@customs-xb.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-378"><a href="#cb1-378" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-379"><a href="#cb1-379" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
+<span id="cb1-380"><a href="#cb1-380" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-381"><a href="#cb1-381" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
+<span id="cb1-382"><a href="#cb1-382" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicAddressID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:endpoint&quot;</span>&gt;XB:3071845926&lt;/<span class="kw">cbc:ElectronicAddressID</span>&gt;</span>
+<span id="cb1-383"><a href="#cb1-383" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ElectronicAddress</span>&gt;</span>
+<span id="cb1-384"><a href="#cb1-384" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:CustomsParty</span>&gt;</span>
+<span id="cb1-385"><a href="#cb1-385" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:PreviousCustomsDeclaration</span>&gt;</span>
+<span id="cb1-386"><a href="#cb1-386" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-IM-26-0161&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-387"><a href="#cb1-387" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:FunctionCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:CustomsDeclarationTypeCode&quot;</span>&gt;IMPORT&lt;/<span class="kw">cbc:FunctionCode</span>&gt;</span>
+<span id="cb1-388"><a href="#cb1-388" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:PreviousCustomsDeclaration</span>&gt;</span>
+<span id="cb1-389"><a href="#cb1-389" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-390"><a href="#cb1-390" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;26-0417&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-391"><a href="#cb1-391" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;Order&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-392"><a href="#cb1-392" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-393"><a href="#cb1-393" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-394"><a href="#cb1-394" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ID</span>&gt;LMW-IM-26-0127&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-395"><a href="#cb1-395" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:DocumentTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:UBLDocumentTypeCode&quot;</span>&gt;ImportCustomsDeclaration&lt;/<span class="kw">cbc:DocumentTypeCode</span>&gt;</span>
+<span id="cb1-396"><a href="#cb1-396" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:AdditionalDocumentReference</span>&gt;</span>
+<span id="cb1-397"><a href="#cb1-397" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:CustomsDeclaration</span>&gt;</span>
+<span id="cb1-398"><a href="#cb1-398" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-399"><a href="#cb1-399" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cbc:ID</span>&gt;BF-SIG-EX-sea&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-400"><a href="#cb1-400" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-401"><a href="#cb1-401" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-402"><a href="#cb1-402" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ID</span> <span class="ot">schemeID=</span><span class="st">&quot;urn:ubl-examples:world:XB:register&quot;</span>&gt;20411644&lt;/<span class="kw">cbc:ID</span>&gt;</span>
+<span id="cb1-403"><a href="#cb1-403" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyIdentification</span>&gt;</span>
+<span id="cb1-404"><a href="#cb1-404" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-405"><a href="#cb1-405" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Bayforth Forwarding&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-406"><a href="#cb1-406" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
+<span id="cb1-407"><a href="#cb1-407" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:SignatoryParty</span>&gt;</span>
+<span id="cb1-408"><a href="#cb1-408" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">cac:Signature</span>&gt;</span>
+<span id="cb1-409"><a href="#cb1-409" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ExportCustomsDeclaration</span>&gt;</span></code></pre></div>
 <hr />
 <p><a href="example-sea-12-ForwardingInstructions.html">← Forwarding
 Instructions</a> · <a href="examples.html#flow-sea">all documents of the
@@ -1555,6 +1539,6 @@ flow</a> · <a href="example-sea-10-PackingList.html">Packing List
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

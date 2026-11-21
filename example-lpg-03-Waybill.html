@@ -201,16 +201,18 @@ planner</strong><br />
 The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Operations</strong><br />
 The department the desk belongs to.</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 38522
-41906</strong><br />
+<li><code>Contact/Telephone</code> = <strong>+999 2 1563 419
+060</strong><br />
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>planning@gullhaventank.example**</code><br />
 The contact's e-mail address.</li>
@@ -335,17 +337,19 @@ coordinator</strong><br />
 The job of the person who answers at the desk.</li>
 <li><code>Contact/Department</code> = <strong>Warehouse</strong><br />
 The department the desk belongs to.</li>
-<li><code>Contact/Telephone</code> = <strong>+999 2 38522
-68330</strong><br />
+<li><code>Contact/Telephone</code> = <strong>+999 2 1563 683
+300</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>despatch@kelpstone.example**</code><br />
 The contact's e-mail address.</li>
@@ -524,30 +528,34 @@ Bayvarra.</li>
 <li><code>Consignment/ConsigneeParty/PostalAddress/Country/Name</code> =
 <strong>Bayvarra</strong><br />
 The country's name, for readers of the address.</li>
-<li><code>Consignment/ConsigneeParty/Contact/Name</code> =
-<strong>Customer service</strong><br />
-The party's main desk, which handles this document; as Coastal State
-Water Company gives it.</li>
+<li><code>Consignment/ConsigneeParty/Contact/Name</code> = <strong>Plant
+control room</strong><br />
+The party's plant control room desk: the desk for its role in this
+document (it receives the goods); as Coastal State Water Company gives
+it.</li>
 <li><code>Consignment/ConsigneeParty/Contact/JobTitle</code> =
-<strong>Customer service officer</strong><br />
+<strong>Plant operator</strong><br />
 The job of the person who answers at the desk; as Coastal State Water
 Company gives it.</li>
 <li><code>Consignment/ConsigneeParty/Contact/Department</code> =
-<strong>Customer service</strong><br />
+<strong>District heating</strong><br />
 The department the desk belongs to; as Coastal State Water Company gives
 it.</li>
 <li><code>Consignment/ConsigneeParty/Contact/Telephone</code> =
-<strong>+999 2 38 9310 7518</strong><br />
+<strong>+999 2 38 9310 7590</strong><br />
+The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7. As Coastal State Water Company gives it.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does. As Coastal State Water Company gives it.</li>
 <li><code>Consignment/ConsigneeParty/Contact/ElectronicMail</code> =
-**<code>customer@coastalwater.example**</code><br />
+**<code>plant@coastalwater.example**</code><br />
 The contact's e-mail address; as Coastal State Water Company gives
 it.</li>
 <li><code>Consignment/ConsigneeParty/Contact/Note</code> = <strong>Every
@@ -730,7 +738,7 @@ name are enough.</li>
 = <strong>Plant control room</strong><br />
 Whom to call in an incident with the propane.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Telephone</code>
-= <strong>+999 2 38522 68399</strong><br />
+= <strong>+999 2 1563 683 990</strong><br />
 The control room answers around the clock, while the tanker is on the
 road; under the reserved +999.</li>
 <li><code>Consignment/TransportHandlingUnit/TransportEquipment/LoadedHazardousItem/ContactParty/Contact/Note</code>
@@ -984,7 +992,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Tanker planning&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Tanker planner&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Operations&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38522 41906&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 1563 419 060&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`planning@gullhaventank.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1040,7 +1048,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Name</span>&gt;Despatch office&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:JobTitle</span>&gt;Despatch coordinator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38522 68330&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 1563 683 300&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`despatch@kelpstone.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -1096,11 +1104,11 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>          &lt;/<span class="kw">cac:Country</span>&gt;</span>
 <span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:PostalAddress</span>&gt;</span>
 <span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cac:Contact</span>&gt;</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Customer service&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Customer service officer&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;Customer service&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 9310 7518&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`customer@coastalwater.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Name</span>&gt;Plant control room&lt;/<span class="kw">cbc:Name</span>&gt;</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:JobTitle</span>&gt;Plant operator&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Department</span>&gt;District heating&lt;/<span class="kw">cbc:Department</span>&gt;</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 9310 7590&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`plant@coastalwater.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>          &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:ConsigneeParty</span>&gt;</span>
@@ -1175,7 +1183,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:PartyName</span>&gt;</span>
 <span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>              &lt;<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Name</span>&gt;Plant control room&lt;/<span class="kw">cbc:Name</span>&gt;</span>
-<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38522 68399&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 1563 683 990&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a>              &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">cac:ContactParty</span>&gt;</span>
@@ -1279,6 +1287,6 @@ href="examples.html#flow-lpg">all documents of the flow</a> · <a
 href="example-lpg-02-DespatchAdvice.html">Despatch Advice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

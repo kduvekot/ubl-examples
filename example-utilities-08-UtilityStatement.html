@@ -29,7 +29,7 @@ href="world-spec-transaction-utility-statement.html">Utility
 statement</a>.</p>
 <p><a href="example-utilities-09-Invoice.html">← Invoice</a> · <a
 href="examples.html#flow-utilities">all documents of the flow</a> · <a
-href="example-utilities-03-UtilityStatement.html">Utility Statement
+href="example-utilities-01-UtilityStatement.html">Utility Statement
 →</a></p>
 <p>The household's annual statement for water and district heat, April
 2025 to March 2026: the annual readings, the year's water with the
@@ -232,15 +232,17 @@ Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>Contact/ElectronicMail</code> =
 **<code>billing@coastalwater.example**</code><br />
 The contact's e-mail address.</li>
-<li><code>Contact/Note</code> = <strong>Every day, around the
-clock</strong><br />
+<li><code>Contact/Note</code> = <strong>Weekdays
+08:00–17:00</strong><br />
 When the desk can be reached.</li>
 <li><code>ElectronicAddress/ExchangeNetworkID</code> =
 <strong>urn:ubl-examples:world:network</strong><br />
@@ -1339,7 +1341,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Department</span>&gt;Customer service&lt;/<span class="kw">cbc:Department</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 38 9310 7518&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`billing@coastalwater.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Every day, around the clock&lt;/<span class="kw">cbc:Note</span>&gt;</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">cac:Contact</span>&gt;</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">cac:ElectronicAddress</span>&gt;</span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">cbc:ExchangeNetworkID</span>&gt;urn:ubl-examples:world:network&lt;/<span class="kw">cbc:ExchangeNetworkID</span>&gt;</span>
@@ -1789,10 +1791,10 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <hr />
 <p><a href="example-utilities-09-Invoice.html">← Invoice</a> · <a
 href="examples.html#flow-utilities">all documents of the flow</a> · <a
-href="example-utilities-03-UtilityStatement.html">Utility Statement
+href="example-utilities-01-UtilityStatement.html">Utility Statement
 →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>

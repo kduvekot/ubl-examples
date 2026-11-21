@@ -94,7 +94,7 @@
         <cbc:Department>Finance</cbc:Department>
         <cbc:Telephone>+999 2 38 6047 1582</cbc:Telephone>
         <cbc:ElectronicMail>receivables@quillmoor.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -133,7 +133,7 @@
         <cbc:Name>Finance office</cbc:Name>
         <cbc:JobTitle>Accounts payable clerk</cbc:JobTitle>
         <cbc:Department>Finance</cbc:Department>
-        <cbc:Telephone>+999 3 726 8840</cbc:Telephone>
+        <cbc:Telephone>+999 3 726 8871</cbc:Telephone>
         <cbc:ElectronicMail>finance@selanu-hospital.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 07:30–17:00</cbc:Note>
       </cac:Contact>
@@ -164,10 +164,12 @@
     </cac:Party>
   </cac:SellerSupplierParty>
   <cac:Delivery>
-    <cbc:ActualDeliveryDate>2026-06-15</cbc:ActualDeliveryDate>
     <cac:DeliveryLocation>
       <cbc:Name>Selanu General Hospital, pharmacy</cbc:Name>
     </cac:DeliveryLocation>
+    <cac:Despatch>
+      <cbc:ActualDespatchDate>2026-06-15</cbc:ActualDespatchDate>
+    </cac:Despatch>
   </cac:Delivery>
   <cac:DeliveryTerms>
     <cbc:ID schemeID="INCOTERMS">CPT</cbc:ID>
@@ -368,7 +370,7 @@
       <cbc:LineID>4</cbc:LineID>
     </cac:OrderLineReference>
     <cac:Item>
-      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, six days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
+      <cbc:Description>A molybdenum-99/technetium-99m generator of 20 GBq nominal activity at its reference time, which the order states, some days after delivery (European pre-calibration): a column of Mo-99 in a shielded housing, from which the hospital elutes sodium pertechnetate (Tc-99m) every morning for a week.</cbc:Description>
       <cbc:Name>Technetium-99m generator, 20 GBq</cbc:Name>
       <cbc:HazardousRiskIndicator>true</cbc:HazardousRiskIndicator>
       <cac:SellersItemIdentification>

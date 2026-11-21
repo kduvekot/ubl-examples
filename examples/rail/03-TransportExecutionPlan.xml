@@ -48,7 +48,7 @@
       <cbc:Name>Freight desk</cbc:Name>
       <cbc:JobTitle>Freight planner</cbc:JobTitle>
       <cbc:Department>Operations</cbc:Department>
-      <cbc:Telephone>+999 1 0413 67100</cbc:Telephone>
+      <cbc:Telephone>+999 1 0425 67100</cbc:Telephone>
       <cbc:ElectronicMail>freight@ferranorail.example</cbc:ElectronicMail>
       <cbc:Note>Every day 06:00–22:00</cbc:Note>
     </cac:Contact>
@@ -201,7 +201,7 @@
     <cbc:TransportServiceProviderSpecialTerms>Delivery within the agreed slot; the consignee unloads. Waiting time beyond two hours is charged.</cbc:TransportServiceProviderSpecialTerms>
     <cbc:ChangeConditions>Changes up to 24 hours before collection without charge.</cbc:ChangeConditions>
     <cac:PaymentTerms>
-      <cbc:Note>30 days net from the consignment note.</cbc:Note>
+      <cbc:Note>30 days net from the consignment note. A charge after the carriage: 30 days net from the date of the debit note.</cbc:Note>
     </cac:PaymentTerms>
     <cac:PenaltyPaymentTerms>
       <cbc:Note>For late delivery the carrier is liable for 5 % of the freight per day late, at most 25 %.</cbc:Note>
@@ -284,7 +284,7 @@
         <cbc:Name>Goods-in</cbc:Name>
         <cbc:JobTitle>Goods-in supervisor</cbc:JobTitle>
         <cbc:Department>Warehouse</cbc:Department>
-        <cbc:Telephone>+999 2 7121 955 964</cbc:Telephone>
+        <cbc:Telephone>+999 2 5121 955 964</cbc:Telephone>
         <cbc:ElectronicMail>goodsin@lumeway.example</cbc:ElectronicMail>
         <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>

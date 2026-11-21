@@ -46,7 +46,7 @@
         <cbc:Department>Purchasing</cbc:Department>
         <cbc:Telephone>+999 2 38 9310 7518</cbc:Telephone>
         <cbc:ElectronicMail>purchasing@coastalwater.example</cbc:ElectronicMail>
-        <cbc:Note>Every day, around the clock</cbc:Note>
+        <cbc:Note>Weekdays 08:00–17:00</cbc:Note>
       </cac:Contact>
       <cac:ElectronicAddress>
         <cbc:ExchangeNetworkID>urn:ubl-examples:world:network</cbc:ExchangeNetworkID>
@@ -97,7 +97,7 @@
         <cbc:Name>Gas sales</cbc:Name>
         <cbc:JobTitle>Gas sales manager</cbc:JobTitle>
         <cbc:Department>Commercial</cbc:Department>
-        <cbc:Telephone>+999 2 38522 68330</cbc:Telephone>
+        <cbc:Telephone>+999 2 1563 683 300</cbc:Telephone>
         <cbc:ElectronicMail>gas@kelpstone.example</cbc:ElectronicMail>
         <cbc:Note>Every day, around the clock</cbc:Note>
       </cac:Contact>
@@ -129,6 +129,12 @@
         <cbc:Percent>6.5</cbc:Percent>
         <cac:TaxScheme>
           <cbc:ID schemeID="UN/EDIFACT EDED 5153">STT</cbc:ID>
+          <cac:JurisdictionRegionAddress>
+            <cbc:CountrySubentity>Coastal State</cbc:CountrySubentity>
+            <cac:Country>
+              <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+            </cac:Country>
+          </cac:JurisdictionRegionAddress>
         </cac:TaxScheme>
       </cac:TaxCategory>
     </cac:TaxSubtotal>

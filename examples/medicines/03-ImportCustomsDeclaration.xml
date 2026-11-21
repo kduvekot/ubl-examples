@@ -8,7 +8,7 @@
   <cbc:UUID>288dda29-bba9-5aaa-b84e-c91eac5c3161</cbc:UUID>
   <cbc:IssueDate>2026-05-11</cbc:IssueDate>
   <cbc:IssueTime>08:30:00-01:00</cbc:IssueTime>
-  <cbc:Note>No duty: goods made in India, outside the Accord, but medicines and radioactive isotopes for medicine are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
+  <cbc:Note>No duty: goods made in India, outside the Accord, but medicines and vaccines are free of duty in Bayvarra's tariff. No tax is due at import: Bayvarra's sales tax is charged once, at the final retail sale.</cbc:Note>
   <cac:ImporterParty>
     <cac:PartyIdentification>
       <cbc:ID schemeID="urn:ubl-examples:world:XB:register">20413425</cbc:ID>
@@ -132,7 +132,7 @@
       <cbc:Name>Import office</cbc:Name>
       <cbc:JobTitle>Customs officer</cbc:JobTitle>
       <cbc:Department>Customs</cbc:Department>
-      <cbc:Telephone>+999 2 7121 503 398</cbc:Telephone>
+      <cbc:Telephone>+999 2 5121 503 398</cbc:Telephone>
       <cbc:ElectronicMail>import@customs-xb.example</cbc:ElectronicMail>
       <cbc:Note>Every day, around the clock</cbc:Note>
     </cac:Contact>
@@ -145,7 +145,16 @@
     <cbc:ID>NLB-SH-26-1786</cbc:ID>
     <cac:Consignment>
       <cbc:ID>NLB-CS-26-1786</cbc:ID>
-      <cbc:GrossWeightMeasure unitCode="KGM">172.8</cbc:GrossWeightMeasure>
+      <cbc:GrossWeightMeasure unitCode="KGM">199.1</cbc:GrossWeightMeasure>
+      <cac:OfficeOfEntryLocation>
+        <cbc:ID schemeID="urn:ubl-examples:world:XB:customs-office">XB002002</cbc:ID>
+        <cbc:Name>Lumeport airport</cbc:Name>
+        <cac:Address>
+          <cac:Country>
+            <cbc:IdentificationCode listID="ISO 3166">XB</cbc:IdentificationCode>
+          </cac:Country>
+        </cac:Address>
+      </cac:OfficeOfEntryLocation>
     </cac:Consignment>
     <cac:GoodsItem>
       <cbc:ID>1</cbc:ID>

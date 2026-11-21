@@ -78,9 +78,10 @@ In words.</li>
 <li><code>Note</code> = <strong>Automatic report from the sender's
 tracking system.</strong><br />
 How it was made.</li>
-<li><code>OtherInstruction</code> = <strong>Reply only if the delivery
-slot must change.</strong><br />
-What the receiver should do, with the slot it is about.</li>
+<li><code>OtherInstruction</code> = <strong>Delivery now expected at the
+goods-in of Lumeway Distribution on 25 March at 09:30; reply only if
+that slot must change.</strong><br />
+What the receiver should do on this report.</li>
 <li><code>TransportationStatusTypeCode</code> =
 <strong>PROGRESS</strong> (listID
 <code>urn:ubl-examples:world:codelist:TransportationStatusTypeCode</code>)<br />
@@ -228,17 +229,19 @@ The job of the person who answers at the desk.</li>
 <li><code>ConsigneeParty/Contact/Department</code> =
 <strong>Warehouse</strong><br />
 The department the desk belongs to.</li>
-<li><code>ConsigneeParty/Contact/Telephone</code> = <strong>+999 2 7121
+<li><code>ConsigneeParty/Contact/Telephone</code> = <strong>+999 2 5121
 955 964</strong><br />
 The party's switchboard, which puts the caller through to the desk.
 Telephone under +999, a country code the ITU reserves for a future
 global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Bayvarra's own plan: British-style closed
 numbering: always 10 digits after the country digit; the area code takes
-2 to 5 of them (Lumeport 38, Upland State 7121, Gullhaven 38522 in the
-Northern Territory: the plan is national and does not follow state
-borders) and the trunk prefix 0 is dropped from abroad. Mobiles start
-with 7.</li>
+2 or 4 of them, and its first digit gives the region: 3 the coast
+(Lumeport 38), 5 Upland (Upland State 5121, Harrowmead 5164), 1 the
+Northern Territory (Gullhaven 1563); the plan is national and follows
+regions, not state borders. No area code is the start of another, and
+the trunk prefix 0 is dropped from abroad. Mobiles start with 7, and
+nothing else does.</li>
 <li><code>ConsigneeParty/Contact/ElectronicMail</code> =
 **<code>goodsin@lumeway.example**</code><br />
 The contact's e-mail address.</li>
@@ -374,8 +377,9 @@ global service (ITU-T E.164), so the number reaches no one; then the
 country digit and a number in Urvania's own plan: Open numbering, kept
 from Italian times: the area code starts with 0 and stays in the number,
 also from abroad; the longer the area code, the shorter the number:
-Ferrano 041 and 7 digits (10 in all), Serravona 0413 and 5 digits (9).
-Mobiles start with 3 and have 10 digits.</li>
+Ferrano 041 and 7 digits (10 in all), Serravona 0425 and 5 digits (9);
+no area code is the start of another. Mobiles start with 3 and have 10
+digits.</li>
 <li><code>CarrierParty/Contact/ElectronicMail</code> =
 **<code>planning@trasvia.example**</code><br />
 The contact's e-mail address.</li>
@@ -687,7 +691,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Name</span>&gt;Transportation status&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Description</span>&gt;Border crossing passed; customs cleared on both sides.&lt;/<span class="kw">cbc:Description</span>&gt;</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:Note</span>&gt;Automatic report from the sender&#39;s tracking system.&lt;/<span class="kw">cbc:Note</span>&gt;</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OtherInstruction</span>&gt;Reply only if the delivery slot must change.&lt;/<span class="kw">cbc:OtherInstruction</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:OtherInstruction</span>&gt;Delivery now expected at the goods-in of Lumeway Distribution on 25 March at 09:30; reply only if that slot must change.&lt;/<span class="kw">cbc:OtherInstruction</span>&gt;</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransportationStatusTypeCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportationStatusTypeCode&quot;</span>&gt;PROGRESS&lt;/<span class="kw">cbc:TransportationStatusTypeCode</span>&gt;</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cbc:TransportExecutionStatusCode</span> <span class="ot">listID=</span><span class="st">&quot;urn:ubl-examples:world:codelist:TransportExecutionStatusCode&quot;</span>&gt;INPROGRESS&lt;/<span class="kw">cbc:TransportExecutionStatusCode</span>&gt;</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">cac:Consignment</span>&gt;</span>
@@ -737,7 +741,7 @@ class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#c
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Name</span>&gt;Goods-in&lt;/<span class="kw">cbc:Name</span>&gt;</span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:JobTitle</span>&gt;Goods-in supervisor&lt;/<span class="kw">cbc:JobTitle</span>&gt;</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Department</span>&gt;Warehouse&lt;/<span class="kw">cbc:Department</span>&gt;</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 7121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Telephone</span>&gt;+999 2 5121 955 964&lt;/<span class="kw">cbc:Telephone</span>&gt;</span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:ElectronicMail</span>&gt;`goodsin@lumeway.example`&lt;/<span class="kw">cbc:ElectronicMail</span>&gt;</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">cbc:Note</span>&gt;Weekdays 08:00–17:00&lt;/<span class="kw">cbc:Note</span>&gt;</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>      &lt;/<span class="kw">cac:Contact</span>&gt;</span>
@@ -949,6 +953,6 @@ documents of the flow</a> · <a
 href="example-road-14-Invoice.html">Invoice →</a></p>
 </main>
 </div>
-<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/e7e23b31e226d53f61d31d578a0cf326b9a4f013"><code>e7e23b3</code></a> of 2026-11-21 13:23 UTC</p></div></footer>
+<footer class="site-footer"><div><p>A fictional world, made to show UBL 2.5 in use. Work in progress, not an OASIS publication. UBL is an OASIS Standard and ISO/IEC 19845. <a href="about.html">About this project</a></p><p><a href="https://github.com/kduvekot/ubl-examples">Source on GitHub</a> · built from commit <a href="https://github.com/kduvekot/ubl-examples/commit/71d34d066155d06b0e77e65553b741ea62877eb4"><code>71d34d0</code></a> of 2026-11-21 14:36 UTC</p></div></footer>
 </body>
 </html>
