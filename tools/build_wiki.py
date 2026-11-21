@@ -449,6 +449,7 @@ def infobox(a):
         rows = [("Maker", f"[[{PARTY[d['seller']]['identity']['name']}]]"),
                 ("Dimensions", " × ".join(str(x) for x in d["dimensions_mm"]) + " mm" if d.get("dimensions_mm") else ""),
                 ("Weight", f"{d['net_kg']:g} kg" if d.get("net_kg") else "")]
+    rows += [(k, v) for k, v in (a["wiki"].get("facts") or {}).items()]
     cells = "".join((f"<tr><th>{k}</th><td>{v}</td></tr>" if k else f'<tr><td colspan="2" class="map">{v}</td></tr>')
                     for k, v in rows if v)
     return cells
@@ -519,6 +520,35 @@ def generated_sections(a):
     return out_
 
 
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+          "November", "December"]
+
+
+def timeline(a, where):
+    """The article's dated key events (wiki "timeline": [date, text]) as a list; checks order, the founding year
+    and the calendar."""
+    items = a["wiki"].get("timeline") or []
+    if not items:
+        return []
+    out, prev = [], ""
+    for date, text in items:
+        if not re.fullmatch(r"\d{4}(-\d{2}-\d{2})?", date):
+            problems.append(f"{where}: timeline date {date!r} is not a year or an ISO date")
+            continue
+        if date < prev:
+            problems.append(f"{where}: timeline not in order at {date}")
+        if date[:4] > "2026":
+            problems.append(f"{where}: timeline date {date} is after the world's calendar")
+        prev = date
+        shown = date if len(date) == 4 else f"{int(date[8:])} {MONTHS[int(date[5:7]) - 1]} {date[:4]}"
+        out.append(f"- **{shown}**: {text}")
+    if a["kind"] == "party":
+        founded = a["data"]["identity"].get("legal", {}).get("founded", "")[:4]
+        if founded and items[0][0][:4] != founded:
+            problems.append(f"{where}: the timeline begins in {items[0][0][:4]}, the party was founded in {founded}")
+    return out
+
+
 CATEGORY = {"country": "Countries", "accord": "Treaties", "town": "Towns", "party": "Companies and institutions",
             "village": "Villages", "locality": "Villages", "route": "Transport", "language": "Languages",
             "currency": "Currencies", "item": "Products", "river": "Rivers", "waters": "Rivers", "landmark": "Landmarks"}
@@ -558,8 +588,18 @@ for title, a in sorted(articles.items()):
     if a["kind"] == "waters":              # the map comes first, the table of rivers last
         k = gen.index("## The rivers")
         rest, gen = gen[:k], gen[k:]
-    for s in w.get("sections", []):
-        rest += [f"## {s['title']}", "", links(fill(s["text"], vals, where), where), ""]
+    secs = list(w.get("sections", []))
+    tl = timeline(a, where)
+    if tl and not any(x["title"] == "History" for x in secs):
+        secs.insert(0, {"title": "History", "text": ""})
+    for i, s in enumerate(secs):
+        rest += [("### " if s.get("sub") else "## ") + s["title"], ""]
+        if s["text"]:
+            rest += [links(fill(s["text"], vals, where), where), ""]
+        last_of_history = s["title"] == "History" or (s.get("sub") and any(x["title"] == "History" for x in secs[:i]))
+        if tl and last_of_history and not (i + 1 < len(secs) and secs[i + 1].get("sub")):
+            rest += ["### Timeline", ""] + [links(l, where) for l in tl] + [""]
+            tl = None
     rest += gen
     see = []
     if a["kind"] == "party":
